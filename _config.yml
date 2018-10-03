@@ -9,20 +9,27 @@ baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://ghwlchlaks.github.io" # the base hostname & protocol for your site, e.g. http://example.com
 
 # Author settings
-author: DMB # add your name
+author: Do My Best # add your name
 author-pic: adam-face.jpg
 about-author: My name is Choi JiHo.
 
+#site settings
+locale : "ko-KR" #사이트의 언어 설정
+
 # Contact links
-email: # Add your Email address
+email: ghwlchlaks@gmail.com # Add your Email address
 phone: # Add your Phone number
 website: # Add your website, do not add http://
 linkedin: # Add your Linkedin handle
-github: artemsheludko # Add your Github handle
-twitter: '@artemsheludko_' # Add your Twitter handle
-facebook: # Add your Facebook handle
+github: ghwlchlaks@github.com # Add your Github handle
+twitter:  # Add your Twitter handle
+facebook: ghwlchlaks@facebook.com # Add your Facebook handle
 instagram: # Add your Instagram handle
 pinterest: # Add your Pinterest handle
+
+# #사이트내 검색 설정
+# search : true
+# search_full_content : true
 
 # Newsletter
 mailchimp: # Add your MailChimp form identifier.

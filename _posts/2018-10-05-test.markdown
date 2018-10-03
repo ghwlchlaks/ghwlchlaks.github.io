@@ -1,0 +1,15 @@
+---
+layout: post
+title: 테스트 타이틀 
+date:   2018-10-05 20:43:20 +0300
+description: 테스트. # Add post description (optional)
+img: post-1.jpg # Add image post (optional)
+tags: [Blog, test]
+author: Jiho, Choi # Add name author (optional)
+---
+테스트 게시
+
+**테스트 게시**
+
+![jiho, Choi]({{site.baseurl}}/assets/img/yosh-ginsu.jpg)
+
