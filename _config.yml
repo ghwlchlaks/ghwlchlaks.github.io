@@ -9,7 +9,7 @@ baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://ghwlchlaks.github.io" # the base hostname & protocol for your site, e.g. http://example.com
 
 # Author settings
-author: Choi JiHo # add your name
+author: DMB # add your name
 author-pic: adam-face.jpg
 about-author: My name is Choi JiHo.
 
