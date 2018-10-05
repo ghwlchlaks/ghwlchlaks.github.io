@@ -10,8 +10,8 @@ url: "https://ghwlchlaks.github.io" # the base hostname & protocol for your site
 
 # Author settings
 author: Do My Best # add your name
-author-pic: adam-face.jpg
-about-author: My name is Choi JiHo.
+author-pic: profile.jpg
+about-author: My name is JiHo.
 
 #site settings
 locale : "ko-KR" #사이트의 언어 설정
@@ -21,15 +21,15 @@ email: ghwlchlaks@gmail.com # Add your Email address
 phone: # Add your Phone number
 website: # Add your website, do not add http://
 linkedin: # Add your Linkedin handle
-github: ghwlchlaks@github.com # Add your Github handle
+github: ghwlchlaks # Add your Github handle
 twitter:  # Add your Twitter handle
-facebook: ghwlchlaks@facebook.com # Add your Facebook handle
+facebook: ghwlchlaks # Add your Facebook handle
 instagram: # Add your Instagram handle
 pinterest: # Add your Pinterest handle
 
 # #사이트내 검색 설정
-# search : true
-# search_full_content : true
+search : true
+search_full_content : true
 
 # Newsletter
 mailchimp: # Add your MailChimp form identifier.
