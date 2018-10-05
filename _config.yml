@@ -1,15 +1,13 @@
 title: "Do My Best"
-email: "ghwlchlaks@naver.com"
-description: > # this means to ignore newlines until "baseurl:"
-  Write an awesome description for your new site here. You can edit this
-  line in _config.yml. It will appear in your document head meta (for
-  Google search results) and in your feed.xml site description.
+email: "ghwlchlaks@gmail.com"
+description:  # this means to ignore newlines until "baseurl:"
+  같이 배워가는 IT 블로그입니다~. Python, JavaScript, nodejs, Github, algorithm, etc
 permalink: ':title/'
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://ghwlchlaks.github.io" # the base hostname & protocol for your site, e.g. http://example.com
 
 # Author settings
-author: Do My Best # add your name
+author: DMB # add your name
 author-pic: profile.jpg
 about-author: My name is JiHo.
 
@@ -19,7 +17,7 @@ locale : "ko-KR" #사이트의 언어 설정
 # Contact links
 email: ghwlchlaks@gmail.com # Add your Email address
 phone: # Add your Phone number
-website: # Add your website, do not add http://
+website: ghwlchlaks.github.io # Add your website, do not add http://
 linkedin: # Add your Linkedin handle
 github: ghwlchlaks # Add your Github handle
 twitter:  # Add your Twitter handle
