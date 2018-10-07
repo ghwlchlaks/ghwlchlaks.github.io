@@ -4,10 +4,11 @@ title: "[Python] 순열, 조합 라이브러리"
 date:   2018-10-06 00:00:00 +0300
 description: 파이썬에서 라이브러리를 이용한 순열과 조합 경우의 수 출력. # Add post description (optional)
 img: python.jpg # Add image post (optional)
+categories: IT
 tags: [Blog, IT, Language, Python]
 author: Jiho # Add name author (optional)
 ---
-안녕하세요! Do My Best 블로그 첫 게시물입니다. ㅎㅎ  
+안녕하세요! **Do My Best 블로그** 첫 게시물입니다. ㅎㅎ  
 언제부터 올려야할지 뭐부터 올려야할지 고민이되서 그냥 '일단 아무거나 올려보자!'란 마음먹고 올리게되었습니다.  
 ㅎㅎ 일단 해보는게 중요하겠죠?
 

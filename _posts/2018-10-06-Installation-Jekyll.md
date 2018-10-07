@@ -4,10 +4,11 @@ title: "[Jekyll] 윈도우에서 지킬 설치 및 실행"
 date:   2018-10-06 01:00:00 +0300
 description: 윈도우에서 지킬 설치 및 실행. # Add post description (optional)
 img: github.png # Add image post (optional)
+categories: IT
 tags: [Blog, IT, Github, Jekyll]
 author: Jiho # Add name author (optional)
 ---
-안녕하세요! Do My Best 블로그 두번째 게시물입니다. ㅎㅎ  
+안녕하세요! **Do My Best 블로그** 두번째 게시물입니다. ㅎㅎ  
 지킬 사용하다가 이것도 게시하면 다른 분들에게 많은 도움이 될 것 같아서 첫번째 게시물 이후에 바로 올립니다.!
 
 이번에 포스팅할거는요~ Jekyll을 사용하여 github에 수정한 블로그 내용은 push하고 확인하는 것이 아니라 로컬에서 작업한 내용을 확인 하는 방법에대해서 포스팅하려고합니다.!
