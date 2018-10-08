@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "[Jekyll] 윈도우에서 지킬 설치 및 실행"
+title: "윈도우에서 지킬 설치 및 실행 [Jekyll]"
 date:   2018-10-06 01:00:00 +0300
 description: 윈도우에서 지킬 설치 및 실행. # Add post description (optional)
 img: github.png # Add image post (optional)
@@ -51,5 +51,7 @@ jekyll serve
 
 해당 게시물에 문제가 있다면 댓글을 통해 피드백해주시면 감사하겠습니다~
 같이 공부해요~^^
+
+`방문해주신분들 댓글 한개씩 달아주시면 감사하겠습니다~~^^`  
 
 [루비-설치-링크]: https://rubyinstaller.org/downloads/

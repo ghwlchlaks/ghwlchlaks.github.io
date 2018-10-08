@@ -1,8 +1,8 @@
 ---
 layout: post
-title: "[Python] 프로그래머스, 네트워크, DFS, Algorithm"
+title: "네트워크 알고리즘 [Python] "
 date:   2018-10-07 20:00:00 +0300
-description: 파이썬에서 프로그머스 네트워크 문제 DFS 알고리즘으로 해결 # Add post description (optional)
+description: 파이썬에서 프로그래머스 백준 네트워크 DFS알고리즘 # Add post description (optional)
 img: python.jpg # Add image post (optional)
 categories: IT
 tags: [Blog, IT, Language, Python, Algorithm]
@@ -51,3 +51,5 @@ def solution(n, computers):
 
 지금까지 DFS 알고리즘을 이용한 프로그래머스 LEVEL 3문제인 **네트워크 풀이**였습니다.   
 해당 게시물에 문제가 있다면 댓글을 통해 피드백해주시면 감사하겠습니다~ 같이 공부해요~^^
+
+`방문해주신분들 댓글 한개씩 달아주시면 감사하겠습니다~~^^`

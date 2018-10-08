@@ -1,8 +1,8 @@
 ---
 layout: post
-title: "[Python] 프로그래머스, 이중우선순위큐, 라이브러리, Algorithm"
+title: "이중우선순위큐 알고리즘 [Python] "
 date:   2018-10-07 20:30:00 +0300
-description: 파이썬에서 프로그머스 이중우선순위큐 heapq라이브러리로 해결 # Add post description (optional)
+description: 파이썬에서 프로그래머스 백준 이중우선순위큐 heapq # Add post description (optional)
 img: python.jpg # Add image post (optional)
 categories: IT
 tags: [Blog, IT, Language, Python, Algorithm]
@@ -57,3 +57,5 @@ def solution(operations):
 
 지금까지 파이썬의 heapq 라이브러리를 이용한 프로그래머스 LEVEL 3문제인 **이중우선순위큐  풀이**였습니다.   
 해당 게시물에 문제가 있다면 댓글을 통해 피드백해주시면 감사하겠습니다~ 같이 공부해요~^^
+
+`방문해주신분들 댓글 한개씩 달아주시면 감사하겠습니다~~^^`

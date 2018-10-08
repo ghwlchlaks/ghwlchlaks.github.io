@@ -1,8 +1,8 @@
 ---
 layout: post
-title: "[Python] 순열, 조합 라이브러리"
+title: "순열과 조합 라이브러리를 사용해보자 [Python] "
 date:   2018-10-06 00:00:00 +0300
-description: 파이썬에서 라이브러리를 이용한 순열과 조합 경우의 수 출력. # Add post description (optional)
+description: 파이썬에서 순열과 조합 경우의 수 출력. # Add post description (optional)
 img: python.jpg # Add image post (optional)
 categories: IT
 tags: [Blog, IT, Language, Python]
@@ -60,3 +60,5 @@ print(list(combinations_with_replacement("빨주노초",2)))
 
 지금까지 파이썬 라이브러리를 이용하여 순열과 조합 모든 경우의 수 계산 방법이었습니다.   
 해당 게시물에 문제가 있다면 댓글을 통해 피드백해주시면 감사하겠습니다~ 같이 공부해요~^^
+
+`방문해주신분들 댓글 한개씩 달아주시면 감사하겠습니다~~^^`
