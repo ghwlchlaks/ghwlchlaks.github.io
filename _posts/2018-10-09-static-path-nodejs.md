@@ -3,7 +3,7 @@ layout: post
 title: "[Node.js] 정적(static) 파일 import (css, image)"
 date:   2018-10-09 00:00:00 +0300
 description: 정적(static) 파일 import (css, image) [Node.js] # Add post description (optional)
-img: JavaScript.jpg # Add image post (optional)
+img: nodejs.png # Add image post (optional)
 categories: IT
 tags: [Blog, IT, Language, Node]
 author: Jiho # Add name author (optional)
