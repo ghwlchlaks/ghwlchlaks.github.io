@@ -33,7 +33,7 @@ search_full_content : true
 mailchimp: # Add your MailChimp form identifier.
 
 # Disqus
-discus_identifier: mr-brown # Add your discus identifier
+discus_identifier: dmb3618 # Add your discus identifier
 
 # Tracker
 analytics: UA-127066443-1 # Google Analytics

@@ -24,7 +24,6 @@ Rufus라는 툴을 이용하면 쉽게 이미지파일을 USB에 업로드하여
 위에 링크로 접속하셔서 Rufus를 다운 받으셔야합니다.!  
 
 ![installation-step1]({{site.baseurl}}/assets/img/2018-10-14-boot-usb-create/installation-step1.png)  
-
 위에 사진에서 Installer를 클릭하시면 자동으로 설치가 진행됩니다.   
 
 
