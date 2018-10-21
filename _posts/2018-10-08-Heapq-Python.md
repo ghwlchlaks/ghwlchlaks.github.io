@@ -1,12 +1,17 @@
 ---
 layout: post
 title: "heapq를 사용해보자 [Python] "
-date:   2018-10-08 03:10:00 +0300
+date:   2018-10-08 03:10:00
 description: 파이썬에서 heapq 라이브러리 # Add post description (optional)
 img: python.jpg # Add image post (optional)
-categories: IT
+categories: Jiho
 tags: [Blog, IT, Language, Python]
+navigation: True
+subclass: 'post tag-IT tag-Language tag-Python'
+logo: 'assets/images/default/DMB_logo.png'
+cover: 'assets/images/cover/python.jpg'
 author: Jiho # Add name author (optional)
+disqus: true
 ---
 안녕하세요! **Do My Best 블로그** 다섯번째 게시물입니다. ㅎㅎ  
 이번에는 세번째 게시물에서 포스팅 예정한 **heapq 라이브러리** 사용방법 입니다.

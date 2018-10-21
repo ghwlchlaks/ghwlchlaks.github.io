@@ -1,12 +1,17 @@
 ---
 layout: post
 title: "[운영체제] 리눅스 부팅 USB 만들기"
-date:   2018-10-14 12:00:00 +0300
+date:   2018-10-14 12:00:00 
 description:  리눅스 부팅 USB 만들기 # Add post description (optional)
 img: usb.jpg # Add image post (optional)
-categories: IT
+categories: Jiho
 tags: [Blog, IT, OS, Linux]
+navigation: True
+subclass: 'post tag-IT tag-OS tag-Linux'
+logo: 'assets/images/default/DMB_logo.png'
+cover: 'assets/images/cover/usb.jpg'
 author: Jiho # Add name author (optional)
+disqus: true
 ---
 안녕하세요! **Do My Best 블로그** 열번째 게시물입니다. ㅎㅎ  
 벌써 열번째 게시물이네요~ 이제는 횟수를 적지 않을까 합니다. 이렇게 계속 포스팅해서 나중에 확인했을때 많이 쌓여있는걸 보면 뿌듯하겠죠? ㅎㅎ
@@ -23,12 +28,12 @@ Rufus라는 툴을 이용하면 쉽게 이미지파일을 USB에 업로드하여
 ## **1. Rufus [설치 링크][installation-rufus]에 접속하기.**  
 위에 링크로 접속하셔서 Rufus를 다운 받으셔야합니다.!  
 
-![installation-step1]({{site.baseurl}}/assets/img/2018-10-14-boot-usb-create/installation-step1.png)  
+<img src="/assets/images/2018-10-14-boot-usb-create/installation-step1.png">
 위에 사진에서 Installer를 클릭하시면 자동으로 설치가 진행됩니다.   
 
 
 Rufus 설치가 완료되고 파일을 실행했을때의 모습입니다.  
-![installation-step2]({{site.baseurl}}/assets/img/2018-10-14-boot-usb-create/installation-step2.png)  
+<img src="/assets/images/2018-10-14-boot-usb-create/installation-step2.png">
 
 ## **2.ISO 파일 다운받기**  
 운영체제를 컴퓨터에 설치하기 위해서는 자신이 설치하고자 하는 운영체제 파일이 있어야겠죠?  

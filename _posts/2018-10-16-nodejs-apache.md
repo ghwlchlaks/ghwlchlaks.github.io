@@ -1,12 +1,17 @@
 ---
 layout: post
 title: "Node.js 와 Apache 연동"
-date:   2018-10-16 12:00:00 +0300
+date:   2018-10-16 12:00:00
 description:  Node.js 와 Apache 연동 # Add post description (optional)
 img: nodejs.png # Add image post (optional)
-categories: IT
+categories: Jiho
 tags: [Blog, IT, Node, Linux, Apache]
+navigation: True
+subclass: 'post tag-IT tag-Node tag-Linux tag-Apache'
+logo: 'assets/images/default/DMB_logo.png'
+cover: 'assets/images/cover/nodejs.png'
 author: Jiho # Add name author (optional)
+disqus: true
 ---
 안녕하세요! **Do My Best 블로그**입니다. ㅎㅎ  
 이번 포스팅 부터는 횟수를 세지 않았습니다!

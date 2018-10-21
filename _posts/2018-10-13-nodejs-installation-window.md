@@ -1,12 +1,17 @@
 ---
 layout: post
 title: "[Node.js] 윈도우에서 Node.js 설치"
-date:   2018-10-13 22:00:00 +0300
+date:   2018-10-13 22:00:00
 description:  윈도우에서 Node.js 설치 # Add post description (optional)
 img: nodejs.png # Add image post (optional)
-categories: IT
+categories: Jiho
 tags: [Blog, IT, Window, Node]
+navigation: True
+subclass: 'post tag-IT tag-Window tag-Node'
+logo: 'assets/images/default/DMB_logo.png'
+cover: 'assets/images/cover/nodejs.png'
 author: Jiho # Add name author (optional)
+disqus: true
 ---
 안녕하세요! **Do My Best 블로그** 아홉번째 게시물입니다. ㅎㅎ  
 이번에 포스팅할 내용은 여덟번째 내용이었던 [리눅스에서 Node.js 설치][linux-installation-nodejs]에 이어 윈도우 운영체제 환경에서 Node.js를 설치하는 방법에 대해서 알아보겠습니다.!
@@ -20,26 +25,25 @@ author: Jiho # Add name author (optional)
 설치 파일을 더블클릭하여 윈도우에서 Node.js 설치를 진행합니다.
 특별한 설정을 할 이유가 없으면 계속해서 Next를 클릭하여 진행합니다!
 
-![node-installation-step1]({{site.baseurl}}/assets/img/node-window-installation-step1.png)  
+<img src="/assets/images/2018-10-13-nodejs-installation-window/node-window-installation-step1.png">
 
   
 
-![node-installation-step2]({{site.baseurl}}/assets/img/node-window-installation-step2.png)  
+<img src="/assets/images/2018-10-13-nodejs-installation-window/node-window-installation-step2.png">
 
 
 
 여기서는 nodejs 폴더를 지정해줍니다. default로 해둬 상관이없다면 **Next!**  
-![node-installation-step3]({{site.baseurl}}/assets/img/node-window-installation-step3.png)  
+<img src="/assets/images/2018-10-13-nodejs-installation-window/node-window-installation-step3.png">
 
 
 
-![node-installation-step4]({{site.baseurl}}/assets/img/node-window-installation-step4.png)  
+<img src="/assets/images/2018-10-13-nodejs-installation-window/node-window-installation-step4.png">
 
 
 
 설치가 완료되고 나면 아까 폴더 경로를 설정한 위치로 이동합니다!  
-
-![node-installation-step5]({{site.baseurl}}/assets/img/nodejs-folder.png)  
+<img src="/assets/images/2018-10-13-nodejs-installation-window/nodejs-folder.png">
 잘 설치된 것을 확인하시면됩니다.!
 
 설치가 너무 쉽죠? ㅎㅎ
@@ -52,7 +56,7 @@ app.js를 만들어 전에 사용했던 예제소소를 여기서도 이용해�
 {% endhighlight %}  
 해당 내용을 작성 후 저장합니다.   
 
-![node-installation-step6]({{site.baseurl}}/assets/img/node-example.png)
+<img src="/assets/images/2018-10-13-nodejs-installation-window/node-example.png">
 
 위에 사진처럼 생성되면 됩니다!
 

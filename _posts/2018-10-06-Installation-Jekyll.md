@@ -1,12 +1,17 @@
 ---
 layout: post
 title: "윈도우에서 지킬 설치 및 실행 [Jekyll]"
-date:   2018-10-06 01:00:00 +0300
+date:   2018-10-06 01:00:00
 description: 윈도우에서 지킬 설치 및 실행. # Add post description (optional)
 img: github.png # Add image post (optional)
-categories: IT
+categories: Jiho
 tags: [Blog, IT, Github, Jekyll]
+navigation: True
+subclass: 'post tag-IT tag-Github tag-Jekyll'
+logo: 'assets/images/default/DMB_logo.png'
+cover: 'assets/images/cover/github.png'
 author: Jiho # Add name author (optional)
+disqus: true
 ---
 안녕하세요! **Do My Best 블로그** 두번째 게시물입니다. ㅎㅎ  
 지킬 사용하다가 이것도 게시하면 다른 분들에게 많은 도움이 될 것 같아서 첫번째 게시물 이후에 바로 올립니다.!

@@ -1,20 +1,28 @@
-<header class="main-header">
-  <div class="wrapper">
-    <div class="header-flex">
-      <div class="menu-icon-container">
-        <span class="menu-icon"><i class="fa fa-bars" aria-hidden="true"></i></span>
+<header class="main-header {% if page.cover %}"
+  style="background-image: url({{ site.baseurl }}{{ page.cover }}) {% else %}no-cover{% endif %}">
+    <nav class="main-nav overlay clearfix">
+      {% if page.logo %}<a class="blog-logo" href="{{ site.baseurl }}"><img src="{{ site.baseurl }}{{ page.logo }}" alt="Blog Logo"/></a>{% endif %}
+      <div class="wrapper">
+          <div class="header-flex">
+            <div class="search-icon-container">
+              <span class="search-icon" style="float: right;">
+                <a><i class="fa fa-search" aria-hidden="true"></i></a>
+              </span>
+      {% if page.navigation %}
+          <a class="menu-button icon-menu" href="#"><span class="word">Menu</span></a>
+      {% endif %}
+          </div>
+        </div>
       </div>
-      <nav class="main-nav">
-        <span class="menu-icon-close"><i class="fa fa-times" aria-hidden="true"></i></span>
-        <ul>
-          <li><a href="{{site.baseurl}}/">Blog</a></li>
-          <li><a href="{{site.baseurl}}/about">About</a></li>
-        </ul>
-      </nav>
-      <p class="logo"><a href="{{site.baseurl}}/">{{ site.author }}</a></p>
-      <div class="search-icon-container">
-        <span class="search-icon"><a><i class="fa fa-search" aria-hidden="true"></i></a></span>
-      </div>
+    </nav>
+
+    <div class="vertical">
+        <div class="main-header-content inner">
+            <h1 class="page-title">{{ site.name }}</h1>
+            <h2 class="page-description">{{ site.description }}</h2>
+        </div>
     </div>
-  </div>
-</header> <!-- End Header -->
+    <a class="scroll-down icon-arrow-left" href="#content" data-offset="-45"><span class="hidden">Scroll Down</span></a>
+
+    
+  </header> <!-- End Header -->

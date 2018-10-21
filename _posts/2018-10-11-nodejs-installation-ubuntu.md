@@ -1,12 +1,17 @@
 ---
 layout: post
 title: "[Node.js] 리눅스에서 Node.js 설치"
-date:   2018-10-11 22:00:00 +0300
+date:   2018-10-11 22:00:00
 description:  리눅스에서 Node.js 설치 # Add post description (optional)
 img: nodejs.png # Add image post (optional)
-categories: IT
+categories: Jiho
 tags: [Blog, IT, Linux, Node]
+navigation: True
+subclass: 'post tag-IT tag-Linux tag-Node'
+logo: 'assets/images/default/DMB_logo.png'
+cover: 'assets/images/cover/nodejs.png'
 author: Jiho # Add name author (optional)
+disqus: true
 ---
 안녕하세요! **Do My Best 블로그** 여덟번째 게시물입니다. ㅎㅎ  
 오늘은 우분투 운영체제 환경에서 Node.js를 설치하는 방법에 대해서 알아보겠습니다.!

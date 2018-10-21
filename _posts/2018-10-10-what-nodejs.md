@@ -1,12 +1,17 @@
 ---
 layout: post
 title: "[Node.js] NodeJs란 무엇인가?"
-date:   2018-10-10 00:00:00 +0300
+date:   2018-10-10 00:00:00
 description: NodeJs란 무엇인가? [Node.js] # Add post description (optional)
 img: nodejs.png # Add image post (optional)
-categories: IT
+categories: Jiho
 tags: [Blog, IT, Language, Node]
+navigation: True
+subclass: 'post tag-IT tag-Language tag-Node'
+logo: 'assets/images/default/DMB_logo.png'
+cover: 'assets/images/cover/nodejs.png'
 author: Jiho # Add name author (optional)
+disqus: true
 ---
 안녕하세요! **Do My Best 블로그** 일곱번째 게시물입니다. ㅎㅎ  
 전에 말씀 드렸다시피 오늘은 **NodeJS란 무엇인가?**라는 내용을 포스팅하려고 합니다.

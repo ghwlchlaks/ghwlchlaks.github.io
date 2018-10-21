@@ -1,12 +1,17 @@
 ---
 layout: post
 title: "이중우선순위큐 알고리즘 [Python] "
-date:   2018-10-07 20:30:00 +0300
+date:   2018-10-07 20:30:00
 description: 파이썬에서 프로그래머스 백준 이중우선순위큐 heapq # Add post description (optional)
 img: python.jpg # Add image post (optional)
-categories: IT
+categories: Jiho
 tags: [Blog, IT, Language, Python, Algorithm]
+navigation: True
+subclass: 'post tag-IT tag-Language tag-Python tag-Algorithm'
+logo: 'assets/images/default/DMB_logo.png'
+cover: 'assets/images/cover/python.jpg'
 author: Jiho # Add name author (optional)
+disqus: true
 ---
 안녕하세요! **Do My Best 블로그** 네번째 게시물입니다. ㅎㅎ  
 이번에는 프로그래머스의 알고리즘 문제 중 LEVEL 3 이중우선순위큐 문제를 **heapq 라이브러리**를 이용하여 해결해보겠습니다. 

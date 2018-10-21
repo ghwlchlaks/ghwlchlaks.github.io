@@ -2,7 +2,7 @@
 layout: post
 title: "[프로그래머스 LEVEL2] 더맵게 프로그래머스 heap [파이썬]"
 date:   2018-10-20 12:00:00 +0300
-description:  더맵게 프로그래머스 스택/큐 [파이썬] 프로그래머스 LEVEL2 # Add post description (optional)
+description:  더맵게 프로그래머스 heap [파이썬] 프로그래머스 LEVEL2 # Add post description (optional)
 img: python.jpg # Add image post (optional)
 categories: IT
 tags: [Blog, IT, Language, Python, Algorithm]

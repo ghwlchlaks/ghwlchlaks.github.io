@@ -1,12 +1,17 @@
 ---
 layout: post
 title: "네트워크 알고리즘 [Python] "
-date:   2018-10-07 20:00:00 +0300
+date:   2018-10-07 20:00:00
 description: 파이썬에서 프로그래머스 백준 네트워크 DFS알고리즘 # Add post description (optional)
 img: python.jpg # Add image post (optional)
-categories: IT
+categories: Jiho
 tags: [Blog, IT, Language, Python, Algorithm]
+navigation: True
+subclass: 'post tag-IT tag-Language tag-Python tag-Algorithm'
+logo: 'assets/images/default/DMB_logo.png'
+cover: 'assets/images/cover/python.jpg'
 author: Jiho # Add name author (optional)
+disqus: true
 ---
 안녕하세요! **Do My Best 블로그** 세번째 게시물입니다. ㅎㅎ  
 이번에는 프로그래머스의 알고리즘 문제 중 LEVEL 3 네트워크 문제를 DFS알고리즘으로 해결해보겠습니다. 
@@ -20,7 +25,7 @@ DFS알고리즘은 자식의 자식 끝까지 먼저 탐색합니다.! 너무 �
 먼저 프로그래머스의 네트워크 문제는 올라온지 얼마 안되서 그런지 문제 푼 분들이 많이 없네요?  
 무려!! **29명!**  
 
-![programmers_network]({{site.baseurl}}/assets/img/programmers_network.png)
+<img src="/assets/images/2018-10-07-Algorithm-DFS-Python/programmers_network.png">
 
 참고하면서 문제를 한번 풀어보겠습니다.
 

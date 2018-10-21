@@ -1,12 +1,16 @@
 ---
 layout: post
 title: "순열과 조합 라이브러리를 사용해보자 [Python] "
-date:   2018-10-06 00:00:00 +0300
+date:   2018-10-06 00:00:00 
 description: 파이썬에서 순열과 조합 경우의 수 출력. # Add post description (optional)
-img: python.jpg # Add image post (optional)
-categories: IT
+categories: Jiho
 tags: [Blog, IT, Language, Python]
+navigation: True
+subclass: 'post tag-IT tag-Language tag-Python'
+logo: 'assets/images/default/DMB_logo.png'
+cover: 'assets/images/cover/python.jpg'
 author: Jiho # Add name author (optional)
+disqus: true
 ---
 안녕하세요! **Do My Best 블로그** 첫 게시물입니다. ㅎㅎ  
 언제부터 올려야할지 뭐부터 올려야할지 고민이되서 그냥 '일단 아무거나 올려보자!'란 마음먹고 올리게되었습니다.  

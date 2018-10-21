@@ -1,0 +1,24 @@
+<div class="nav">
+    <h3 class="nav-title">Menu</h3>
+    <a href="#" class="nav-close">
+        <span class="hidden">Close</span>
+    </a>
+    <ul>
+        <li class="nav-home {% if page.current == 'home' %} nav-current{% endif %}" role="presentation"><a href="{{ site.baseurl }}">Home</a></li>
+        <li class="nav-about {% if page.current == 'about' %} nav-current{% endif %}" role="presentation"><a href="{{ site.baseurl }}about">About</a></li>
+        <li class="nav-IT {% if page.url contains 'IT' %} nav-current{% endif %}" role="presentation"><a href="{{ site.baseurl }}tag/IT">IT</a></li>
+        <li class="nav-Node {% if page.url contains 'Node' %} nav-current{% endif %}" role="presentation"><a href="{{ site.baseurl }}tag/Node">Node</a></li>
+        <li class="nav-Linux {% if page.url contains 'Linux' %} nav-current{% endif %}" role="presentation"><a href="{{ site.baseurl }}tag/Linux">Linux</a></li>
+        <li class="nav-Python {% if page.url contains 'Python' %} nav-current{% endif %}" role="presentation"><a href="{{ site.baseurl }}tag/Python">Python</a></li>
+        <li class="nav-Language {% if page.url contains 'Language' %} nav-current{% endif %}" role="presentation"><a href="{{ site.baseurl }}tag/Language">Language</a></li>
+        <li class="nav-Github {% if page.url contains 'Github' %} nav-current{% endif %}" role="presentation"><a href="{{ site.baseurl }}tag/Github">Github</a></li>
+        <li class="nav-Algorithm {% if page.url contains 'Algorithm' %} nav-current{% endif %}" role="presentation"><a href="{{ site.baseurl }}tag/Algorithm">Algorithm</a></li>
+        <li class="nav-Window {% if page.url contains 'Window' %} nav-current{% endif %}" role="presentation"><a href="{{ site.baseurl }}tag/Window">Window</a></li>
+        <li class="nav-Apache {% if page.url contains 'Apache' %} nav-current{% endif %}" role="presentation"><a href="{{ site.baseurl }}tag/Apache">Apache</a></li>
+        <li class="nav-Jiho {% if page.url contains 'Jiho' %} nav-current{% endif %}" role="presentation"><a href="{{ site.baseurl }}author/Jiho">JIHO</a></li>
+        
+        
+    </ul>
+    <a class="subscribe-button icon-feed" href="{{ site.baseurl }}feed.xml">Subscribe</a>
+</div>
+<span class="nav-cover"></span>
