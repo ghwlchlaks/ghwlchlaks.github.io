@@ -1,13 +1,19 @@
 ---
 layout: post
 title: "[프로그래머스 LEVEL2] 프린터 프로그래머스 스택/큐 [파이썬]"
-date:   2018-10-19 12:00:00 +0300
+date:   2018-10-19 12:00:00
 description:  프린터 프로그래머스 스택/큐 [파이썬] 프로그래머스 LEVEL2 # Add post description (optional)
 img: python.jpg # Add image post (optional)
 categories: IT
+navigation: True
+subclass: 'post tag-IT tag-Language tag-Python tag-Algorithm'
 tags: [Blog, IT, Language, Python, Algorithm]
+logo: 'assets/images/default/DMB_logo.png'
+cover: 'assets/images/cover/python.jpg'
 author: Jiho # Add name author (optional)
+disqus: true
 ---
+
 안녕하세요! **Do My Best 블로그**입니다. ㅎㅎ  
 
 이번에 포스팅할 내용은 스택/큐에 해당되는 **프로그래머스 문제 LEVEL2에 해당되는 프린터 알고리즘 문제**를 풀어보도록 하겠습니다.

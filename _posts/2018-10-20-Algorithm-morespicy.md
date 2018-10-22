@@ -1,12 +1,17 @@
 ---
 layout: post
 title: "[프로그래머스 LEVEL2] 더맵게 프로그래머스 heap [파이썬]"
-date:   2018-10-20 12:00:00 +0300
+date:   2018-10-20 12:00:00
 description:  더맵게 프로그래머스 heap [파이썬] 프로그래머스 LEVEL2 # Add post description (optional)
 img: python.jpg # Add image post (optional)
 categories: IT
+navigation: True
+subclass: 'post tag-IT tag-Language tag-Python tag-Algorithm'
 tags: [Blog, IT, Language, Python, Algorithm]
+logo: 'assets/images/default/DMB_logo.png'
+cover: 'assets/images/cover/python.jpg'
 author: Jiho # Add name author (optional)
+disqus: true
 ---
 안녕하세요! **Do My Best 블로그**입니다. ㅎㅎ  
 
