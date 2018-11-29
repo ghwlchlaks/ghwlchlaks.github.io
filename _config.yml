@@ -22,8 +22,8 @@ search: true
 search_full_content: true
 
 # Permalinks
-#permalink: /:title
-permalink: /author/:username
+permalink: /:title
+#permalink: /author/:username
 # permalink: /tag/:tag
 
 # gems and other configs
