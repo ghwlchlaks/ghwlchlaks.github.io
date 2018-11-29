@@ -22,7 +22,7 @@ search: true
 search_full_content: true
 
 # Permalinks
-permalink: /:title
+#permalink: /:title
 permalink: /author/:username
 # permalink: /tag/:tag
 
