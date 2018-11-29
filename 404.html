@@ -33,20 +33,21 @@ permalink: 404.html
                         <section class="error-details">
                             <img
                                     class="error-ghost"
-                                    src="{{ site.url }}{{site.baseurl}}assets/images/default/404.png"
-                                    srcset="{{ site.url }}{{site.baseurl}}assets/images/default/404.png"/>
+                                    src="{{ site.url }}assets/images/default/404.png"
+                                    srcset="{{ site.url }}assets/images/default/404.png"/>
                             <section class="error-message">
                                 <h1 class="error-code">404</h1>
                                 <h2 class="error-description">Page not found</h2>
                                 <a class="error-link" href="{{ site.url }}{{site.baseurl}}">Go to the front page →</a>
                             </section>
+                            <h1>"{{site.url}}"</h1>
+                            <h1>"{{site.baseurl}}"</h1>
                         </section>
                     </section>
                 </div>
             </div>
         </div>
     </main>
-
     <!-- Add Google Analytics  -->
     {% include analytics.html %}
 </body>
