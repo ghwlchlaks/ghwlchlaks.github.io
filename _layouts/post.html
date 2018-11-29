@@ -14,7 +14,7 @@ class: 'post-template'
 <div class="flex-container">
         <header class="main-header post-head {% if page.cover %}" style="background-image: url({{ site.baseurl }}{{ page.cover }}){% else %}no-cover{% endif %}">
             <nav class="main-nav {% if page.cover %}overlay{% endif %} clearfix">
-                {% if page.logo %}<a class="blog-logo" href="{{ site.baseurl }}"><img src="{{ site.baseurl }}{{ page.logo }}" alt="Blog Logo" /></a>{% endif %}
+                {% if page.logo %}<a class="blog-logo" href="{{ site.url }}/"><img src="{{ site.baseurl }}{{ page.logo }}" alt="Blog Logo" /></a>{% endif %}
                 <div class="wrapper">
                         <div class="header-flex">
                         <div class="search-icon-container">
