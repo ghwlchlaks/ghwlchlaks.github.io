@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>[Node.js] 리눅스에서 Node.js 설치 - Do My Best</title>
+
+	<meta property="og:locale" content="ko_KR" />
+	<meta name="description" content="안녕하세요! Do My Best 블로그 여덟번째 게시물입니다. ㅎㅎ오늘은 우분투 운영체제 환경에서 Node.js를 설치하는 방법에 대해서 알아보겠습니다.!">
+	<meta property="og:site_name" content="Do My Best">
+	
+	<meta property="og:title" content="[Node.js] 리눅스에서 Node.js 설치">
+	<meta property="og:type" content="article">
+	<meta property="og:description" content="안녕하세요! Do My Best 블로그 여덟번째 게시물입니다. ㅎㅎ
+오늘은 우분투 운영체제 환경에서 Node.js를 설치하는 방법에 대해서 알아보겠습니다.!
+
+"/>
+	
+	
+	<meta property="article:published_time" content="2018-10-12T04:00:00+09:00">
+	<meta property="article:author" content="http://localhost:4000/about/">
+	
+	<meta property="og:url" content="http://localhost:4000/nodejs-installation-ubuntu/" />
+	
+	<meta itemprop="keywords" content="Blog,IT,Linux,Node" />
+	
+	<meta property="article:tag" content="Blog">
+	
+	<meta property="article:tag" content="IT">
+	
+	<meta property="article:tag" content="Linux">
+	
+	<meta property="article:tag" content="Node">
+	
+	
+	
+
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<link rel="shortcut icon" href="/assets/img/favicon/favicon.ico" type="image/x-icon">
+	<link rel="apple-touch-icon" href="/assets/img/favicon/apple-touch-icon.png">
+	<link rel="apple-touch-icon" sizes="72x72" href="/assets/img/favicon/apple-touch-icon-72x72.png">
+	<link rel="apple-touch-icon" sizes="114x114" href="/assets/img/favicon/apple-touch-icon-114x114.png">
+
+	<!-- Chrome, Firefox OS and Opera -->
+	<meta name="theme-color" content="#311e3e">
+	<!-- Windows Phone -->
+	<meta name="msapplication-navbutton-color" content="#311e3e">
+	<meta property="al:web:url" content="http://ghwlchlaks.github.io/">
+	<!-- iOS Safari -->
+	<meta name="apple-mobile-web-app-status-bar-style" content="#311e3e">
+	<!-- Google Fonts -->
+	<link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,700" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Lato:300,400,700" rel="stylesheet">
+	<!-- Font Awesome -->
+	<link rel="stylesheet" href="/assets/fonts/font-awesome/css/font-awesome.min.css">
+	<!-- Styles -->
+	<link rel="stylesheet" href="/assets/css/main.css">
+	
+	<link rel="canonical" href="http://www.ghwlchlaks.github.io/">
+	<meta name="robots" content="index,follow">
+</head>
+
+<body>
+  <div class="flex-container">
+  <header class="main-header">
+  <div class="wrapper">
+    <div class="header-flex">
+      <div class="menu-icon-container">
+        <span class="menu-icon"><i class="fa fa-bars" aria-hidden="true"></i></span>
+      </div>
+      <nav class="main-nav">
+        <span class="menu-icon-close"><i class="fa fa-times" aria-hidden="true"></i></span>
+        <ul>
+          <li><a href="/">Blog</a></li>
+          <li><a href="/about">About</a></li>
+        </ul>
+      </nav>
+      <p class="logo"><a href="/">DMB</a></p>
+      <div class="search-icon-container">
+        <span class="search-icon"><a><i class="fa fa-search" aria-hidden="true"></i></a></span>
+      </div>
+    </div>
+  </div>
+</header> <!-- End Header -->
+
+  <article class="article-page">
+    <div class="page-image">
+      <div class="cover-image" style="background: url(/assets/img/nodejs.png) center no-repeat; background-size: cover;"></div>
+    </div>
+    <div class="wrapper">
+      <div class="page-content">
+        <div class="header-page">
+          <h1 class="page-title">[Node.js] 리눅스에서 Node.js 설치</h1>
+          <div class="page-date"><time datetime="2018-10-12 04:00:00 +0900">2018, Oct 12</time></div>
+        </div>
+        <p>안녕하세요! <strong>Do My Best 블로그</strong> 여덟번째 게시물입니다. ㅎㅎ<br />
+오늘은 우분투 운영체제 환경에서 Node.js를 설치하는 방법에 대해서 알아보겠습니다.!</p>
+
+<p><a href="https://github.com/nodesource/distributions">nodejs-github</a>과 <a href="https://nodejs.org/ko/download/package-manager/">nodejs공식페이지</a>을 보시면 잘 설명 되어있습니다.</p>
+
+<p><strong>데비안(Debian)과 우분투(Ubuntu)에서 설치하는 방법.</strong></p>
+
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">curl</span> <span class="o">-</span><span class="n">sL</span> <span class="n">https</span><span class="ss">:/</span><span class="o">/</span><span class="n">deb</span><span class="p">.</span><span class="nf">nodesource</span><span class="p">.</span><span class="nf">com</span><span class="o">/</span><span class="n">setup_8</span><span class="p">.</span><span class="nf">x</span> <span class="o">|</span> <span class="n">sudo</span> <span class="o">-</span><span class="no">E</span> <span class="n">bash</span> <span class="o">-</span>
+<span class="n">sudo</span> <span class="n">apt</span><span class="o">-</span><span class="n">get</span> <span class="n">install</span> <span class="o">-</span><span class="n">y</span> <span class="n">nodejs</span></code></pre></figure>
+
+<p><code class="highlighter-rouge">Node.js 10를 사용하고 싶다면 다음을 실행합니다.</code></p>
+
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">curl</span> <span class="o">-</span><span class="n">sL</span> <span class="n">https</span><span class="ss">:/</span><span class="o">/</span><span class="n">deb</span><span class="p">.</span><span class="nf">nodesource</span><span class="p">.</span><span class="nf">com</span><span class="o">/</span><span class="n">setup_10</span><span class="p">.</span><span class="nf">x</span> <span class="o">|</span> <span class="n">sudo</span> <span class="o">-</span><span class="no">E</span> <span class="n">bash</span> <span class="o">-</span>  
+<span class="n">sudo</span> <span class="n">apt</span><span class="o">-</span><span class="n">get</span> <span class="n">install</span> <span class="o">-</span><span class="n">y</span> <span class="n">nodejs</span>  </code></pre></figure>
+
+<p>추가적으로<br />
+<strong>RHEL, CentOS, Fedora에서 설치하는 방법</strong>도 간단하게 설명하겠습니다</p>
+
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">curl</span> <span class="o">--</span><span class="n">silent</span> <span class="o">--</span><span class="n">location</span> <span class="n">https</span><span class="ss">:/</span><span class="o">/</span><span class="n">rpm</span><span class="p">.</span><span class="nf">nodesource</span><span class="p">.</span><span class="nf">com</span><span class="o">/</span><span class="n">setup_8</span><span class="p">.</span><span class="nf">x</span> <span class="o">|</span> <span class="n">sudo</span> <span class="n">bash</span> <span class="o">-</span>  
+<span class="n">sudo</span> <span class="n">yum</span> <span class="o">-</span><span class="n">y</span> <span class="n">install</span> <span class="n">nodejs</span>  </code></pre></figure>
+
+<p><code class="highlighter-rouge">Node.js 10를 사용하고 싶다면 다음을 실행합니다.</code></p>
+
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">curl</span> <span class="o">--</span><span class="n">silent</span> <span class="o">--</span><span class="n">location</span> <span class="n">https</span><span class="ss">:/</span><span class="o">/</span><span class="n">rpm</span><span class="p">.</span><span class="nf">nodesource</span><span class="p">.</span><span class="nf">com</span><span class="o">/</span><span class="n">setup_10</span><span class="p">.</span><span class="nf">x</span> <span class="o">|</span> <span class="n">sudo</span> <span class="n">bash</span> <span class="o">-</span>  
+<span class="n">sudo</span> <span class="n">yum</span> <span class="o">-</span><span class="n">y</span> <span class="n">install</span> <span class="n">nodejs</span>  </code></pre></figure>
+
+<p>설치가 아주 간단하죠?ㅎㅎ</p>
+
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">node</span> <span class="o">-</span><span class="n">v</span>  
+<span class="n">npm</span> <span class="o">-</span><span class="n">v</span>  </code></pre></figure>
+
+<p>해당 명령어로 nodejs와 npm이 잘 설치 되었는지 확인합니다.</p>
+
+<p>간단하게 예제 코드를 보도록 하겠습니다! <br />
+<strong>app.js</strong>를 생성한 후</p>
+
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="s2">"Hello world"</span><span class="p">);</span>  </code></pre></figure>
+
+<p>해당 내용을 작성 후 저장합니다.</p>
+
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">node</span> <span class="n">app</span><span class="p">.</span><span class="nf">js</span>  
+<span class="c1">#=&gt; Hello world  </span></code></pre></figure>
+
+<p>해당 결과 값이 출력되면 됩니다!!</p>
+
+<p>이번엔 <strong>간단한 웹서버</strong>를 만들어보겠습니다.<br />
+Node.js가 다른 웹서버와 다른 장점 중 하나는 빠르게 웹서버를 만들 수 있는것입니다!ㅎㅎ<br />
+<strong>app.js</strong>코드를 수정하도록 하겠습니다.</p>
+
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">var</span> <span class="n">http</span> <span class="o">=</span> <span class="nb">require</span><span class="p">(</span><span class="s1">'http'</span><span class="p">);</span>
+
+<span class="n">var</span> <span class="n">server</span> <span class="o">=</span> <span class="n">http</span><span class="p">.</span><span class="nf">createServer</span><span class="p">(</span><span class="n">function</span> <span class="p">(</span><span class="n">req</span><span class="p">,</span> <span class="n">res</span><span class="p">)</span> <span class="p">{</span>
+  <span class="n">res</span><span class="p">.</span><span class="nf">writeHead</span><span class="p">(</span><span class="mi">200</span><span class="p">,</span> <span class="p">{</span> <span class="s1">'Content-Type'</span> <span class="p">:</span> <span class="s1">'text/plain'</span> <span class="p">});</span>
+  <span class="n">res</span><span class="p">.</span><span class="nf">end</span><span class="p">(</span><span class="s1">'Hello World'</span><span class="p">);</span>
+<span class="p">});</span>
+
+<span class="n">server</span><span class="p">.</span><span class="nf">listen</span><span class="p">(</span><span class="mi">3000</span><span class="p">);</span></code></pre></figure>
+
+<p>해당 내용을 작성 후</p>
+
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">node</span> <span class="n">app</span><span class="p">.</span><span class="nf">js</span>  </code></pre></figure>
+
+<p>를 실행하게 되면 간단하게 <strong>웹서버가</strong> 실행이 됩니다.<br />
+물론 기능을 더 넣으려면 코드를 추가 해야겠죠?<br />
+웹 서버가 실행이 됐는지 확인하는 방법은 http://127.0.0.1:3000으로 접속하시면 화면에 Hello World가 출력 되는 것을 확인 하실 수 있습니다.!</p>
+
+<p>지금까지 <strong>리눅스에서 Node.js설치 방법</strong>이라는 주제로 포스팅하였습니다!  <br />
+해당 게시물에 문제가 있다면 댓글을 통해 피드백해주시면 감사하겠습니다~ 같이 공부해요~^^</p>
+
+<p><code class="highlighter-rouge">방문해주신분들 댓글 한개씩 달아주시면 감사하겠습니다~~^^</code></p>
+
+
+        <div class="page-footer">
+          <div class="page-tag">
+            <span>Tags:</span>
+            
+            <a href="/tags#Blog" class="tag">| Blog</a>
+            
+            <a href="/tags#IT" class="tag">| IT</a>
+            
+            <a href="/tags#Linux" class="tag">| Linux</a>
+            
+            <a href="/tags#Node" class="tag">| Node</a>
+            
+          </div><!-- End Tags -->
+          <div class="page-share">
+            <span>Share:</span>
+            <a href="https://twitter.com/intent/tweet?text=[Node.js] 리눅스에서 Node.js 설치&url=http://localhost:4000/nodejs-installation-ubuntu/" title="Share on Twitter" rel="nofollow" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+            <a href="https://facebook.com/sharer.php?u=http://localhost:4000/nodejs-installation-ubuntu/" title="Share on Facebook" rel="nofollow" target="_blank"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+            <a href="https://plus.google.com/share?url=http://localhost:4000/nodejs-installation-ubuntu/" title="Share on Google+" rel="nofollow" target="_blank"><i class="fa fa-google" aria-hidden="true"></i></a>
+          </div><!-- End Share -->
+        </div>
+        <section class="author-box">
+  <img src="/assets/img/profile.jpg" alt="DMB" class="author-img">
+  <div class="author-desc">
+    <h2>DMB</h2>
+    <p>My name is JiHo.</p>
+    <ul>
+      
+        <li class="email"><a href="mailto:ghwlchlaks@gmail.com"><i class="fa fa-envelope-o"></i></a></li>
+      
+      
+        <li class="phone"><a href="tel:"><i class="fa fa-phone" aria-hidden="true"></i></a></li>
+      
+      
+        <li class="website"><a href="http://ghwlchlaks.github.io" target="_blank"><i class="fa fa-globe"></i></a></li>
+      
+      
+        <li class="twitter"><a href="https://twitter.com/" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+      
+    </ul>
+  </div>
+</section>
+
+        <div class="recent-box">
+  <h2 class="recent-title">Recent post</h2>
+  <div class="recent-list">
+    
+      
+        <a href="/Algorithm-stockprice/" class="recent-item" style="background: url(/assets/img/python.jpg) center no-repeat; background-size: cover;"><span>[프로그래머스 LEVEL2] 주식가격 프로그래머스 [파이썬]</span></a>
+      
+    
+      
+        <a href="/Algorithm-morespicy/" class="recent-item" style="background: url(/assets/img/python.jpg) center no-repeat; background-size: cover;"><span>[프로그래머스 LEVEL2] 더맵게 프로그래머스 heap [파이썬]</span></a>
+      
+    
+      
+        <a href="/Algorithm-printer/" class="recent-item" style="background: url(/assets/img/python.jpg) center no-repeat; background-size: cover;"><span>[프로그래머스 LEVEL2] 프린터 프로그래머스 스택/큐 [파이썬]</span></a>
+      
+    
+      
+        <a href="/Algorithm-Top/" class="recent-item" style="background: url(/assets/img/python.jpg) center no-repeat; background-size: cover;"><span>[프로그래머스 LEVEL2] 탑 프로그래머스 스택/큐 [파이썬]</span></a>
+      
+    
+  </div>
+</div> <!-- End Recent-Box -->
+
+        <div class="newsletter" id="mc_embed_signup">
+  <h2 class="newsletter-title">Newsletter</h2>
+  <div class="form-container">
+    <p>Subscribe here to get our latest updates</p>
+    <form action="//" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
+      <label class="screen-reader-text" for="mce-EMAIL">Email Address</label>
+      <div class="newsletter-box" id="mc_embed_signup_scroll">
+        <input type="email" name="EMAIL" placeholder="Email address" class="email-input" id="mce-EMAIL" required>
+        <input type="submit" value="Subscribe" name="subscribe" class="subscribe-btn" id="mc-embedded-subscribe">
+      </div>
+    </form>
+  </div>
+</div> <!-- End Newsletter -->
+
+        <section class="comment-area">
+  <div class="comment-wrapper">
+    
+    <div id="disqus_thread" class="article-comments"></div>
+    <script>
+      (function() {
+          var d = document, s = d.createElement('script');
+          s.src = '//dmb3618.disqus.com/embed.js';
+          s.setAttribute('data-timestamp', +new Date());
+          (d.head || d.body).appendChild(s);
+      })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    
+  </div>
+</section> <!-- End Comment Area -->
+
+      </div>
+    </div> <!-- End Wrapper -->
+  </article>
+  <div class="search-box">
+  <div class="wrapper">
+    <div class="search-grid">
+      <form class="search-form">
+        <div id="search-container">
+          <input type="text" id="search-input" class="search" placeholder="Search">
+        </div>
+      </form>
+      <ul id="results-container" class="results-search"></ul>
+      <div class="icon-close-container">
+        <span class="search-icon-close"><i class="fa fa-times" aria-hidden="true"></i></span>
+      </div>
+    </div>
+  </div>
+</div>
+
+  <footer class="main-footer">
+  <div class="copyright">
+    <p>2018 &copy; DMB</p>
+  </div>
+</footer> <!-- End Footer -->
+
+</div>
+  <!-- JS -->
+<script src="/assets/js/jquery-3.2.1.min.js"></script>
+<script src="/assets/js/jekyll-search.js"></script>
+<script>
+  SimpleJekyllSearch({
+    searchInput: document.getElementById('search-input'),
+    resultsContainer: document.getElementById('results-container'),
+    json: '/search.json',
+    searchResultTemplate: '<li><a href="{url}" title="{desc}">{title}</a></li>',
+    noResultsText: 'No results found',
+    fuzzy: false,
+    exclude: ['Welcome']
+  });
+</script>
+<script src="/assets/js/main.js"></script>
+
+  <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-127066443-1', 'auto');
+  ga('send', 'pageview');
+</script> <!-- End Analytics -->
+
+</body>
+</html>

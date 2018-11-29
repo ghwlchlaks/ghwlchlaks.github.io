@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>순열과 조합 라이브러리를 사용해보자 [Python]  - Do My Best</title>
+
+	<meta property="og:locale" content="ko_KR" />
+	<meta name="description" content="안녕하세요! Do My Best 블로그 첫 게시물입니다. ㅎㅎ언제부터 올려야할지 뭐부터 올려야할지 고민이되서 그냥 ‘일단 아무거나 올려보자!’란 마음먹고 올리게되었습니다.ㅎㅎ 일단 해보는게 중요하겠죠?">
+	<meta property="og:site_name" content="Do My Best">
+	
+	<meta property="og:title" content="순열과 조합 라이브러리를 사용해보자 [Python] ">
+	<meta property="og:type" content="article">
+	<meta property="og:description" content="안녕하세요! Do My Best 블로그 첫 게시물입니다. ㅎㅎ
+언제부터 올려야할지 뭐부터 올려야할지 고민이되서 그냥 ‘일단 아무거나 올려보자!’란 마음먹고 올리게되었습니다.
+ㅎㅎ 일단 해보는게 중요하겠죠?
+
+"/>
+	
+	
+	<meta property="article:published_time" content="2018-10-06T06:00:00+09:00">
+	<meta property="article:author" content="http://localhost:4000/about/">
+	
+	<meta property="og:url" content="http://localhost:4000/permutation-combination-python/" />
+	
+	<meta itemprop="keywords" content="Blog,IT,Language,Python" />
+	
+	<meta property="article:tag" content="Blog">
+	
+	<meta property="article:tag" content="IT">
+	
+	<meta property="article:tag" content="Language">
+	
+	<meta property="article:tag" content="Python">
+	
+	
+	
+
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<link rel="shortcut icon" href="/assets/img/favicon/favicon.ico" type="image/x-icon">
+	<link rel="apple-touch-icon" href="/assets/img/favicon/apple-touch-icon.png">
+	<link rel="apple-touch-icon" sizes="72x72" href="/assets/img/favicon/apple-touch-icon-72x72.png">
+	<link rel="apple-touch-icon" sizes="114x114" href="/assets/img/favicon/apple-touch-icon-114x114.png">
+
+	<!-- Chrome, Firefox OS and Opera -->
+	<meta name="theme-color" content="#311e3e">
+	<!-- Windows Phone -->
+	<meta name="msapplication-navbutton-color" content="#311e3e">
+	<meta property="al:web:url" content="http://ghwlchlaks.github.io/">
+	<!-- iOS Safari -->
+	<meta name="apple-mobile-web-app-status-bar-style" content="#311e3e">
+	<!-- Google Fonts -->
+	<link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,700" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Lato:300,400,700" rel="stylesheet">
+	<!-- Font Awesome -->
+	<link rel="stylesheet" href="/assets/fonts/font-awesome/css/font-awesome.min.css">
+	<!-- Styles -->
+	<link rel="stylesheet" href="/assets/css/main.css">
+	
+	<link rel="canonical" href="http://www.ghwlchlaks.github.io/">
+	<meta name="robots" content="index,follow">
+</head>
+
+<body>
+  <div class="flex-container">
+  <header class="main-header">
+  <div class="wrapper">
+    <div class="header-flex">
+      <div class="menu-icon-container">
+        <span class="menu-icon"><i class="fa fa-bars" aria-hidden="true"></i></span>
+      </div>
+      <nav class="main-nav">
+        <span class="menu-icon-close"><i class="fa fa-times" aria-hidden="true"></i></span>
+        <ul>
+          <li><a href="/">Blog</a></li>
+          <li><a href="/about">About</a></li>
+        </ul>
+      </nav>
+      <p class="logo"><a href="/">DMB</a></p>
+      <div class="search-icon-container">
+        <span class="search-icon"><a><i class="fa fa-search" aria-hidden="true"></i></a></span>
+      </div>
+    </div>
+  </div>
+</header> <!-- End Header -->
+
+  <article class="article-page">
+    <div class="page-image">
+      <div class="cover-image" style="background: url(/assets/img/python.jpg) center no-repeat; background-size: cover;"></div>
+    </div>
+    <div class="wrapper">
+      <div class="page-content">
+        <div class="header-page">
+          <h1 class="page-title">순열과 조합 라이브러리를 사용해보자 [Python] </h1>
+          <div class="page-date"><time datetime="2018-10-06 06:00:00 +0900">2018, Oct 06</time></div>
+        </div>
+        <p>안녕하세요! <strong>Do My Best 블로그</strong> 첫 게시물입니다. ㅎㅎ<br />
+언제부터 올려야할지 뭐부터 올려야할지 고민이되서 그냥 ‘일단 아무거나 올려보자!’란 마음먹고 올리게되었습니다.<br />
+ㅎㅎ 일단 해보는게 중요하겠죠?</p>
+
+<p>이번에 포스팅할거는요~ 파이썬 언어에서 라이브러리를 이용한 순열과 조합입니다. <br />
+경우의 수는 쉽게 구하지만 모든 경우의 수는 알고리즘을 통해 구현하거나, 밑에 방법처럼 라이브러리를 이용해야겠죠?</p>
+
+<p>우선 순열 라이브러리 사용방법에대해서 간단하게 설명하도록 하겠습니다.!</p>
+
+<p>순열을 <code class="highlighter-rouge">nPr</code>로 표현하는데요~ n개중에 r개를 뽑아 나열하는 경우의 수입니다.</p>
+
+<p><strong>#순열 : 중복 허용x</strong>
+<code class="highlighter-rouge">permutations</code> 중복을 허용하지 않습니다.</p>
+
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">from</span> <span class="n">itertools</span> <span class="n">import</span> <span class="n">permutations</span>
+<span class="n">per</span> <span class="o">=</span> <span class="n">permutations</span><span class="p">([</span><span class="s2">"빨"</span><span class="p">,</span><span class="s2">"주"</span><span class="p">,</span><span class="s2">"노"</span><span class="p">,</span><span class="s2">"초"</span><span class="p">],</span><span class="mi">2</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">list</span><span class="p">(</span><span class="n">per</span><span class="p">))</span>
+<span class="c1">#=&gt; [('빨', '주'), ('빨', '노'), ('빨', '초'), ('주', '빨'), ('주', '노'), ('주', '초'), ('노', '빨'), ('노', '주'), ('노', '초'), ('초', '빨'), ('초', '주'), ('초', '노')]</span></code></pre></figure>
+
+<p><strong>#순열 : 중복 허용o</strong><br />
+<code class="highlighter-rouge">product</code>는 중복을 허용한 방법입니다. 이때 <code class="highlighter-rouge">repeat</code>으로 인자를 설정해야합니다!</p>
+
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">from</span> <span class="n">itertools</span> <span class="n">import</span> <span class="n">product</span>
+<span class="n">per1</span> <span class="o">=</span> <span class="n">product</span><span class="p">(([</span><span class="s2">"빨"</span><span class="p">,</span><span class="s2">"주"</span><span class="p">,</span><span class="s2">"노"</span><span class="p">,</span><span class="s2">"초"</span><span class="p">]),</span> <span class="n">repeat</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">list</span><span class="p">(</span><span class="n">per1</span><span class="p">))</span>
+<span class="c1">#=&gt; [('빨', '빨'), ('빨', '주'), ('빨', '노'), ('빨', '초'), ('주', '빨'), ('주', '주'), ('주', '노'), ('주', '초'), ('노', '빨'), ('노', '주'), ('노', '노'), ('노', '초'), ('초', '빨'), ('초', '주'), ('초', '노'), ('초', '초')]</span></code></pre></figure>
+
+<p>조합은 <code class="highlighter-rouge">nCr</code>로 표현하는데요~ n개중에 r개를 뽑는 수 입니다.<br />
+나열하는 경우가 없는 것에서 순열과 차이가 있죠?</p>
+
+<p><strong>#조합 : 중복 허용x</strong>
+<code class="highlighter-rouge">combinations</code>는 중복을 허용하지 않습니다.</p>
+
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">from</span> <span class="n">itertools</span> <span class="n">import</span> <span class="n">combinations</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">list</span><span class="p">(</span><span class="n">combinations</span><span class="p">(</span><span class="s1">'빨주노초'</span><span class="p">,</span><span class="mi">2</span><span class="p">)))</span>
+<span class="c1">#=&gt; [('빨', '주'), ('빨', '노'), ('빨', '초'), ('주', '노'), ('주', '초'), ('노', '초')]</span></code></pre></figure>
+
+<p><strong>#조합 : 중복 허용o</strong>
+<code class="highlighter-rouge">combinations_with_replacement</code>는 중복을 허용한 방법입니다.</p>
+
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">from</span> <span class="n">itertools</span> <span class="n">import</span> <span class="n">combinations_with_replacement</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">list</span><span class="p">(</span><span class="n">combinations_with_replacement</span><span class="p">(</span><span class="s2">"빨주노초"</span><span class="p">,</span><span class="mi">2</span><span class="p">)))</span>
+<span class="c1">#=&gt; [('빨', '빨'), ('빨', '주'), ('빨', '노'), ('빨', '초'), ('주', '주'), ('주', '노'), ('주', '초'), ('노', '노'), ('노', '초'), ('초', '초')]</span></code></pre></figure>
+
+<p>결과값을 확인해보시고 차이점을 생각해보세요~</p>
+
+<p>지금까지 파이썬 라이브러리를 이용하여 순열과 조합 모든 경우의 수 계산 방법이었습니다. <br />
+해당 게시물에 문제가 있다면 댓글을 통해 피드백해주시면 감사하겠습니다~ 같이 공부해요~^^</p>
+
+<p><code class="highlighter-rouge">방문해주신분들 댓글 한개씩 달아주시면 감사하겠습니다~~^^</code></p>
+
+        <div class="page-footer">
+          <div class="page-tag">
+            <span>Tags:</span>
+            
+            <a href="/tags#Blog" class="tag">| Blog</a>
+            
+            <a href="/tags#IT" class="tag">| IT</a>
+            
+            <a href="/tags#Language" class="tag">| Language</a>
+            
+            <a href="/tags#Python" class="tag">| Python</a>
+            
+          </div><!-- End Tags -->
+          <div class="page-share">
+            <span>Share:</span>
+            <a href="https://twitter.com/intent/tweet?text=순열과 조합 라이브러리를 사용해보자 [Python] &url=http://localhost:4000/permutation-combination-python/" title="Share on Twitter" rel="nofollow" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+            <a href="https://facebook.com/sharer.php?u=http://localhost:4000/permutation-combination-python/" title="Share on Facebook" rel="nofollow" target="_blank"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+            <a href="https://plus.google.com/share?url=http://localhost:4000/permutation-combination-python/" title="Share on Google+" rel="nofollow" target="_blank"><i class="fa fa-google" aria-hidden="true"></i></a>
+          </div><!-- End Share -->
+        </div>
+        <section class="author-box">
+  <img src="/assets/img/profile.jpg" alt="DMB" class="author-img">
+  <div class="author-desc">
+    <h2>DMB</h2>
+    <p>My name is JiHo.</p>
+    <ul>
+      
+        <li class="email"><a href="mailto:ghwlchlaks@gmail.com"><i class="fa fa-envelope-o"></i></a></li>
+      
+      
+        <li class="phone"><a href="tel:"><i class="fa fa-phone" aria-hidden="true"></i></a></li>
+      
+      
+        <li class="website"><a href="http://ghwlchlaks.github.io" target="_blank"><i class="fa fa-globe"></i></a></li>
+      
+      
+        <li class="twitter"><a href="https://twitter.com/" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+      
+    </ul>
+  </div>
+</section>
+
+        <div class="recent-box">
+  <h2 class="recent-title">Recent post</h2>
+  <div class="recent-list">
+    
+      
+        <a href="/Algorithm-stockprice/" class="recent-item" style="background: url(/assets/img/python.jpg) center no-repeat; background-size: cover;"><span>[프로그래머스 LEVEL2] 주식가격 프로그래머스 [파이썬]</span></a>
+      
+    
+      
+        <a href="/Algorithm-morespicy/" class="recent-item" style="background: url(/assets/img/python.jpg) center no-repeat; background-size: cover;"><span>[프로그래머스 LEVEL2] 더맵게 프로그래머스 heap [파이썬]</span></a>
+      
+    
+      
+        <a href="/Algorithm-printer/" class="recent-item" style="background: url(/assets/img/python.jpg) center no-repeat; background-size: cover;"><span>[프로그래머스 LEVEL2] 프린터 프로그래머스 스택/큐 [파이썬]</span></a>
+      
+    
+      
+        <a href="/Algorithm-Top/" class="recent-item" style="background: url(/assets/img/python.jpg) center no-repeat; background-size: cover;"><span>[프로그래머스 LEVEL2] 탑 프로그래머스 스택/큐 [파이썬]</span></a>
+      
+    
+  </div>
+</div> <!-- End Recent-Box -->
+
+        <div class="newsletter" id="mc_embed_signup">
+  <h2 class="newsletter-title">Newsletter</h2>
+  <div class="form-container">
+    <p>Subscribe here to get our latest updates</p>
+    <form action="//" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
+      <label class="screen-reader-text" for="mce-EMAIL">Email Address</label>
+      <div class="newsletter-box" id="mc_embed_signup_scroll">
+        <input type="email" name="EMAIL" placeholder="Email address" class="email-input" id="mce-EMAIL" required>
+        <input type="submit" value="Subscribe" name="subscribe" class="subscribe-btn" id="mc-embedded-subscribe">
+      </div>
+    </form>
+  </div>
+</div> <!-- End Newsletter -->
+
+        <section class="comment-area">
+  <div class="comment-wrapper">
+    
+    <div id="disqus_thread" class="article-comments"></div>
+    <script>
+      (function() {
+          var d = document, s = d.createElement('script');
+          s.src = '//dmb3618.disqus.com/embed.js';
+          s.setAttribute('data-timestamp', +new Date());
+          (d.head || d.body).appendChild(s);
+      })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    
+  </div>
+</section> <!-- End Comment Area -->
+
+      </div>
+    </div> <!-- End Wrapper -->
+  </article>
+  <div class="search-box">
+  <div class="wrapper">
+    <div class="search-grid">
+      <form class="search-form">
+        <div id="search-container">
+          <input type="text" id="search-input" class="search" placeholder="Search">
+        </div>
+      </form>
+      <ul id="results-container" class="results-search"></ul>
+      <div class="icon-close-container">
+        <span class="search-icon-close"><i class="fa fa-times" aria-hidden="true"></i></span>
+      </div>
+    </div>
+  </div>
+</div>
+
+  <footer class="main-footer">
+  <div class="copyright">
+    <p>2018 &copy; DMB</p>
+  </div>
+</footer> <!-- End Footer -->
+
+</div>
+  <!-- JS -->
+<script src="/assets/js/jquery-3.2.1.min.js"></script>
+<script src="/assets/js/jekyll-search.js"></script>
+<script>
+  SimpleJekyllSearch({
+    searchInput: document.getElementById('search-input'),
+    resultsContainer: document.getElementById('results-container'),
+    json: '/search.json',
+    searchResultTemplate: '<li><a href="{url}" title="{desc}">{title}</a></li>',
+    noResultsText: 'No results found',
+    fuzzy: false,
+    exclude: ['Welcome']
+  });
+</script>
+<script src="/assets/js/main.js"></script>
+
+  <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-127066443-1', 'auto');
+  ga('send', 'pageview');
+</script> <!-- End Analytics -->
+
+</body>
+</html>
