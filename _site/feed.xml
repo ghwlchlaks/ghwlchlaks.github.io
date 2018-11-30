@@ -1,0 +1,248 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>DeMBi - Articles</title>
+    <description>같이 배워가는 IT 블로그입니다~. Python, JavaScript, nodejs, Github, algorithm, etc</description>
+    <link>
+    https://ghwlchlaks.github.io</link>
+    
+      
+      <item>
+        <title>[프로그래머스 LEVEL2] 주식가격 프로그래머스 [파이썬]</title>
+        
+          <description>&lt;p&gt;안녕하세요! &lt;strong&gt;Do My Best 블로그&lt;/strong&gt;입니다. ㅎㅎ&lt;/p&gt;
+
+</description>
+        
+        <pubDate>Sun, 21 Oct 2018 21:00:00 +0900</pubDate>
+        <link>
+        https://ghwlchlaks.github.io/Algorithm-stockprice</link>
+        <guid isPermaLink="true">https://ghwlchlaks.github.io/Algorithm-stockprice</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>[프로그래머스 LEVEL2] 더맵게 프로그래머스 heap [파이썬]</title>
+        
+          <description>&lt;p&gt;안녕하세요! &lt;strong&gt;Do My Best 블로그&lt;/strong&gt;입니다. ㅎㅎ&lt;/p&gt;
+
+</description>
+        
+        <pubDate>Sat, 20 Oct 2018 21:00:00 +0900</pubDate>
+        <link>
+        https://ghwlchlaks.github.io/Algorithm-morespicy</link>
+        <guid isPermaLink="true">https://ghwlchlaks.github.io/Algorithm-morespicy</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>[프로그래머스 LEVEL2] 프린터 프로그래머스 스택/큐 [파이썬]</title>
+        
+          <description>&lt;p&gt;안녕하세요! &lt;strong&gt;Do My Best 블로그&lt;/strong&gt;입니다. ㅎㅎ&lt;/p&gt;
+
+</description>
+        
+        <pubDate>Fri, 19 Oct 2018 21:00:00 +0900</pubDate>
+        <link>
+        https://ghwlchlaks.github.io/Algorithm-printer</link>
+        <guid isPermaLink="true">https://ghwlchlaks.github.io/Algorithm-printer</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>[프로그래머스 LEVEL2] 탑 프로그래머스 스택/큐 [파이썬]</title>
+        
+          <description>&lt;p&gt;안녕하세요! &lt;strong&gt;Do My Best 블로그&lt;/strong&gt;입니다. ㅎㅎ&lt;/p&gt;
+
+</description>
+        
+        <pubDate>Thu, 18 Oct 2018 21:00:00 +0900</pubDate>
+        <link>
+        https://ghwlchlaks.github.io/Algorithm-Top</link>
+        <guid isPermaLink="true">https://ghwlchlaks.github.io/Algorithm-Top</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>Node.js 와 Apache 연동</title>
+        
+          <description>&lt;p&gt;안녕하세요! &lt;strong&gt;Do My Best 블로그&lt;/strong&gt;입니다. ㅎㅎ&lt;br /&gt;
+이번 포스팅 부터는 횟수를 세지 않았습니다!&lt;/p&gt;
+
+</description>
+        
+        <pubDate>Tue, 16 Oct 2018 21:00:00 +0900</pubDate>
+        <link>
+        https://ghwlchlaks.github.io/nodejs-apache</link>
+        <guid isPermaLink="true">https://ghwlchlaks.github.io/nodejs-apache</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>[운영체제] 리눅스 부팅 USB 만들기</title>
+        
+          <description>&lt;p&gt;안녕하세요! &lt;strong&gt;Do My Best 블로그&lt;/strong&gt; 열번째 게시물입니다. ㅎㅎ&lt;br /&gt;
+벌써 열번째 게시물이네요~ 이제는 횟수를 적지 않을까 합니다. 이렇게 계속 포스팅해서 나중에 확인했을때 많이 쌓여있는걸 보면 뿌듯하겠죠? ㅎㅎ&lt;/p&gt;
+
+</description>
+        
+        <pubDate>Sun, 14 Oct 2018 21:00:00 +0900</pubDate>
+        <link>
+        https://ghwlchlaks.github.io/boot-usb-create</link>
+        <guid isPermaLink="true">https://ghwlchlaks.github.io/boot-usb-create</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>[Node.js] 윈도우에서 Node.js 설치</title>
+        
+          <description>&lt;p&gt;안녕하세요! &lt;strong&gt;Do My Best 블로그&lt;/strong&gt; 아홉번째 게시물입니다. ㅎㅎ&lt;br /&gt;
+이번에 포스팅할 내용은 여덟번째 내용이었던 &lt;a href=&quot;https://ghwlchlaks.github.io/nodejs-installation-ubuntu/&quot;&gt;리눅스에서 Node.js 설치&lt;/a&gt;에 이어 윈도우 운영체제 환경에서 Node.js를 설치하는 방법에 대해서 알아보겠습니다.!&lt;/p&gt;
+
+</description>
+        
+        <pubDate>Sun, 14 Oct 2018 07:00:00 +0900</pubDate>
+        <link>
+        https://ghwlchlaks.github.io/nodejs-installation-window</link>
+        <guid isPermaLink="true">https://ghwlchlaks.github.io/nodejs-installation-window</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>[Node.js] 리눅스에서 Node.js 설치</title>
+        
+          <description>&lt;p&gt;안녕하세요! &lt;strong&gt;Do My Best 블로그&lt;/strong&gt; 여덟번째 게시물입니다. ㅎㅎ&lt;br /&gt;
+오늘은 우분투 운영체제 환경에서 Node.js를 설치하는 방법에 대해서 알아보겠습니다.!&lt;/p&gt;
+
+</description>
+        
+        <pubDate>Fri, 12 Oct 2018 07:00:00 +0900</pubDate>
+        <link>
+        https://ghwlchlaks.github.io/nodejs-installation-ubuntu</link>
+        <guid isPermaLink="true">https://ghwlchlaks.github.io/nodejs-installation-ubuntu</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>[Node.js] NodeJs란 무엇인가?</title>
+        
+          <description>&lt;p&gt;안녕하세요! &lt;strong&gt;Do My Best 블로그&lt;/strong&gt; 일곱번째 게시물입니다. ㅎㅎ&lt;br /&gt;
+전에 말씀 드렸다시피 오늘은 &lt;strong&gt;NodeJS란 무엇인가?&lt;/strong&gt;라는 내용을 포스팅하려고 합니다.&lt;/p&gt;
+
+</description>
+        
+        <pubDate>Wed, 10 Oct 2018 09:00:00 +0900</pubDate>
+        <link>
+        https://ghwlchlaks.github.io/what-nodejs</link>
+        <guid isPermaLink="true">https://ghwlchlaks.github.io/what-nodejs</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>[Node.js] 정적(static) 파일 import (css, image)</title>
+        
+          <description>&lt;p&gt;안녕하세요! &lt;strong&gt;Do My Best 블로그&lt;/strong&gt; 여섯번째 게시물입니다. ㅎㅎ&lt;br /&gt;
+지금까지 파이썬 언어에대해 포스팅 해왔는데요.. &lt;br /&gt;
+사실 파이썬은 알고리즘 공부땜에 파이썬 언어로 공부하며 알고리즘공부도 하고 있습니다.&lt;/p&gt;
+
+</description>
+        
+        <pubDate>Tue, 09 Oct 2018 09:00:00 +0900</pubDate>
+        <link>
+        https://ghwlchlaks.github.io/static-path-nodejs</link>
+        <guid isPermaLink="true">https://ghwlchlaks.github.io/static-path-nodejs</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>heapq를 사용해보자 [Python] </title>
+        
+          <description>&lt;p&gt;안녕하세요! &lt;strong&gt;Do My Best 블로그&lt;/strong&gt; 다섯번째 게시물입니다. ㅎㅎ&lt;br /&gt;
+이번에는 세번째 게시물에서 포스팅 예정한 &lt;strong&gt;heapq 라이브러리&lt;/strong&gt; 사용방법 입니다.&lt;/p&gt;
+
+</description>
+        
+        <pubDate>Mon, 08 Oct 2018 12:10:00 +0900</pubDate>
+        <link>
+        https://ghwlchlaks.github.io/Heapq-Python</link>
+        <guid isPermaLink="true">https://ghwlchlaks.github.io/Heapq-Python</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>이중우선순위큐 알고리즘 [Python] </title>
+        
+          <description>&lt;p&gt;안녕하세요! &lt;strong&gt;Do My Best 블로그&lt;/strong&gt; 네번째 게시물입니다. ㅎㅎ&lt;br /&gt;
+이번에는 프로그래머스의 알고리즘 문제 중 LEVEL 3 이중우선순위큐 문제를 &lt;strong&gt;heapq 라이브러리&lt;/strong&gt;를 이용하여 해결해보겠습니다.&lt;/p&gt;
+
+</description>
+        
+        <pubDate>Mon, 08 Oct 2018 05:30:00 +0900</pubDate>
+        <link>
+        https://ghwlchlaks.github.io/Algorithm-Heapq-Python</link>
+        <guid isPermaLink="true">https://ghwlchlaks.github.io/Algorithm-Heapq-Python</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>네트워크 알고리즘 [Python] </title>
+        
+          <description>&lt;p&gt;안녕하세요! &lt;strong&gt;Do My Best 블로그&lt;/strong&gt; 세번째 게시물입니다. ㅎㅎ&lt;br /&gt;
+이번에는 프로그래머스의 알고리즘 문제 중 LEVEL 3 네트워크 문제를 DFS알고리즘으로 해결해보겠습니다.&lt;/p&gt;
+
+</description>
+        
+        <pubDate>Mon, 08 Oct 2018 05:00:00 +0900</pubDate>
+        <link>
+        https://ghwlchlaks.github.io/Algorithm-DFS-python</link>
+        <guid isPermaLink="true">https://ghwlchlaks.github.io/Algorithm-DFS-python</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>윈도우에서 지킬 설치 및 실행 [Jekyll]</title>
+        
+          <description>&lt;p&gt;안녕하세요! &lt;strong&gt;Do My Best 블로그&lt;/strong&gt; 두번째 게시물입니다. ㅎㅎ&lt;br /&gt;
+지킬 사용하다가 이것도 게시하면 다른 분들에게 많은 도움이 될 것 같아서 첫번째 게시물 이후에 바로 올립니다.!&lt;/p&gt;
+
+</description>
+        
+        <pubDate>Sat, 06 Oct 2018 10:00:00 +0900</pubDate>
+        <link>
+        https://ghwlchlaks.github.io/Installation-Jekyll</link>
+        <guid isPermaLink="true">https://ghwlchlaks.github.io/Installation-Jekyll</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>순열과 조합 라이브러리를 사용해보자 [Python] </title>
+        
+          <description>&lt;p&gt;안녕하세요! &lt;strong&gt;Do My Best 블로그&lt;/strong&gt; 첫 게시물입니다. ㅎㅎ&lt;br /&gt;
+언제부터 올려야할지 뭐부터 올려야할지 고민이되서 그냥 ‘일단 아무거나 올려보자!’란 마음먹고 올리게되었습니다.&lt;br /&gt;
+ㅎㅎ 일단 해보는게 중요하겠죠?&lt;/p&gt;
+
+</description>
+        
+        <pubDate>Sat, 06 Oct 2018 09:00:00 +0900</pubDate>
+        <link>
+        https://ghwlchlaks.github.io/permutation-combination-python</link>
+        <guid isPermaLink="true">https://ghwlchlaks.github.io/permutation-combination-python</guid>
+      </item>
+      
+    
+  </channel>
+</rss>

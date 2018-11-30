@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <!-- Document Settings -->
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    <!-- Page Meta -->
+    <title>Node.js 와 Apache 연동</title>
+    <meta name="description" content="Node.js 와 Apache 연동" />
+
+    <!-- Mobile Meta -->
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Brand icon -->
+    <link rel="shortcut icon" href="https://ghwlchlaks.github.io/assets/images/default/favicon.ico" >
+
+    <!-- Styles'n'Scripts -->
+    <link rel="stylesheet" type="text/css" href="https://ghwlchlaks.github.io/assets/css/screen.css" />
+    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Merriweather:300,700,700italic,300italic|Open+Sans:700,400" />
+    <!-- <link rel="stylesheet" type="text/css" href="/assets/css/syntax.css" /> -->
+
+    <!-- highlight.js -->
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.3.0/styles/default.min.css">
+    <style>.hljs { background: none; }</style>
+
+	<!-- Font Awesome -->
+	<link rel="stylesheet" href="/assets/fonts/font-awesome/css/font-awesome.min.css">
+
+    <!-- Ghost outputs important style and meta data with this tag -->
+        <link rel="canonical" href="https://ghwlchlaks.github.io//nodejs-apache" />
+    <meta name="referrer" content="origin" />
+    <link rel="next" href="https://ghwlchlaks.github.io/page2/" />
+
+    <meta property="og:site_name" content="DeMBi" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Node.js 와 Apache 연동" />
+    <meta property="og:description" content="Node.js 와 Apache 연동" />
+    <meta property="og:url" content="https://ghwlchlaks.github.io//nodejs-apache" />
+    <meta property="og:image" content="https://ghwlchlaks.github.io/assets/images/cover/nodejs.png" />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Node.js 와 Apache 연동" />
+    <meta name="twitter:description" content="Node.js 와 Apache 연동" />
+    <meta name="twitter:url" content="https://ghwlchlaks.github.io//nodejs-apache" />
+    <meta name="twitter:image:src" content="/assets/images/cover/nodejs.png" />
+    
+    <!-- <meta property="og:locale" content="ko_KR" />
+	<meta name="description" content="안녕하세요! Do My Best 블로그입니다. ㅎㅎ이번 포스팅 부터는 횟수를 세지 않았습니다!">
+	<meta property="og:site_name" content="">
+	
+	<meta property="og:title" content="Node.js 와 Apache 연동">
+	<meta property="og:type" content="article">
+	<meta property="og:description" content="안녕하세요! Do My Best 블로그입니다. ㅎㅎ
+이번 포스팅 부터는 횟수를 세지 않았습니다!
+
+"/>
+	
+	
+	<meta property="article:published_time" content="2018-10-16T21:00:00+09:00">
+	<meta property="article:author" content="https://ghwlchlaks.github.io/about/">
+	
+	<meta property="og:url" content="https://ghwlchlaks.github.io/nodejs-apache" />
+	
+	<meta itemprop="keywords" content="Blog,IT,Node,Linux,Apache" />
+	
+	<meta property="article:tag" content="Blog">
+	
+	<meta property="article:tag" content="IT">
+	
+	<meta property="article:tag" content="Node">
+	
+	<meta property="article:tag" content="Linux">
+	
+	<meta property="article:tag" content="Apache">
+	
+	
+	 -->
+
+
+    <script type="application/ld+json">
+{
+    "@context": "http://schema.org",
+    "@type": "Website",
+    "publisher": "DeMBi",
+    "name": "Node.js 와 Apache 연동",
+    "url": "https://ghwlchlaks.github.io///nodejs-apache",
+    "image": "https://ghwlchlaks.github.io/assets/images/cover/nodejs.png",
+    "description": "Node.js 와 Apache 연동"
+}
+    </script>
+
+    <meta name="generator" content="Jekyll 3.0.0" />
+    <link rel="alternate" type="application/rss+xml" title="DeMBi" href="https://ghwlchlaks.github.io/feed.xml" />
+
+
+</head>
+<body class="home-template nav-closed">
+
+    <!-- The blog navigation links -->
+    <div class="nav">
+    <h3 class="nav-title">Menu</h3>
+    <a href="#" class="nav-close">
+        <span class="hidden">Close</span>
+    </a>
+    <ul>
+        <li class="nav-home " role="presentation"><a href="https://ghwlchlaks.github.io">Home</a></li>
+        <li class="nav-about " role="presentation"><a href="https://ghwlchlaks.github.io/about">About</a></li>
+        <li class="nav-IT " role="presentation"><a href="https://ghwlchlaks.github.io/tag/IT">IT</a></li>
+        <li class="nav-Node " role="presentation"><a href="https://ghwlchlaks.github.io/tag/Node">Node</a></li>
+        <li class="nav-Linux " role="presentation"><a href="https://ghwlchlaks.github.io/tag/Linux">Linux</a></li>
+        <li class="nav-Python " role="presentation"><a href="https://ghwlchlaks.github.io/tag/Python">Python</a></li>
+        <li class="nav-Language " role="presentation"><a href="https://ghwlchlaks.github.io/tag/Language">Language</a></li>
+        <li class="nav-Github " role="presentation"><a href="https://ghwlchlaks.github.io/tag/Github">Github</a></li>
+        <li class="nav-Algorithm " role="presentation"><a href="https://ghwlchlaks.github.io/tag/Algorithm">Algorithm</a></li>
+        <li class="nav-Window " role="presentation"><a href="https://ghwlchlaks.github.io/tag/Window">Window</a></li>
+        <li class="nav-Apache " role="presentation"><a href="https://ghwlchlaks.github.io/tag/Apache">Apache</a></li>
+        <li class="nav-Jiho " role="presentation"><a href="https://ghwlchlaks.github.io/author/Jiho">JIHO</a></li>
+        
+        
+    </ul>
+    <a class="subscribe-button icon-feed" href="https://ghwlchlaks.github.io/feed.xml">Subscribe</a>
+</div>
+<span class="nav-cover"></span>
+
+
+    <div class="site-wrapper">
+
+        <!-- All the main content gets inserted here, index.hbs, post.hbs, etc -->
+        <!-- default -->
+
+<!-- The comment above "< default" means - insert everything in this file into -->
+    <!-- the [body] of the default.hbs template, which contains our header/footer. -->
+
+<!-- Everything inside the #post tags pulls data from the post -->
+<!-- #post -->
+
+<div class="flex-container">
+        <header class="main-header post-head " style="background-image: url(/assets/images/cover/nodejs.png)">
+            <nav class="main-nav overlay clearfix">
+                <a class="blog-logo" href="https://ghwlchlaks.github.io/"><img src="/assets/images/default/DMB_logo.png" alt="Blog Logo" /></a>
+                <div class="wrapper">
+                        <div class="header-flex">
+                        <div class="search-icon-container">
+                            <span class="search-icon" style="float: right;">
+                            <a><i class="fa fa-search" aria-hidden="true"></i></a>
+                            </span>
+                    
+                        <a class="menu-button icon-menu" href="#"><span class="word">Menu</span></a>
+                    
+                        </div>
+                    </div>
+                    </div>
+            </nav>
+        </header>
+    
+        <div class="content wrapper">
+            <div class="search-box">
+  <div class="wrapper">
+    <div class="search-grid">
+      <form class="search-form">
+        <div id="search-container">
+          <input type="text" id="search-input" class="search" placeholder="Search">
+        </div>
+      </form>
+      <ul id="results-container" class="results-search"></ul>
+      <div class="icon-close-container">
+        <span class="search-icon-close"><i class="fa fa-times" aria-hidden="true"></i></span>
+      </div>
+    </div>
+  </div>
+</div>
+        </div>
+    </div>
+    
+<main class="content" role="main">
+
+    <article class="post tag-IT tag-Node tag-Linux tag-Apache">
+
+        <header class="post-header">
+            <h1 class="post-title">Node.js 와 Apache 연동</h1>
+            <section class="post-meta">
+            <!-- <a href='/'></a> -->
+
+            
+                
+                    <a href='/author/Jiho'>Jiho</a>
+                
+            
+            <time class="post-date" datetime="2018-10-16">16 Oct 2018</time>
+                <!-- [[tags prefix=" on "]] -->
+                
+                on
+                
+                    
+                       <a href='/tag/Blog'>Blog</a>,
+                    
+                
+                    
+                       <a href='/tag/IT'>It</a>,
+                    
+                
+                    
+                       <a href='/tag/Node'>Node</a>,
+                    
+                
+                    
+                       <a href='/tag/Linux'>Linux</a>,
+                    
+                
+                    
+                       <a href='/tag/Apache'>Apache</a>
+                    
+                
+                
+            </section>
+        </header>
+
+        <section class="post-content">
+
+            <p>안녕하세요! <strong>Do My Best 블로그</strong>입니다. ㅎㅎ<br />
+이번 포스팅 부터는 횟수를 세지 않았습니다!</p>
+
+<p>이번에 포스팅할 내용은 <strong>Node.js 서버와 Apache서버를 Proxy</strong>를 사용하여 연동하는 방법에대해 알아보겠습니다.</p>
+
+<p>proxy를 사용하여 apache로 들어온 정보를 node.js에게 전달해주는 방식입니다.</p>
+
+<ul>
+  <li><strong>필요한 apache모듈 활성화</strong></li>
+  <li><strong>가상 호스트 설정</strong></li>
+</ul>
+
+<h2 id="1-필요한-apache모듈-활성화"><strong>1. 필요한 apache모듈 활성화.</strong></h2>
+<p>먼저 mod_proxy, mod_proxy_http가 설치되어있어야합니다. 하지만 ubuntu에서 apache서버는 기본적으로 모듈이 설치되어있습니다.</p>
+
+<p>처음에는 두개의 모듈이 비활성화 되어있을겁니다.<br />
+활성화를 하는 방법은</p>
+
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">sudo</span> <span class="n">a2enmod</span> <span class="n">proxy</span>  
+<span class="n">sudo</span> <span class="n">a2enmod</span> <span class="n">proxy_http</span>  </code></pre></figure>
+
+<p>명령어를 사용하여 활성화 해줍니다.</p>
+
+<h2 id="2-가상-호스트-설정"><strong>2. 가상 호스트 설정.</strong></h2>
+<ul>
+  <li>/etc/apache2/sites-available폴더로 이동합니다.</li>
+  <li>해당 폴더에 들어가서 000으로 시작하는 파일 내용을 수정합니다. 만약 새롭게 파일을 만들고 싶다면 파일을 cp명령어로 복사를 한 후 <code class="highlighter-rouge">e2sites '파일이름'</code>으로 등록을 해주어야 합니다.</li>
+  <li>새롭게 파일을 등록 한 후 확인하려면 sites-enabled 폴더 안에softLink로된 같은 파일이 잘 등록 되어있는지 확인합니다. softLink파일인지 확인하는 방법은 <code class="highlighter-rouge">ls -l</code> 명령어를 입력하였을 떄 
+lrwxr-xr-x 1 test test 5 Mar 7 22:00 link1 -&gt; file1<br />
+위와 같이 맨앞에 <code class="highlighter-rouge">l</code>문자와 <code class="highlighter-rouge">-&gt;</code>기호가 있으면됩니다. 우분투에서는 파일이 초록색으로 나오네요?ㅎㅎ</li>
+  <li>해당 파일의 내용을 작성해봅니다.!</li>
+</ul>
+
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="o">&lt;</span><span class="no">VirtualHost</span> <span class="o">*</span><span class="p">:</span><span class="mi">80</span><span class="o">&gt;</span>  
+<span class="c1">#The Server Name directive sets the request schema, hostname and port that  </span>
+<span class="c1">#the server uses to identify itself. This is used when creating  </span>
+<span class="c1">#redirection URLs. In the context of virtual hosts, the ServerName  </span>
+<span class="c1">#specifies what hostname must appear in the request's Host: header to  </span>
+<span class="c1">#match this virtual host. For the default virtual host (this file) this  </span>
+<span class="c1">#value is not decisive as it is used as a last resort host regardless.  </span>
+<span class="c1">#However, you must set it for any further virtual host explicitly.  </span>
+<span class="c1">#ServerName www.example.com  </span>
+
+<span class="no">ServerAdmin</span> <span class="n">webmaster</span><span class="vi">@localhost</span>  
+<span class="no">DocumentRoot</span> <span class="sr">/var/</span><span class="n">www</span><span class="o">/</span><span class="n">html</span>  
+
+<span class="c1">#Available loglevels: trace8, ..., trace1, debug, info, notice, warn,  </span>
+<span class="c1">#error, crit, alert, emerg.  </span>
+<span class="c1">#It is also possible to configure the loglevel for particular  </span>
+<span class="c1">#modules, e.g.  </span>
+<span class="c1">#LogLevel info ssl:warn  </span>
+
+<span class="no">ErrorLog</span> <span class="err">$</span><span class="p">{</span><span class="no">APACHE_LOG_DIR</span><span class="p">}</span><span class="o">/</span><span class="n">error</span><span class="p">.</span><span class="nf">log</span>  
+<span class="no">CustomLog</span> <span class="err">$</span><span class="p">{</span><span class="no">APACHE_LOG_DIR</span><span class="p">}</span><span class="o">/</span><span class="n">access</span><span class="p">.</span><span class="nf">log</span> <span class="n">combined</span>  
+
+<span class="c1">#For most configuration files from conf-availalbe/, which are  </span>
+<span class="c1">#enabled or disabled at a global level, it is possible to  </span>
+<span class="c1">#include a line for only one particular virtual host. For example the  </span>
+<span class="c1">#follwing line enables the CGI configuration for this host only  </span>
+<span class="c1">#after it has been globally disabled with "a2disconf".  </span>
+<span class="c1">#Include conf-available/serve-cgi-bin.conf  </span>
+  
+<span class="no">ProxyPass</span> <span class="sr">/url http:/</span><span class="o">/</span><span class="n">localhost</span><span class="p">:</span><span class="mi">3000</span><span class="o">/</span><span class="n">url</span></code></pre></figure>
+
+<p><code class="highlighter-rouge">ProxyPass</code>부분을 보시면 됩니다. <code class="highlighter-rouge">ProxyPass 접속url nodejsurl</code> 이러한 형식으로 설정을 계속 추가해 보시면 웹에서 접속url에 접근하였을때 nodejsUrl로 전달해주는 방식이 됩니다.!<br />
+<code class="highlighter-rouge">service apache restart</code> 이후 apache를 재시작 해주시면 설정이 적용됩니다!!</p>
+
+<p>생각외로 간단합니다! 하지만 안해보면 모른다는.. 한번 테스트 해보시면 좋을것 같네요~</p>
+
+<p>지금까지 <strong>Node.js 와 Apache 연동 방법</strong>이라는 주제로 포스팅하였습니다!  <br />
+해당 게시물에 문제가 있다면 댓글을 통해 피드백해주시면 감사하겠습니다~ 같이 공부해요~^^</p>
+
+<p><code class="highlighter-rouge">방문해주신분들 댓글 한개씩 달아주시면 감사하겠습니다~~^^</code></p>
+
+
+        </section>
+
+        <footer class="post-footer">
+
+            <!-- Everything inside the #author tags pulls data from the author -->
+            <!-- #author-->
+            
+                
+                    
+                        <figure class="author-image">
+                            <a class="img" href="/author/Jiho" style="background-image: url(/assets/images/default/profile.jpg)"><span class="hidden">Jiho's Picture</span></a>
+                        </figure>
+                    
+
+                    <section class="author">
+                        <h4><a href="/author/Jiho">Jiho</a></h4>
+
+                        
+                            <p> 안녕하세요 DeMBi 블로그입니다!</p>
+                        
+                        <div class="author-meta">
+                            <span class="author-location icon-location"> Seoul, Korea</span>
+                            <span class="author-link icon-link"><a href="http://ghwlchlaks.github.io/"> ghwlchlaks.github.io/</a></span>
+                        </div>
+                    </section>
+
+                    <!-- /author  -->
+
+                    <!-- <section class="share">
+                        <h4>Share this post</h4>
+                        <a class="icon-twitter" href="http://twitter.com/share?text=Node.js 와 Apache 연동&amp;url=https://ghwlchlaks.github.io/nodejs-apache"
+                            onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
+                            <span class="hidden">Twitter</span>
+                        </a>
+                        <a class="icon-facebook" href="https://www.facebook.com/sharer/sharer.php?u=https://ghwlchlaks.github.io/nodejs-apache"
+                            onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
+                            <span class="hidden">Facebook</span>
+                        </a>
+                        <a class="icon-google-plus" href="https://plus.google.com/share?url=https://ghwlchlaks.github.ionodejs-apache" 
+                            <a class="icon-google-plus" href="https://plus.google.com/share?url=https://ghwlchlaks.github.io/nodejs-apache"
+                           onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;">
+                            <span class="hidden">Google+</span>
+                        </a>
+                    </section> -->
+                
+            
+
+            <!-- Add Disqus Comments -->
+            
+                <div id="disqus_thread"></div>
+<script type="text/javascript">
+        /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+        var disqus_shortname = 'dmb3618'; // required: replace example with your forum shortname
+        var disqus_identifier = '/nodejs-apache';
+        var disqus_url = 'https://ghwlchlaks.github.io/nodejs-apache';
+
+            /* * * DON'T EDIT BELOW THIS LINE * * */
+            (function() {
+                var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+                dsq.src = 'https://' + disqus_shortname + '.disqus.com/embed.js';
+                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+            })();
+        </script>
+        <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+        <a href="http://disqus.com" class="dsq-brlink">blog comments powered by <span class="logo-disqus">Disqus</span></a>
+    </div>
+
+            
+
+        </footer>
+
+    </article>
+
+</main>
+
+<aside class="read-next">
+
+    <!-- [[! next_post ]] -->
+    
+        <a class="read-next-story " style="background-image: url(/assets/images/cover/python.jpg)" href="/Algorithm-Top">
+            <section class="post">
+                <h2>[프로그래머스 LEVEL2] 탑 프로그래머스 스택/큐 [파이썬]</h2>
+                <p>안녕하세요! **Do My Best 블로그**입니다. ㅎㅎ 이번에 포스팅할 내용은 스택/큐에 해당되는 **프로그래머스 문제 LEVEL2에 해당되는...</p>
+            </section>
+        </a>
+    
+    <!-- [[! /next_post ]] -->
+    <!-- [[! prev_post ]] -->
+    
+        <a class="read-next-story prev " style="background-image: url(/assets/images/cover/usb.jpg)" href="/boot-usb-create">
+            <section class="post">
+                <h2>[운영체제] 리눅스 부팅 USB 만들기</h2>
+                <p>안녕하세요! Do My Best 블로그 열번째 게시물입니다. ㅎㅎ 벌써 열번째 게시물이네요~ 이제는 횟수를 적지 않을까...</p>
+            </section>
+        </a>
+    
+    <!-- [[! /prev_post ]] -->
+</aside>
+
+<!-- /post -->
+
+
+        <!-- The tiny footer at the very bottom -->
+        <footer class="site-footer clearfix">
+          <section class="copyright"><a href="https://ghwlchlaks.github.io/">DeMBi</a> &copy; 2018</section>
+          <section class="poweredby">Proudly published with <a href="https://jekyllrb.com/">Jekyll</a> using <a href="https://github.com/jekyller/jasper">Jasper</a></section>
+        </footer>
+    </div>
+    <!-- highlight.js -->
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.3.0/highlight.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+
+    <!-- jQuery needs to come before `` so that jQuery can be used in code injection -->
+    <script type="text/javascript" src="//code.jquery.com/jquery-1.12.0.min.js"></script>
+    <!-- Ghost outputs important scripts and data with this tag -->
+    <!--  -->
+    <!-- Add Google Analytics  -->
+        <!-- Google Analytics Tracking code -->
+     <script>
+	    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+	    ga('create', 'UA-127066443-1', 'auto');
+	    ga('send', 'pageview');
+
+     </script>
+    <!-- Fitvids makes video embeds responsive and awesome -->
+    <script type="text/javascript" src="https://ghwlchlaks.github.io/assets/js/jquery.fitvids.js"></script>
+    <!-- The main JavaScript file for Casper -->
+    <script type="text/javascript" src="https://ghwlchlaks.github.io/assets/js/index.js"></script>
+
+    
+        
+            
+                <!-- JS -->
+<script src="https://ghwlchlaks.github.io/assets/js/jquery-3.2.1.min.js"></script>
+<script src="https://ghwlchlaks.github.io/assets/js/jekyll-search.js"></script>
+<script>
+  SimpleJekyllSearch({
+    searchInput: document.getElementById('search-input'),
+    resultsContainer: document.getElementById('results-container'),
+    json: 'https://ghwlchlaks.github.io/search.json',
+    searchResultTemplate: '<li><a href="{url}" title="{desc}">{title}</a></li>',
+    noResultsText: 'No results found',
+    fuzzy: false,
+    exclude: ['Welcome']
+  });
+</script>
+<script src="https://ghwlchlaks.github.io/assets/js/main.js"></script>
+
+            
+        
+    
+    
+</body>
+</html>

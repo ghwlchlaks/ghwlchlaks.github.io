@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+<channel>
+   
+      <title>ghwlchlaks.github.io/</title>
+   
+   <link>https://ghwlchlaks.github.io</link>
+   <description>같이 배워가는 IT 블로그입니다~. Python, JavaScript, nodejs, Github, algorithm, etc</description>
+   <language>ko-KR</language>
+   <managingEditor> </managingEditor>
+   <atom:link href="rss" rel="self" type="application/rss+xml" />
+   
+	<item>
+	  <title>윈도우에서 지킬 설치 및 실행 [Jekyll]</title>
+	  <link>//Installation-Jekyll</link>
+	  <author></author>
+	  <pubDate>2018-10-06T10:00:00+09:00</pubDate>
+	  <guid>//Installation-Jekyll</guid>
+	  <description><![CDATA[
+	     <p>안녕하세요! <strong>Do My Best 블로그</strong> 두번째 게시물입니다. ㅎㅎ<br />
+지킬 사용하다가 이것도 게시하면 다른 분들에게 많은 도움이 될 것 같아서 첫번째 게시물 이후에 바로 올립니다.!</p>
+
+<p>이번에 포스팅할거는요~ Jekyll을 사용하여 github에 수정한 블로그 내용은 push하고 확인하는 것이 아니라 로컬에서 작업한 내용을 확인 하는 방법에대해서 포스팅하려고합니다.!</p>
+
+<p><strong>1. 루비 (Ruby) 설치!</strong><br />
+우선 루비를 설치해야합니다.!<br />
+저도 루비 설치 안해서.. 계속 안됐다는.. 하하.. 
+<a href="https://rubyinstaller.org/downloads/">루비 설치 링크</a> 입니다.<br />
+이곳에 접속하셔서 윈도우용루비 + 개발자킷(DevKit)설치 프로그램을 다운로드 하시면됩니다.<br />
+과정중에 PATH설정도 해주는 checkbox를 체크 해주세요~~ 자동으로 PATH를 잡아줍니다~ 용량이 좀 되네요…?ㅎㅎ</p>
+
+<p><strong>2. 지킬 (Jekyll) 설치</strong><br />
+Ruby Command prompt창을 시작합니다.<br />
+윈도우 검색창에서 검색하시면 바로 나옵니다~ 콘솔창이 켜지면 gem명령어를 이용하여 설치를 진행합니다.! 시간이 좀걸려요~</p>
+
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">gem</span> <span class="n">install</span> <span class="n">jekyll</span>
+<span class="n">gem</span> <span class="n">install</span> <span class="n">minima</span>
+<span class="n">gem</span> <span class="n">install</span> <span class="n">bundler</span>
+<span class="n">gem</span> <span class="n">install</span> <span class="n">jekyll</span><span class="o">-</span><span class="n">feed</span>
+<span class="n">gem</span> <span class="n">install</span> <span class="n">tzinfo</span><span class="o">-</span><span class="n">data</span></code></pre></figure>
+
+<p>설치가 오류 없이 정상적으로 설치되면 다음으로~<br />
+오류가 생긴다면 추가적으로 필요한 모듈이 로그에 나오니깐 추가적으로 설치하시면 되요~</p>
+
+<p><strong>3. 로컬에서 블로그 실행</strong><br />
+우선 로컬에 자신의 블로그 git폴더가 있어야겠죠?<br />
+그 후 폴더 내에서 <code class="highlighter-rouge">jekyll serve</code>를 이용하여 실행 합니다.</p>
+
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="c1">#자신의 블로그 복제하여 다운로드</span>
+<span class="n">git</span> <span class="nb">clone</span> <span class="n">https</span><span class="ss">:/</span><span class="o">/</span><span class="n">github</span><span class="p">.</span><span class="nf">com</span><span class="o">/</span><span class="n">username</span><span class="p">.</span><span class="nf">git</span><span class="p">.</span><span class="nf">io</span><span class="o">/</span>
+<span class="c1">#폴더내로 이동</span>
+<span class="n">cd</span> <span class="n">username</span><span class="p">.</span><span class="nf">git</span><span class="p">.</span><span class="nf">io</span>
+<span class="c1">#로컬에서 블로그 실행! 요것은 ruby prompt에서 실행해야겠죠?</span>
+<span class="n">jekyll</span> <span class="n">serve</span></code></pre></figure>
+
+<p>오류 없이 실행이 된다면 <code class="highlighter-rouge">http://localhost:4000/</code>으로 접속하시면 자신이 폴더내에서 수정한 블로그를 확인 할 수 있습니다.<br />
+수정이 끝난 후에는 git push를 통해 업로드 하시면 적용가능합니다!</p>
+
+<p>해당 게시물에 문제가 있다면 댓글을 통해 피드백해주시면 감사하겠습니다~
+같이 공부해요~^^</p>
+
+<p><code class="highlighter-rouge">방문해주신분들 댓글 한개씩 달아주시면 감사하겠습니다~~^^</code></p>
+
+
+	  ]]></description>
+	</item>
+
+
+</channel>
+</rss>
