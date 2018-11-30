@@ -13,65 +13,6 @@
    
 	<item>
 	  <title>[프로그래머스 LEVEL2] 주식가격 프로그래머스 [파이썬]</title>
-	  <link>//stockprice</link>
-	  <author></author>
-	  <pubDate>2018-10-22T21:00:00+09:00</pubDate>
-	  <guid>//stockprice</guid>
-	  <description><![CDATA[
-	     <p>안녕하세요! <strong>Do My Best 블로그</strong>입니다. ㅎㅎ</p>
-
-<p>이번에 포스팅할 내용은 스택(stack)/큐(queue)와 관련된 <strong>프로그래머스 문제 LEVEL2에 해당되는 주식가격 알고리즘 문제</strong>를 풀어보도록 하겠습니다.</p>
-
-<p>해당 문제는 <a href="https://programmers.co.kr/learn/courses/30/lessons/42584">프로그래머스 웹페이지</a>에서 만나보실 수 있습니다.</p>
-
-<h1 id="문제">문제</h1>
-<p>초 단위로 기록된 주식가격이 담긴 배열 prices가 매개변수로 주어질 때, 가격이 유지된 기간은 몇 초인지를 계산하는 문제입니다.</p>
-
-<p><strong>제한 사항</strong></p>
-<blockquote>
-  <ul>
-    <li>prices의 각 가격은 1 이상 10,000 이하인 자연수입니다.</li>
-    <li>prices의 길이는 2 이상 100,000 이하입니다.</li>
-  </ul>
-</blockquote>
-
-<h1 id="풀이">풀이</h1>
-
-<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby">  
-<span class="k">def</span> <span class="nf">solution</span><span class="p">(</span><span class="n">prices</span><span class="p">):</span>
-    <span class="n">answer</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">*</span> <span class="n">len</span><span class="p">(</span><span class="n">prices</span><span class="p">)</span>
-
-    <span class="k">for</span> <span class="n">i</span> <span class="k">in</span> <span class="n">range</span><span class="p">(</span><span class="n">len</span><span class="p">(</span><span class="n">prices</span><span class="p">)</span><span class="o">-</span><span class="mi">1</span><span class="p">):</span>
-        <span class="k">for</span> <span class="n">j</span> <span class="k">in</span> <span class="n">range</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">len</span><span class="p">(</span><span class="n">prices</span><span class="p">)</span><span class="o">-</span><span class="mi">1</span><span class="p">):</span>
-            <span class="k">if</span> <span class="n">prices</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">&gt;</span><span class="n">prices</span><span class="p">[</span><span class="n">j</span><span class="p">]:</span>
-                <span class="k">break</span>
-            <span class="ss">else:
-                </span><span class="n">answer</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">+=</span><span class="mi">1</span>
-    <span class="k">return</span> <span class="n">answer</span></code></pre></figure>
-
-<p>해당 문제는 스택/큐 부분이지만 이중 for문을 이용해서 풀었습니다.<br />
-다른 분들이 푸신내용보니깐 큐를 이용해서 (pop(0)) 푸시는 분들도 많았습니다.<br />
-사실 저도 큐를 이용하여 접근하였지만 시간초과가 발생해서 간단히 이중for문을 이용했습니다.<br />
-시간의 큰차이는 없어보였는데 시간 제한사항이 역시나 민감하네요 
-ㅎㅎ 처음에 시간초과가 발생해서 살짝 당황했습니다. ㅎㅎ</p>
-
-<h1 id="풀이방법">풀이방법</h1>
-<p>처음 i 변수를 가지는 for문은 비교할 기준의 요소를 정하는 인덱스입니다.<br />
-안에 j 변수를 가지는 for문은 인덱스 i부터 끝까지 비교할 대상의 인덱스를 나타냅니다.<br />
-안에 <code class="highlighter-rouge">if prices[i] &gt; prices[j]</code>는 기준에 비해 가격이 유지되지 않고 떨어지는 인덱스를 가졌을때 해당 for문을 벗어나는 코드입니다.<br />
-<code class="highlighter-rouge">else</code>부분은 이외에는 count를 1씩 증가시켜줍니다.</p>
-
-<p>지금까지 <strong>주식가격 프로그래머스 스택/큐 [파이썬]</strong>이라는 주제로 포스팅하였습니다!  <br />
-해당 게시물에 문제가 있다면 댓글을 통해 피드백해주시면 감사하겠습니다~ 같이 공부해요~^^</p>
-
-<p><code class="highlighter-rouge">방문해주신분들 댓글 한개씩 달아주시면 감사하겠습니다~~^^</code></p>
-
-
-	  ]]></description>
-	</item>
-
-	<item>
-	  <title>[프로그래머스 LEVEL2] 주식가격 프로그래머스 [파이썬]</title>
 	  <link>//Algorithm-stockprice</link>
 	  <author></author>
 	  <pubDate>2018-10-21T21:00:00+09:00</pubDate>
@@ -702,6 +643,61 @@ Event Loop는 단일 Thread지만 Thread Pool 내부는 여러개의 Thread를 �
 
 <p>한번 테스트해보시고 사용해보시면 좋을것같습니다.!<br />
 지금까지 <strong>Node.js란?</strong>이라는 주제로 포스팅하였습니다!<br />
+해당 게시물에 문제가 있다면 댓글을 통해 피드백해주시면 감사하겠습니다~ 같이 공부해요~^^</p>
+
+<p><code class="highlighter-rouge">방문해주신분들 댓글 한개씩 달아주시면 감사하겠습니다~~^^</code></p>
+
+	  ]]></description>
+	</item>
+
+	<item>
+	  <title>[Node.js] 정적(static) 파일 import (css, image)</title>
+	  <link>//static-path-nodejs</link>
+	  <author></author>
+	  <pubDate>2018-10-09T09:00:00+09:00</pubDate>
+	  <guid>//static-path-nodejs</guid>
+	  <description><![CDATA[
+	     <p>안녕하세요! <strong>Do My Best 블로그</strong> 여섯번째 게시물입니다. ㅎㅎ<br />
+지금까지 파이썬 언어에대해 포스팅 해왔는데요.. <br />
+사실 파이썬은 알고리즘 공부땜에 파이썬 언어로 공부하며 알고리즘공부도 하고 있습니다.</p>
+
+<p>이번에는 서버 프레임워크 중 하나인 <strong>Node.js의 static경로 설정 방법</strong>에 대해 포스팅하도록 하겠습니다. <br />
+제가 전에 경로땜에 살짝 헤맸다는…</p>
+
+<p>막상 포스팅을 시작하려니 Node.js의 개념에대해 먼저 포스팅을 했어야했다는 것이 생각이나네요..<br />
+아직 블로그 초보라..하하..<br />
+다음에는 Node.js 개념에대해 포스팅하도록 하겠습니다.!</p>
+
+<p>Node.js에서 <strong>static</strong>경로를 설정하는 방법에대해서 알아 보아요~<br />
+여기서는 기본적으로 <strong>express-generator</strong>로 생성한 Node.js 폴더라는 가정하에 다루도록하겠습니다.!</p>
+
+<p>Node를 사용하면서 ejs나 pug 등과 같은 확장자를 만질때가 있을텐데요~<br />
+자신이 추가하고자하는 외부 css파일이나 image파일을 Node.js 폴더내에 추가하고 
+view에서 접근하여도 css나 image가 적용이 되지 않는 당황스러운 경험을 하실 수 있는데요~<br />
+이때 css와 image가 적용이 되지않는 문제를 해결해보도록 하겠습니다!</p>
+
+<p>Node.js폴더내에 app.js를 확인해보면~</p>
+
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">app</span><span class="p">.</span><span class="nf">use</span><span class="p">(</span><span class="n">express</span><span class="p">.</span><span class="nf">static</span><span class="p">(</span><span class="n">path</span><span class="p">.</span><span class="nf">join</span><span class="p">(</span><span class="n">__dirname</span><span class="p">,</span> <span class="s1">'../public'</span><span class="p">)));</span></code></pre></figure>
+
+<p>이러한 코드를 확인 하실 수 있을것입니다!
+이코드는 express-generator로 생성한 폴더라면 default로 설정되어있습니다.</p>
+
+<p>해당 코드의 의미는 정적(static)한 파일을 이곳에 넣어두면 <code class="highlighter-rouge">/</code> 경로로 ejs파일내에서 public폴더내에 있는 파일을 접근 할 수 있다는 의미입니다.</p>
+
+<p>예를들어 <code class="highlighter-rouge">/public/test.jpg</code> 라는 파일이 <strong>public 폴더</strong>내에 존재한다면
+ejs파일내에서 <code class="highlighter-rouge">src=/test.jpg </code>로 접근을 할 수 있습니다.!!</p>
+
+<p>만약 default로 설정된 <code class="highlighter-rouge">/</code> 경로가 아닌 다른 정적(static) 폴더를 만들고 다른 경로를 만들어서 사용하고 싶으시다면 app.js 파일에</p>
+
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">app</span><span class="p">.</span><span class="nf">use</span><span class="p">(</span><span class="s1">'/ejs에서접근할경로'</span><span class="p">,</span> <span class="n">express</span><span class="p">.</span><span class="nf">static</span><span class="p">(</span><span class="n">path</span><span class="p">.</span><span class="nf">join</span><span class="p">(</span><span class="n">__dirname</span><span class="p">,</span> <span class="s1">' /실제위치한디렉토리경로'</span><span class="p">)));</span>  </code></pre></figure>
+
+<p>해당 코드를 입력하고~<br />
+<strong>ejs</strong>에서 <code class="highlighter-rouge">src=/ejs에서접근할경로/정적(static)파일위치</code> 로 접근하시면
+image,css와같은 파일들의 자원을 사용하실 수 있습니다!!</p>
+
+<p>한번 테스트해보시고 사용해보시면 좋을것같습니다.!<br />
+지금까지 <strong>Node.js에서 정적(static)</strong> 파일 사용하는 방법이었습니다!<br />
 해당 게시물에 문제가 있다면 댓글을 통해 피드백해주시면 감사하겠습니다~ 같이 공부해요~^^</p>
 
 <p><code class="highlighter-rouge">방문해주신분들 댓글 한개씩 달아주시면 감사하겠습니다~~^^</code></p>
