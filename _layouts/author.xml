@@ -2,7 +2,7 @@
 layout: atom
 title: nil
 ---
-{% for post in page.posts %}
+{% for post in paginator.posts %}
 	<item>
 	  <title>{{ post.title }}</title>
 	  <!-- <link>{{ site.baseurl }}{{ post.url }}</link> -->
