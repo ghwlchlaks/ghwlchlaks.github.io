@@ -4,7 +4,7 @@ title: "[프로그래머스 LEVEL2] 주식가격 프로그래머스 [파이썬]"
 date:   2018-10-21 12:00:00
 description:  주식가격 프로그래머스 스택/큐 [파이썬] 프로그래머스 LEVEL2 # Add post description (optional)
 img: python.jpg # Add image post (optional)
-categories: IT
+categories: Jiho
 navigation: True
 subclass: 'post tag-IT tag-Language tag-Python tag-Algorithm'
 tags: [Blog, IT, Language, Python, Algorithm]

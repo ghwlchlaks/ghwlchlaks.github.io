@@ -53,8 +53,8 @@ lsi: false
 username: dmb3618
 repo: ghwlchlaks.github.io
 branch: master
-relative_source: ./
-destination: ../dmb-pages/
+relative_source: ../
+destination: ../ghwlchlaks/
 production_url:  https://ghwlchlaks.github.io/
 source_url:  https://github.com/ghwlchlaks/ghwlchlaks.github.io/
 
