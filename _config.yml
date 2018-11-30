@@ -69,6 +69,7 @@ exclude:
   - .travis.yml
   - node_modules
   - .git
+  - publish.sh
 
 include:
   - .nojekyll
