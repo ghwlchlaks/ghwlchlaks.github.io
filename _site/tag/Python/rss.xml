@@ -13,65 +13,6 @@
    
 	<item>
 	  <title>[프로그래머스 LEVEL2] 주식가격 프로그래머스 [파이썬]</title>
-	  <link>//stockprice</link>
-	  <author></author>
-	  <pubDate>2018-10-22T21:00:00+09:00</pubDate>
-	  <guid>//stockprice</guid>
-	  <description><![CDATA[
-	     <p>안녕하세요! <strong>Do My Best 블로그</strong>입니다. ㅎㅎ</p>
-
-<p>이번에 포스팅할 내용은 스택(stack)/큐(queue)와 관련된 <strong>프로그래머스 문제 LEVEL2에 해당되는 주식가격 알고리즘 문제</strong>를 풀어보도록 하겠습니다.</p>
-
-<p>해당 문제는 <a href="https://programmers.co.kr/learn/courses/30/lessons/42584">프로그래머스 웹페이지</a>에서 만나보실 수 있습니다.</p>
-
-<h1 id="문제">문제</h1>
-<p>초 단위로 기록된 주식가격이 담긴 배열 prices가 매개변수로 주어질 때, 가격이 유지된 기간은 몇 초인지를 계산하는 문제입니다.</p>
-
-<p><strong>제한 사항</strong></p>
-<blockquote>
-  <ul>
-    <li>prices의 각 가격은 1 이상 10,000 이하인 자연수입니다.</li>
-    <li>prices의 길이는 2 이상 100,000 이하입니다.</li>
-  </ul>
-</blockquote>
-
-<h1 id="풀이">풀이</h1>
-
-<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby">  
-<span class="k">def</span> <span class="nf">solution</span><span class="p">(</span><span class="n">prices</span><span class="p">):</span>
-    <span class="n">answer</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">*</span> <span class="n">len</span><span class="p">(</span><span class="n">prices</span><span class="p">)</span>
-
-    <span class="k">for</span> <span class="n">i</span> <span class="k">in</span> <span class="n">range</span><span class="p">(</span><span class="n">len</span><span class="p">(</span><span class="n">prices</span><span class="p">)</span><span class="o">-</span><span class="mi">1</span><span class="p">):</span>
-        <span class="k">for</span> <span class="n">j</span> <span class="k">in</span> <span class="n">range</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">len</span><span class="p">(</span><span class="n">prices</span><span class="p">)</span><span class="o">-</span><span class="mi">1</span><span class="p">):</span>
-            <span class="k">if</span> <span class="n">prices</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">&gt;</span><span class="n">prices</span><span class="p">[</span><span class="n">j</span><span class="p">]:</span>
-                <span class="k">break</span>
-            <span class="ss">else:
-                </span><span class="n">answer</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">+=</span><span class="mi">1</span>
-    <span class="k">return</span> <span class="n">answer</span></code></pre></figure>
-
-<p>해당 문제는 스택/큐 부분이지만 이중 for문을 이용해서 풀었습니다.<br />
-다른 분들이 푸신내용보니깐 큐를 이용해서 (pop(0)) 푸시는 분들도 많았습니다.<br />
-사실 저도 큐를 이용하여 접근하였지만 시간초과가 발생해서 간단히 이중for문을 이용했습니다.<br />
-시간의 큰차이는 없어보였는데 시간 제한사항이 역시나 민감하네요 
-ㅎㅎ 처음에 시간초과가 발생해서 살짝 당황했습니다. ㅎㅎ</p>
-
-<h1 id="풀이방법">풀이방법</h1>
-<p>처음 i 변수를 가지는 for문은 비교할 기준의 요소를 정하는 인덱스입니다.<br />
-안에 j 변수를 가지는 for문은 인덱스 i부터 끝까지 비교할 대상의 인덱스를 나타냅니다.<br />
-안에 <code class="highlighter-rouge">if prices[i] &gt; prices[j]</code>는 기준에 비해 가격이 유지되지 않고 떨어지는 인덱스를 가졌을때 해당 for문을 벗어나는 코드입니다.<br />
-<code class="highlighter-rouge">else</code>부분은 이외에는 count를 1씩 증가시켜줍니다.</p>
-
-<p>지금까지 <strong>주식가격 프로그래머스 스택/큐 [파이썬]</strong>이라는 주제로 포스팅하였습니다!  <br />
-해당 게시물에 문제가 있다면 댓글을 통해 피드백해주시면 감사하겠습니다~ 같이 공부해요~^^</p>
-
-<p><code class="highlighter-rouge">방문해주신분들 댓글 한개씩 달아주시면 감사하겠습니다~~^^</code></p>
-
-
-	  ]]></description>
-	</item>
-
-	<item>
-	  <title>[프로그래머스 LEVEL2] 주식가격 프로그래머스 [파이썬]</title>
 	  <link>//Algorithm-stockprice</link>
 	  <author></author>
 	  <pubDate>2018-10-21T21:00:00+09:00</pubDate>
