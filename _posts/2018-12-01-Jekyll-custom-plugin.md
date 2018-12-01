@@ -88,10 +88,10 @@ git push --all
 기본적으로 github 브랜치 구조는 다음과 같습니다. 
 
 master branch (source 브랜치에서 build된 _site폴더내부)  
-<img src="/assets/images/2018-12-01-Jekyll-custom-plugin/master.png">
+<img src="/assets/images/2018-12-01-Jekyll-custom-plugin/master.PNG">
 
 source branch (소스를 관리하는 전체 소스)  
-<img src="/assets/images/2018-12-01-Jekyll-custom-plugin/source.png">
+<img src="/assets/images/2018-12-01-Jekyll-custom-plugin/source.PNG">
 
 **8. 해당 순서를 shell script를 만들어서 간편화 하기**  
 매번 위와 같이 반복작업을 하다보면 매우 귀찮겠죠? 이것을 한번에 처리하기 위해 
