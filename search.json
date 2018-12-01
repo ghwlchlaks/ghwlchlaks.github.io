@@ -4,7 +4,7 @@
       "title"    : "Jekyll custom plugin (로컬은되는데 원격은 안될때) [Jekyll]",
       "category" : "",
       "tags"     : "Blog, IT, Github, Jekyll",
-      "url"      : "http://localhost:4000/Jekyll-custom-plugin",
+      "url"      : "https://ghwlchlaks.github.io/Jekyll-custom-plugin",
       "date"     : "2018-12-01 09:00:00 +0900"
     } ,
   
@@ -12,7 +12,7 @@
       "title"    : "[프로그래머스 LEVEL2] 주식가격 프로그래머스 [파이썬]",
       "category" : "",
       "tags"     : "Blog, IT, Language, Python, Algorithm",
-      "url"      : "http://localhost:4000/Algorithm-stockprice",
+      "url"      : "https://ghwlchlaks.github.io/Algorithm-stockprice",
       "date"     : "2018-10-21 21:00:00 +0900"
     } ,
   
@@ -20,7 +20,7 @@
       "title"    : "[프로그래머스 LEVEL2] 더맵게 프로그래머스 heap [파이썬]",
       "category" : "",
       "tags"     : "Blog, IT, Language, Python, Algorithm",
-      "url"      : "http://localhost:4000/Algorithm-morespicy",
+      "url"      : "https://ghwlchlaks.github.io/Algorithm-morespicy",
       "date"     : "2018-10-20 21:00:00 +0900"
     } ,
   
@@ -28,7 +28,7 @@
       "title"    : "[프로그래머스 LEVEL2] 프린터 프로그래머스 스택/큐 [파이썬]",
       "category" : "",
       "tags"     : "Blog, IT, Language, Python, Algorithm",
-      "url"      : "http://localhost:4000/Algorithm-printer",
+      "url"      : "https://ghwlchlaks.github.io/Algorithm-printer",
       "date"     : "2018-10-19 21:00:00 +0900"
     } ,
   
@@ -36,7 +36,7 @@
       "title"    : "[프로그래머스 LEVEL2] 탑 프로그래머스 스택/큐 [파이썬]",
       "category" : "",
       "tags"     : "Blog, IT, Language, Python, Algorithm",
-      "url"      : "http://localhost:4000/Algorithm-Top",
+      "url"      : "https://ghwlchlaks.github.io/Algorithm-Top",
       "date"     : "2018-10-18 21:00:00 +0900"
     } ,
   
@@ -44,7 +44,7 @@
       "title"    : "Node.js 와 Apache 연동",
       "category" : "",
       "tags"     : "Blog, IT, Node, Linux, Apache",
-      "url"      : "http://localhost:4000/nodejs-apache",
+      "url"      : "https://ghwlchlaks.github.io/nodejs-apache",
       "date"     : "2018-10-16 21:00:00 +0900"
     } ,
   
@@ -52,7 +52,7 @@
       "title"    : "[운영체제] 리눅스 부팅 USB 만들기",
       "category" : "",
       "tags"     : "Blog, IT, OS, Linux",
-      "url"      : "http://localhost:4000/boot-usb-create",
+      "url"      : "https://ghwlchlaks.github.io/boot-usb-create",
       "date"     : "2018-10-14 21:00:00 +0900"
     } ,
   
@@ -60,7 +60,7 @@
       "title"    : "[Node.js] 윈도우에서 Node.js 설치",
       "category" : "",
       "tags"     : "Blog, IT, Window, Node",
-      "url"      : "http://localhost:4000/nodejs-installation-window",
+      "url"      : "https://ghwlchlaks.github.io/nodejs-installation-window",
       "date"     : "2018-10-14 07:00:00 +0900"
     } ,
   
@@ -68,7 +68,7 @@
       "title"    : "[Node.js] 리눅스에서 Node.js 설치",
       "category" : "",
       "tags"     : "Blog, IT, Linux, Node",
-      "url"      : "http://localhost:4000/nodejs-installation-ubuntu",
+      "url"      : "https://ghwlchlaks.github.io/nodejs-installation-ubuntu",
       "date"     : "2018-10-12 07:00:00 +0900"
     } ,
   
@@ -76,7 +76,7 @@
       "title"    : "[Node.js] NodeJs란 무엇인가?",
       "category" : "",
       "tags"     : "Blog, IT, Language, Node",
-      "url"      : "http://localhost:4000/what-nodejs",
+      "url"      : "https://ghwlchlaks.github.io/what-nodejs",
       "date"     : "2018-10-10 09:00:00 +0900"
     } ,
   
@@ -84,7 +84,7 @@
       "title"    : "[Node.js] 정적(static) 파일 import (css, image)",
       "category" : "",
       "tags"     : "Blog, IT, Language, Node",
-      "url"      : "http://localhost:4000/static-path-nodejs",
+      "url"      : "https://ghwlchlaks.github.io/static-path-nodejs",
       "date"     : "2018-10-09 09:00:00 +0900"
     } ,
   
@@ -92,7 +92,7 @@
       "title"    : "heapq를 사용해보자 [Python] ",
       "category" : "",
       "tags"     : "Blog, IT, Language, Python",
-      "url"      : "http://localhost:4000/Heapq-Python",
+      "url"      : "https://ghwlchlaks.github.io/Heapq-Python",
       "date"     : "2018-10-08 12:10:00 +0900"
     } ,
   
@@ -100,7 +100,7 @@
       "title"    : "이중우선순위큐 알고리즘 [Python] ",
       "category" : "",
       "tags"     : "Blog, IT, Language, Python, Algorithm",
-      "url"      : "http://localhost:4000/Algorithm-Heapq-Python",
+      "url"      : "https://ghwlchlaks.github.io/Algorithm-Heapq-Python",
       "date"     : "2018-10-08 05:30:00 +0900"
     } ,
   
@@ -108,7 +108,7 @@
       "title"    : "네트워크 알고리즘 [Python] ",
       "category" : "",
       "tags"     : "Blog, IT, Language, Python, Algorithm",
-      "url"      : "http://localhost:4000/Algorithm-DFS-python",
+      "url"      : "https://ghwlchlaks.github.io/Algorithm-DFS-python",
       "date"     : "2018-10-08 05:00:00 +0900"
     } ,
   
@@ -116,7 +116,7 @@
       "title"    : "윈도우에서 지킬 설치 및 실행 [Jekyll]",
       "category" : "",
       "tags"     : "Blog, IT, Github, Jekyll",
-      "url"      : "http://localhost:4000/Installation-Jekyll",
+      "url"      : "https://ghwlchlaks.github.io/Installation-Jekyll",
       "date"     : "2018-10-06 10:00:00 +0900"
     } ,
   
@@ -124,7 +124,7 @@
       "title"    : "순열과 조합 라이브러리를 사용해보자 [Python] ",
       "category" : "",
       "tags"     : "Blog, IT, Language, Python",
-      "url"      : "http://localhost:4000/permutation-combination-python",
+      "url"      : "https://ghwlchlaks.github.io/permutation-combination-python",
       "date"     : "2018-10-06 09:00:00 +0900"
     } 
   
