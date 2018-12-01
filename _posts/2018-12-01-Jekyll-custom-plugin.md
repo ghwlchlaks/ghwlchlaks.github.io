@@ -63,7 +63,7 @@ git branch -D master
 이 주석을 제거해줍시다!
 
 **4. source브랜치에서 .nojekyll 파일 생성 및 _config.yml 파일 수정**  
-.nojekyll 파일을 생성한 후 
+.nojekyll 파일을 생성
 _config.yml파일 수정
 {% highlight ruby %}
 include:  
