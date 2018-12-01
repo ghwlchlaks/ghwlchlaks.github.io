@@ -12,6 +12,126 @@
    <atom:link href="rss" rel="self" type="application/rss+xml" />
    
 	<item>
+	  <title>Jekyll custom plugin (로컬은되는데 원격은 안될때) [Jekyll]</title>
+	  <link>//Jekyll-custom-plugin</link>
+	  <author></author>
+	  <pubDate>2018-12-01T09:00:00+09:00</pubDate>
+	  <guid>//Jekyll-custom-plugin</guid>
+	  <description><![CDATA[
+	     <p>안녕하세요! <strong>Do My Best 블로그</strong> 입니다.<br />
+오래만에 포스팅합니다.ㅠㅠ 요즘 다른일에 집중하느라.. (핑계..)</p>
+
+<p>이번에는 제가 Jekyll theme에 기능들을 수정하다가 생긴 이슈에 대해서 생긴 이슈를 해결하는 방법에대해서 설명드리도록 하겠습니다.</p>
+
+<p>jekyll plugin에서 custom plugin을 보실수 있습니다. 그런데 여러가지 기능을 추가하다보면 local상에서는 정상 작동되는데 github에 업로드하여 사이트에 접속했을때는 404 에러 혹은 문제가 발생할 수 있습니다. (경로문제가 아닐때 ㅎㅎ)</p>
+
+<p>해당 이슈를 해결하는 방법에대해서 포스팅 하겠습니다.</p>
+
+<p>해당 이슈가 생기는 이유는 github에서 보안 문제로 custom plugin이 적용이되지 않는다고 하네요 ㅎㅎ</p>
+
+<p><strong>해결 순서</strong></p>
+<blockquote>
+  <ol>
+    <li>local repository상에서 master브랜치에서 분기한 다른 브랜치를 생성  (여기서는 source 브랜치 생성)</li>
+    <li>local repository와 remote repository에서 master브랜치 삭제</li>
+    <li>source브랜치에서 .gitignore파일 _site폴더 주석 혹은 삭제 처리</li>
+    <li>source브랜치에서 .nojekyll 파일 생성 및 _config.yml 파일 수정</li>
+    <li>source브랜치에서 _site폴더만 필터링 해서 master브랜치 생성</li>
+    <li>master브랜치와 source브랜치 전체 push 하기</li>
+    <li>웹사이트 정상 작동 확인</li>
+    <li>해당 순서를 shell script를 만들어서 간편화 하기</li>
+  </ol>
+</blockquote>
+
+<p>해당 순서만 보고 따라해도 되겠지만 왜 저렇게 하는지 가볍게 알고 넘어가는게 좋겠죠?
+우선 github 블로그는 master브랜치만 적용이되어 블로그가 생성 및 갱신됩니다. <br />
+그래서 master브랜치에 아예 local에서 정상 작동되는 _site폴더를 master브랜치에 push하여 해결하는 방식입니다. <br />
+여기서 _site폴더는 local에서 jekyll build를 할때 갱신되는 것은 알고 계실것이라고 생각합니다. <br />
+그리고 source브랜치는 _post및 전체 블로그의 소스를 관리하는 브랜치입니다.<br />
+여기서 갱신및 추가한 소스를 jekyll build하여 _site폴더가 갱신되면
+해당 _site를 필터링하여 master브랜치에 업로드하는 방식입니다.</p>
+
+<p>그럼 해결 순서대로 시작해보겠습니다.</p>
+
+<p><strong>1. local repository상에서 master브랜치에서 분기한 다른 브랜치를 생성(여기서는 source 브랜치 생성)</strong></p>
+
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">git</span> <span class="n">checkout</span> <span class="o">-</span><span class="n">b</span> <span class="n">source</span>
+<span class="o">=&gt;</span> <span class="n">source</span> <span class="err">브랜치를</span> <span class="err">생성하고</span> <span class="err">해당</span> <span class="err">브랜치로</span> <span class="err">이동</span></code></pre></figure>
+
+<p><strong>2. local repository와 remote repository에서 master브랜치 삭제</strong></p>
+
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">git</span> <span class="n">push</span> <span class="n">origin</span> <span class="ss">:master</span>
+<span class="o">=&gt;</span> <span class="n">remote</span> <span class="n">repository</span><span class="err">에</span> <span class="n">master</span><span class="err">브랜치</span> <span class="err">삭제</span>
+<span class="n">git</span> <span class="n">branch</span> <span class="o">-</span><span class="no">D</span> <span class="n">master</span>
+<span class="o">=&gt;</span> <span class="n">local</span> <span class="n">repository</span><span class="err">에서</span> <span class="n">master</span><span class="err">브랜치</span> <span class="err">삭제</span></code></pre></figure>
+
+<p><strong>3. source브랜치에서 .gitignore파일 _site폴더 주석 혹은 삭제 처리</strong><br />
+기본적으로 _site폴더는 .gitignore에서 업로드 못하게 되어있습니다. 
+이 주석을 제거해줍시다!</p>
+
+<p><strong>4. source브랜치에서 .nojekyll 파일 생성 및 _config.yml 파일 수정</strong><br />
+.nojekyll 파일을 생성한 후 
+_config.yml파일 수정</p>
+
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="ss">include:  
+  </span><span class="p">\</span><span class="o">-</span> <span class="p">.</span><span class="nf">nojekyll</span>
+<span class="o">=&gt;</span> <span class="err">해당</span> <span class="err">코드를</span> <span class="err">추가해</span> <span class="err">줍니다</span><span class="o">!</span></code></pre></figure>
+
+<p><strong>5. source브랜치에서 _site폴더만 필터링 해서 master브랜치 생성</strong></p>
+
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">git</span> <span class="n">filter</span><span class="o">-</span><span class="n">branch</span> <span class="o">--</span><span class="n">subdirectory</span><span class="o">-</span><span class="n">filter</span> <span class="n">_site</span> <span class="o">-</span><span class="n">f</span> <span class="no">HEAD</span>
+<span class="o">=&gt;</span> <span class="err">현재</span> <span class="no">HEAD</span><span class="err">에서</span> <span class="n">_site</span> <span class="err">폴더를</span> <span class="err">필터링하는</span> <span class="err">명령어</span> <span class="err">입니다</span><span class="p">.</span> <span class="nf">git</span><span class="err">에서</span> <span class="err">제공하고요</span><span class="o">~</span></code></pre></figure>
+
+<p><strong>6. master브랜치와 source브랜치 전체 push 하기</strong></p>
+
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">git</span> <span class="n">push</span> <span class="o">--</span><span class="n">all</span> 
+<span class="o">=&gt;</span> <span class="err">전체</span> <span class="n">branch</span><span class="err">를</span> <span class="n">push</span> <span class="err">하는</span> <span class="err">명령어입니다</span><span class="o">.</span></code></pre></figure>
+
+<p><strong>7. 웹사이트 정상 작동 확인</strong><br />
+업로드 후 자신의 사이트에서 정상 작동하는지 확인하시면 됩니다.
+기본적으로 github 브랜치 구조는 다음과 같습니다.</p>
+
+<p>master branch (source 브랜치에서 build된 _site폴더내부)<br />
+<img src="/assets/images/2018-12-01-Jekyll-custom-plugin/master.png" /></p>
+
+<p>source branch (소스를 관리하는 전체 소스)<br />
+<img src="/assets/images/2018-12-01-Jekyll-custom-plugin/source.png" /></p>
+
+<p><strong>8. 해당 순서를 shell script를 만들어서 간편화 하기</strong><br />
+매번 위와 같이 반복작업을 하다보면 매우 귀찮겠죠? 이것을 한번에 처리하기 위해 
+shell script를 만들어 보겠습니다 파일명.sh을 만든 후 해당 코드를 입력합니다.</p>
+
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="c1">#!/bin/bash</span>
+<span class="n">git</span> <span class="n">checkout</span> <span class="n">source</span>
+<span class="o">=&gt;</span> <span class="n">source</span> <span class="err">브랜치로</span> <span class="err">이동</span> 
+<span class="n">git</span> <span class="n">branch</span> <span class="o">-</span><span class="no">D</span> <span class="n">master</span>
+<span class="o">=&gt;</span> <span class="err">병합되지</span> <span class="err">않은</span> <span class="n">master</span> <span class="err">브랜치</span> <span class="err">삭제</span>
+<span class="n">git</span> <span class="n">checkout</span> <span class="o">-</span><span class="n">b</span> <span class="n">master</span>
+<span class="o">=&gt;</span> <span class="n">master</span><span class="err">브랜치</span> <span class="err">생성</span> <span class="p">(</span><span class="err">당연히</span> <span class="n">souce</span><span class="err">브랜치에서</span> <span class="n">build</span><span class="err">후</span> <span class="n">git</span> <span class="n">add</span><span class="p">,</span> <span class="n">git</span> <span class="n">commit</span><span class="err">을</span> <span class="err">한</span> <span class="err">이후여야겠죠</span><span class="p">?)</span>
+<span class="n">git</span> <span class="n">filter</span><span class="o">-</span><span class="n">branch</span> <span class="o">--</span><span class="n">subdirectory</span><span class="o">-</span><span class="n">filter</span> <span class="n">_site</span> <span class="o">-</span><span class="n">f</span> <span class="no">HEAD</span>
+<span class="o">=&gt;</span> <span class="err">브랜치</span> <span class="err">필터링을</span> <span class="err">통해</span> <span class="n">_site</span> <span class="err">추출</span>
+<span class="n">git</span> <span class="n">push</span> <span class="o">--</span><span class="n">all</span>
+<span class="o">=&gt;</span> <span class="n">master</span><span class="p">,</span> <span class="n">source</span> <span class="err">브랜치</span> <span class="err">모두</span> <span class="n">github</span><span class="err">에</span> <span class="n">push</span>
+<span class="n">git</span> <span class="n">checkout</span> <span class="n">source</span>
+<span class="o">=&gt;</span> <span class="err">다시</span> <span class="err">소스를</span> <span class="err">관리하는</span> <span class="n">source</span> <span class="err">브랜치로</span> <span class="err">이동</span></code></pre></figure>
+
+<p>이렇게 shell script를 만든 후 윈도우는 환경변수 설정을 해주시면 되는데요 <br />
+저는 에디터에서 파일경로 복사하고 에디터 터미널에 붙여넣기 하는 방식으로 합니다. <br />
+편하신 방법으로 하시면 되겠습니다.</p>
+
+<p>물론 당연한거지만 <code class="highlighter-rouge">주의하실점</code>은 source브랜치에서 bundle exec jekyll build or bundle exec jekyll serve 명령어로 build하신 후 (local에서 확인 하실 꺼니깐 당연히 하실꺼라 생각합니다.) git add, git commit을 하셔야합니다. <br />
+그래야 _site폴더가 갱신된 상태에서 local repository에 적용이 되니깐요 ㅎㅎ<br />
+그 후 쉘스크립트 또는 위에 순서대로 진행하시면 됩니다.</p>
+
+<p>해당 게시물에 문제가 있다면 댓글을 통해 피드백해주시면 감사하겠습니다~
+같이 공부해요~^^</p>
+
+<p><code class="highlighter-rouge">방문해주신분들 댓글 한개씩 달아주시면 감사하겠습니다~~^^</code></p>
+
+	  ]]></description>
+	</item>
+
+	<item>
 	  <title>윈도우에서 지킬 설치 및 실행 [Jekyll]</title>
 	  <link>//Installation-Jekyll</link>
 	  <author></author>
