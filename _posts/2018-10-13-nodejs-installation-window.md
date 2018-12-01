@@ -18,7 +18,7 @@ disqus: true
 
 **1. Node.js [공식 사이트][node-org]에 접속하기.**
 접속하시면 자신의 운영체제에 맞게 페이지가 등장합니다!  
-![node-org-pic]({{site.baseurl}}/assets/img/node-org.png)  
+<img src="/assets/images/2018-10-13-nodejs-installation-window/node-org.png">
 해당 페이지에서 LTS버전을 클릭하여 윈도우 node.js 설치 파일을 다운받습니다!
 
 **2. 설치 진행**
