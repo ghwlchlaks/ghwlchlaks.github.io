@@ -37,7 +37,7 @@ Help -> Market places -> sts검색 -> spring mvc plugin 설치
 File -> new -> other -> spring -> spring legacy project를 통해 프로젝트를 생성해줍니다. 
 <img src="/assets/images/2018-12-09-eclipse-spring-setup/spring2.png">
 프로젝트 생성이 완료되었습니다.
-<img src="/assets/images/2018-12-09-eclipse-spring-setup/spring5.png">  
+<img src="/assets/images/2018-12-09-eclipse-spring-setup/springfolder.png">  
 
 **3.tomcat 설치 후 서버 실행**  
 이제는 구동 시킬 tomcat서버를 설치하도록 하겠습니다.   
