@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 
     <!-- Page Meta -->
-    <title>DMB - Do My Best</title>
+    <title>DeMBi</title>
     <meta name="description" content="같이 배워가는 IT 블로그입니다~. Python, JavaScript, nodejs, Github, algorithm, etc" />
 
     <!-- Mobile Meta -->
@@ -29,21 +29,21 @@
 	<link rel="stylesheet" href="/assets/fonts/font-awesome/css/font-awesome.min.css">
 
     <!-- Ghost outputs important style and meta data with this tag -->
-        <link rel="canonical" href="http://localhost:4000//page4/" />
+        <link rel="canonical" href="http://localhost:4000//tag/JavaScript/" />
     <meta name="referrer" content="origin" />
     <link rel="next" href="http://localhost:4000/page2/" />
 
     <meta property="og:site_name" content="DeMBi" />
     <meta property="og:type" content="website" />
-    <meta property="og:title" content="DMB - Do My Best" />
+    <meta property="og:title" content="DeMBi" />
     <meta property="og:description" content="같이 배워가는 IT 블로그입니다~. Python, JavaScript, nodejs, Github, algorithm, etc" />
-    <meta property="og:url" content="http://localhost:4000//page4/" />
+    <meta property="og:url" content="http://localhost:4000//tag/JavaScript/" />
     <meta property="og:image" content="http://localhost:4000/assets/images/default/main_theme.jpg" />
 
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="DMB - Do My Best" />
+    <meta name="twitter:title" content="DeMBi" />
     <meta name="twitter:description" content="같이 배워가는 IT 블로그입니다~. Python, JavaScript, nodejs, Github, algorithm, etc" />
-    <meta name="twitter:url" content="http://localhost:4000//page4/" />
+    <meta name="twitter:url" content="http://localhost:4000//tag/JavaScript/" />
     <meta name="twitter:image:src" content="/assets/images/default/main_theme.jpg" />
     
     <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
@@ -57,12 +57,12 @@
 	<meta name="description" content="같이 배워가는 IT 블로그입니다~. Python, JavaScript, nodejs, Github, algorithm, etc">
 	<meta property="og:site_name" content="">
 	
-	<meta property="og:title" content="DMB - Do My Best">
-	<meta property="og:type" content="article">
-	<meta property="og:description" content=""/>
+	<meta property="og:title" content="">
+	<meta property="og:type" content="website">
+	<meta property="og:description" content="같이 배워가는 IT 블로그입니다~. Python, JavaScript, nodejs, Github, algorithm, etc">
 	
 	
-	<meta property="og:url" content="http://localhost:4000/page4/" />
+	<meta property="og:url" content="http://localhost:4000/tag/JavaScript/" />
 	
 	 -->
 
@@ -72,8 +72,8 @@
     "@context": "http://schema.org",
     "@type": "Website",
     "publisher": "DeMBi",
-    "name": "DMB - Do My Best",
-    "url": "http://localhost:4000///page4/",
+    "name": "DeMBi",
+    "url": "http://localhost:4000///tag/JavaScript/",
     "image": "http://localhost:4000/assets/images/default/main_theme.jpg",
     "description": "같이 배워가는 IT 블로그입니다~. Python, JavaScript, nodejs, Github, algorithm, etc"
 }
@@ -84,7 +84,7 @@
 
 
 </head>
-<body class="paged archive-template nav-closed">
+<body class="tag-template nav-closed">
 
     <!-- The blog navigation links -->
     <div class="nav">
@@ -93,12 +93,12 @@
         <span class="hidden">Close</span>
     </a>
     <ul>
-        <li class="nav-home  nav-current" role="presentation"><a href="http://localhost:4000">Home</a></li>
+        <li class="nav-home " role="presentation"><a href="http://localhost:4000">Home</a></li>
         <li class="nav-about " role="presentation"><a href="http://localhost:4000/about">About</a></li>
         <li class="nav-IT " role="presentation"><a href="http://localhost:4000/tag/IT">IT</a></li>
-        <li class="nav-JavaScript " role="presentation"><a href="http://localhost:4000/tag/JavaScript">JavaScript</a></li>
+        <li class="nav-JavaScript  nav-current" role="presentation"><a href="http://localhost:4000/tag/JavaScript">JavaScript</a></li>
         <li class="nav-Python " role="presentation"><a href="http://localhost:4000/tag/Python">Python</a></li>
-        <li class="nav-Java " role="presentation"><a href="http://localhost:4000/tag/Java">Java</a></li>
+        <li class="nav-Java  nav-current" role="presentation"><a href="http://localhost:4000/tag/Java">Java</a></li>
         <li class="nav-Github " role="presentation"><a href="http://localhost:4000/tag/Github">Github</a></li>
         <li class="nav-Algorithm " role="presentation"><a href="http://localhost:4000/tag/Algorithm">Algorithm</a></li>
         <li class="nav-Linux " role="presentation"><a href="http://localhost:4000/tag/Linux">Linux</a></li>
@@ -115,58 +115,31 @@
     <div class="site-wrapper">
 
         <!-- All the main content gets inserted here, index.hbs, post.hbs, etc -->
-        <!-- < default -->
+        <!-- dynamically overriding backgrounds for tags as well as descriptions -->
+
+
+<!-- default -->
 <!-- The tag above means - insert everything in this file into the [body] of the default.hbs template -->
 
-<div class="flex-container">
-    <header class="main-header "
-  style="background-image: url(http://localhost:4000/assets/images/default/main_theme.jpg) ">
+<!-- If we have a tag cover, display that - else blog cover - else nothing -->
+<header class="main-header tag-head " style="background-image: url(http://localhost:4000/assets/images/default/main_theme.jpg) ">
     <nav class="main-nav overlay clearfix">
-      <a class="blog-logo" href="http://localhost:4000/"><img src="http://localhost:4000/assets/images/default/DMB_logo.png" alt="Blog Logo"/></a>
-      <div class="wrapper">
-          <div class="header-flex">
-            <div class="search-icon-container">
-              <span class="search-icon" style="float: right;">
-                <a><i class="fa fa-search" aria-hidden="true"></i></a>
-              </span>
-      
-          <a class="menu-button icon-menu" href="#"><span class="word">Menu</span></a>
-      
-          </div>
-        </div>
-      </div>
+        <a class="blog-logo" href="http://localhost:4000/"><img src="http://localhost:4000/assets/images/default/DMB_logo.png" alt="Blog Logo" /></a>
+        
+            <a class="menu-button icon-menu" href="#"><span class="word">Menu</span></a>
+        
     </nav>
-
     <div class="vertical">
         <div class="main-header-content inner">
-            <h1 class="page-title">DeMBi</h1>
-            <h2 class="page-description">같이 배워가는 IT 블로그입니다~. Python, JavaScript, nodejs, Github, algorithm, etc</h2>
+            <h1 class="page-title">Javascript</h1>
+            <h2 class="page-description">
+            
+			    A 5-post collection
+            
+            </h2>
         </div>
     </div>
-    <a class="scroll-down icon-arrow-left" href="#content" data-offset="-45"><span class="hidden">Scroll Down</span></a>
-
-    
-  </header> <!-- End Header -->
-
-    <div class="content wrapper">
-        <div class="search-box">
-  <div class="wrapper">
-    <div class="search-grid">
-      <form class="search-form">
-        <div id="search-container">
-          <input type="text" id="search-input" class="search" placeholder="Search">
-        </div>
-      </form>
-      <ul id="results-container" class="results-search"></ul>
-      <div class="icon-close-container">
-        <span class="search-icon-close"><i class="fa fa-times" aria-hidden="true"></i></span>
-      </div>
-    </div>
-  </div>
-</div>
-    </div>
-</div>
-
+</header>
 <!-- The main content area on the homepage -->
 <main id="content" class="content" role="main">
 
@@ -176,11 +149,7 @@
         
             <nav class="pagination" role="pagination">
     
-        
-            <a class="newer-posts" href="http://localhost:4000/page3/" title="Previous Page">&laquo; Newer Posts</a>
-      
-    
-    <span class="page-number"> Page 4 of 4 </span>
+    <span class="page-number"> Page 1 of 1 </span>
      
 </nav>
         
@@ -190,10 +159,155 @@
     
     <article class="post">
         <header class="post-header">
-            <h2 class="post-title"><a href="http://localhost:4000/Algorithm-Heapq-Python">이중우선순위큐 알고리즘 [Python] </a></h2>
+            <h2 class="post-title"><a href="http://localhost:4000/nodejs-apache">Node.js 와 Apache 연동</a></h2>
         </header>
         <section class="post-excerpt">
-            <p>안녕하세요! Do My Best 블로그 네번째 게시물입니다. ㅎㅎ 이번에는 프로그래머스의 알고리즘 문제 중 LEVEL 3 이중우선순위큐 문제를 heapq 라이브러리를 이용하여 해결해보겠습니다. heapq는 완전 이진 트리의 일종으로... <a class="read-more" href="http://localhost:4000/Algorithm-Heapq-Python">&raquo;</a></p>
+            <p>안녕하세요! Do My Best 블로그입니다. ㅎㅎ 이번 포스팅 부터는 횟수를 세지 않았습니다! 이번에 포스팅할 내용은 Node.js 서버와 Apache서버를 Proxy를 사용하여 연동하는 방법에대해 알아보겠습니다. proxy를 사용하여 apache로... <a class="read-more" href="http://localhost:4000/nodejs-apache">&raquo;</a></p>
+        </section>
+        <footer class="post-meta">
+            
+                
+
+                <img class="author-thumb" src="http://localhost:4000/assets/images/default/profile.jpg" alt="Author image" nopin="nopin" />
+                <!-- author -->
+                <a href='http://localhost:4000/author/Jiho'>Jiho</a>
+
+                
+            
+
+            <!-- [[tags prefix=" on "]] -->
+            
+                on
+                
+                    
+                       <a href='http://localhost:4000/tag/Blog'>Blog</a>,
+                    
+                
+                    
+                       <a href='http://localhost:4000/tag/IT'>It</a>,
+                    
+                
+                    
+                       <a href='http://localhost:4000/tag/Node'>Node</a>,
+                    
+                
+                    
+                       <a href='http://localhost:4000/tag/Linux'>Linux</a>,
+                    
+                
+                    
+                       <a href='http://localhost:4000/tag/Apache'>Apache</a>,
+                    
+                
+                    
+                       <a href='http://localhost:4000/tag/JavaScript'>Javascript</a>
+                    
+                
+            
+            <time class="post-date" datetime="2018-10-16">16 Oct 2018</time>
+        </footer>
+    </article>
+    
+    <article class="post">
+        <header class="post-header">
+            <h2 class="post-title"><a href="http://localhost:4000/nodejs-installation-window">[Node.js] 윈도우에서 Node.js 설치</a></h2>
+        </header>
+        <section class="post-excerpt">
+            <p>안녕하세요! Do My Best 블로그 아홉번째 게시물입니다. ㅎㅎ 이번에 포스팅할 내용은 여덟번째 내용이었던 리눅스에서 Node.js 설치에 이어 윈도우 운영체제 환경에서 Node.js를 설치하는 방법에 대해서 알아보겠습니다.! 1.... <a class="read-more" href="http://localhost:4000/nodejs-installation-window">&raquo;</a></p>
+        </section>
+        <footer class="post-meta">
+            
+                
+
+                <img class="author-thumb" src="http://localhost:4000/assets/images/default/profile.jpg" alt="Author image" nopin="nopin" />
+                <!-- author -->
+                <a href='http://localhost:4000/author/Jiho'>Jiho</a>
+
+                
+            
+
+            <!-- [[tags prefix=" on "]] -->
+            
+                on
+                
+                    
+                       <a href='http://localhost:4000/tag/Blog'>Blog</a>,
+                    
+                
+                    
+                       <a href='http://localhost:4000/tag/IT'>It</a>,
+                    
+                
+                    
+                       <a href='http://localhost:4000/tag/Window'>Window</a>,
+                    
+                
+                    
+                       <a href='http://localhost:4000/tag/Node'>Node</a>,
+                    
+                
+                    
+                       <a href='http://localhost:4000/tag/JavaScript'>Javascript</a>
+                    
+                
+            
+            <time class="post-date" datetime="2018-10-14">14 Oct 2018</time>
+        </footer>
+    </article>
+    
+    <article class="post">
+        <header class="post-header">
+            <h2 class="post-title"><a href="http://localhost:4000/nodejs-installation-ubuntu">[Node.js] 리눅스에서 Node.js 설치</a></h2>
+        </header>
+        <section class="post-excerpt">
+            <p>안녕하세요! Do My Best 블로그 여덟번째 게시물입니다. ㅎㅎ 오늘은 우분투 운영체제 환경에서 Node.js를 설치하는 방법에 대해서 알아보겠습니다.! nodejs-github과 nodejs공식페이지을 보시면 잘 설명 되어있습니다. 데비안(Debian)과 우분투(Ubuntu)에서 설치하는... <a class="read-more" href="http://localhost:4000/nodejs-installation-ubuntu">&raquo;</a></p>
+        </section>
+        <footer class="post-meta">
+            
+                
+
+                <img class="author-thumb" src="http://localhost:4000/assets/images/default/profile.jpg" alt="Author image" nopin="nopin" />
+                <!-- author -->
+                <a href='http://localhost:4000/author/Jiho'>Jiho</a>
+
+                
+            
+
+            <!-- [[tags prefix=" on "]] -->
+            
+                on
+                
+                    
+                       <a href='http://localhost:4000/tag/Blog'>Blog</a>,
+                    
+                
+                    
+                       <a href='http://localhost:4000/tag/IT'>It</a>,
+                    
+                
+                    
+                       <a href='http://localhost:4000/tag/Linux'>Linux</a>,
+                    
+                
+                    
+                       <a href='http://localhost:4000/tag/Node'>Node</a>,
+                    
+                
+                    
+                       <a href='http://localhost:4000/tag/JavaScript'>Javascript</a>
+                    
+                
+            
+            <time class="post-date" datetime="2018-10-12">12 Oct 2018</time>
+        </footer>
+    </article>
+    
+    <article class="post">
+        <header class="post-header">
+            <h2 class="post-title"><a href="http://localhost:4000/what-nodejs">[Node.js] NodeJs란 무엇인가?</a></h2>
+        </header>
+        <section class="post-excerpt">
+            <p>안녕하세요! Do My Best 블로그 일곱번째 게시물입니다. ㅎㅎ 전에 말씀 드렸다시피 오늘은 NodeJS란 무엇인가?라는 내용을 포스팅하려고 합니다. NodeJS는 확상성 있는 네트워크 애플리케이션 특히 서버사이드 개발에 사용되는... <a class="read-more" href="http://localhost:4000/what-nodejs">&raquo;</a></p>
         </section>
         <footer class="post-meta">
             
@@ -223,24 +337,24 @@
                     
                 
                     
-                       <a href='http://localhost:4000/tag/Python'>Python</a>,
+                       <a href='http://localhost:4000/tag/Node'>Node</a>,
                     
                 
                     
-                       <a href='http://localhost:4000/tag/Algorithm'>Algorithm</a>
+                       <a href='http://localhost:4000/tag/JavaScript'>Javascript</a>
                     
                 
             
-            <time class="post-date" datetime="2018-10-08">08 Oct 2018</time>
+            <time class="post-date" datetime="2018-10-10">10 Oct 2018</time>
         </footer>
     </article>
     
     <article class="post">
         <header class="post-header">
-            <h2 class="post-title"><a href="http://localhost:4000/Algorithm-DFS-python">네트워크 알고리즘 [Python] </a></h2>
+            <h2 class="post-title"><a href="http://localhost:4000/static-path-nodejs">[Node.js] 정적(static) 파일 import (css, image)</a></h2>
         </header>
         <section class="post-excerpt">
-            <p>안녕하세요! Do My Best 블로그 세번째 게시물입니다. ㅎㅎ 이번에는 프로그래머스의 알고리즘 문제 중 LEVEL 3 네트워크 문제를 DFS알고리즘으로 해결해보겠습니다. DFS는 Depth First Search로 깊이 우선 탐색입니다.... <a class="read-more" href="http://localhost:4000/Algorithm-DFS-python">&raquo;</a></p>
+            <p>안녕하세요! Do My Best 블로그 여섯번째 게시물입니다. ㅎㅎ 지금까지 파이썬 언어에대해 포스팅 해왔는데요.. 사실 파이썬은 알고리즘 공부땜에 파이썬 언어로 공부하며 알고리즘공부도 하고 있습니다. 이번에는 서버 프레임워크... <a class="read-more" href="http://localhost:4000/static-path-nodejs">&raquo;</a></p>
         </section>
         <footer class="post-meta">
             
@@ -270,101 +384,15 @@
                     
                 
                     
-                       <a href='http://localhost:4000/tag/Python'>Python</a>,
+                       <a href='http://localhost:4000/tag/Node'>Node</a>,
                     
                 
                     
-                       <a href='http://localhost:4000/tag/Algorithm'>Algorithm</a>
-                    
-                
-            
-            <time class="post-date" datetime="2018-10-08">08 Oct 2018</time>
-        </footer>
-    </article>
-    
-    <article class="post">
-        <header class="post-header">
-            <h2 class="post-title"><a href="http://localhost:4000/Installation-Jekyll">윈도우에서 지킬 설치 및 실행 [Jekyll]</a></h2>
-        </header>
-        <section class="post-excerpt">
-            <p>안녕하세요! Do My Best 블로그 두번째 게시물입니다. ㅎㅎ 지킬 사용하다가 이것도 게시하면 다른 분들에게 많은 도움이 될 것 같아서 첫번째 게시물 이후에 바로 올립니다.! 이번에 포스팅할거는요~... <a class="read-more" href="http://localhost:4000/Installation-Jekyll">&raquo;</a></p>
-        </section>
-        <footer class="post-meta">
-            
-                
-
-                <img class="author-thumb" src="http://localhost:4000/assets/images/default/profile.jpg" alt="Author image" nopin="nopin" />
-                <!-- author -->
-                <a href='http://localhost:4000/author/Jiho'>Jiho</a>
-
-                
-            
-
-            <!-- [[tags prefix=" on "]] -->
-            
-                on
-                
-                    
-                       <a href='http://localhost:4000/tag/Blog'>Blog</a>,
-                    
-                
-                    
-                       <a href='http://localhost:4000/tag/IT'>It</a>,
-                    
-                
-                    
-                       <a href='http://localhost:4000/tag/Github'>Github</a>,
-                    
-                
-                    
-                       <a href='http://localhost:4000/tag/Jekyll'>Jekyll</a>
+                       <a href='http://localhost:4000/tag/JavaScript'>Javascript</a>
                     
                 
             
-            <time class="post-date" datetime="2018-10-06">06 Oct 2018</time>
-        </footer>
-    </article>
-    
-    <article class="post">
-        <header class="post-header">
-            <h2 class="post-title"><a href="http://localhost:4000/permutation-combination-python">순열과 조합 라이브러리를 사용해보자 [Python] </a></h2>
-        </header>
-        <section class="post-excerpt">
-            <p>안녕하세요! Do My Best 블로그 첫 게시물입니다. ㅎㅎ 언제부터 올려야할지 뭐부터 올려야할지 고민이되서 그냥 ‘일단 아무거나 올려보자!’란 마음먹고 올리게되었습니다. ㅎㅎ 일단 해보는게 중요하겠죠? 이번에 포스팅할거는요~ 파이썬... <a class="read-more" href="http://localhost:4000/permutation-combination-python">&raquo;</a></p>
-        </section>
-        <footer class="post-meta">
-            
-                
-
-                <img class="author-thumb" src="http://localhost:4000/assets/images/default/profile.jpg" alt="Author image" nopin="nopin" />
-                <!-- author -->
-                <a href='http://localhost:4000/author/Jiho'>Jiho</a>
-
-                
-            
-
-            <!-- [[tags prefix=" on "]] -->
-            
-                on
-                
-                    
-                       <a href='http://localhost:4000/tag/Blog'>Blog</a>,
-                    
-                
-                    
-                       <a href='http://localhost:4000/tag/IT'>It</a>,
-                    
-                
-                    
-                       <a href='http://localhost:4000/tag/Language'>Language</a>,
-                    
-                
-                    
-                       <a href='http://localhost:4000/tag/Python'>Python</a>
-                    
-                
-            
-            <time class="post-date" datetime="2018-10-06">06 Oct 2018</time>
+            <time class="post-date" datetime="2018-10-09">09 Oct 2018</time>
         </footer>
     </article>
     
@@ -373,11 +401,7 @@
     
         <nav class="pagination" role="pagination">
     
-        
-            <a class="newer-posts" href="http://localhost:4000/page3/" title="Previous Page">&laquo; Newer Posts</a>
-      
-    
-    <span class="page-number"> Page 4 of 4 </span>
+    <span class="page-number"> Page 1 of 1 </span>
      
 </nav>
     
@@ -418,25 +442,6 @@
     <script type="text/javascript" src="http://localhost:4000/assets/js/index.js"></script>
 
     
-        
-            
-                <!-- JS -->
-<script src="http://localhost:4000/assets/js/jquery-3.2.1.min.js"></script>
-<script src="http://localhost:4000/assets/js/jekyll-search.js"></script>
-<script>
-  SimpleJekyllSearch({
-    searchInput: document.getElementById('search-input'),
-    resultsContainer: document.getElementById('results-container'),
-    json: 'http://localhost:4000/search.json',
-    searchResultTemplate: '<li><a href="{url}" title="{desc}">{title}</a></li>',
-    noResultsText: 'No results found',
-    fuzzy: false,
-    exclude: ['Welcome']
-  });
-</script>
-<script src="http://localhost:4000/assets/js/main.js"></script>
-
-            
         
     
     
