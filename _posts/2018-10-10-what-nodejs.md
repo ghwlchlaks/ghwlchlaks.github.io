@@ -5,9 +5,9 @@ date:   2018-10-10 00:00:00
 description: NodeJs란 무엇인가? [Node.js] # Add post description (optional)
 img: nodejs.png # Add image post (optional)
 categories: Jiho
-tags: [Blog, IT, Language, Node]
+tags: [Blog, IT, Language, Node, JavaScript]
 navigation: True
-subclass: 'post tag-IT tag-Language tag-Node'
+subclass: 'post tag-IT tag-Language tag-Node tag-JavaScript'
 logo: 'assets/images/default/DMB_logo.png'
 cover: 'assets/images/cover/nodejs.png'
 author: Jiho # Add name author (optional)

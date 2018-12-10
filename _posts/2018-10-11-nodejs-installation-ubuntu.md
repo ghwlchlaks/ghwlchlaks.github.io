@@ -5,9 +5,9 @@ date:   2018-10-11 22:00:00
 description:  리눅스에서 Node.js 설치 # Add post description (optional)
 img: nodejs.png # Add image post (optional)
 categories: Jiho
-tags: [Blog, IT, Linux, Node]
+tags: [Blog, IT, Linux, Node, JavaScript]
 navigation: True
-subclass: 'post tag-IT tag-Linux tag-Node'
+subclass: 'post tag-IT tag-Linux tag-Node tag-JavaScript'
 logo: 'assets/images/default/DMB_logo.png'
 cover: 'assets/images/cover/nodejs.png'
 author: Jiho # Add name author (optional)

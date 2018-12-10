@@ -5,9 +5,9 @@ date:   2018-10-13 22:00:00
 description:  윈도우에서 Node.js 설치 # Add post description (optional)
 img: nodejs.png # Add image post (optional)
 categories: Jiho
-tags: [Blog, IT, Window, Node]
+tags: [Blog, IT, Window, Node, JavaScript]
 navigation: True
-subclass: 'post tag-IT tag-Window tag-Node'
+subclass: 'post tag-IT tag-Window tag-Node tag-JavaScript'
 logo: 'assets/images/default/DMB_logo.png'
 cover: 'assets/images/cover/nodejs.png'
 author: Jiho # Add name author (optional)

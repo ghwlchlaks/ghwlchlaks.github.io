@@ -5,9 +5,9 @@ date:   2018-10-16 12:00:00
 description:  Node.js 와 Apache 연동 # Add post description (optional)
 img: nodejs.png # Add image post (optional)
 categories: Jiho
-tags: [Blog, IT, Node, Linux, Apache]
+tags: [Blog, IT, Node, Linux, Apache, JavaScript]
 navigation: True
-subclass: 'post tag-IT tag-Node tag-Linux tag-Apache'
+subclass: 'post tag-IT tag-Node tag-Linux tag-Apache tag-JavaScript'
 logo: 'assets/images/default/DMB_logo.png'
 cover: 'assets/images/cover/nodejs.png'
 author: Jiho # Add name author (optional)
