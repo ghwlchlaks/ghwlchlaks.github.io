@@ -12,6 +12,125 @@
    <atom:link href="rss" rel="self" type="application/rss+xml" />
    
 	<item>
+	  <title>일반적으로 .gitignore에 등록하는 파일 [Git]</title>
+	  <link>//gitignore-filelist</link>
+	  <author></author>
+	  <pubDate>2018-12-13T09:00:00+09:00</pubDate>
+	  <guid>//gitignore-filelist</guid>
+	  <description><![CDATA[
+	     <p>안녕하세요! <strong>Do My Best 블로그</strong> 입니다.</p>
+
+<p>이번에는 <strong>일반적으로 .gitignore에 등록하는 파일</strong>에 대해서 포스팅하겠습니다.</p>
+
+<p>.gitignore는 git에 올리지 말아야하거나 올릴 필요가 없는 파일을 미리 등록하여 git add를 통해 staging영역에 올라가지 않는 파일을 설정한 파일을 말합니다.
+파일 명은 <code class="highlighter-rouge">.gitignore</code>입니다.</p>
+
+<p>이때 일반적으로 올리지 않는 형식에대해서 다뤄보고자 합니다.</p>
+
+<p><strong>순서</strong></p>
+<blockquote>
+  <ol>
+    <li>실행파일 제외</li>
+    <li>로그파일 제외</li>
+    <li>문서 파일 제외</li>
+    <li>패키지 파일 제외</li>
+    <li>OS용 시스템 파일 제외</li>
+    <li>자신의 에디터[Eclipse, VSCode] 설정 파일 제외</li>
+  </ol>
+</blockquote>
+
+<p><strong>1. 실행파일 제외</strong></p>
+
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="o">*</span><span class="p">.</span><span class="nf">dll</span>
+<span class="o">*</span><span class="p">.</span><span class="nf">exe</span>
+<span class="o">*</span><span class="p">.</span><span class="nf">o</span>
+<span class="o">*</span><span class="p">.</span><span class="nf">so</span>
+<span class="o">*</span><span class="p">.</span><span class="nf">com</span>
+<span class="o">*</span><span class="p">.</span><span class="nf">class</span>
+<span class="c1">#=&gt; 컴파일된 결과물입니다. 올릴 이유가 없겠죠?</span>
+<span class="c1">#=&gt; *은 모두들 아시다시피 전체를 뜻하는 별칭입니다. 앞으로 많이 사용됩니다~</span></code></pre></figure>
+
+<p><strong>2. 로그파일 제외</strong></p>
+
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="o">*</span><span class="p">.</span><span class="nf">log</span>
+<span class="n">logs</span><span class="o">/</span>
+<span class="c1">#=&gt; 로그파일은 개발자마다 다르니 올릴 이유가 없겠죠?</span>
+<span class="c1">#=&gt; 폴더를 등록할경우 위에처럼 logs/ 선언하면됩니다. 그러면 logs폴더 내부에 모든 파일이 제외 대상입니다.</span></code></pre></figure>
+
+<p><strong>3. 문서 파일 제외</strong></p>
+
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="o">*</span><span class="p">.</span><span class="nf">xlsx</span>
+<span class="o">*</span><span class="p">.</span><span class="nf">xls</span>
+<span class="o">*</span><span class="p">.</span><span class="nf">pdf</span>
+<span class="o">*</span><span class="p">.</span><span class="nf">docs</span>
+<span class="o">*</span><span class="p">.</span><span class="nf">ppt</span>
+<span class="o">*</span><span class="p">.</span><span class="nf">pptx</span>
+<span class="c1">#=&gt; 문서형식은 올리지 않도록 설정합니다. 위에 형식이 자주 사용하는 파일 형식이죠?</span>
+<span class="c1">#=&gt; 물론 필요에 따라서 문서를 올리기도 합니다 그때는 적절히 .gitignore파일을 수정해주면 되겠죠?</span></code></pre></figure>
+
+<p><strong>4. 패키지 파일 제외</strong></p>
+
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="o">*</span><span class="p">.</span><span class="nf">dmg</span>
+<span class="o">*</span><span class="p">.</span><span class="nf">iso</span>
+<span class="o">*</span><span class="p">.</span><span class="nf">tar</span>
+<span class="o">*</span><span class="p">.</span><span class="nf">zip</span>
+<span class="o">*</span><span class="p">.</span><span class="nf">gz</span>
+<span class="c1">#=&gt; 압축파일 형식입니다. </span></code></pre></figure>
+
+<p><strong>5. OS용 시스템 파일 제외</strong></p>
+
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="o">.</span><span class="no">Trashes</span>
+<span class="o">.</span><span class="no">Thumbs</span><span class="p">.</span><span class="nf">db</span>
+<span class="p">.</span><span class="nf">ehthumbs</span><span class="p">.</span><span class="nf">db</span>
+<span class="c1">#=&gt; 개발때 사용한 운영체제별 시스템 파일은 제외해야겠죠?</span></code></pre></figure>
+
+<p><strong>6. 자신의 에디터[Eclipse, VSCode] 설정 파일 제외</strong></p>
+
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="c1">#=&gt; Eclipse</span>
+<span class="p">.</span><span class="nf">metadata</span>
+<span class="n">bin</span><span class="o">/</span>
+<span class="n">tmp</span><span class="o">/</span>
+<span class="o">*</span><span class="p">.</span><span class="nf">tmp</span>
+<span class="o">*</span><span class="p">.</span><span class="nf">bak</span>
+<span class="o">*</span><span class="p">.</span><span class="nf">swp</span>
+<span class="n">local</span><span class="p">.</span><span class="nf">properties</span>
+<span class="p">.</span><span class="nf">settings</span><span class="o">/</span>
+<span class="p">.</span><span class="nf">loadpath</span>
+<span class="p">.</span><span class="nf">recommenders</span>
+<span class="p">.</span><span class="nf">project</span>
+<span class="p">.</span><span class="nf">externalToolBuilders</span><span class="o">/</span>
+<span class="o">*</span><span class="p">.</span><span class="nf">launch</span>
+<span class="p">.</span><span class="nf">classpath</span>
+<span class="p">.</span><span class="nf">factorypath</span>
+<span class="p">.</span><span class="nf">buildpath</span>
+<span class="p">.</span><span class="nf">target</span>
+<span class="p">.</span><span class="nf">springBeans</span>
+<span class="p">.</span><span class="nf">recommenders</span><span class="o">/</span>
+<span class="o">-----------------------------------------------------------------------------</span>
+<span class="c1">#=&gt; VSCode</span>
+<span class="p">.</span><span class="nf">vscode</span><span class="o">/*</span>
+<span class="o">!</span><span class="p">.</span><span class="nf">vscode</span><span class="o">/</span><span class="n">settings</span><span class="p">.</span><span class="nf">json</span>
+<span class="o">!</span><span class="p">.</span><span class="nf">vscode</span><span class="o">/</span><span class="n">tasks</span><span class="p">.</span><span class="nf">json</span>
+<span class="o">!</span><span class="p">.</span><span class="nf">vscode</span><span class="o">/</span><span class="n">launch</span><span class="p">.</span><span class="nf">json</span>
+<span class="o">!</span><span class="p">.</span><span class="nf">vscode</span><span class="o">/</span><span class="n">extensions</span><span class="p">.</span><span class="nf">json</span>
+<span class="c1">#=&gt; 이클립스를 사용하면 생성되는 설정 파일 혹은 임시 파일들은 제외합니다. </span>
+<span class="c1">#=&gt; 해당 정보는 개발자마다 PC환경이 다르기 때문에 설정 정보를 넣어서 push하게 된다면</span>
+<span class="c1">#=&gt; 해당 내용을 받는 개발자들에 이클립스 환경에 덮어쓰기가되어 동작하지않는 이슈가 생길 수 있습니다. </span>
+<span class="c1">#=&gt; 이클립스 뿐만아니라 다른 에디터를 사용하면서 생기는 설정, 임시 파일을 제외해주세요~</span></code></pre></figure>
+
+<p>해당 내용 이외에도 제외하고자하는 파일 형식이나 폴더를 등록해주시면 git 저장소에 쓸데없는 내용이 업로드 되지 않겠죠?ㅎㅎ</p>
+
+<p>여기까지 <code class="highlighter-rouge">일반적으로 .gitignore에 등록하는 파일</code>에대해서 포스팅했습니다.</p>
+
+<p>해당 게시물에 문제가 있다면 댓글을 통해 피드백해주시면 감사하겠습니다~ 
+같이 공부해요~^^</p>
+
+<p><code class="highlighter-rouge">방문해주신분들 댓글 한개씩 달아주시면 감사하겠습니다~~^^</code></p>
+
+	  ]]></description>
+	</item>
+
+	<item>
 	  <title>Oracle 설치 및 Spring에서 연동 [Oracle]</title>
 	  <link>//spring-oracle-setup</link>
 	  <author></author>
@@ -787,93 +906,6 @@ lrwxr-xr-x 1 test test 5 Mar 7 22:00 link1 -&gt; file1<br />
 해당 게시물에 문제가 있다면 댓글을 통해 피드백해주시면 감사하겠습니다~ 같이 공부해요~^^</p>
 
 <p><code class="highlighter-rouge">방문해주신분들 댓글 한개씩 달아주시면 감사하겠습니다~~^^</code></p>
-
-	  ]]></description>
-	</item>
-
-	<item>
-	  <title>[운영체제] 리눅스 부팅 USB 만들기</title>
-	  <link>//boot-usb-create</link>
-	  <author></author>
-	  <pubDate>2018-10-14T21:00:00+09:00</pubDate>
-	  <guid>//boot-usb-create</guid>
-	  <description><![CDATA[
-	     <p>안녕하세요! <strong>Do My Best 블로그</strong> 열번째 게시물입니다. ㅎㅎ<br />
-벌써 열번째 게시물이네요~ 이제는 횟수를 적지 않을까 합니다. 이렇게 계속 포스팅해서 나중에 확인했을때 많이 쌓여있는걸 보면 뿌듯하겠죠? ㅎㅎ</p>
-
-<p>이번에 포스팅할 내용은 리눅스 운영체제 부팅 USB륾 만드는 방법에대해 포스팅 하겠습니다.<br />
-Rufus라는 툴을 이용하면 쉽게 이미지파일을 USB에 업로드하여 부팅 USB를 만들 수 있습니다. <br />
-윈도우 운영체제인경우 마이크로소프트 사이트에 접속하시면 쉽게 부팅 USB를 만들 수 있습니다.</p>
-
-<ul>
-  <li><strong>Rufus 다운받기</strong></li>
-  <li><strong>ISO 파일 다운받기</strong></li>
-  <li><strong>부팅 USB 만들기</strong></li>
-  <li><strong>USB 삽입 후 부팅하기</strong></li>
-</ul>
-
-<h2 id="1-rufus-설치-링크에-접속하기"><strong>1. Rufus <a href="https://www.techspot.com/downloads/6062-rufus.html">설치 링크</a>에 접속하기.</strong></h2>
-<p>위에 링크로 접속하셔서 Rufus를 다운 받으셔야합니다.!</p>
-
-<p><img src="/assets/images/2018-10-14-boot-usb-create/installation-step1.png" />
-위에 사진에서 Installer를 클릭하시면 자동으로 설치가 진행됩니다.</p>
-
-<p>Rufus 설치가 완료되고 파일을 실행했을때의 모습입니다.<br />
-<img src="/assets/images/2018-10-14-boot-usb-create/installation-step2.png" /></p>
-
-<h2 id="2iso-파일-다운받기"><strong>2.ISO 파일 다운받기</strong></h2>
-<p>운영체제를 컴퓨터에 설치하기 위해서는 자신이 설치하고자 하는 운영체제 파일이 있어야겠죠?<br />
-그렇다면 운영체제 이미지 파일을 설치해 봅시다!</p>
-
-<ol>
-  <li><a href="https://www.debian.org/CD/http-ftp/">debian</a></li>
-  <li><a href="https://www.ubuntu.com/download">ubuntu</a></li>
-  <li><a href="https://www.archlinux.org/download/">arch</a></li>
-  <li><a href="https://getfedora.org/">fedora</a></li>
-  <li><a href="https://wiki.centos.org/?id=15">centOS</a></li>
-  <li><a href="https://www.redhat.com/en/store">redHat</a></li>
-</ol>
-
-<p>해당 링크 중 자신이 설치하고자 하는 운영체제 링크에 접속하여 ISO 파일으르 다운 받으시면 됩니다.!</p>
-
-<h2 id="3-부팅-usb-만들기"><strong>3. 부팅 USB 만들기</strong></h2>
-<p>Rufus와 운영체제 ISO 파일을 다운받으셨다면 이제 부팅 USB를 만들어보겠습니다!</p>
-
-<ul>
-  <li>장치 : OS를 설치할 “USB를 선택”합니다.</li>
-  <li>디스크 형식와 부팅 시스템 유형 : MBR 파티션 형식의 BIOS 또는 UEFI(BIOS 호환)을 선택합니다.</li>
-  <li>MBR(MASTER BOOT RECORD) : 가장 보편화된 디스크 파티션 기술로 디스크의 첫번재 센터를 말한다.</li>
-  <li>GPT(GUID PARTION TABLE) : MBR의 기술적 제한의 해결하기 위해 나온 디스크 파티션 기술을 말합니다</li>
-  <li>BIOS(BASIC INPUT/OUTPUT SYSTEM) : 메이보드에 내장된 펌웨어로 CUI 기반입니다.</li>
-  <li>
-    <p>UEFI(UNIFIED EXTENSIBLE FIRMWARE INTERFACE) : BIOS의 발전형이며 GUI 기반의 펌웨어입니다.</p>
-  </li>
-  <li>파일 시스템 : FAT32 을 선택합니다.</li>
-  <li>할당 단위 크기 : 4096 bytes 을 선택합니다.</li>
-  <li>배드섹터 검사 : 이미지가 제대로 설치 되었는지 무결성을 검사합니다. 체크 해제 합니다.</li>
-  <li>빠른 포멧 : USB 포멧 방식입니다. 체크 합니다.</li>
-</ul>
-
-<p>기본적으로 특별한 설정을 하지 않는 이상 default값으로 설정하시면 됩니다.!
-모든 설정을 마친 후 실행을 누르시면 자동으로 USB 포맷이 진행되고 부팅 USB가 만들어집니다.</p>
-
-<h2 id="4-usb-삽입-후-부팅하기"><strong>4. USB 삽입 후 부팅하기</strong></h2>
-<p>이제 모든 준비가 완료되었습니다.<br />
-이제 컴퓨터를 재시작하고 바이오스 화면에서 부팅 순서를 변경해 줍니다.!<br />
-컴퓨터를 부팅하는 화면에서 “F2”나 “DEL”키를 누르시면 바이오스 설정화면으로 넘어가집니다. <br />
-부팅 화면이 빠르게 넘어갈 수 있으니 해당 키를 연타하시는게 좋을 것 같네요 ㅎㅎ<br />
-바이오스 화면은 메인보드에 따라 다르므로 자신의 메인보드를 검색하셔서 찾아보는것도 좋은 방법입니다!<br />
-기본적으로 ‘Boot Device Priority’에서 ‘1st Boot Device’로 boot순서를 변경 할 수 있습니다. <br />
-이때 <code class="highlighter-rouge">1st Boot Device</code>를 아까 만든 <code class="highlighter-rouge">부팅 USB</code>로 설정하시면 되겠죠?<br />
-설정을 저장한 후 다시 재부팅하시면 자동으로 운영체제의 설치 화면으로 넘어가게됩니다.!!</p>
-
-<p>복잡한 과정인것 같지만 해보면 그렇게 복잡하지는 않습니다. ISO 파일 설치할 때 좀 걸린다는 점만 빼면..ㅎㅎ</p>
-
-<p>지금까지 <strong>부팅 USB 만들기</strong>라는 주제로 포스팅하였습니다!  <br />
-해당 게시물에 문제가 있다면 댓글을 통해 피드백해주시면 감사하겠습니다~ 같이 공부해요~^^</p>
-
-<p><code class="highlighter-rouge">방문해주신분들 댓글 한개씩 달아주시면 감사하겠습니다~~^^</code></p>
-
 
 	  ]]></description>
 	</item>
