@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+<channel>
+   
+      <title>ghwlchlaks.github.io/</title>
+   
+   <link>https://ghwlchlaks.github.io</link>
+   <description>같이 배워가는 IT 블로그입니다~. Python, JavaScript, nodejs, Github, algorithm, etc</description>
+   <language>ko-KR</language>
+   <managingEditor> </managingEditor>
+   <atom:link href="rss" rel="self" type="application/rss+xml" />
+   
+	<item>
+	  <title>일반적으로 .gitignore에 등록하는 파일 [Git]</title>
+	  <link>//gitignore-filelist</link>
+	  <author></author>
+	  <pubDate>2018-12-13T09:00:00+09:00</pubDate>
+	  <guid>//gitignore-filelist</guid>
+	  <description><![CDATA[
+	     <p>안녕하세요! <strong>Do My Best 블로그</strong> 입니다.</p>
+
+<p>이번에는 <strong>일반적으로 .gitignore에 등록하는 파일</strong>에 대해서 포스팅하겠습니다.</p>
+
+<p>.gitignore는 git에 올리지 말아야하거나 올릴 필요가 없는 파일을 미리 등록하여 git add를 통해 staging영역에 올라가지 않는 파일을 설정한 파일을 말합니다.
+파일 명은 <code class="highlighter-rouge">.gitignore</code>입니다.</p>
+
+<p>이때 일반적으로 올리지 않는 형식에대해서 다뤄보고자 합니다.</p>
+
+<p><strong>순서</strong></p>
+<blockquote>
+  <ol>
+    <li>실행파일 제외</li>
+    <li>로그파일 제외</li>
+    <li>문서 파일 제외</li>
+    <li>패키지 파일 제외</li>
+    <li>OS용 시스템 파일 제외</li>
+    <li>자신의 에디터[Eclipse, VSCode] 설정 파일 제외</li>
+  </ol>
+</blockquote>
+
+<p><strong>1. 실행파일 제외</strong></p>
+
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="o">*</span><span class="p">.</span><span class="nf">dll</span>
+<span class="o">*</span><span class="p">.</span><span class="nf">exe</span>
+<span class="o">*</span><span class="p">.</span><span class="nf">o</span>
+<span class="o">*</span><span class="p">.</span><span class="nf">so</span>
+<span class="o">*</span><span class="p">.</span><span class="nf">com</span>
+<span class="o">*</span><span class="p">.</span><span class="nf">class</span>
+<span class="c1">#=&gt; 컴파일된 결과물입니다. 올릴 이유가 없겠죠?</span>
+<span class="c1">#=&gt; *은 모두들 아시다시피 전체를 뜻하는 별칭입니다. 앞으로 많이 사용됩니다~</span></code></pre></figure>
+
+<p><strong>2. 로그파일 제외</strong></p>
+
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="o">*</span><span class="p">.</span><span class="nf">log</span>
+<span class="n">logs</span><span class="o">/</span>
+<span class="c1">#=&gt; 로그파일은 개발자마다 다르니 올릴 이유가 없겠죠?</span>
+<span class="c1">#=&gt; 폴더를 등록할경우 위에처럼 logs/ 선언하면됩니다. 그러면 logs폴더 내부에 모든 파일이 제외 대상입니다.</span></code></pre></figure>
+
+<p><strong>3. 문서 파일 제외</strong></p>
+
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="o">*</span><span class="p">.</span><span class="nf">xlsx</span>
+<span class="o">*</span><span class="p">.</span><span class="nf">xls</span>
+<span class="o">*</span><span class="p">.</span><span class="nf">pdf</span>
+<span class="o">*</span><span class="p">.</span><span class="nf">docs</span>
+<span class="o">*</span><span class="p">.</span><span class="nf">ppt</span>
+<span class="o">*</span><span class="p">.</span><span class="nf">pptx</span>
+<span class="c1">#=&gt; 문서형식은 올리지 않도록 설정합니다. 위에 형식이 자주 사용하는 파일 형식이죠?</span>
+<span class="c1">#=&gt; 물론 필요에 따라서 문서를 올리기도 합니다 그때는 적절히 .gitignore파일을 수정해주면 되겠죠?</span></code></pre></figure>
+
+<p><strong>4. 패키지 파일 제외</strong></p>
+
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="o">*</span><span class="p">.</span><span class="nf">dmg</span>
+<span class="o">*</span><span class="p">.</span><span class="nf">iso</span>
+<span class="o">*</span><span class="p">.</span><span class="nf">tar</span>
+<span class="o">*</span><span class="p">.</span><span class="nf">zip</span>
+<span class="o">*</span><span class="p">.</span><span class="nf">gz</span>
+<span class="c1">#=&gt; 압축파일 형식입니다. </span></code></pre></figure>
+
+<p><strong>5. OS용 시스템 파일 제외</strong></p>
+
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="o">.</span><span class="no">Trashes</span>
+<span class="o">.</span><span class="no">Thumbs</span><span class="p">.</span><span class="nf">db</span>
+<span class="p">.</span><span class="nf">ehthumbs</span><span class="p">.</span><span class="nf">db</span>
+<span class="c1">#=&gt; 개발때 사용한 운영체제별 시스템 파일은 제외해야겠죠?</span></code></pre></figure>
+
+<p><strong>6. 자신의 에디터[Eclipse, VSCode] 설정 파일 제외</strong></p>
+
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="c1">#=&gt; Eclipse</span>
+<span class="p">.</span><span class="nf">metadata</span>
+<span class="n">bin</span><span class="o">/</span>
+<span class="n">tmp</span><span class="o">/</span>
+<span class="o">*</span><span class="p">.</span><span class="nf">tmp</span>
+<span class="o">*</span><span class="p">.</span><span class="nf">bak</span>
+<span class="o">*</span><span class="p">.</span><span class="nf">swp</span>
+<span class="n">local</span><span class="p">.</span><span class="nf">properties</span>
+<span class="p">.</span><span class="nf">settings</span><span class="o">/</span>
+<span class="p">.</span><span class="nf">loadpath</span>
+<span class="p">.</span><span class="nf">recommenders</span>
+<span class="p">.</span><span class="nf">project</span>
+<span class="p">.</span><span class="nf">externalToolBuilders</span><span class="o">/</span>
+<span class="o">*</span><span class="p">.</span><span class="nf">launch</span>
+<span class="p">.</span><span class="nf">classpath</span>
+<span class="p">.</span><span class="nf">factorypath</span>
+<span class="p">.</span><span class="nf">buildpath</span>
+<span class="p">.</span><span class="nf">target</span>
+<span class="p">.</span><span class="nf">springBeans</span>
+<span class="p">.</span><span class="nf">recommenders</span><span class="o">/</span>
+<span class="o">-----------------------------------------------------------------------------</span>
+<span class="c1">#=&gt; VSCode</span>
+<span class="p">.</span><span class="nf">vscode</span><span class="o">/*</span>
+<span class="o">!</span><span class="p">.</span><span class="nf">vscode</span><span class="o">/</span><span class="n">settings</span><span class="p">.</span><span class="nf">json</span>
+<span class="o">!</span><span class="p">.</span><span class="nf">vscode</span><span class="o">/</span><span class="n">tasks</span><span class="p">.</span><span class="nf">json</span>
+<span class="o">!</span><span class="p">.</span><span class="nf">vscode</span><span class="o">/</span><span class="n">launch</span><span class="p">.</span><span class="nf">json</span>
+<span class="o">!</span><span class="p">.</span><span class="nf">vscode</span><span class="o">/</span><span class="n">extensions</span><span class="p">.</span><span class="nf">json</span>
+<span class="c1">#=&gt; 이클립스를 사용하면 생성되는 설정 파일 혹은 임시 파일들은 제외합니다. </span>
+<span class="c1">#=&gt; 해당 정보는 개발자마다 PC환경이 다르기 때문에 설정 정보를 넣어서 push하게 된다면</span>
+<span class="c1">#=&gt; 해당 내용을 받는 개발자들에 이클립스 환경에 덮어쓰기가되어 동작하지않는 이슈가 생길 수 있습니다. </span>
+<span class="c1">#=&gt; 이클립스 뿐만아니라 다른 에디터를 사용하면서 생기는 설정, 임시 파일을 제외해주세요~</span></code></pre></figure>
+
+<p>해당 내용 이외에도 제외하고자하는 파일 형식이나 폴더를 등록해주시면 git 저장소에 쓸데없는 내용이 업로드 되지 않겠죠?ㅎㅎ</p>
+
+<p>여기까지 <code class="highlighter-rouge">일반적으로 .gitignore에 등록하는 파일</code>에대해서 포스팅했습니다.</p>
+
+<p>해당 게시물에 문제가 있다면 댓글을 통해 피드백해주시면 감사하겠습니다~ 
+같이 공부해요~^^</p>
+
+<p><code class="highlighter-rouge">방문해주신분들 댓글 한개씩 달아주시면 감사하겠습니다~~^^</code></p>
+
+	  ]]></description>
+	</item>
+
+
+</channel>
+</rss>

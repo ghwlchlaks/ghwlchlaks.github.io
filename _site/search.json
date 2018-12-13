@@ -1,6 +1,14 @@
 [
   
     {
+      "title"    : "일반적으로 .gitignore에 등록하는 파일 [Git]",
+      "category" : "",
+      "tags"     : "Blog, IT, Git",
+      "url"      : "https://ghwlchlaks.github.io/gitignore-filelist",
+      "date"     : "2018-12-13 09:00:00 +0900"
+    } ,
+  
+    {
       "title"    : "Oracle 설치 및 Spring에서 연동 [Oracle]",
       "category" : "",
       "tags"     : "Blog, IT, SPRING, JAVA, DB",
