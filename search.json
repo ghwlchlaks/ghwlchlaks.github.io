@@ -1,6 +1,14 @@
 [
   
     {
+      "title"    : "[프로그래머스 LEVEL1] 완주하지 못한 선수 프로그래머스 해시 [파이썬]",
+      "category" : "",
+      "tags"     : "Blog, IT, Language, Python, Algorithm",
+      "url"      : "https://ghwlchlaks.github.io/Algorithm-finalplayer",
+      "date"     : "2018-12-18 21:00:00 +0900"
+    } ,
+  
+    {
       "title"    : "일반적으로 .gitignore에 등록하는 파일 [Git]",
       "category" : "",
       "tags"     : "Blog, IT, Git",
