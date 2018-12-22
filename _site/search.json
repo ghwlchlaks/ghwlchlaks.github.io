@@ -1,6 +1,14 @@
 [
   
     {
+      "title"    : "[프로그래머스 LEVEL2] 이상한 문자 만들기 [파이썬]",
+      "category" : "",
+      "tags"     : "Blog, IT, Language, Python, Algorithm",
+      "url"      : "https://ghwlchlaks.github.io/Algorithm-strangeChar",
+      "date"     : "2018-12-22 09:00:00 +0900"
+    } ,
+  
+    {
       "title"    : "[프로그래머스 LEVEL1] 완주하지 못한 선수 프로그래머스 해시 [파이썬]",
       "category" : "",
       "tags"     : "Blog, IT, Language, Python, Algorithm",
