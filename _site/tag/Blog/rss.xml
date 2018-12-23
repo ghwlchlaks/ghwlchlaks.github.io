@@ -12,6 +12,63 @@
    <atom:link href="rss" rel="self" type="application/rss+xml" />
    
 	<item>
+	  <title>[프로그래머스 LEVEL2] 땅 따먹기 [파이썬]</title>
+	  <link>//Algorithm-land</link>
+	  <author></author>
+	  <pubDate>2018-12-23T09:00:00+09:00</pubDate>
+	  <guid>//Algorithm-land</guid>
+	  <description><![CDATA[
+	     <p>안녕하세요! <strong>Do My Best 블로그</strong>입니다. ㅎㅎ</p>
+
+<p>이번에 포스팅할 내용은  <strong>프로그래머스 문제 LEVEL2에 해당되는 땅 따먹기 문제</strong>를 풀어보도록 하겠습니다.</p>
+
+<p>해당 문제는 <a href="https://programmers.co.kr/learn/courses/30/lessons/12913">프로그래머스 웹페이지</a>에서 만나보실 수 있습니다.</p>
+
+<h1 id="문제">문제</h1>
+<p>땅은 총 N행 4열로 이루어져있습니다. 1행부터 땅을 밟으며 한 행씩 내려옵니다. 각 행은 한칸씩 밝아야하며, 같은 열을 연속해서 밟을 수는 없습니다. 이때 마지막행에서 최고 점을 받는 점수를 리턴하시오.</p>
+
+<p>입출력 예제는 <a href="https://programmers.co.kr/learn/courses/30/lessons/12913">프로그래머스 웹페이지</a>에서 확인하세요!</p>
+
+<p><strong>제한 사항</strong></p>
+<blockquote>
+  <ul>
+    <li>행의 개수 N: 100,000 이하의 자연수</li>
+    <li>열의 개수 4, 땅은 2차원 배열</li>
+    <li>점수 : 100이하의 자연수</li>
+  </ul>
+</blockquote>
+
+<p>해당 문제는 <strong>dp(다이나믹 프로그래밍)</strong>에 대표적인 문제이기도 합니다.
+dp를 풀면서 해당 문제를 풀어보도록 하겠습니다.</p>
+
+<h1 id="풀이">풀이</h1>
+
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby">    <span class="k">for</span> <span class="n">i</span> <span class="k">in</span> <span class="n">range</span><span class="p">(</span><span class="n">len</span><span class="p">(</span><span class="n">land</span><span class="p">)</span><span class="o">-</span><span class="mi">1</span><span class="p">):</span>
+        <span class="n">land</span><span class="p">[</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="n">max</span><span class="p">(</span><span class="n">land</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="mi">1</span><span class="p">],</span> <span class="n">land</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="mi">2</span><span class="p">],</span> <span class="n">land</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="mi">3</span><span class="p">])</span> <span class="o">+</span> <span class="n">land</span><span class="p">[</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span>
+        <span class="n">land</span><span class="p">[</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">max</span><span class="p">(</span><span class="n">land</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="mi">0</span><span class="p">],</span> <span class="n">land</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="mi">2</span><span class="p">],</span> <span class="n">land</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="mi">3</span><span class="p">])</span> <span class="o">+</span> <span class="n">land</span><span class="p">[</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span>
+        <span class="n">land</span><span class="p">[</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">][</span><span class="mi">2</span><span class="p">]</span> <span class="o">=</span> <span class="n">max</span><span class="p">(</span><span class="n">land</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="mi">0</span><span class="p">],</span> <span class="n">land</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="mi">1</span><span class="p">],</span> <span class="n">land</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="mi">3</span><span class="p">])</span> <span class="o">+</span> <span class="n">land</span><span class="p">[</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">][</span><span class="mi">2</span><span class="p">]</span>
+        <span class="n">land</span><span class="p">[</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">][</span><span class="mi">3</span><span class="p">]</span> <span class="o">=</span> <span class="n">max</span><span class="p">(</span><span class="n">land</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="mi">0</span><span class="p">],</span> <span class="n">land</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="mi">1</span><span class="p">],</span> <span class="n">land</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="mi">2</span><span class="p">])</span> <span class="o">+</span> <span class="n">land</span><span class="p">[</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">][</span><span class="mi">3</span><span class="p">]</span>
+    
+    <span class="k">return</span> <span class="n">max</span><span class="p">(</span><span class="n">land</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span></code></pre></figure>
+
+<p>i+1번째행에 최댓값은 이전 행에 최댓값을 더한겁니다. <br />
+또한 자기 자신에 열을 연속해서 밟으면 안되므로 자신을 제외한 열의 max값을 구합니다. <br />
+즉 하나의 행열에서의 최댓값을 구하는 식은 <code class="highlighter-rouge">land[i+1][0] = max(land[i][1], land[i][2], land[i][3]) + land[i+1][0]</code>  입니다. <br />
+그러면 마지막 행에는 모든 경로의 최댓값이 들어가게됩니다. <br />
+마지막행에서 최댓값을 구하면 위에 조건을 만족하면서 최대점수를 구할 수 있습니다.</p>
+
+<p>다이나믹 프로그래밍은 아직 너무 어렵네요.. ㅠㅠ 좀 더 공부하도록 하겠습니다.!</p>
+
+<p>지금까지 <strong>프로그래머스 문제 LEVEL2에 해당되는 땅 따먹기 문제</strong>이라는 주제로 포스팅하였습니다!  <br />
+해당 게시물에 문제가 있다면 댓글을 통해 피드백해주시면 감사하겠습니다~ 같이 공부해요~^^</p>
+
+<p><code class="highlighter-rouge">방문해주신분들 댓글 한개씩 달아주시면 감사하겠습니다~~^^</code></p>
+
+
+	  ]]></description>
+	</item>
+
+	<item>
 	  <title>[프로그래머스 LEVEL2] 이상한 문자 만들기 [파이썬]</title>
 	  <link>//Algorithm-strangeChar</link>
 	  <author></author>
@@ -845,76 +902,6 @@ heapq에대한 설명은 <a href="https://ghwlchlaks.github.io/Heapq-Python/">he
 또한 heapq를 사용하여 다른 알고리즘 문제를 해결한 것은 <a href="https://ghwlchlaks.github.io/Algorithm-Heapq-Python/">이중우선순위큐 알고리즘 [Python]</a>에서 볼 수 있습니다.</p>
 
 <p>지금까지 <strong>더맵게 프로그래머스 heap [파이썬]</strong>이라는 주제로 포스팅하였습니다!  <br />
-해당 게시물에 문제가 있다면 댓글을 통해 피드백해주시면 감사하겠습니다~ 같이 공부해요~^^</p>
-
-<p><code class="highlighter-rouge">방문해주신분들 댓글 한개씩 달아주시면 감사하겠습니다~~^^</code></p>
-
-
-	  ]]></description>
-	</item>
-
-	<item>
-	  <title>[프로그래머스 LEVEL2] 프린터 프로그래머스 스택/큐 [파이썬]</title>
-	  <link>//Algorithm-printer</link>
-	  <author></author>
-	  <pubDate>2018-10-19T21:00:00+09:00</pubDate>
-	  <guid>//Algorithm-printer</guid>
-	  <description><![CDATA[
-	     <p>안녕하세요! <strong>Do My Best 블로그</strong>입니다. ㅎㅎ</p>
-
-<p>이번에 포스팅할 내용은 스택/큐에 해당되는 <strong>프로그래머스 문제 LEVEL2에 해당되는 프린터 알고리즘 문제</strong>를 풀어보도록 하겠습니다.</p>
-
-<p>해당 문제는 <a href="https://programmers.co.kr/learn/courses/30/lessons/42587">프로그래머스 웹페이지</a>에서 만나보실 수 있습니다.</p>
-
-<h1 id="문제">문제</h1>
-<p>일반적인 프린터는 인쇄 요청이 들어온 순서대로 인쇄합니다. 그렇기 때문에 중요한 문서가 나중에 인쇄될 수 있습니다. 이런 문제를 보완하기 위해 중요도가 높은 문서를 먼저 인쇄하는 프린터를 개발했습니다. 이 새롭게 개발한 프린터는 아래와 같은 방식으로 인쇄 작업을 수행합니다.</p>
-<blockquote>
-  <ol>
-    <li>인쇄 대기목록의 가장 앞에 있는 문서(J)를 대기목록에서 꺼냅니다.</li>
-    <li>나머지 인쇄 대기목록에서 J보다 중요도가 높은 문서가 한 개라도 존재하면 J를 대기목록의 가장 마지막에 넣습니다.</li>
-    <li>그렇지 않으면 J를 인쇄합니다.</li>
-  </ol>
-</blockquote>
-
-<p><strong>제한 사항</strong></p>
-<blockquote>
-  <ul>
-    <li>현재 대기목록에는 1개 이상 100개 이하의 문서가 있습니다.</li>
-    <li>인쇄 작업의 중요도는 1~9로 표현하며 숫자가 클수록 중요하다는 뜻입니다.</li>
-    <li>location은 0 이상 (현재 대기목록에 있는 작업 수 - 1) 이하의 값을 가지며 대기목록의 가장 앞에 있으면 0, 두 번째에 있으면 1로 표현합니다.</li>
-  </ul>
-</blockquote>
-
-<h1 id="풀이">풀이</h1>
-
-<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="k">def</span> <span class="nf">solution</span><span class="p">(</span><span class="n">priorities</span><span class="p">,</span> <span class="n">location</span><span class="p">):</span>
-    <span class="n">answer</span> <span class="o">=</span> <span class="n">len</span><span class="p">(</span><span class="n">priorities</span><span class="p">)</span>
-    <span class="n">array</span> <span class="o">=</span> <span class="p">[]</span>
-    <span class="k">for</span> <span class="n">i</span> <span class="k">in</span> <span class="n">range</span><span class="p">(</span><span class="n">len</span><span class="p">(</span><span class="n">priorities</span><span class="p">)):</span>
-        <span class="n">array</span><span class="p">.</span><span class="nf">append</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
-
-    <span class="k">while</span> <span class="n">location</span> <span class="k">in</span> <span class="ss">array:
-        </span><span class="n">paper</span> <span class="o">=</span> <span class="n">priorities</span><span class="p">.</span><span class="nf">pop</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
-        <span class="n">idx_paper</span> <span class="o">=</span> <span class="n">array</span><span class="p">.</span><span class="nf">pop</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
-        <span class="n">isMax</span> <span class="o">=</span>  <span class="no">False</span>
-        <span class="k">for</span> <span class="n">i</span> <span class="k">in</span> <span class="n">range</span><span class="p">(</span><span class="n">len</span><span class="p">(</span><span class="n">priorities</span><span class="p">)):</span>
-            <span class="k">if</span> <span class="n">paper</span> <span class="o">&lt;</span> <span class="n">priorities</span><span class="p">[</span><span class="n">i</span><span class="p">]:</span>
-                <span class="n">isMax</span> <span class="o">=</span> <span class="no">True</span>
-                <span class="k">break</span>
-        <span class="k">if</span> <span class="ss">isMax:
-            </span><span class="n">priorities</span><span class="p">.</span><span class="nf">append</span><span class="p">(</span><span class="n">paper</span><span class="p">)</span>
-            <span class="n">array</span><span class="p">.</span><span class="nf">append</span><span class="p">(</span><span class="n">idx_paper</span><span class="p">)</span>
-
-    <span class="k">return</span> <span class="n">answer</span> <span class="o">-</span> <span class="n">len</span><span class="p">(</span><span class="n">array</span><span class="p">)</span></code></pre></figure>
-
-<p>해당 문제는 큐를 이용하여 해결하였습니다. <br />
-저의 해결 방법은 순서를 나타내는 변수를 더 생성했습니다. (다른분들 풀이 보니깐.. 저건 비효율적인것같네요.ㅠㅠ)<br />
-while문을 통해 배열에 찾고자하는 location이 없다면 while문을 빠져나오는 조건입니다. <br />
-while문안에서는 맨앞에 요소를 pop(0)을 통해 꺼내고 남은 priorities 배열요소와 우선순위를 비교해서 큰 우선순위가 있으면 뒤로 append하고 없으면 pop(0) 연산만 하는 코드입니다.</p>
-
-<p>다른분들에 코드를 보면 저의 부족함이 많이 느껴지네요.. ㅠㅠ</p>
-
-<p>지금까지 <strong>프린터 프로그래머스 스택/큐 [파이썬]</strong>이라는 주제로 포스팅하였습니다!  <br />
 해당 게시물에 문제가 있다면 댓글을 통해 피드백해주시면 감사하겠습니다~ 같이 공부해요~^^</p>
 
 <p><code class="highlighter-rouge">방문해주신분들 댓글 한개씩 달아주시면 감사하겠습니다~~^^</code></p>
