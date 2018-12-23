@@ -180,7 +180,21 @@
 </div>
         </div>
     </div>
-    
+
+<!-- 모바일인지 pc인지 판단: 광고 개시-->
+<script>
+document.addEventListener("DOMContentLoaded", function(){
+  // Handler when the DOM is fully loaded
+  function isMobile() {
+    return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+    }
+    if(isMobile()) {
+        document.getElementById("right_ads").style.width="0%"
+    } else {
+        document.getElementById("right_ads").style.width="20%"
+    }
+});
+</script>
 <main class="content" role="main">
     <!-- 자동 광고-->
     <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
@@ -194,7 +208,7 @@
             (adsbygoogle = window.adsbygoogle || []).push({});
         </script>
 
-    <div style="float: right; width: 20%; padding-top: 100px">
+    <div id="right_ads" style="float: right; width: 20%; padding-top: 100px">
         <div>
             
             <!-- 사이드바수직배너 -->
