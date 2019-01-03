@@ -12,6 +12,181 @@
    <atom:link href="rss" rel="self" type="application/rss+xml" />
    
 	<item>
+	  <title>[Express] Typescript를 이용한 express, node초기 설정</title>
+	  <link>//express-setup-typescript</link>
+	  <author></author>
+	  <pubDate>2019-01-03T09:00:00+09:00</pubDate>
+	  <guid>//express-setup-typescript</guid>
+	  <description><![CDATA[
+	     <p>안녕하세요! <strong>Do My Best 블로그</strong> 입니다. 
+2019년 기해년에 첫 게시글이 되겠네요.ㅎㅎ<br />
+모두 새해 복 많이 받으세요~</p>
+
+<p>이번에 포스팅할 내용은 JavaScript가 아니라 TypeScript를 이용하여 Node 서버 초기 환경 설정하는 방법에 대해서 
+포스팅 하겠습니다.</p>
+
+<p>TypeScript와 JavaScript의 차이는 다른 게시글에서 포스팅하도록 하겠습니다.</p>
+
+<p>먼저 해당 게시물은 node가 설치 되어있다는 가정하에 시작하도록 하겠습니다.<br />
+혹시 설치가 안되있는 분은 설치 방법을 링크하도록 하겠습니다.</p>
+
+<p><a href="https://ghwlchlaks.github.io/nodejs-installation-window/">윈도우 설치</a><br />
+<a href="https://ghwlchlaks.github.io/nodejs-installation-ubuntu/">리눅스 설치</a></p>
+
+<p>먼저 typescript를 이용하여 node 서버 구동을 위한 환경 설정은 다양한 방법들이 존재합니다. 
+해당 방법도 여러가지 방법 중 하나라고 생각하시고 보시면 좋을것 같습니다.</p>
+
+<p><strong>순서</strong></p>
+<blockquote>
+  <ul>
+    <li>폴더 생성 및 node 폴더로 초기화.</li>
+    <li>devloperment 의존성 설치</li>
+    <li>express 설치</li>
+    <li>tsconfig.json 생성 및 작성</li>
+    <li>tslint 생성 및 설정</li>
+    <li>package.json 수정</li>
+    <li>node server 구동</li>
+  </ul>
+</blockquote>
+
+<p><strong>1. 폴더 생성 및 node 폴더로 초기화.</strong></p>
+
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">mkdir</span> <span class="n">typescript</span><span class="o">-</span><span class="n">node</span>
+<span class="n">cd</span> <span class="n">typescript</span><span class="o">-</span><span class="n">node</span>
+<span class="n">npm</span> <span class="n">init</span></code></pre></figure>
+
+<p>npm init 명령어를 입력하게 되면 여러가지 적는 칸과 선택 하는 항목이 출력되게됩니다. 
+특별하게 설정할 것이없다면 모두 default로 설정해주시면 됩니다.</p>
+
+<p><strong>2. devloperment 의존성 설치</strong></p>
+
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">npm</span> <span class="n">install</span> <span class="o">-</span><span class="no">D</span> <span class="n">typescript</span>
+<span class="n">npm</span> <span class="n">install</span> <span class="o">-</span><span class="no">D</span> <span class="n">nodemon</span>
+<span class="n">npm</span> <span class="n">install</span> <span class="o">-</span><span class="no">D</span> <span class="n">tslint</span></code></pre></figure>
+
+<p>Typescript로 진행 할 예정이니 당연히 typescript를 설치 해야겠죠?
+nodemon은 개발시 auto refresh가 되기 때문에 개발 편의를 위해 설치 해줍니다
+tslint는 개발 시 정해놓은 어법을 맞추기 위해 설치 해줍니다.<br />
+문서에서는 코딩스타일, 코딩 표준을 맞추기 위한 방법이라고 설명되어있네요 ㅎㅎ</p>
+
+<p><strong>3. express 설치</strong></p>
+
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">npm</span> <span class="n">install</span> <span class="n">express</span>
+<span class="n">npm</span> <span class="n">install</span> <span class="vi">@types</span><span class="o">/</span><span class="n">express</span></code></pre></figure>
+
+<p>express로 서버를 구성할 것이기 떄문에 express모듈을 추가적으로 설치 해줍니다.</p>
+
+<p><strong>4. tsconfig.json 생성 및 작성</strong></p>
+
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="p">{</span>
+    <span class="s2">"compilerOptions"</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s2">"module"</span><span class="p">:</span> <span class="s2">"commonjs"</span><span class="p">,</span>
+        <span class="s2">"esModuleInterop"</span><span class="p">:</span> <span class="kp">true</span><span class="p">,</span>
+        <span class="s2">"target"</span><span class="p">:</span> <span class="s2">"es6"</span><span class="p">,</span>
+        <span class="s2">"noImplicitAny"</span><span class="p">:</span> <span class="kp">true</span><span class="p">,</span>
+        <span class="s2">"moduleResolution"</span><span class="p">:</span> <span class="s2">"node"</span><span class="p">,</span>
+        <span class="s2">"sourceMap"</span><span class="p">:</span> <span class="kp">true</span><span class="p">,</span>
+        <span class="s2">"outDir"</span><span class="p">:</span> <span class="s2">"dist"</span><span class="p">,</span>
+        <span class="s2">"baseUrl"</span><span class="p">:</span> <span class="s2">"."</span><span class="p">,</span>
+        <span class="s2">"paths"</span><span class="p">:</span> <span class="p">{</span>
+            <span class="s2">"*"</span><span class="p">:</span> <span class="p">[</span>
+                <span class="s2">"node_modules/*"</span><span class="p">,</span>
+                <span class="s2">"src/types/*"</span>
+            <span class="p">]</span>
+        <span class="p">},</span>
+        <span class="s2">"lib"</span><span class="p">:</span> <span class="p">[</span>
+            <span class="s2">"es2015"</span>
+        <span class="p">]</span>
+    <span class="p">},</span>
+    <span class="s2">"include"</span><span class="p">:</span> <span class="p">[</span>
+        <span class="s2">"src/**/*"</span>
+    <span class="p">]</span>
+<span class="p">}</span></code></pre></figure>
+
+<p>tsconfig.json 파일을 생성후 해당 내용을 넣어줍니다. 
+typescript는 compile을 통해 javascript파일을 생성하고 구동합니다.<br />
+그렇기 때문에 compile option을 지정하고 compile할 경로 include를 지정해 줍니다. <br />
+대표적으로  include에 파일들을 lib에 express버전을통해 compile하고 outDir에 경로에 javascript파일을 생성합니다.</p>
+
+<p><strong>5. tslint 생성 및 설정</strong></p>
+
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="p">.</span><span class="nf">/</span><span class="n">node_modules</span><span class="o">/</span><span class="p">.</span><span class="nf">bin</span><span class="o">/</span><span class="n">tslint</span> <span class="o">--</span><span class="n">init</span></code></pre></figure>
+
+<p>tslint 설정을 위해 생성해줍니다. 
+그 후 tslint.json에 내용을 수정해 줍니다.</p>
+
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="p">{</span>
+    <span class="s2">"defaultSeverity"</span><span class="p">:</span> <span class="s2">"error"</span><span class="p">,</span>
+    <span class="s2">"extends"</span><span class="p">:</span> <span class="p">[</span>
+        <span class="s2">"tslint:recommended"</span>
+    <span class="p">],</span>
+    <span class="s2">"jsRules"</span><span class="p">:</span> <span class="p">{},</span>
+    <span class="s2">"rules"</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s2">"interface-name"</span><span class="p">:</span> <span class="p">[</span><span class="kp">false</span><span class="p">],</span>
+        <span class="s2">"no-console"</span><span class="p">:</span> <span class="p">[</span><span class="kp">false</span><span class="p">],</span>
+        <span class="s2">"quotemark"</span><span class="p">:</span> <span class="p">[</span><span class="kp">true</span><span class="p">,</span> <span class="s2">"single"</span><span class="p">]</span>
+    <span class="p">},</span>
+    <span class="s2">"rulesDirectory"</span><span class="p">:</span> <span class="p">[]</span>
+<span class="p">}</span></code></pre></figure>
+
+<p>기본적인 lint이외에 다른 옵션들은 검색을 통해 쉽게 찾으실 수 있습니다.</p>
+
+<p><strong>6. package.json 수정</strong></p>
+
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="p">{</span>
+  <span class="s2">"name"</span><span class="p">:</span> <span class="s2">"typescript-node"</span><span class="p">,</span>
+  <span class="s2">"version"</span><span class="p">:</span> <span class="s2">"1.0.0"</span><span class="p">,</span>
+  <span class="s2">"description"</span><span class="p">:</span> <span class="s2">""</span><span class="p">,</span>
+  <span class="s2">"main"</span><span class="p">:</span> <span class="s2">"dist/server.js"</span><span class="p">,</span>
+  <span class="s2">"scripts"</span><span class="p">:</span> <span class="p">{</span>
+    <span class="s2">"build-ts"</span><span class="p">:</span> <span class="s2">"tsc"</span><span class="p">,</span>
+    <span class="s2">"start"</span><span class="p">:</span> <span class="s2">"npm run serve"</span><span class="p">,</span>
+    <span class="s2">"serve"</span><span class="p">:</span> <span class="s2">"node dist/server.js"</span><span class="p">,</span>
+    <span class="s2">"watch-node"</span><span class="p">:</span> <span class="s2">"nodemon dist/server.js"</span><span class="p">,</span>
+    <span class="s2">"watch-ts"</span><span class="p">:</span> <span class="s2">"tsc -w"</span>
+  <span class="p">},</span>
+  <span class="s2">"author"</span><span class="p">:</span> <span class="s2">""</span><span class="p">,</span>
+  <span class="s2">"license"</span><span class="p">:</span> <span class="s2">"ISC"</span><span class="p">,</span>
+  <span class="s2">"devDependencies"</span><span class="p">:</span> <span class="p">{</span>
+    <span class="s2">"nodemon"</span><span class="p">:</span> <span class="s2">"^1.18.3"</span><span class="p">,</span>
+    <span class="s2">"tslint"</span><span class="p">:</span> <span class="s2">"^5.11.0"</span><span class="p">,</span>
+    <span class="s2">"typescript"</span><span class="p">:</span> <span class="s2">"^3.0.1"</span>
+  <span class="p">},</span>
+  <span class="s2">"dependencies"</span><span class="p">:</span> <span class="p">{</span>
+    <span class="s2">"@types/express"</span><span class="p">:</span> <span class="s2">"^4.16.0"</span><span class="p">,</span>
+    <span class="s2">"express"</span><span class="p">:</span> <span class="s2">"^4.16.3"</span>
+  <span class="p">}</span>
+<span class="p">}</span></code></pre></figure>
+
+<p>수정해야할 부분은 main, scripts에 있는 내용입니다. 이외에 내용은 앞에서 설치하며 진행했기 때문에 
+수정하지 않아도 될 것입니다.<br />
+<code class="highlighter-rouge">scripts</code> 부분은 node 서버를 구동하기위해 사용하는 script들입니다.</p>
+
+<p><strong>7. node server 구동</strong>
+기본적인 설정이 끝이 났습니다. 이제 서버를 실행시켜 구동해보도록 하겠습니다.</p>
+
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">npm</span> <span class="n">run</span> <span class="n">watch</span><span class="o">-</span><span class="n">ts</span></code></pre></figure>
+
+<p>다른 터미널에서</p>
+
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">npm</span> <span class="n">run</span> <span class="n">watch</span><span class="o">-</span><span class="n">node</span></code></pre></figure>
+
+<p>그 후 <code class="highlighter-rouge">http://localhost:3000</code>에 접속해보시면 server가 구동된것을 확인 하실 수 있습니다.</p>
+
+<p>다음 링크는 초기 환경 설정이 된 폴더 입니다.</p>
+
+<p><a href="https://github.com/ghwlchlaks/typescript-express-example">Typescript-node-boilerplate</a></p>
+
+<p>지금까지 <strong>typescript를 이용한 express, node초기 설정</strong>이라는 주제로 포스팅하였습니다!  <br />
+해당 게시물에 문제가 있다면 댓글을 통해 피드백해주시면 감사하겠습니다~ 같이 공부해요~^^</p>
+
+<p><code class="highlighter-rouge">방문해주신분들 댓글 한개씩 달아주시면 감사하겠습니다~~^^</code></p>
+
+
+	  ]]></description>
+	</item>
+
+	<item>
 	  <title>Node.js 와 Apache 연동</title>
 	  <link>//nodejs-apache</link>
 	  <author></author>
