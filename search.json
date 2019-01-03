@@ -1,6 +1,14 @@
 [
   
     {
+      "title"    : "[Express] Typescript를 이용한 express, node초기 설정",
+      "category" : "",
+      "tags"     : "Blog, IT, Node, TypeScript",
+      "url"      : "https://ghwlchlaks.github.io/express-setup-typescript",
+      "date"     : "2019-01-03 09:00:00 +0900"
+    } ,
+  
+    {
       "title"    : "[프로그래머스 LEVEL2] 땅 따먹기 [파이썬]",
       "category" : "",
       "tags"     : "Blog, IT, Language, Python, Algorithm",
