@@ -800,6 +800,7 @@ body.nav-opened .nav {
     counter-reset: item;
 }
 
+/* nav number */
 .nav li:before {
     display: block;
     float: right;
@@ -815,6 +816,7 @@ body.nav-opened .nav {
 .nav li {
     margin: 0;
 }
+/* nav title */
 .nav li a {
     text-decoration: none;
     line-height: 1.4;
@@ -824,6 +826,7 @@ body.nav-opened .nav {
     overflow: hidden;
     white-space: nowrap;
     text-overflow: ellipsis;
+    margin-left: 5px;
 }
 .nav li a:after {
     display: inline-block;

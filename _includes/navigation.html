@@ -6,18 +6,67 @@
     <ul>
         <li class="nav-home {% if page.current == 'home' %} nav-current{% endif %}" role="presentation"><a href="{{ site.url }}">Home</a></li>
         <li class="nav-about {% if page.current == 'about' %} nav-current{% endif %}" role="presentation"><a href="{{ site.url }}/about">About</a></li>
-        <li class="nav-IT {% if page.url contains 'IT' %} nav-current{% endif %}" role="presentation"><a href="{{ site.url }}/tag/IT">IT</a></li>
-        <li class="nav-JavaScript {% if page.url contains 'JavaScript' %} nav-current{% endif %}" role="presentation"><a href="{{ site.url }}/tag/JavaScript">JavaScript</a></li>
-        <li class="nav-Python {% if page.url contains 'Python' %} nav-current{% endif %}" role="presentation"><a href="{{ site.url }}/tag/Python">Python</a></li>
-        <li class="nav-Java {% if page.url contains 'Java' %} nav-current{% endif %}" role="presentation"><a href="{{ site.url }}/tag/Java">Java</a></li>
+        <li class="nav-Jiho {% if page.url contains 'Jiho' %} nav-current{% endif %}" role="presentation"><a href="{{ site.url }}/author/Jiho">JIHO</a></li>
+
         <li class="nav-Github {% if page.url contains 'Github' %} nav-current{% endif %}" role="presentation"><a href="{{ site.url }}/tag/Github">Github</a></li>
         <li class="nav-Algorithm {% if page.url contains 'Algorithm' %} nav-current{% endif %}" role="presentation"><a href="{{ site.url }}/tag/Algorithm">Algorithm</a></li>
-        <li class="nav-Linux {% if page.url contains 'Linux' %} nav-current{% endif %}" role="presentation"><a href="{{ site.url }}/tag/Linux">Linux</a></li>
-        <li class="nav-Window {% if page.url contains 'Window' %} nav-current{% endif %}" role="presentation"><a href="{{ site.url }}/tag/Window">Window</a></li>
-        <li class="nav-Jiho {% if page.url contains 'Jiho' %} nav-current{% endif %}" role="presentation"><a href="{{ site.url }}/author/Jiho">JIHO</a></li>
+        <!-- <li class="nav-IT {% if page.url contains 'IT' %} nav-current{% endif %}" role="presentation"><a href="{{ site.url }}/tag/IT">IT</a></li> -->
+        
+        <button class="dropdown-btn">Language <i class="material-icons arrow">arrow_drop_up</i></button>
+        <div class="dropdown-container">
+            <li class="nav-JavaScript {% if page.url contains 'JavaScript' %} nav-current{% endif %}" role="presentation"><a href="{{ site.url }}/tag/JavaScript">JavaScript</a></li>
+            <li class="nav-TypeScript {% if page.url contains 'TypeScript' %} nav-current{% endif %}" role="presentation"><a href="{{ site.url }}/tag/TypeScript">TypeScript</a></li>
+            <li class="nav-Python {% if page.url contains 'Python' %} nav-current{% endif %}" role="presentation"><a href="{{ site.url }}/tag/Python">Python</a></li>
+            <li class="nav-Java {% if page.url contains 'Java' %} nav-current{% endif %}" role="presentation"><a href="{{ site.url }}/tag/Java">Java</a></li>
+        </div>
+
+        <button class="dropdown-btn">OS <i class="material-icons arrow">arrow_drop_up</i></button>
+        <div class="dropdown-container">
+            <li class="nav-Linux {% if page.url contains 'Linux' %} nav-current{% endif %}" role="presentation"><a href="{{ site.url }}/tag/Linux">Linux</a></li>
+            <li class="nav-Window {% if page.url contains 'Window' %} nav-current{% endif %}" role="presentation"><a href="{{ site.url }}/tag/Window">Window</a></li>
+        </div>
         
         
     </ul>
     <a class="subscribe-button icon-feed" href="{{ site.url }}/feed.xml">Subscribe</a>
 </div>
 <span class="nav-cover"></span>
+
+<script defer async>
+/* dropdown event */
+let dropdown = document.getElementsByClassName('dropdown-btn');
+for (let i=0; i< dropdown.length; i++) {
+    dropdown[i].addEventListener('click', function() {
+        this.classList.toggle('active');
+        if (this.classList.contains('active')) {
+            this.childNodes[1].innerHTML = 'arrow_drop_down';
+        } else {
+            this.childNodes[1].innerHTML = 'arrow_drop_up';
+        }
+        let dropdownContent = this.nextElementSibling;
+        if(dropdownContent.style.display === "block") {
+            dropdownContent.style.display = 'none';
+        } else {
+            dropdownContent.style.display = 'block';
+        }
+    })
+}
+</script>
+<style>
+.dropdown-btn {
+    color: rgba(255,255,255,0.5);
+    background-color: transparent;
+    font-size: 1.4rem;
+    padding-left: 0%;
+    text-align: center;
+    width: 100%;
+    line-height: 25px;
+}
+.dropdown-container {
+    display: none;
+}
+.arrow {
+    margin-bottom: 0%;
+    float: right;
+}
+</style>
