@@ -3,13 +3,13 @@ layout: post
 title: "[Angular] Angular 프로젝트 생성"
 date:   2019-01-08 00:00:00
 description: Angular 프로젝트 생성  # Add post description (optional)
-img: nodejs.png # Add image post (optional)
+img: angular.png # Add image post (optional)
 categories: Jiho
-tags: [Blog, IT, Node, TypeScript, Angular]
+tags: [Blog, IT, TypeScript, Angular]
 navigation: True
 subclass: 'post tag-IT tag-Node tag-TypeScript tag-Angular'
 logo: 'assets/images/default/DMB_logo.png'
-cover: 'assets/images/cover/nodejs.png'
+cover: 'assets/images/cover/angular.png'
 author: Jiho # Add name author (optional)
 disqus: true
 ---
