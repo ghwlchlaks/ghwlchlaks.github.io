@@ -12,6 +12,124 @@
    <atom:link href="rss" rel="self" type="application/rss+xml" />
    
 	<item>
+	  <title>[Angular] Angular ng-bootstrap 환경 설정</title>
+	  <link>//angular-ngbootstrap-setup</link>
+	  <author></author>
+	  <pubDate>2019-01-13T09:00:00+09:00</pubDate>
+	  <guid>//angular-ngbootstrap-setup</guid>
+	  <description><![CDATA[
+	     <p>안녕하세요! <strong>Do My Best 블로그</strong> 입니다.</p>
+
+<p>이번에 포스팅할 내용은 Angular에서 ng-bootstrap 라이브러리 설치 및 사용방법에대해서 알아보겠습니다.</p>
+
+<p>이번 포스팅은 Angular 프로젝트가 cli로 생성했다는 전제하에 진행하도록 하겠습니다. 
+Angular 프로젝트 생성 방법 링크는 밑에 있습니다.
+<a href="https://ghwlchlaks.github.io/angular-starter">angular 프로젝트 생성</a></p>
+
+<p><strong>순서</strong></p>
+<blockquote>
+  <ul>
+    <li>ng-bootstrap 설치</li>
+    <li>ng-bootstrap 모듈 import</li>
+    <li>style.css에 bootstrap css추가</li>
+    <li>sample code 실행하여 적용되었는지 확인</li>
+  </ul>
+</blockquote>
+
+<p>먼저 설치 설치 원본 링크입니다. 
+<a href="https://ng-bootstrap.github.io/#/getting-started">ng-boostrap 설치</a></p>
+
+<p><strong>1. ng-bootstrap 설치</strong>
+ng-bootstrap 모듈을 설치하도록 하겠습니다. 
+그리고 ng-bootstrap에서 css를 사용하기위해 bootstrap모듈도 설치를 해줍니다.</p>
+
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">npm</span> <span class="n">install</span> <span class="o">--</span><span class="n">save</span> <span class="vi">@ng</span><span class="o">-</span><span class="n">bootstarp</span><span class="o">/</span><span class="n">ng</span><span class="o">-</span><span class="n">boostrap</span>
+<span class="n">npm</span> <span class="n">install</span> <span class="o">--</span><span class="n">save</span> <span class="n">bootstrap</span></code></pre></figure>
+
+<p><strong>2. ng-bootstrap 모듈 import</strong>
+ng-boostrap을 사용하기위해 모듈을 app.module.ts에 import를 해보겠습니다.</p>
+
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">import</span> <span class="p">{</span> <span class="no">BrowserModule</span> <span class="p">}</span> <span class="n">from</span> <span class="s1">'@angular/platform-browser'</span><span class="p">;</span>
+<span class="n">import</span> <span class="p">{</span> <span class="no">NgModule</span> <span class="p">}</span> <span class="n">from</span> <span class="s1">'@angular/core'</span><span class="p">;</span>
+<span class="n">import</span> <span class="p">{</span> <span class="no">NgbModule</span> <span class="p">}</span> <span class="n">from</span> <span class="s1">'@ng-bootstrap/ng-bootstrap'</span><span class="p">;</span> <span class="sr">//</span><span class="err">추가</span>
+<span class="n">import</span> <span class="p">{</span> <span class="no">AppComponent</span> <span class="p">}</span> <span class="n">from</span> <span class="s1">'./app.component'</span><span class="p">;</span>
+<span class="vi">@NgModule</span><span class="p">({</span>
+<span class="ss">declarations: </span><span class="p">[</span>
+<span class="no">AppComponent</span>
+<span class="p">],</span>
+<span class="ss">imports: </span><span class="p">[</span>
+<span class="no">BrowserModule</span><span class="p">,</span>
+<span class="no">NgbModule</span> <span class="sr">//</span><span class="err">추가</span>
+<span class="p">],</span>
+<span class="ss">providers: </span><span class="p">[],</span>
+<span class="ss">bootstrap: </span><span class="p">[</span><span class="no">AppComponent</span><span class="p">]</span>
+<span class="p">})</span>
+<span class="n">export</span> <span class="k">class</span> <span class="nc">AppModule</span> <span class="p">{</span> <span class="p">}</span>
+<span class="err">위와같이</span> <span class="err">주석으로</span> <span class="err">추가라고</span> <span class="err">된</span> <span class="mi">2</span><span class="err">줄만</span> <span class="err">추ㅏ해주시면됩니다</span><span class="o">.</span></code></pre></figure>
+
+<p><strong>3. style.css에 bootstrap css추가</strong>
+1번에서 설치한 모듈인 boostrap의 css를 사용하기위해 style.css에 해당 코드를 추가합니다.</p>
+
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="vi">@import</span> <span class="s2">"~bootstrap/dist/css/bootstrap.css"</span><span class="p">;</span></code></pre></figure>
+
+<p>여기까지 ng-boostrap을 사용하기 위한 준비가 끝났습니다. 
+이제 샘플 코드 하나를 적어 잘 적용되었는지 확인하도록 하겠습니다.</p>
+
+<p><strong>4. sample code 실행하여 적용되었는지 확인</strong>
+html파일에 아래와같은 코드를 적어 줍니다.</p>
+
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="o">&lt;</span><span class="n">ngb</span><span class="o">-</span><span class="n">accordion</span> <span class="c1">#acc="ngbAccordion" activeIds="ngb-panel-0"&gt;</span>
+<span class="o">&lt;</span><span class="n">ngb</span><span class="o">-</span><span class="n">panel</span> <span class="n">title</span><span class="o">=</span><span class="s2">"Simple"</span><span class="o">&gt;</span>
+<span class="o">&lt;</span><span class="n">ng</span><span class="o">-</span><span class="n">template</span> <span class="n">ngbPanelContent</span><span class="o">&gt;</span>
+<span class="no">Anim</span> <span class="n">pariatur</span> <span class="n">cliche</span> <span class="n">reprehenderit</span><span class="p">,</span> <span class="n">enim</span> <span class="n">eiusmod</span> <span class="n">high</span> <span class="n">life</span> <span class="n">accusamus</span> <span class="n">terry</span> <span class="n">richardson</span> <span class="n">ad</span> <span class="n">squid</span><span class="o">.</span> <span class="mi">3</span> <span class="n">wolf</span> <span class="n">moon</span> <span class="n">officia</span>
+<span class="n">aute</span><span class="p">,</span> <span class="n">non</span> <span class="n">cupidatat</span> <span class="n">skateboard</span> <span class="n">dolor</span> <span class="n">brunch</span><span class="o">.</span> <span class="no">Food</span> <span class="n">truck</span> <span class="n">quinoa</span> <span class="n">nesciunt</span> <span class="n">laborum</span> <span class="n">eiusmod</span><span class="o">.</span> <span class="no">Brunch</span> <span class="mi">3</span> <span class="n">wolf</span> <span class="n">moon</span> <span class="n">tempor</span><span class="p">,</span>
+<span class="n">sunt</span> <span class="n">aliqua</span> <span class="n">put</span> <span class="n">a</span> <span class="n">bird</span> <span class="n">on</span> <span class="n">it</span> <span class="n">squid</span> <span class="n">single</span><span class="o">-</span><span class="n">origin</span> <span class="n">coffee</span> <span class="n">nulla</span> <span class="n">assumenda</span> <span class="n">shoreditch</span> <span class="n">et</span><span class="o">.</span> <span class="no">Nihil</span> <span class="n">anim</span> <span class="n">keffiyeh</span> <span class="n">helvetica</span><span class="p">,</span>
+<span class="n">craft</span> <span class="n">beer</span> <span class="n">labore</span> <span class="n">wes</span> <span class="n">anderson</span> <span class="n">cred</span> <span class="n">nesciunt</span> <span class="n">sapiente</span> <span class="n">ea</span> <span class="n">proident</span><span class="o">.</span> <span class="no">Ad</span> <span class="n">vegan</span> <span class="n">excepteur</span> <span class="n">butcher</span> <span class="n">vice</span> <span class="n">lomo</span><span class="o">.</span> <span class="no">Leggings</span>
+<span class="n">occaecat</span> <span class="n">craft</span> <span class="n">beer</span> <span class="n">farm</span><span class="o">-</span><span class="n">to</span><span class="o">-</span><span class="n">table</span><span class="p">,</span> <span class="n">raw</span> <span class="n">denim</span> <span class="n">aesthetic</span> <span class="n">synth</span> <span class="n">nesciunt</span> <span class="n">you</span> <span class="n">probably</span> <span class="n">haven</span><span class="s1">'t heard of them accusamus
+labore sustainable VHS.
+&lt;/ng-template&gt;
+&lt;/ngb-panel&gt;
+&lt;ngb-panel&gt;
+&lt;ng-template ngbPanelTitle&gt;
+&lt;span&gt;★ &lt;b&gt;Fancy&lt;/b&gt; title ★&lt;/span&gt;
+&lt;/ng-template&gt;
+&lt;ng-template ngbPanelContent&gt;
+Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia
+aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor,
+sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica,
+craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings
+occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven'</span><span class="n">t</span> <span class="n">heard</span> <span class="n">of</span> <span class="n">them</span> <span class="n">accusamus</span>
+<span class="n">labore</span> <span class="n">sustainable</span> <span class="no">VHS</span><span class="p">.</span>
+<span class="nf">&lt;</span><span class="o">/</span><span class="n">ng</span><span class="o">-</span><span class="n">template</span><span class="o">&gt;</span>
+<span class="o">&lt;</span><span class="sr">/ngb-panel&gt;
+&lt;ngb-panel title="Disabled" [disabled]="true"&gt;
+&lt;ng-template ngbPanelContent&gt;
+Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia
+aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor,
+sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica,
+craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings
+occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus
+labore sustainable VHS.
+&lt;/n</span><span class="n">g</span><span class="o">-</span><span class="n">template</span><span class="o">&gt;</span>
+<span class="o">&lt;</span><span class="sr">/ngb-panel&gt;
+&lt;/n</span><span class="n">gb</span><span class="o">-</span><span class="n">accordion</span><span class="o">&gt;</span>
+<span class="err">복사</span> <span class="err">붙혀넣기를</span> <span class="err">해봅시다</span><span class="o">.!!</span></code></pre></figure>
+
+<p>잘 적용되었다면 아래와같은 화면이 출력됩니다. 
+물론 angular 이미지는 angular 프로젝트 생성시 있는 이미지입니다.</p>
+
+<p><img src="/assets/images/2019-01-14-angular-ngbootstrap-setup/result.png" /></p>
+
+<p>지금까지 <strong>Angular ng-bootstrap 환경 설정</strong>이라는 주제로 포스팅하였습니다!  <br />
+해당 게시물에 문제가 있다면 댓글을 통해 피드백해주시면 감사하겠습니다~ 같이 공부해요~^^</p>
+
+<p><code class="highlighter-rouge">방문해주신분들 댓글 한개씩 달아주시면 감사하겠습니다~~^^</code></p>
+
+
+	  ]]></description>
+	</item>
+
+	<item>
 	  <title>[Angular] Angular 프로젝트 생성</title>
 	  <link>//angular-starter</link>
 	  <author></author>
@@ -902,126 +1020,6 @@ docker에 대한 개념설명을 먼저하려고 했으나 제가 연습한 내�
 
 <p><code class="highlighter-rouge">방문해주신분들 댓글 한개씩 달아주시면 감사하겠습니다~~^^</code></p>
 
-
-	  ]]></description>
-	</item>
-
-	<item>
-	  <title>Jekyll custom plugin (로컬은되는데 원격은 안될때) [Jekyll]</title>
-	  <link>//Jekyll-custom-plugin</link>
-	  <author></author>
-	  <pubDate>2018-12-01T09:00:00+09:00</pubDate>
-	  <guid>//Jekyll-custom-plugin</guid>
-	  <description><![CDATA[
-	     <p>안녕하세요! <strong>Do My Best 블로그</strong> 입니다.<br />
-오래만에 포스팅합니다.ㅠㅠ 요즘 다른일에 집중하느라.. (핑계..)</p>
-
-<p>이번에는 제가 Jekyll theme에 기능들을 수정하다가 생긴 이슈에 대해서 생긴 이슈를 해결하는 방법에대해서 설명드리도록 하겠습니다.</p>
-
-<p>jekyll plugin에서 custom plugin을 보실수 있습니다. 그런데 여러가지 기능을 추가하다보면 local상에서는 정상 작동되는데 github에 업로드하여 사이트에 접속했을때는 404 에러 혹은 문제가 발생할 수 있습니다. (경로문제가 아닐때 ㅎㅎ)</p>
-
-<p>해당 이슈를 해결하는 방법에대해서 포스팅 하겠습니다.</p>
-
-<p>해당 이슈가 생기는 이유는 github에서 보안 문제로 custom plugin이 적용이되지 않는다고 하네요 ㅎㅎ</p>
-
-<p><strong>해결 순서</strong></p>
-<blockquote>
-  <ol>
-    <li>local repository상에서 master브랜치에서 분기한 다른 브랜치를 생성  (여기서는 source 브랜치 생성)</li>
-    <li>local repository와 remote repository에서 master브랜치 삭제</li>
-    <li>source브랜치에서 .gitignore파일 _site폴더 주석 혹은 삭제 처리</li>
-    <li>source브랜치에서 .nojekyll 파일 생성 및 _config.yml 파일 수정</li>
-    <li>source브랜치에서 _site폴더만 필터링 해서 master브랜치 생성</li>
-    <li>master브랜치와 source브랜치 전체 push 하기</li>
-    <li>웹사이트 정상 작동 확인</li>
-    <li>해당 순서를 shell script를 만들어서 간편화 하기</li>
-  </ol>
-</blockquote>
-
-<p>해당 순서만 보고 따라해도 되겠지만 왜 저렇게 하는지 가볍게 알고 넘어가는게 좋겠죠?
-우선 github 블로그는 master브랜치만 적용이되어 블로그가 생성 및 갱신됩니다. <br />
-그래서 master브랜치에 아예 local에서 정상 작동되는 _site폴더를 master브랜치에 push하여 해결하는 방식입니다. <br />
-여기서 _site폴더는 local에서 jekyll build를 할때 갱신되는 것은 알고 계실것이라고 생각합니다. <br />
-그리고 source브랜치는 _post및 전체 블로그의 소스를 관리하는 브랜치입니다.<br />
-여기서 갱신및 추가한 소스를 jekyll build하여 _site폴더가 갱신되면
-해당 _site를 필터링하여 master브랜치에 업로드하는 방식입니다.</p>
-
-<p>그럼 해결 순서대로 시작해보겠습니다.</p>
-
-<p><strong>1. local repository상에서 master브랜치에서 분기한 다른 브랜치를 생성(여기서는 source 브랜치 생성)</strong></p>
-
-<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">git</span> <span class="n">checkout</span> <span class="o">-</span><span class="n">b</span> <span class="n">source</span>
-<span class="o">=&gt;</span> <span class="n">source</span> <span class="err">브랜치를</span> <span class="err">생성하고</span> <span class="err">해당</span> <span class="err">브랜치로</span> <span class="err">이동</span></code></pre></figure>
-
-<p><strong>2. local repository와 remote repository에서 master브랜치 삭제</strong></p>
-
-<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">git</span> <span class="n">push</span> <span class="n">origin</span> <span class="ss">:master</span>
-<span class="o">=&gt;</span> <span class="n">remote</span> <span class="n">repository</span><span class="err">에</span> <span class="n">master</span><span class="err">브랜치</span> <span class="err">삭제</span>
-<span class="n">git</span> <span class="n">branch</span> <span class="o">-</span><span class="no">D</span> <span class="n">master</span>
-<span class="o">=&gt;</span> <span class="n">local</span> <span class="n">repository</span><span class="err">에서</span> <span class="n">master</span><span class="err">브랜치</span> <span class="err">삭제</span></code></pre></figure>
-
-<p><strong>3. source브랜치에서 .gitignore파일 _site폴더 주석 혹은 삭제 처리</strong><br />
-기본적으로 _site폴더는 .gitignore에서 업로드 못하게 되어있습니다. 
-이 주석을 제거해줍시다!</p>
-
-<p><strong>4. source브랜치에서 .nojekyll 파일 생성 및 _config.yml 파일 수정</strong><br />
-.nojekyll 파일을 생성
-_config.yml파일 수정</p>
-
-<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="ss">include:  
-  </span><span class="p">\</span><span class="o">-</span> <span class="p">.</span><span class="nf">nojekyll</span>
-<span class="o">=&gt;</span> <span class="err">해당</span> <span class="err">코드를</span> <span class="err">추가해</span> <span class="err">줍니다</span><span class="o">!</span></code></pre></figure>
-
-<p><strong>5. source브랜치에서 _site폴더만 필터링 해서 master브랜치 생성</strong></p>
-
-<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">git</span> <span class="n">filter</span><span class="o">-</span><span class="n">branch</span> <span class="o">--</span><span class="n">subdirectory</span><span class="o">-</span><span class="n">filter</span> <span class="n">_site</span> <span class="o">-</span><span class="n">f</span> <span class="no">HEAD</span>
-<span class="o">=&gt;</span> <span class="err">현재</span> <span class="no">HEAD</span><span class="err">에서</span> <span class="n">_site</span> <span class="err">폴더를</span> <span class="err">필터링하는</span> <span class="err">명령어</span> <span class="err">입니다</span><span class="p">.</span> <span class="nf">git</span><span class="err">에서</span> <span class="err">제공하고요</span><span class="o">~</span></code></pre></figure>
-
-<p><strong>6. master브랜치와 source브랜치 전체 push 하기</strong></p>
-
-<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">git</span> <span class="n">push</span> <span class="o">--</span><span class="n">all</span> 
-<span class="o">=&gt;</span> <span class="err">전체</span> <span class="n">branch</span><span class="err">를</span> <span class="n">push</span> <span class="err">하는</span> <span class="err">명령어입니다</span><span class="o">.</span></code></pre></figure>
-
-<p><strong>7. 웹사이트 정상 작동 확인</strong><br />
-업로드 후 자신의 사이트에서 정상 작동하는지 확인하시면 됩니다.
-기본적으로 github 브랜치 구조는 다음과 같습니다.</p>
-
-<p>master branch (source 브랜치에서 build된 _site폴더내부)<br />
-<img src="/assets/images/2018-12-01-Jekyll-custom-plugin/master.PNG" /></p>
-
-<p>source branch (소스를 관리하는 전체 소스)<br />
-<img src="/assets/images/2018-12-01-Jekyll-custom-plugin/source.PNG" /></p>
-
-<p><strong>8. 해당 순서를 shell script를 만들어서 간편화 하기</strong><br />
-매번 위와 같이 반복작업을 하다보면 매우 귀찮겠죠? 이것을 한번에 처리하기 위해 
-shell script를 만들어 보겠습니다 파일명.sh을 만든 후 해당 코드를 입력합니다.</p>
-
-<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="c1">#!/bin/bash</span>
-<span class="n">git</span> <span class="n">checkout</span> <span class="n">source</span>
-<span class="o">=&gt;</span> <span class="n">source</span> <span class="err">브랜치로</span> <span class="err">이동</span> 
-<span class="n">git</span> <span class="n">branch</span> <span class="o">-</span><span class="no">D</span> <span class="n">master</span>
-<span class="o">=&gt;</span> <span class="err">병합되지</span> <span class="err">않은</span> <span class="n">master</span> <span class="err">브랜치</span> <span class="err">삭제</span>
-<span class="n">git</span> <span class="n">checkout</span> <span class="o">-</span><span class="n">b</span> <span class="n">master</span>
-<span class="o">=&gt;</span> <span class="n">master</span><span class="err">브랜치</span> <span class="err">생성</span> <span class="p">(</span><span class="err">당연히</span> <span class="n">souce</span><span class="err">브랜치에서</span> <span class="n">build</span><span class="err">후</span> <span class="n">git</span> <span class="n">add</span><span class="p">,</span> <span class="n">git</span> <span class="n">commit</span><span class="err">을</span> <span class="err">한</span> <span class="err">이후여야겠죠</span><span class="p">?)</span>
-<span class="n">git</span> <span class="n">filter</span><span class="o">-</span><span class="n">branch</span> <span class="o">--</span><span class="n">subdirectory</span><span class="o">-</span><span class="n">filter</span> <span class="n">_site</span> <span class="o">-</span><span class="n">f</span> <span class="no">HEAD</span>
-<span class="o">=&gt;</span> <span class="err">브랜치</span> <span class="err">필터링을</span> <span class="err">통해</span> <span class="n">_site</span> <span class="err">추출</span>
-<span class="n">git</span> <span class="n">push</span> <span class="o">--</span><span class="n">all</span>
-<span class="o">=&gt;</span> <span class="n">master</span><span class="p">,</span> <span class="n">source</span> <span class="err">브랜치</span> <span class="err">모두</span> <span class="n">github</span><span class="err">에</span> <span class="n">push</span>
-<span class="n">git</span> <span class="n">checkout</span> <span class="n">source</span>
-<span class="o">=&gt;</span> <span class="err">다시</span> <span class="err">소스를</span> <span class="err">관리하는</span> <span class="n">source</span> <span class="err">브랜치로</span> <span class="err">이동</span></code></pre></figure>
-
-<p>이렇게 shell script를 만든 후 윈도우는 환경변수 설정을 해주시면 되는데요 <br />
-저는 에디터에서 파일경로 복사하고 에디터 터미널에 붙여넣기 하는 방식으로 합니다. <br />
-편하신 방법으로 하시면 되겠습니다.</p>
-
-<p>물론 당연한거지만 <code class="highlighter-rouge">주의하실점</code>은 source브랜치에서 bundle exec jekyll build or bundle exec jekyll serve 명령어로 build하신 후 (local에서 확인 하실 꺼니깐 당연히 하실꺼라 생각합니다.) git add, git commit을 하셔야합니다. <br />
-그래야 _site폴더가 갱신된 상태에서 local repository에 적용이 되니깐요 ㅎㅎ<br />
-그 후 쉘스크립트 또는 위에 순서대로 진행하시면 됩니다.</p>
-
-<p>해당 게시물에 문제가 있다면 댓글을 통해 피드백해주시면 감사하겠습니다~
-같이 공부해요~^^</p>
-
-<p><code class="highlighter-rouge">방문해주신분들 댓글 한개씩 달아주시면 감사하겠습니다~~^^</code></p>
 
 	  ]]></description>
 	</item>

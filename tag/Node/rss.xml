@@ -12,69 +12,6 @@
    <atom:link href="rss" rel="self" type="application/rss+xml" />
    
 	<item>
-	  <title>[Angular] Angular 프로젝트 생성</title>
-	  <link>//angular-starter</link>
-	  <author></author>
-	  <pubDate>2019-01-08T09:00:00+09:00</pubDate>
-	  <guid>//angular-starter</guid>
-	  <description><![CDATA[
-	     <p>안녕하세요! <strong>Do My Best 블로그</strong> 입니다.</p>
-
-<p>이번에 포스팅할 내용은 Angular 프로젝트 생성을해서 실행까지 해보도록 하겠습니다.</p>
-
-<p>이번 포스팅은 Node가 설치되어 있는 상태라 가정하고 진행하도록 하겠습니다.<br />
-node가 설치 되지 않은 분들은 아래 링크에 들어가셔서 자신에 운영체제에 맞게 설치를 진행하시면 되겠습니다.<br />
-<a href="https://ghwlchlaks.github.io/nodejs-installation-window/">윈도우 설치</a><br />
-<a href="https://ghwlchlaks.github.io/nodejs-installation-ubuntu/">리눅스 설치</a></p>
-
-<p><strong>순서</strong></p>
-<blockquote>
-  <ul>
-    <li>Angular cli 설치 및 Angular 새로운 프로젝트 생성</li>
-    <li>Angular 실행</li>
-  </ul>
-</blockquote>
-
-<p><strong>1. Angular cli 설치 및 Angular 새로운 프로젝트 생성</strong></p>
-
-<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">npm</span> <span class="n">install</span> <span class="o">-</span><span class="n">g</span> <span class="n">angular</span><span class="o">-</span><span class="n">cli</span></code></pre></figure>
-
-<p>전역(g)옵션으로 angular 명령어를 사용할 수 있는 라이브러리를 설치해 줍니다. 
-설치가 되고나면 angular-cli는 ng 명령어 키워드를 이용할 수 있습니다.</p>
-
-<p>이제 angular 프로젝트를 생성해 보겠습니다. 아주 간단합니다.</p>
-
-<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">ng</span> <span class="n">new</span> <span class="p">[</span><span class="n">project</span> <span class="nb">name</span><span class="p">]</span></code></pre></figure>
-
-<p><img src="/assets/images/2019-01-08-angular-starter/newProject.png" />
-그러면 위 이미지처럼 선택하는 항목이 나오게되는데 위에 이미지가 default입니다. 
-css말고 scss등 선택할 수 있습니다.</p>
-
-<p>선택하시면 쉽게 프로젝트가 생성되었습니다.</p>
-
-<p><strong>2. Angular 실행</strong>
-이번에는 만들어진 default 프로젝트를 실행해 보도록하겠습니다. 
-ng 명령어 키워드를 이용하시면 됩니다.</p>
-
-<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">ng</span> <span class="n">serve</span></code></pre></figure>
-
-<p><img src="/assets/images/2019-01-08-angular-starter/startPage.png" />
-서버가 실행이되면 <code class="highlighter-rouge">localhost:4200</code>에 접속하시게되면 위 이미지와같이 출력되는것을 확인 하실 수 있습니다.</p>
-
-<p>다음 링크는 초기 환경 설정이 된 github link 입니다.</p>
-
-<p><a href="https://github.com/ghwlchlaks/angular-bulletinBoard-example/tree/env/angular-material">Angular-starter</a></p>
-
-<p>지금까지 <strong>Angular 프로젝트 생성</strong>이라는 주제로 포스팅하였습니다!  <br />
-해당 게시물에 문제가 있다면 댓글을 통해 피드백해주시면 감사하겠습니다~ 같이 공부해요~^^</p>
-
-<p><code class="highlighter-rouge">방문해주신분들 댓글 한개씩 달아주시면 감사하겠습니다~~^^</code></p>
-
-
-	  ]]></description>
-	</item>
-
-	<item>
 	  <title>[Express] Typescript를 이용한 express, node초기 설정</title>
 	  <link>//express-setup-typescript</link>
 	  <author></author>
