@@ -1,6 +1,14 @@
 [
   
     {
+      "title"    : "[리눅스] GUI, CLI 환경으로 변경 방법",
+      "category" : "",
+      "tags"     : "Blog, IT, TypeScript, Angular",
+      "url"      : "https://ghwlchlaks.github.io/linux-gui-to-cli",
+      "date"     : "2019-01-21 09:00:00 +0900"
+    } ,
+  
+    {
       "title"    : "[Angular] Angular ng-bootstrap 환경 설정",
       "category" : "",
       "tags"     : "Blog, IT, TypeScript, Angular",

@@ -12,6 +12,76 @@
    <atom:link href="rss" rel="self" type="application/rss+xml" />
    
 	<item>
+	  <title>[리눅스] GUI, CLI 환경으로 변경 방법</title>
+	  <link>//linux-gui-to-cli</link>
+	  <author></author>
+	  <pubDate>2019-01-21T09:00:00+09:00</pubDate>
+	  <guid>//linux-gui-to-cli</guid>
+	  <description><![CDATA[
+	     <p>안녕하세요! <strong>Do My Best 블로그</strong> 입니다.</p>
+
+<p>이번에 포스팅할 내용은 리눅스 GUI환경에서 CLI환경으로 바꾸는 방법에대해서 포스팅하겠습니다.
+바꾸는 방법은 한가지 파일만 수정하면 되므로 쉽습니다.<br />
+순서는 아래와 같습니다.</p>
+
+<p><strong>순서</strong></p>
+<blockquote>
+  <ul>
+    <li>주석 처리</li>
+    <li>수정</li>
+    <li>주석 제거</li>
+    <li>CLI 환경 적용</li>
+    <li>GUI 환경으로 돌아가기</li>
+  </ul>
+</blockquote>
+
+<p>이번 포스팅은 /etc/default/grub 파일만을 다룹니다.</p>
+
+<p><strong>1. 주석 처리</strong></p>
+
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="no">GRUB_CMDLINE_LINUX_DEFAULT</span> <span class="err">라인을</span> <span class="err">주석처리합니다</span><span class="o">.</span></code></pre></figure>
+
+<p><img src="/assets/images/2019-01-21-linux-gui-to-cli/1.png" /></p>
+
+<p><strong>2. 수정</strong></p>
+
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="no">GRUB_CMDLINE_LINUX</span> <span class="err">라인을</span> <span class="no">GRUB_CMDLINE_LINUX</span><span class="o">=</span><span class="s2">"text"</span> <span class="err">로</span> <span class="err">수정합니다</span><span class="o">.</span></code></pre></figure>
+
+<p><img src="/assets/images/2019-01-21-linux-gui-to-cli/2.png" /></p>
+
+<p><strong>3. 주석 제거</strong></p>
+
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="p">\</span><span class="c1">#GRUB_TERMINAL=console' 라인에 주석을 제거하여 'GRUB_TERMINAL=console' 로 수정</span></code></pre></figure>
+
+<p><img src="/assets/images/2019-01-21-linux-gui-to-cli/3.png" /></p>
+
+<p>여기까지 파일 수정은 끝이났습니다. :wq명령어 혹은 쓰시는 에디터의 명령어를 이용하여 저장하고 빠져나옵니다.</p>
+
+<p><strong>4. CLI 환경 적용</strong>
+아래 명령어를 이용하여 적용해줍니다.</p>
+
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">systemctl</span> <span class="n">set</span><span class="o">-</span><span class="n">default</span> <span class="n">multi</span><span class="o">-</span><span class="n">user</span><span class="p">.</span><span class="nf">target</span></code></pre></figure>
+
+<p><img src="/assets/images/2019-01-21-linux-gui-to-cli/5.png" /></p>
+
+<p><strong>4. GUI 환경으로 돌아가기</strong>
+혹시나 GUI환경으로 돌아가려면 아래와같은 명령어를 실행해줍니다.</p>
+
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">systemctl</span> <span class="n">set</span><span class="o">-</span><span class="n">default</span> <span class="n">graphical</span><span class="p">.</span><span class="nf">target</span></code></pre></figure>
+
+<p><img src="/assets/images/2019-01-21-linux-gui-to-cli/4.png" /></p>
+
+<p>이제 모든 설정이 끝이 났습니다. reboot를해서 재부팅을 하면 CLI환경으로 접속되는것을 확인 할 수 있습니다.</p>
+
+<p>지금까지 <strong>GUI, CLI 환경으로 변경 방법</strong>이라는 주제로 포스팅하였습니다!  <br />
+해당 게시물에 문제가 있다면 댓글을 통해 피드백해주시면 감사하겠습니다~ 같이 공부해요~^^</p>
+
+<p><code class="highlighter-rouge">방문해주신분들 댓글 한개씩 달아주시면 감사하겠습니다~~^^</code></p>
+
+	  ]]></description>
+	</item>
+
+	<item>
 	  <title>[Angular] Angular ng-bootstrap 환경 설정</title>
 	  <link>//angular-ngbootstrap-setup</link>
 	  <author></author>
