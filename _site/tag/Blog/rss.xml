@@ -12,6 +12,76 @@
    <atom:link href="rss" rel="self" type="application/rss+xml" />
    
 	<item>
+	  <title>[리눅스] GUI, CLI 환경으로 변경 방법</title>
+	  <link>//linux-gui-to-cli</link>
+	  <author></author>
+	  <pubDate>2019-01-21T09:00:00+09:00</pubDate>
+	  <guid>//linux-gui-to-cli</guid>
+	  <description><![CDATA[
+	     <p>안녕하세요! <strong>Do My Best 블로그</strong> 입니다.</p>
+
+<p>이번에 포스팅할 내용은 리눅스 GUI환경에서 CLI환경으로 바꾸는 방법에대해서 포스팅하겠습니다.
+바꾸는 방법은 한가지 파일만 수정하면 되므로 쉽습니다.<br />
+순서는 아래와 같습니다.</p>
+
+<p><strong>순서</strong></p>
+<blockquote>
+  <ul>
+    <li>주석 처리</li>
+    <li>수정</li>
+    <li>주석 제거</li>
+    <li>CLI 환경 적용</li>
+    <li>GUI 환경으로 돌아가기</li>
+  </ul>
+</blockquote>
+
+<p>이번 포스팅은 /etc/default/grub 파일만을 다룹니다.</p>
+
+<p><strong>1. 주석 처리</strong></p>
+
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="no">GRUB_CMDLINE_LINUX_DEFAULT</span> <span class="err">라인을</span> <span class="err">주석처리합니다</span><span class="o">.</span></code></pre></figure>
+
+<p><img src="/assets/images/2019-01-21-linux-gui-to-cli/1.png" /></p>
+
+<p><strong>2. 수정</strong></p>
+
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="no">GRUB_CMDLINE_LINUX</span> <span class="err">라인을</span> <span class="no">GRUB_CMDLINE_LINUX</span><span class="o">=</span><span class="s2">"text"</span> <span class="err">로</span> <span class="err">수정합니다</span><span class="o">.</span></code></pre></figure>
+
+<p><img src="/assets/images/2019-01-21-linux-gui-to-cli/2.png" /></p>
+
+<p><strong>3. 주석 제거</strong></p>
+
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="p">\</span><span class="c1">#GRUB_TERMINAL=console' 라인에 주석을 제거하여 'GRUB_TERMINAL=console' 로 수정</span></code></pre></figure>
+
+<p><img src="/assets/images/2019-01-21-linux-gui-to-cli/3.png" /></p>
+
+<p>여기까지 파일 수정은 끝이났습니다. :wq명령어 혹은 쓰시는 에디터의 명령어를 이용하여 저장하고 빠져나옵니다.</p>
+
+<p><strong>4. CLI 환경 적용</strong>
+아래 명령어를 이용하여 적용해줍니다.</p>
+
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">systemctl</span> <span class="n">set</span><span class="o">-</span><span class="n">default</span> <span class="n">multi</span><span class="o">-</span><span class="n">user</span><span class="p">.</span><span class="nf">target</span></code></pre></figure>
+
+<p><img src="/assets/images/2019-01-21-linux-gui-to-cli/5.png" /></p>
+
+<p><strong>4. GUI 환경으로 돌아가기</strong>
+혹시나 GUI환경으로 돌아가려면 아래와같은 명령어를 실행해줍니다.</p>
+
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">systemctl</span> <span class="n">set</span><span class="o">-</span><span class="n">default</span> <span class="n">graphical</span><span class="p">.</span><span class="nf">target</span></code></pre></figure>
+
+<p><img src="/assets/images/2019-01-21-linux-gui-to-cli/4.png" /></p>
+
+<p>이제 모든 설정이 끝이 났습니다. reboot를해서 재부팅을 하면 CLI환경으로 접속되는것을 확인 할 수 있습니다.</p>
+
+<p>지금까지 <strong>GUI, CLI 환경으로 변경 방법</strong>이라는 주제로 포스팅하였습니다!  <br />
+해당 게시물에 문제가 있다면 댓글을 통해 피드백해주시면 감사하겠습니다~ 같이 공부해요~^^</p>
+
+<p><code class="highlighter-rouge">방문해주신분들 댓글 한개씩 달아주시면 감사하겠습니다~~^^</code></p>
+
+	  ]]></description>
+	</item>
+
+	<item>
 	  <title>[Angular] Angular ng-bootstrap 환경 설정</title>
 	  <link>//angular-ngbootstrap-setup</link>
 	  <author></author>
@@ -894,126 +964,6 @@ web.xml파일에 해당 내용을 추가해줍니다.</p>
 <p>여기까지 eclipse에서 spring 초기 환경 설정에대해서 포스팅했습니다. <br />
 물론 sts 에디터라와 spring boot와 같이 초기에 쉬운 설정을 할 수 있는 방법들이 있지만 
 기존에 방식대로 설정하는 방법이었습니다. ㅎㅎ</p>
-
-<p>해당 게시물에 문제가 있다면 댓글을 통해 피드백해주시면 감사하겠습니다~ 
-같이 공부해요~^^</p>
-
-<p><code class="highlighter-rouge">방문해주신분들 댓글 한개씩 달아주시면 감사하겠습니다~~^^</code></p>
-
-
-	  ]]></description>
-	</item>
-
-	<item>
-	  <title>docker-compose apache tomcat, mysql 환경 구성 [docker]</title>
-	  <link>//docker-tomcat-mysql</link>
-	  <author></author>
-	  <pubDate>2018-12-06T09:00:00+09:00</pubDate>
-	  <guid>//docker-tomcat-mysql</guid>
-	  <description><![CDATA[
-	     <p>안녕하세요! <strong>Do My Best 블로그</strong> 입니다.</p>
-
-<p>이번에는 docker에대해 포스팅하려고 합니다.<br />
-docker에 대한 개념설명을 먼저하려고 했으나 제가 연습한 내용이 있어서 해당 내용을 간단히 먼저 포스팅하려고 합니다. ㅎㅎ</p>
-
-<p>docker를 이용하여 어느 환경에서나 동일한 작업환경을 구성할 수 있는 장점이 있는데요
-이때 사용하는 것이 dockerfile, docker-compose 입니다.</p>
-
-<p>여기서 docker-compose는 여러개의 이미지 파일을 이용하여 여러개의 컨테이너를 실행시켜 동일한 작업 환경을 구축하는데에 사용하기위해 사용하는 파일입니다. ㅎㅎ</p>
-
-<p>이번 포스팅에서는 apache tomcat, mysql 환경을 구축하는 docker-compose 파일을 작성하는 방법에대해 알아보도록 하겠습니다.</p>
-
-<p><strong>해결 순서</strong></p>
-<blockquote>
-  <ol>
-    <li>docker 설치</li>
-    <li>docker-compose 파일 작성</li>
-    <li>docker-compose 파일 실행</li>
-  </ol>
-</blockquote>
-
-<p>간단하죠? ㅎㅎ
-사실 설치와 실행은 더 간단합니다. 가장 중요한것은 docker-compose 파일을 작성하는 것입니다.</p>
-
-<p>그럼 실습을 통해서 한번 진행해 보도록 하겠습니다.</p>
-
-<p><strong>1. docker 설치</strong></p>
-
-<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">apt</span><span class="o">-</span><span class="n">get</span> <span class="n">update</span>
-<span class="n">apt</span><span class="o">-</span><span class="n">get</span> <span class="n">upgrade</span>
-<span class="c1">#=&gt; 간단히 리눅스 환경에서 update와 upgrade를 해줍니다. ㅎㅎ</span>
-<span class="n">apt</span><span class="o">-</span><span class="n">get</span> <span class="n">install</span> <span class="n">curl</span> 
-<span class="c1">#=&gt; docker를 apt-get으로 설치해도 되지만 curl를 이용해서 설치하기위해 curl를 설치 해줍니다.</span>
-<span class="n">curl</span> <span class="o">-</span><span class="n">fsSL</span> <span class="n">https</span><span class="ss">:/</span><span class="o">/</span><span class="n">get</span><span class="p">.</span><span class="nf">docker</span><span class="p">.</span><span class="nf">com</span><span class="o">/</span> <span class="o">|</span> <span class="n">sudo</span> <span class="n">sh</span>
-<span class="c1">#=&gt; curl 명령어를 이용해 docker를 설치 해줍니다.</span></code></pre></figure>
-
-<p>간단한 설치 과정으로 1번 과정이 끝이 났습니다.</p>
-
-<p>아래 파일은 <a href="https://github.com/ghwlchlaks/docker-example-tomcat-mysql">docker-compose-apache-tomcat-mysql</a> 에서 보실 수 있습니다.</p>
-
-<p><strong>2. docker-compose 파일 작성</strong></p>
-
-<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="ss">version: </span><span class="s1">'2'</span>
-<span class="ss">services:
-        db:
-                image: </span><span class="n">mysql</span><span class="ss">:latest</span>
-                <span class="ss">environment:
-                        </span><span class="no">MYSQL_ROOT_PASSWORD</span><span class="p">:</span> <span class="mi">1234</span>
-                        <span class="no">MYSQL_DATABASE</span><span class="p">:</span> <span class="nb">test</span>
-                        <span class="no">MYSQL_USER</span><span class="p">:</span> <span class="n">user</span>
-                        <span class="no">MYSQL_PASSWORD</span><span class="p">:</span> <span class="mi">1234</span>
-                <span class="ss">ports:
-                        </span><span class="o">-</span> <span class="s2">"3306:3306"</span>
-                <span class="ss">volumes:
-                        </span><span class="o">-</span> <span class="s2">"./db:/docker-entrypoint-initdb.d"</span>
-                <span class="ss">restart: </span><span class="n">always</span>
-
-        <span class="ss">web:
-                image: </span><span class="n">tomcat</span><span class="ss">:latest</span>
-                <span class="ss">environment:
-                        </span><span class="no">JDBC_URL</span><span class="p">:</span> <span class="n">jdbc</span><span class="ss">:mysql:/</span><span class="o">/</span><span class="n">db</span><span class="p">:</span><span class="mi">3306</span><span class="o">/</span><span class="nb">test</span><span class="p">?</span><span class="n">connectTimeout</span><span class="o">=</span><span class="mi">0</span><span class="o">&amp;</span><span class="n">amp</span><span class="p">;</span><span class="n">socketTimeout</span><span class="o">=</span><span class="mi">0</span><span class="o">&amp;</span><span class="n">amp</span><span class="p">;</span><span class="n">autoReconnect</span><span class="o">=</span><span class="kp">true</span>
-                        <span class="no">JDBC_USER</span><span class="p">:</span> <span class="n">user</span>
-                        <span class="no">JDBC_PASS</span><span class="p">:</span> <span class="mi">1234</span>
-                <span class="ss">ports:
-                        </span><span class="o">-</span> <span class="s2">"80:8080"</span>
-                <span class="ss">volumes:
-                        </span><span class="o">-</span> <span class="p">.</span><span class="nf">/</span><span class="n">tomcat</span><span class="o">/</span><span class="n">webapps</span><span class="ss">:/</span><span class="n">user</span><span class="o">/</span><span class="n">local</span><span class="o">/</span><span class="n">tomcat</span><span class="o">/</span><span class="n">webapps</span>
-                <span class="ss">links:
-                        </span><span class="o">-</span> <span class="n">db</span>
-                <span class="ss">restart: </span><span class="n">always</span>  
-
-<span class="c1">#=&gt; 1번째: db라는 이름으로 컨테이너를 생성합니다.</span>
-<span class="c1">#=&gt; 2번째: 최신 버전의 mysql이미지를 다운받습니다.</span>
-<span class="c1">#=&gt; 3~7번째: db컨테이너에대해 환경설정을 하는 부분입니다.</span>
-<span class="c1">#=&gt; 8~9번째: host포트와 docker container포트를 연결할 port번호입니다.</span>
-<span class="c1">#=&gt; 10~11번째: 컨테이너안에서 사용하는 데이터를 host에 저장할 위치입니다. </span>
-<span class="c1">#=&gt; 이외에 web도 비슷한 흐름이므로 설명을 생략하겠습니다.</span>
-<span class="c1">#=&gt; 추가적으로 web에서 links는 연결할 컨테이너 이름입니다. 컨테이너를 연결하여 web에 enviroment등과 같이 설정을 연결할 수 있습니다.</span></code></pre></figure>
-
-<p>이외에도 여러가지 옵션이 있고 복잡한 환경설정을 할 수 있지만 기본적으로 환경설정을 할 수 있는 설정파일작성이 끝이 났습니다. <br />
-해당 내용을 <code class="highlighter-rouge">docker-compose.yml</code>로 저장하고 터미널환경으로 나와 줍니다~ㅎㅎ</p>
-
-<p><strong>3. docker-compose 파일 실행</strong><br />
-이제 해당 내용이 잘 작성되었는지 실행해보도록 하겠습니다.</p>
-
-<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">docker</span><span class="o">-</span><span class="n">compose</span> <span class="n">up</span>
-<span class="c1">#=&gt; 해당 커맨드를 입력하면 docker-compose.yml파일이 실행이 됩니다. </span>
-<span class="c1">#=&gt; 백그라운드로 파일을 시작하고 싶다면 `-d` 옵션을 추가적으로 입력해줍니다.</span></code></pre></figure>
-
-<p>실행이 완료되면 docker ps 명령어를 이용하여 db와 web컨테이너가 잘 실행되었는지 확인합니다.</p>
-
-<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">docker</span> <span class="n">ps</span></code></pre></figure>
-
-<p><img src="/assets/images/2018-12-07-docker-tomcat-mysql/docker_ps.png" /></p>
-
-<p>위에 사진처럼 두개의 컨테이너가 실행이 된것을 확인하시면 됩니다</p>
-
-<p>여기서는 tomcat과 mysql두개의 컨테이너를 생성하는 커맨드를 docker-compose파일로 작성하였지만 
-추가적으로 자신이 개발할 환경에 맞는 커맨드를 이용하여 docker-compose파일을 만든다면 어디서나 똑같은 개발환경을 구축하는데에 편해질것입니다.</p>
-
-<p>또한 위에 적힌 커맨드 옵션 이외에도 많은 옵션들이 있으니 공부하시면서 테스트 해보시면 좋을 것같습니다.</p>
-
-<p>지금까지 docker-compse를 이용하여 tomcat, mysql 컨테이너 환경 구축하는 방법에대해 포스팅했습니다.</p>
 
 <p>해당 게시물에 문제가 있다면 댓글을 통해 피드백해주시면 감사하겠습니다~ 
 같이 공부해요~^^</p>
