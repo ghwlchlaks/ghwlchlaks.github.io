@@ -1,6 +1,14 @@
 [
   
     {
+      "title"    : "[도커] 도커파일 Typescript node App에 도커파일 만들기",
+      "category" : "",
+      "tags"     : "Blog, IT, TypeScript, Node",
+      "url"      : "https://ghwlchlaks.github.io/dockerfile-node-typescript",
+      "date"     : "2019-01-24 09:00:00 +0900"
+    } ,
+  
+    {
       "title"    : "[도커] 도커파일 명령어",
       "category" : "",
       "tags"     : "Blog, IT, TypeScript, Angular",
