@@ -12,6 +12,89 @@
    <atom:link href="rss" rel="self" type="application/rss+xml" />
    
 	<item>
+	  <title>[Angular] Angular Http Ajax 사용하기</title>
+	  <link>//angular-http</link>
+	  <author></author>
+	  <pubDate>2019-01-27T09:00:00+09:00</pubDate>
+	  <guid>//angular-http</guid>
+	  <description><![CDATA[
+	     <p>안녕하세요! <strong>Do My Best 블로그</strong> 입니다.</p>
+
+<p>이번에 포스팅할 내용은 Angular에서 http 방법으로 Api 호출하는 방법에대해서 포스팅하겠습니다.</p>
+
+<h2 id="순서">순서</h2>
+<blockquote>
+  <ul>
+    <li>라이브러리 설치</li>
+    <li>service 파일 생성</li>
+    <li>module 파일 수정</li>
+    <li>service 파일 수정</li>
+    <li>사용</li>
+  </ul>
+</blockquote>
+
+<p><strong>1. 라이브러리 설치</strong><br />
+http 라이브러리를 사용하기위해 아래 명령어를 이용하여 설치 해줍니다. 
+기본적으로 @angular라이브러리들은 설치가 되있겠지만 혹시 설치가 안되있는경우 설치해 줍니다.</p>
+
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">npm</span> <span class="n">install</span> <span class="vi">@angular</span><span class="o">/</span><span class="n">http</span>
+<span class="n">npm</span> <span class="n">install</span> <span class="n">rxjs</span><span class="o">-</span><span class="n">compat</span> </code></pre></figure>
+
+<p><strong>2. service 파일 생성</strong><br />
+http 라이브러리를 관리하기위해 파일을 생성해줍니다.</p>
+
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">ng</span> <span class="n">generate</span> <span class="n">service</span> <span class="n">services</span><span class="o">/</span><span class="err">파일이름</span></code></pre></figure>
+
+<p><strong>3. module 파일 수정</strong><br />
+app.module혹은 컴포넌트에 상위에서 사용하는 module 파일을 수정해 줍니다.</p>
+
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">import</span> <span class="p">{</span><span class="no">HttpModule</span><span class="p">}</span> <span class="n">from</span> <span class="s1">'@angular/http'</span><span class="p">;</span>     
+<span class="n">import</span> <span class="p">{</span><span class="no">ApiService</span><span class="p">}</span> <span class="n">from</span> <span class="s1">'../services/service파일이름'</span>
+<span class="ss">imports: </span><span class="p">[</span><span class="no">HttpModule</span><span class="p">]</span>  
+<span class="ss">providers: </span><span class="p">[</span><span class="no">ApiSerice</span><span class="p">]</span></code></pre></figure>
+
+<p><strong>4. service 파일 수정</strong><br />
+2번에서 생성한 service파일을 수정해줍니다.</p>
+
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">export</span> <span class="k">class</span> <span class="nc">HomeModule</span> <span class="p">{</span> <span class="p">}</span>
+<span class="n">import</span> <span class="p">{</span> <span class="no">Injectable</span> <span class="p">}</span> <span class="n">from</span> <span class="s1">'@angular/core'</span><span class="p">;</span>
+<span class="n">import</span> <span class="p">{</span><span class="no">Http</span><span class="p">}</span> <span class="n">from</span> <span class="s1">'@angular/http'</span><span class="p">;(</span><span class="err">추가</span><span class="p">)</span>
+<span class="vi">@Injectable</span><span class="p">({</span>
+<span class="ss">providedIn: </span><span class="s1">'root'</span>
+<span class="p">})</span>
+<span class="n">export</span> <span class="k">class</span> <span class="nc">ApiService</span> <span class="p">{</span>
+<span class="n">constructor</span><span class="p">(</span><span class="kp">private</span> <span class="ss">http: </span><span class="no">Http</span><span class="p">)</span> <span class="p">{</span> <span class="p">}</span>
+<span class="n">getIpAddress</span><span class="p">():</span> <span class="no">Observable</span><span class="o">&lt;</span><span class="no">Object</span><span class="o">&gt;</span> <span class="p">{</span>
+    <span class="p">(</span><span class="err">추가</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">this</span><span class="p">.</span><span class="nf">http</span><span class="p">.</span><span class="nf">get</span><span class="p">(</span><span class="s1">'localhost:3000/'</span><span class="p">)</span>
+    <span class="p">.</span><span class="nf">map</span><span class="p">((</span><span class="ss">data: </span><span class="no">Response</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="n">data</span><span class="p">.</span><span class="nf">json</span><span class="p">());</span>
+    <span class="p">}</span>
+<span class="p">}</span></code></pre></figure>
+
+<p><strong>5. 사용</strong><br />
+Api를 사용할 컴포넌트 파일을 수정해줍니다.</p>
+
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"> 
+<span class="n">import</span> <span class="p">{</span><span class="no">ApiService</span><span class="p">}</span> <span class="n">from</span> <span class="s1">'./services/service파일이름'</span>
+<span class="n">constructor</span><span class="p">(</span> <span class="kp">private</span> <span class="ss">apiSerivce: </span><span class="no">ApiService</span><span class="p">)</span> <span class="p">{</span> <span class="p">}</span> 
+<span class="n">apiService</span><span class="p">.</span><span class="nf">getData</span><span class="p">().</span><span class="nf">subscribe</span><span class="p">((</span><span class="n">result</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="n">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="n">result</span><span class="p">);</span>
+<span class="p">})</span></code></pre></figure>
+
+<p>위와같이 작성하게되면 localhost:3000으로 api요청이 들어와 값이 반환되게됩니다.<br />
+물론 3000포트의 서버는 작성이 되있으셔야겠죠??</p>
+
+<p>지금까지 <strong>Angular Http Ajax 사용하기</strong>이라는 주제로 포스팅하였습니다!</p>
+
+<p>해당 게시물에 문제가 있다면 댓글을 통해 피드백해주시면 감사하겠습니다~ 같이 공부해요~^^</p>
+
+<p><code class="highlighter-rouge">방문해주신분들 댓글 한개씩 달아주시면 감사하겠습니다~~^^</code></p>
+
+
+	  ]]></description>
+	</item>
+
+	<item>
 	  <title>[도커] 도커파일 Typescript node App에 도커파일 만들기</title>
 	  <link>//dockerfile-node-typescript</link>
 	  <author></author>
@@ -819,125 +902,6 @@ collections.Counter(list) 메소드는 리스트를 dictionary 형태로 숫자�
 
 <p><code class="highlighter-rouge">방문해주신분들 댓글 한개씩 달아주시면 감사하겠습니다~~^^</code></p>
 
-
-	  ]]></description>
-	</item>
-
-	<item>
-	  <title>일반적으로 .gitignore에 등록하는 파일 [Git]</title>
-	  <link>//gitignore-filelist</link>
-	  <author></author>
-	  <pubDate>2018-12-13T09:00:00+09:00</pubDate>
-	  <guid>//gitignore-filelist</guid>
-	  <description><![CDATA[
-	     <p>안녕하세요! <strong>Do My Best 블로그</strong> 입니다.</p>
-
-<p>이번에는 <strong>일반적으로 .gitignore에 등록하는 파일</strong>에 대해서 포스팅하겠습니다.</p>
-
-<p>.gitignore는 git에 올리지 말아야하거나 올릴 필요가 없는 파일을 미리 등록하여 git add를 통해 staging영역에 올라가지 않는 파일을 설정한 파일을 말합니다.
-파일 명은 <code class="highlighter-rouge">.gitignore</code>입니다.</p>
-
-<p>이때 일반적으로 올리지 않는 형식에대해서 다뤄보고자 합니다.</p>
-
-<p><strong>순서</strong></p>
-<blockquote>
-  <ol>
-    <li>실행파일 제외</li>
-    <li>로그파일 제외</li>
-    <li>문서 파일 제외</li>
-    <li>패키지 파일 제외</li>
-    <li>OS용 시스템 파일 제외</li>
-    <li>자신의 에디터[Eclipse, VSCode] 설정 파일 제외</li>
-  </ol>
-</blockquote>
-
-<p><strong>1. 실행파일 제외</strong></p>
-
-<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="o">*</span><span class="p">.</span><span class="nf">dll</span>
-<span class="o">*</span><span class="p">.</span><span class="nf">exe</span>
-<span class="o">*</span><span class="p">.</span><span class="nf">o</span>
-<span class="o">*</span><span class="p">.</span><span class="nf">so</span>
-<span class="o">*</span><span class="p">.</span><span class="nf">com</span>
-<span class="o">*</span><span class="p">.</span><span class="nf">class</span>
-<span class="c1">#=&gt; 컴파일된 결과물입니다. 올릴 이유가 없겠죠?</span>
-<span class="c1">#=&gt; *은 모두들 아시다시피 전체를 뜻하는 별칭입니다. 앞으로 많이 사용됩니다~</span></code></pre></figure>
-
-<p><strong>2. 로그파일 제외</strong></p>
-
-<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="o">*</span><span class="p">.</span><span class="nf">log</span>
-<span class="n">logs</span><span class="o">/</span>
-<span class="c1">#=&gt; 로그파일은 개발자마다 다르니 올릴 이유가 없겠죠?</span>
-<span class="c1">#=&gt; 폴더를 등록할경우 위에처럼 logs/ 선언하면됩니다. 그러면 logs폴더 내부에 모든 파일이 제외 대상입니다.</span></code></pre></figure>
-
-<p><strong>3. 문서 파일 제외</strong></p>
-
-<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="o">*</span><span class="p">.</span><span class="nf">xlsx</span>
-<span class="o">*</span><span class="p">.</span><span class="nf">xls</span>
-<span class="o">*</span><span class="p">.</span><span class="nf">pdf</span>
-<span class="o">*</span><span class="p">.</span><span class="nf">docs</span>
-<span class="o">*</span><span class="p">.</span><span class="nf">ppt</span>
-<span class="o">*</span><span class="p">.</span><span class="nf">pptx</span>
-<span class="c1">#=&gt; 문서형식은 올리지 않도록 설정합니다. 위에 형식이 자주 사용하는 파일 형식이죠?</span>
-<span class="c1">#=&gt; 물론 필요에 따라서 문서를 올리기도 합니다 그때는 적절히 .gitignore파일을 수정해주면 되겠죠?</span></code></pre></figure>
-
-<p><strong>4. 패키지 파일 제외</strong></p>
-
-<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="o">*</span><span class="p">.</span><span class="nf">dmg</span>
-<span class="o">*</span><span class="p">.</span><span class="nf">iso</span>
-<span class="o">*</span><span class="p">.</span><span class="nf">tar</span>
-<span class="o">*</span><span class="p">.</span><span class="nf">zip</span>
-<span class="o">*</span><span class="p">.</span><span class="nf">gz</span>
-<span class="c1">#=&gt; 압축파일 형식입니다. </span></code></pre></figure>
-
-<p><strong>5. OS용 시스템 파일 제외</strong></p>
-
-<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="o">.</span><span class="no">Trashes</span>
-<span class="o">.</span><span class="no">Thumbs</span><span class="p">.</span><span class="nf">db</span>
-<span class="p">.</span><span class="nf">ehthumbs</span><span class="p">.</span><span class="nf">db</span>
-<span class="c1">#=&gt; 개발때 사용한 운영체제별 시스템 파일은 제외해야겠죠?</span></code></pre></figure>
-
-<p><strong>6. 자신의 에디터[Eclipse, VSCode] 설정 파일 제외</strong></p>
-
-<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="c1">#=&gt; Eclipse</span>
-<span class="p">.</span><span class="nf">metadata</span>
-<span class="n">bin</span><span class="o">/</span>
-<span class="n">tmp</span><span class="o">/</span>
-<span class="o">*</span><span class="p">.</span><span class="nf">tmp</span>
-<span class="o">*</span><span class="p">.</span><span class="nf">bak</span>
-<span class="o">*</span><span class="p">.</span><span class="nf">swp</span>
-<span class="n">local</span><span class="p">.</span><span class="nf">properties</span>
-<span class="p">.</span><span class="nf">settings</span><span class="o">/</span>
-<span class="p">.</span><span class="nf">loadpath</span>
-<span class="p">.</span><span class="nf">recommenders</span>
-<span class="p">.</span><span class="nf">project</span>
-<span class="p">.</span><span class="nf">externalToolBuilders</span><span class="o">/</span>
-<span class="o">*</span><span class="p">.</span><span class="nf">launch</span>
-<span class="p">.</span><span class="nf">classpath</span>
-<span class="p">.</span><span class="nf">factorypath</span>
-<span class="p">.</span><span class="nf">buildpath</span>
-<span class="p">.</span><span class="nf">target</span>
-<span class="p">.</span><span class="nf">springBeans</span>
-<span class="p">.</span><span class="nf">recommenders</span><span class="o">/</span>
-<span class="o">-----------------------------------------------------------------------------</span>
-<span class="c1">#=&gt; VSCode</span>
-<span class="p">.</span><span class="nf">vscode</span><span class="o">/*</span>
-<span class="o">!</span><span class="p">.</span><span class="nf">vscode</span><span class="o">/</span><span class="n">settings</span><span class="p">.</span><span class="nf">json</span>
-<span class="o">!</span><span class="p">.</span><span class="nf">vscode</span><span class="o">/</span><span class="n">tasks</span><span class="p">.</span><span class="nf">json</span>
-<span class="o">!</span><span class="p">.</span><span class="nf">vscode</span><span class="o">/</span><span class="n">launch</span><span class="p">.</span><span class="nf">json</span>
-<span class="o">!</span><span class="p">.</span><span class="nf">vscode</span><span class="o">/</span><span class="n">extensions</span><span class="p">.</span><span class="nf">json</span>
-<span class="c1">#=&gt; 이클립스를 사용하면 생성되는 설정 파일 혹은 임시 파일들은 제외합니다. </span>
-<span class="c1">#=&gt; 해당 정보는 개발자마다 PC환경이 다르기 때문에 설정 정보를 넣어서 push하게 된다면</span>
-<span class="c1">#=&gt; 해당 내용을 받는 개발자들에 이클립스 환경에 덮어쓰기가되어 동작하지않는 이슈가 생길 수 있습니다. </span>
-<span class="c1">#=&gt; 이클립스 뿐만아니라 다른 에디터를 사용하면서 생기는 설정, 임시 파일을 제외해주세요~</span></code></pre></figure>
-
-<p>해당 내용 이외에도 제외하고자하는 파일 형식이나 폴더를 등록해주시면 git 저장소에 쓸데없는 내용이 업로드 되지 않겠죠?ㅎㅎ</p>
-
-<p>여기까지 <code class="highlighter-rouge">일반적으로 .gitignore에 등록하는 파일</code>에대해서 포스팅했습니다.</p>
-
-<p>해당 게시물에 문제가 있다면 댓글을 통해 피드백해주시면 감사하겠습니다~ 
-같이 공부해요~^^</p>
-
-<p><code class="highlighter-rouge">방문해주신분들 댓글 한개씩 달아주시면 감사하겠습니다~~^^</code></p>
 
 	  ]]></description>
 	</item>
