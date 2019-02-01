@@ -11,10 +11,11 @@ class: 'about-template'
   
   <img src="/assets/images/default/choijiho3.jpg" style="float: right; margin-right: 40%;">  
   
-## **최지호**  
+# **`최지호`**  
 
 **Email** : `ghwlchlaks@gmail.com`  
 **Github** : [Github](https://github.com/ghwlchlaks/)  
+**Blog** : [Blog](https://ghwlchlaks.github.io/) 
 
 ---
 
@@ -63,6 +64,8 @@ class: 'about-template'
 >* **자격증 명** : 정보처리기사
 >* **기간** : 2018.05
 >* **결과** : 취득  
+
+---
 
 ### **[기타 공부 프로젝트]**
 >* **[Vue와 Node를 이용한 게시판](https://github.com/ghwlchlaks/node-vue-rtcAPI)**
