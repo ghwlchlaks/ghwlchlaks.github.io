@@ -3,7 +3,7 @@ layout: page
 title: Info
 navigation: true
 logo: 'assets/images/default/DMB_logo.png'
-current: about
+current: Info
 logo: 'assets/images/default/DMB_logo.png'
 cover: 'assets/images/cover/about_cover.jpg'
 class: 'about-template'
@@ -21,6 +21,8 @@ class: 'about-template'
 ### **[하고 싶은 말]**  
 >* Github에 조금씩이라도 매일 업로드하는 것을 목표로 공부하고 있습니다.  
    꾸준히 공부하는 개발자가 되겠습니다.  
+
+---
 
 ### **[주요프로젝트]**
 >* **[2019년 게임 전적 조회 사이트 구축](http://fortnitestats.xyz/)**  
