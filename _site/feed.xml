@@ -8,6 +8,23 @@
     
       
       <item>
+        <title>웹 공부01</title>
+        
+          <description>&lt;h2 id=&quot;웹-공부01&quot;&gt;웹 공부01&lt;/h2&gt;
+&lt;p&gt;Fetch api를 이용하면 request나 response와 같은 HTTP의 파이프라인을 구성하는 요소를 조작하는 것이 가능.
+XMLHttpRequest 객체를 사용해 서버와 상호작용을 살 수 있습니다. 페이지 전체의 데이터를 새로 받아오지 않고도 특정 URL로부터 데이터를 받아 올 수 있습니다. 이를 이용해 웹페이지는 용자를 방해하지 않고도 페이지의 일부분만을 업데이트 할 수 있습니다.&lt;/p&gt;
+
+</description>
+        
+        <pubDate>Fri, 08 Feb 2019 09:00:00 +0900</pubDate>
+        <link>
+        https://ghwlchlaks.github.io/interview01</link>
+        <guid isPermaLink="true">https://ghwlchlaks.github.io/interview01</guid>
+      </item>
+      
+    
+      
+      <item>
         <title>[Angular] Angular Http Ajax 사용하기</title>
         
           <description>&lt;p&gt;안녕하세요! &lt;strong&gt;Do My Best 블로그&lt;/strong&gt; 입니다.&lt;/p&gt;
