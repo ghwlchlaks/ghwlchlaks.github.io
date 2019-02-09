@@ -12,6 +12,59 @@
    <atom:link href="rss" rel="self" type="application/rss+xml" />
    
 	<item>
+	  <title>Git 공부01</title>
+	  <link>//interview02</link>
+	  <author></author>
+	  <pubDate>2019-02-09T09:00:00+09:00</pubDate>
+	  <guid>//interview02</guid>
+	  <description><![CDATA[
+	     <h2 id="git-공부01">Git 공부01</h2>
+<p>git clone</p>
+<ul>
+  <li>원격저장소를 복제하여 가져온다.</li>
+</ul>
+
+<p>git add</p>
+<ul>
+  <li>워킹디렉토리에 있는 파일들은 stage영역으로 추가하는 것 . 추가하게되면 commit-을 이용한 스냅샷저장에 포함되어진다.</li>
+</ul>
+
+<p>git commit</p>
+<ul>
+  <li>저장소의 스냅샷을 찍기위한 명령어. 한 개한개가 버전업이되는것이다</li>
+</ul>
+
+<p>git branch</p>
+<ul>
+  <li>메인 브랜치 혹은 작업할 브랜치에서 분기를 하여 작업할 수 있는 공간을 말한다.</li>
+</ul>
+
+<p>git checkout</p>
+<ul>
+  <li>브랜치로 이동혹은 특정 버전(커밋)으로 이동하는 명령어</li>
+</ul>
+
+<p>git statsh</p>
+<ul>
+  <li>unstaged 상태(add하지 않은 상태)인 변경사항을 일시적으로 백업하고 워킹디렉토리를(작업디렉토리)를 깨끗한 상태로 유지(HEAD) 상태로</li>
+  <li>그 후 rebase나 pull값은 작업을 할 수 있음</li>
+  <li>그 후 git statsh pop or git stash apply를 사용하여 워킹디렉토리에 백업한 내용을 적용할 수 있습니다.</li>
+</ul>
+
+<p>git push</p>
+<ul>
+  <li>로컬저장소에 저장된 (add, commit이된) 파일들을 원격저장소에 업로드한다.</li>
+</ul>
+
+<p>git merge</p>
+<ul>
+  <li>브랜치를 합친다.</li>
+</ul>
+
+	  ]]></description>
+	</item>
+
+	<item>
 	  <title>웹 공부01</title>
 	  <link>//interview01</link>
 	  <author></author>
@@ -818,93 +871,6 @@ dp를 풀면서 해당 문제를 풀어보도록 하겠습니다.</p>
 <p>다이나믹 프로그래밍은 아직 너무 어렵네요.. ㅠㅠ 좀 더 공부하도록 하겠습니다.!</p>
 
 <p>지금까지 <strong>프로그래머스 문제 LEVEL2에 해당되는 땅 따먹기 문제</strong>이라는 주제로 포스팅하였습니다!  <br />
-해당 게시물에 문제가 있다면 댓글을 통해 피드백해주시면 감사하겠습니다~ 같이 공부해요~^^</p>
-
-<p><code class="highlighter-rouge">방문해주신분들 댓글 한개씩 달아주시면 감사하겠습니다~~^^</code></p>
-
-
-	  ]]></description>
-	</item>
-
-	<item>
-	  <title>[프로그래머스 LEVEL2] 이상한 문자 만들기 [파이썬]</title>
-	  <link>//Algorithm-strangeChar</link>
-	  <author></author>
-	  <pubDate>2018-12-22T09:00:00+09:00</pubDate>
-	  <guid>//Algorithm-strangeChar</guid>
-	  <description><![CDATA[
-	     <p>안녕하세요! <strong>Do My Best 블로그</strong>입니다. ㅎㅎ</p>
-
-<p>이번에 포스팅할 내용은  <strong>프로그래머스 문제 LEVEL2에 해당되는 이상한 문자 만들기 알고리즘 문제</strong>를 풀어보도록 하겠습니다.</p>
-
-<p>해당 문제는 <a href="https://programmers.co.kr/learn/courses/30/lessons/12930">프로그래머스 웹페이지</a>에서 만나보실 수 있습니다.</p>
-
-<h1 id="문제">문제</h1>
-<p>문자열 s는 공백 문자로 구분되어 있습니다. 각 단어의 홀수는 소문자로, 짝수는 대문자로 바꿔 리턴하는 함수를 작성하시오.</p>
-
-<p>입출력 예제는 <a href="https://programmers.co.kr/learn/courses/30/lessons/12930">프로그래머스 웹페이지</a>에서 확인하세요!</p>
-
-<p><strong>제한 사항</strong></p>
-<blockquote>
-  <ul>
-    <li>문자열 전체가 아닌 단어 공백으로 인덱스를 판별해아합니다.</li>
-  </ul>
-</blockquote>
-
-<p>저의 처음 풀이 방법은  아래와 같습니다.</p>
-
-<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">answer</span> <span class="o">=</span> <span class="s2">""</span>
-<span class="k">for</span> <span class="n">datas</span> <span class="k">in</span> <span class="n">s</span><span class="p">.</span><span class="nf">split</span><span class="p">():</span>
-    <span class="n">c_data</span> <span class="o">=</span> <span class="s2">""</span>
-    <span class="k">for</span> <span class="n">i</span> <span class="k">in</span> <span class="ss">data:
-        </span><span class="k">if</span> <span class="n">i</span> <span class="o">%</span><span class="mi">2</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
-            <span class="n">c_data</span> <span class="o">+=</span> <span class="n">data</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="nf">upper</span><span class="p">()</span>
-        <span class="ss">else:
-            </span><span class="n">c_data</span> <span class="o">+=</span> <span class="n">data</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="nf">lower</span><span class="p">()</span>
-    <span class="n">answer</span> <span class="o">+=</span> <span class="n">c_data</span> <span class="o">+</span> <span class="s2">" "</span>
-    <span class="n">retrun</span> <span class="n">answer</span><span class="p">.</span><span class="nf">strip</span><span class="p">()</span> </code></pre></figure>
-
-<p>처음 저의 생각은 단순히 문장을 split() 하여 각 단어별로 짝수, 홀수를 판단하여 대문자(upper), 소문자(lower)로 해결해겠다는 생각을 하였습니다. 이렇게 하게되면 입축력 예제는 통과하지만 제출을 하게되면 많은 실패가 출력되는 것을 보실 수 있을것입니다.</p>
-
-<p>또는 위에 코드를 이렇게 줄일 수 있습니다.</p>
-
-<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="k">return</span> <span class="s1">' '</span><span class="p">.</span><span class="nf">join</span><span class="p">(</span><span class="s1">''</span><span class="p">.</span><span class="nf">join</span><span class="p">([</span><span class="n">c</span><span class="p">.</span><span class="nf">upper</span><span class="p">()</span> <span class="k">if</span> <span class="n">i</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">0</span> <span class="k">else</span> <span class="n">c</span><span class="p">.</span><span class="nf">lower</span><span class="p">()</span> <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">c</span> <span class="k">in</span> <span class="n">enumerate</span><span class="p">(</span><span class="n">w</span><span class="p">)])</span> <span class="k">for</span> <span class="n">w</span> <span class="k">in</span> <span class="n">s</span><span class="p">.</span><span class="nf">split</span><span class="p">())</span></code></pre></figure>
-
-<p>훨씬 깔끕해졌죠? 하지만 실패한 것을 해결하기 위해 조건을 생각해보았습니다.</p>
-<blockquote>
-  <ol>
-    <li>위에 해당하는 것처럼 인덱스 별로 짝수, 홀수를 판단하여 대문자, 소문자로 변경해야합니다.</li>
-    <li>(중요!) 이전까지 작성한 코드는 마지막 공백(“ “)을 strip()으로 제거하는 것을 보실 수 있습니다. 
-하지만 문자열 마지막에 공백문자가 있다면 당연히 오류가 나겠죠? 이 조건을 생각하여 해결하면 해당 문제를 풀 수 있습니다.</li>
-  </ol>
-</blockquote>
-
-<p>다음은 통과한 풀이 방법 입니다.</p>
-
-<h1 id="풀이">풀이</h1>
-
-<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby">    <span class="n">dx</span> <span class="o">=</span> <span class="mi">0</span>
-    <span class="n">answer</span> <span class="o">=</span> <span class="s2">""</span>
-    <span class="k">for</span> <span class="n">i</span> <span class="k">in</span> <span class="n">range</span><span class="p">(</span><span class="n">len</span><span class="p">(</span><span class="n">s</span><span class="p">)):</span>
-        <span class="k">if</span> <span class="n">s</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">==</span> <span class="s2">" "</span><span class="p">:</span>
-            <span class="n">dx</span> <span class="o">=</span> <span class="mi">0</span>
-            <span class="n">answer</span> <span class="o">+=</span> <span class="s2">" "</span>
-            <span class="n">continue</span>
-        <span class="k">if</span> <span class="n">dx</span> <span class="o">%</span><span class="mi">2</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
-            <span class="n">answer</span> <span class="o">+=</span> <span class="n">s</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="nf">upper</span><span class="p">()</span>
-        <span class="ss">else:
-            </span><span class="n">answer</span> <span class="o">+=</span> <span class="n">s</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="nf">lower</span><span class="p">()</span>
-        <span class="n">dx</span> <span class="o">+=</span> <span class="mi">1</span>
-    <span class="k">return</span> <span class="n">answer</span></code></pre></figure>
-
-<p>문자열을 split()로 쪼개지않고 전체를 for문을 돌린후 단어별로 짝수 홀수를 판단하여 대문자, 소문자로 변환합니다.(조건1)<br />
-그 후 마지막 문자열에 공백이 존재할 수 있기 때문에 그대로 문자열에 더하여 저장하는 코드입니다. (조건2) 
-이러한 방식으로 풀면 해당 문제를 해결 할 수 있습니다. 
-계속 실패하길래 어디가 문제인가 싶었더니 조건을 더 생각해야한다는 것을 알았습니다.. ㅠㅠ</p>
-
-<p>이부분에서 많은 분들이 실수하시는 것같습니다.</p>
-
-<p>지금까지 <strong>프로그래머스 문제 LEVEL2에 해당되는 이상한 문자 만들기 알고리즘 문제</strong>이라는 주제로 포스팅하였습니다!  <br />
 해당 게시물에 문제가 있다면 댓글을 통해 피드백해주시면 감사하겠습니다~ 같이 공부해요~^^</p>
 
 <p><code class="highlighter-rouge">방문해주신분들 댓글 한개씩 달아주시면 감사하겠습니다~~^^</code></p>
