@@ -8,6 +8,32 @@
     
       
       <item>
+        <title>NoSQL 공부01</title>
+        
+          <description>&lt;h2 id=&quot;nosql-공부01&quot;&gt;NoSQL 공부01&lt;/h2&gt;
+&lt;p&gt;NoSql은 키-값이나 컬럼, 문서 형식 등의 데이터 모델을 이용, 비 관계형 데이터베이스 
+Nosql과 RDBMS와의 다른 점&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;스키마가 없다. (데이터 관계와 정해진 규격 (table-colmn의 정의))가 없다.&lt;/li&gt;
+  &lt;li&gt;관계 정의가 없으니 Join이 불가능 (reference(참조)와 같은 기능으로 비슷하게 구현 가능)&lt;/li&gt;
+  &lt;li&gt;분산처리(수평적 확장)를 쉽게 제공
+왜 사용하는가?&lt;/li&gt;
+  &lt;li&gt;많은 양의 데이터를 효율적으로 처리가 필요할 때&lt;/li&gt;
+  &lt;li&gt;데이터의 분산처리, 빠른 쓰기가 필요할 떄&lt;/li&gt;
+  &lt;li&gt;분산처리를 하므로 특정서버에 장애가 발생했을때에도 데이터 유실이나 서비스 중지가 없는 형태의 구조이기 때문에 사용&lt;/li&gt;
+&lt;/ul&gt;
+
+</description>
+        
+        <pubDate>Sun, 10 Feb 2019 09:00:00 +0900</pubDate>
+        <link>
+        https://ghwlchlaks.github.io/interview03</link>
+        <guid isPermaLink="true">https://ghwlchlaks.github.io/interview03</guid>
+      </item>
+      
+    
+      
+      <item>
         <title>Git 공부01</title>
         
           <description>&lt;h2 id=&quot;git-공부01&quot;&gt;Git 공부01&lt;/h2&gt;
