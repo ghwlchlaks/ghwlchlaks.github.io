@@ -12,6 +12,132 @@
    <atom:link href="rss" rel="self" type="application/rss+xml" />
    
 	<item>
+	  <title>[React] LifeCycle</title>
+	  <link>//react-lifecycle</link>
+	  <author></author>
+	  <pubDate>2019-02-28T09:00:00+09:00</pubDate>
+	  <guid>//react-lifecycle</guid>
+	  <description><![CDATA[
+	     <p>면접을 준비하면서 리액트를 빠르게 배워서 개발을 진행했습니다.<br />
+공부하면서 중요한 부분중에 하나가 역시 LifeCycle이었고 어려운 부분이었습니다.</p>
+
+<p>어떠한 내용들이 있는지 정리하는 포스팅을 해보려고 합니다.</p>
+
+<h2 id="생성">생성</h2>
+
+<hr />
+
+<h3 id="1constructor">1.constructor</h3>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>constructor(props) {
+    super(props);
+}
+</code></pre></div></div>
+
+<p>constructor는 생성자 메소드로 컴포넌트가 처음 생성될떄 만들어집니다.
+props또한 전달되어집니다.</p>
+
+<h3 id="2componentwillmount-deprecated">2.componentWillMount (deprecated)</h3>
+
+<h3 id="3-render">3. render</h3>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>render {
+    return()
+}
+</code></pre></div></div>
+
+<p>리액트를 하시면 위와 같은 코드를 보실 수 있는데요 jsx문법을 사용하여 렌더링하는 부분입니다.</p>
+
+<h3 id="4-componentdidmount">4. componentDidMount</h3>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>componentDidMount() {
+    Document.get...
+    axios.get...
+}
+</code></pre></div></div>
+
+<p>componentDidMount는 3번 render이후에 즉 컴포넌트가 렌더링된 이후 호출되는 메소드로 DOM 조작 및 axios등을 이용한 비동기 데이터 요청을 주로 작성하는 부분입니다.<br />
+여기서 주의할점은 componentDidMount 메소드에서 setState를 이용하여 state의 값을 변경하게되면 리렌더링이 되므로 작성하지 않는 것이 좋습니다.</p>
+
+<h2 id="업데이트">업데이트</h2>
+
+<hr />
+
+<h3 id="1-getderivedstatefromprops">1. getDerivedStateFromProps</h3>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>static getDerivedStateFromProps(nextProps, prevState) {
+    if (prevState.val !== nextProps.val) {
+        return {val: nextProps.val};
+    }
+    return null;
+}
+</code></pre></div></div>
+
+<p>getDerivedStateFromProps는 Props가 변할때 state값을 변경해서 리렌링 할 수 있는 메소드입니다.<br />
+위와 같이 기본적으로 null을 리턴하며 이전 state의 값과 이후 받은 props의 값을 비교하여 다른 경우에만
+state를 변경시켜주는 코드입니다. 여기서 주의하실점은 setState문을 이용하여 state를 변경하는 것이아니라
+retrun {val: nextProps.val}의 형태로 반환해준다는 것입니다.</p>
+
+<h3 id="2-shouldcomponentupdate">2. shouldComponentUpdate</h3>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>shouldComponentUpdate(nextProps, nextState) {
+    if ( this.state.val !== nextState.val) {
+        return false;
+    }
+    return true;
+}
+</code></pre></div></div>
+
+<p>기본적으로 return하는 값은 true이며 true인경우에는 리렌더링을 진행합니다.<br />
+해당 메소드는 성능 최적화를 하기위해서 사용하는 메소드로 굳이 리렌더링을 하지 않아도 되는 state를 막는 것입니다.<br />
+위와같이 state혹은 Props를 비교해서 값이 변경된 경우에만 렌더링을 하게 할 수 있습니다.</p>
+
+<h3 id="3-getsnapshotbeforeupdate">3. getSnapshotBeforeUpdate</h3>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>getSnapshotBeforeUpdate(prevProps, prevState) {
+    return prevState.val;
+}
+</code></pre></div></div>
+
+<p>해당 메소드는 수정(update)이 발생하기 바로 전에 호출되는 메소드입니다. 해당 메소드에서 반환한 값은
+componentDidupdate에 세번째 매개변수로 전달됩니다. (자주 사용하는 부분은 아닌것같습니다.)<br />
+찾아보니 리렌더링되는 동안 스크롤의 위치가 처음으로초기화 되는 것이아니라 기존의 위치로 렌더링되기위해 기존의 위치를 update되기전 넘겨주는 역할을 하는 경우에 사용한다고 합니다.</p>
+
+<h3 id="4-componentdidupdate">4. componentDidUpdate</h3>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>componentDidUpdate(prevProps, prevState, [snapshot]) {
+}
+</code></pre></div></div>
+
+<p>해당 메소드는 업데이트 처리를 끝내고 render이 된 이후에 실행되는 메소드입니다.<br />
+즉 모든 props와 state의 값이 변경이된상태이고 prevProps와 prevState 인자를 이용해 이전의 값들은 읽을 수 있습니다.<br />
+또한 세번째 인자인 snapshot은 3번에 getSnapshotBeforeUpdate에서 반환한 데이터입니다.</p>
+
+<h2 id="소멸">소멸</h2>
+
+<hr />
+
+<h3 id="1-componentwillunmount">1. componentWillUnmount</h3>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>componentWillUnmount() {
+}
+</code></pre></div></div>
+
+<p>해당 메소드는 컴포넌트가 소멸될때 발생하는 메소드로 인스턴스를 제거하는 코드를 작섷해줍니다.</p>
+
+<p>여기까지 큰틀로 실행되는 리액트의 LifeCycle에대해서 알아보았습니다.<br />
+deprecated 된것이 꽤 있기 때문에 모든것을 적지는 않았습니다.</p>
+
+<p>저 또한 작성하면서 다시 공부할 수 있었습니다.</p>
+
+<p>해당 게시물에 문제가 있다면 댓글을 통해 피드백해주시면 감사하겠습니다~ 같이 공부해요~^^</p>
+
+<p><code class="highlighter-rouge">방문해주신분들 댓글 한개씩 달아주시면 감사하겠습니다~~^^</code></p>
+
+	  ]]></description>
+	</item>
+
+	<item>
 	  <title>취업 미션 후기</title>
 	  <link>//interview-review01</link>
 	  <author></author>
@@ -668,69 +794,6 @@ labore sustainable VHS.
 <p><img src="/assets/images/2019-01-14-angular-ngbootstrap-setup/result.png" /></p>
 
 <p>지금까지 <strong>Angular ng-bootstrap 환경 설정</strong>이라는 주제로 포스팅하였습니다!  <br />
-해당 게시물에 문제가 있다면 댓글을 통해 피드백해주시면 감사하겠습니다~ 같이 공부해요~^^</p>
-
-<p><code class="highlighter-rouge">방문해주신분들 댓글 한개씩 달아주시면 감사하겠습니다~~^^</code></p>
-
-
-	  ]]></description>
-	</item>
-
-	<item>
-	  <title>[Angular] Angular 프로젝트 생성</title>
-	  <link>//angular-starter</link>
-	  <author></author>
-	  <pubDate>2019-01-08T09:00:00+09:00</pubDate>
-	  <guid>//angular-starter</guid>
-	  <description><![CDATA[
-	     <p>안녕하세요! <strong>Do My Best 블로그</strong> 입니다.</p>
-
-<p>이번에 포스팅할 내용은 Angular 프로젝트 생성을해서 실행까지 해보도록 하겠습니다.</p>
-
-<p>이번 포스팅은 Node가 설치되어 있는 상태라 가정하고 진행하도록 하겠습니다.<br />
-node가 설치 되지 않은 분들은 아래 링크에 들어가셔서 자신에 운영체제에 맞게 설치를 진행하시면 되겠습니다.<br />
-<a href="https://ghwlchlaks.github.io/nodejs-installation-window/">윈도우 설치</a><br />
-<a href="https://ghwlchlaks.github.io/nodejs-installation-ubuntu/">리눅스 설치</a></p>
-
-<p><strong>순서</strong></p>
-<blockquote>
-  <ul>
-    <li>Angular cli 설치 및 Angular 새로운 프로젝트 생성</li>
-    <li>Angular 실행</li>
-  </ul>
-</blockquote>
-
-<p><strong>1. Angular cli 설치 및 Angular 새로운 프로젝트 생성</strong></p>
-
-<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">npm</span> <span class="n">install</span> <span class="o">-</span><span class="n">g</span> <span class="n">angular</span><span class="o">-</span><span class="n">cli</span></code></pre></figure>
-
-<p>전역(g)옵션으로 angular 명령어를 사용할 수 있는 라이브러리를 설치해 줍니다. 
-설치가 되고나면 angular-cli는 ng 명령어 키워드를 이용할 수 있습니다.</p>
-
-<p>이제 angular 프로젝트를 생성해 보겠습니다. 아주 간단합니다.</p>
-
-<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">ng</span> <span class="n">new</span> <span class="p">[</span><span class="n">project</span> <span class="nb">name</span><span class="p">]</span></code></pre></figure>
-
-<p><img src="/assets/images/2019-01-08-angular-starter/newProject.png" />
-그러면 위 이미지처럼 선택하는 항목이 나오게되는데 위에 이미지가 default입니다. 
-css말고 scss등 선택할 수 있습니다.</p>
-
-<p>선택하시면 쉽게 프로젝트가 생성되었습니다.</p>
-
-<p><strong>2. Angular 실행</strong>
-이번에는 만들어진 default 프로젝트를 실행해 보도록하겠습니다. 
-ng 명령어 키워드를 이용하시면 됩니다.</p>
-
-<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">ng</span> <span class="n">serve</span></code></pre></figure>
-
-<p><img src="/assets/images/2019-01-08-angular-starter/startPage.png" />
-서버가 실행이되면 <code class="highlighter-rouge">localhost:4200</code>에 접속하시게되면 위 이미지와같이 출력되는것을 확인 하실 수 있습니다.</p>
-
-<p>다음 링크는 초기 환경 설정이 된 github link 입니다.</p>
-
-<p><a href="https://github.com/ghwlchlaks/angular-bulletinBoard-example/tree/env/angular-material">Angular-starter</a></p>
-
-<p>지금까지 <strong>Angular 프로젝트 생성</strong>이라는 주제로 포스팅하였습니다!  <br />
 해당 게시물에 문제가 있다면 댓글을 통해 피드백해주시면 감사하겠습니다~ 같이 공부해요~^^</p>
 
 <p><code class="highlighter-rouge">방문해주신분들 댓글 한개씩 달아주시면 감사하겠습니다~~^^</code></p>
