@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 
     <!-- Page Meta -->
-    <title>[React] LifeCycle</title>
+    <title>[React] 컴포넌트간의 데이터 전송</title>
     <meta name="description" content="리액트 라이프 사이클" />
 
     <!-- Mobile Meta -->
@@ -29,21 +29,21 @@
 	<link rel="stylesheet" href="/assets/fonts/font-awesome/css/font-awesome.min.css">
 
     <!-- Ghost outputs important style and meta data with this tag -->
-        <link rel="canonical" href="https://ghwlchlaks.github.io//react-lifecycle" />
+        <link rel="canonical" href="https://ghwlchlaks.github.io//react-data-transfer" />
     <meta name="referrer" content="origin" />
     <link rel="next" href="https://ghwlchlaks.github.io/page2/" />
 
     <meta property="og:site_name" content="DeMBi" />
     <meta property="og:type" content="website" />
-    <meta property="og:title" content="[React] LifeCycle" />
+    <meta property="og:title" content="[React] 컴포넌트간의 데이터 전송" />
     <meta property="og:description" content="리액트 라이프 사이클" />
-    <meta property="og:url" content="https://ghwlchlaks.github.io//react-lifecycle" />
+    <meta property="og:url" content="https://ghwlchlaks.github.io//react-data-transfer" />
     <meta property="og:image" content="https://ghwlchlaks.github.io/assets/images/cover/react_js.png" />
 
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="[React] LifeCycle" />
+    <meta name="twitter:title" content="[React] 컴포넌트간의 데이터 전송" />
     <meta name="twitter:description" content="리액트 라이프 사이클" />
-    <meta name="twitter:url" content="https://ghwlchlaks.github.io//react-lifecycle" />
+    <meta name="twitter:url" content="https://ghwlchlaks.github.io//react-data-transfer" />
     <meta name="twitter:image:src" content="/assets/images/cover/react_js.png" />
     
     <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
@@ -54,21 +54,21 @@
     });
     </script>
     <!-- <meta property="og:locale" content="ko_KR" />
-	<meta name="description" content="면접을 준비하면서 리액트를 빠르게 배워서 개발을 진행했습니다.공부하면서 중요한 부분중에 하나가 역시 LifeCycle이었고 어려운 부분이었습니다.">
+	<meta name="description" content="2개이상의 컴포넌트를 만들게 되면 부모 자식 관계의 컴포넌트가 생성되게 됩니다.리액트에서 컴포넌트간 데이터를 전송을 해야하는 경우가 많습니다. 이럴때 어떻게 데이터를 전송할 수 있을지 알아보도록하겠습니다.">
 	<meta property="og:site_name" content="">
 	
-	<meta property="og:title" content="[React] LifeCycle">
+	<meta property="og:title" content="[React] 컴포넌트간의 데이터 전송">
 	<meta property="og:type" content="article">
-	<meta property="og:description" content="면접을 준비하면서 리액트를 빠르게 배워서 개발을 진행했습니다.
-공부하면서 중요한 부분중에 하나가 역시 LifeCycle이었고 어려운 부분이었습니다.
+	<meta property="og:description" content="2개이상의 컴포넌트를 만들게 되면 부모 자식 관계의 컴포넌트가 생성되게 됩니다.
+리액트에서 컴포넌트간 데이터를 전송을 해야하는 경우가 많습니다. 이럴때 어떻게 데이터를 전송할 수 있을지 알아보도록하겠습니다.
 
 "/>
 	
 	
-	<meta property="article:published_time" content="2019-02-28T09:00:00+09:00">
+	<meta property="article:published_time" content="2019-03-01T09:00:00+09:00">
 	<meta property="article:author" content="https://ghwlchlaks.github.io/about/">
 	
-	<meta property="og:url" content="https://ghwlchlaks.github.io/react-lifecycle" />
+	<meta property="og:url" content="https://ghwlchlaks.github.io/react-data-transfer" />
 	
 	<meta itemprop="keywords" content="Blog,IT" />
 	
@@ -85,8 +85,8 @@
     "@context": "http://schema.org",
     "@type": "Website",
     "publisher": "DeMBi",
-    "name": "[React] LifeCycle",
-    "url": "https://ghwlchlaks.github.io///react-lifecycle",
+    "name": "[React] 컴포넌트간의 데이터 전송",
+    "url": "https://ghwlchlaks.github.io///react-data-transfer",
     "image": "https://ghwlchlaks.github.io/assets/images/cover/react_js.png",
     "description": "리액트 라이프 사이클"
 }
@@ -281,7 +281,7 @@ document.addEventListener("DOMContentLoaded", function(){
     </div>
     <article id="contents_ads" class="post tag-IT tag-Interview" style="width: 70%; padding-right: 10px; padding-top: 10px;">
         <header class="post-header">
-            <h1 class="post-title">[React] LifeCycle</h1>
+            <h1 class="post-title">[React] 컴포넌트간의 데이터 전송</h1>
             <section class="post-meta">
             <!-- <a href='/'></a> -->
 
@@ -290,7 +290,7 @@ document.addEventListener("DOMContentLoaded", function(){
                     <a href='/author/Jiho'>Jiho</a>
                 
             
-            <time class="post-date" datetime="2019-02-28">28 Feb 2019</time>
+            <time class="post-date" datetime="2019-03-01">01 Mar 2019</time>
                 <!-- [[tags prefix=" on "]] -->
                 
                 on
@@ -309,117 +309,62 @@ document.addEventListener("DOMContentLoaded", function(){
 
         <section class="post-content">
 
-            <p>면접을 준비하면서 리액트를 빠르게 배워서 개발을 진행했습니다.<br />
-공부하면서 중요한 부분중에 하나가 역시 LifeCycle이었고 어려운 부분이었습니다.</p>
+            <p>2개이상의 컴포넌트를 만들게 되면 부모 자식 관계의 컴포넌트가 생성되게 됩니다.<br />
+리액트에서 컴포넌트간 데이터를 전송을 해야하는 경우가 많습니다. 이럴때 어떻게 데이터를 전송할 수 있을지 알아보도록하겠습니다.</p>
 
-<p>어떠한 내용들이 있는지 정리하는 포스팅을 해보려고 합니다.</p>
+<blockquote>
+  <ol>
+    <li>부모에서 자식으로 데이터 전송</li>
+    <li>자식에서 부모로 데이터 전송</li>
+  </ol>
+</blockquote>
 
-<h2 id="생성">생성</h2>
+<h2 id="1-부모컴포넌트에서-자식컴포넌트로-데이터-전송">1. 부모컴포넌트에서 자식컴포넌트로 데이터 전송</h2>
 
-<hr />
+<p>부모에서 자식으로 데이터를 전송하는 방법은 Props를 이용한 방식을 사용합니다.</p>
 
-<h3 id="1constructor">1.constructor</h3>
-
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>constructor(props) {
-    super(props);
-}
-</code></pre></div></div>
-
-<p>constructor는 생성자 메소드로 컴포넌트가 처음 생성될떄 만들어집니다.
-props또한 전달되어집니다.</p>
-
-<h3 id="2componentwillmount-deprecated">2.componentWillMount (deprecated)</h3>
-
-<h3 id="3-render">3. render</h3>
-
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>render {
-    return()
-}
-</code></pre></div></div>
-
-<p>리액트를 하시면 위와 같은 코드를 보실 수 있는데요 jsx문법을 사용하여 렌더링하는 부분입니다.</p>
-
-<h3 id="4-componentdidmount">4. componentDidMount</h3>
-
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>componentDidMount() {
-    Document.get...
-    axios.get...
-}
-</code></pre></div></div>
-
-<p>componentDidMount는 3번 render이후에 즉 컴포넌트가 렌더링된 이후 호출되는 메소드로 DOM 조작 및 axios등을 이용한 비동기 데이터 요청을 주로 작성하는 부분입니다.<br />
-여기서 주의할점은 componentDidMount 메소드에서 setState를 이용하여 state의 값을 변경하게되면 리렌더링이 되므로 작성하지 않는 것이 좋습니다.</p>
-
-<h2 id="업데이트">업데이트</h2>
-
-<hr />
-
-<h3 id="1-getderivedstatefromprops">1. getDerivedStateFromProps</h3>
-
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>static getDerivedStateFromProps(nextProps, prevState) {
-    if (prevState.val !== nextProps.val) {
-        return {val: nextProps.val};
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>class Parent extends Component {
+    const data = this.state.data;
+    render() {
+        return (
+            &lt;div&gt;
+                &lt;Child dataFromParent={data} /&gt;
+            &lt;/div&gt;
+        )
     }
-    return null;
 }
 </code></pre></div></div>
 
-<p>getDerivedStateFromProps는 Props가 변할때 state값을 변경해서 리렌링 할 수 있는 메소드입니다.<br />
-위와 같이 기본적으로 null을 리턴하며 이전 state의 값과 이후 받은 props의 값을 비교하여 다른 경우에만
-state를 변경시켜주는 코드입니다. 여기서 주의하실점은 setState문을 이용하여 state를 변경하는 것이아니라
-retrun {val: nextProps.val}의 형태로 반환해준다는 것입니다.</p>
+<p>위와 같이 <code class="highlighter-rouge">Parent</code> 컴포넌트에서 자식컴포넌트를 렌더링하고있는 상황에 부모컴포넌트는 data라는 값을 자식컴포넌트 dataFromParent로 전달해줍니다.<br />
+이때 <code class="highlighter-rouge">Child</code> 컴포넌트에서는 this.props.dataFromParent로 접근하여 데이터를 읽을 수 있습니다.</p>
 
-<h3 id="2-shouldcomponentupdate">2. shouldComponentUpdate</h3>
+<h2 id="2-자식컴포넌트에서-부모컴포넌트로-데이터-전송">2. 자식컴포넌트에서 부모컴포넌트로 데이터 전송</h2>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>shouldComponentUpdate(nextProps, nextState) {
-    if ( this.state.val !== nextState.val) {
-        return false;
+<p>자식에서 부모로 데이터를 전송하는 방법은 states를 이용한 방식을 사용합니다.</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>class Parent extends Component {
+    parentCallback = (dataFromChild) =&gt; {
+        // 자식 컴포넌트에서 받은 값을 이용한 로직 처리
+        this.setState({
+            data: dataFromChild
+        })
     }
-    return true;
+
+    render() {
+        return (
+            &lt;div&gt;
+                &lt;Child callbackFromParent={this.parentCallback}&gt;
+            &lt;/div&gt;
+        )
+    }
 }
 </code></pre></div></div>
 
-<p>기본적으로 return하는 값은 true이며 true인경우에는 리렌더링을 진행합니다.<br />
-해당 메소드는 성능 최적화를 하기위해서 사용하는 메소드로 굳이 리렌더링을 하지 않아도 되는 state를 막는 것입니다.<br />
-위와같이 state혹은 Props를 비교해서 값이 변경된 경우에만 렌더링을 하게 할 수 있습니다.</p>
+<p>위와 같이 parentCallback 함수를 <code class="highlighter-rouge">Child</code>에게 전달하여 자식은 this.props.callbackFromParent로 접근 할 수 있습니다. 접근하여 <code class="highlighter-rouge">Parent</code> state값을 변경할 수 있습니다.</p>
 
-<h3 id="3-getsnapshotbeforeupdate">3. getSnapshotBeforeUpdate</h3>
+<p>1, 2번 부모가 인자를 넘겨주고 자식이 이용하는 방법은 동일하지만 부모가 자식에게 데이터를 전달하는 것은 자식컴포넌트에서 부모컴포넌트의 데이터를 이용한(읽기) 로직을 처리하기 위함이고, 자식 컴포넌트에서 부모컴포넌트로 데이터를 전달하는 것은 부모 state의 값을 변경하기 위함입니다.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>getSnapshotBeforeUpdate(prevProps, prevState) {
-    return prevState.val;
-}
-</code></pre></div></div>
-
-<p>해당 메소드는 수정(update)이 발생하기 바로 전에 호출되는 메소드입니다. 해당 메소드에서 반환한 값은
-componentDidupdate에 세번째 매개변수로 전달됩니다. (자주 사용하는 부분은 아닌것같습니다.)<br />
-찾아보니 리렌더링되는 동안 스크롤의 위치가 처음으로초기화 되는 것이아니라 기존의 위치로 렌더링되기위해 기존의 위치를 update되기전 넘겨주는 역할을 하는 경우에 사용한다고 합니다.</p>
-
-<h3 id="4-componentdidupdate">4. componentDidUpdate</h3>
-
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>componentDidUpdate(prevProps, prevState, [snapshot]) {
-}
-</code></pre></div></div>
-
-<p>해당 메소드는 업데이트 처리를 끝내고 render이 된 이후에 실행되는 메소드입니다.<br />
-즉 모든 props와 state의 값이 변경이된상태이고 prevProps와 prevState 인자를 이용해 이전의 값들은 읽을 수 있습니다.<br />
-또한 세번째 인자인 snapshot은 3번에 getSnapshotBeforeUpdate에서 반환한 데이터입니다.</p>
-
-<h2 id="소멸">소멸</h2>
-
-<hr />
-
-<h3 id="1-componentwillunmount">1. componentWillUnmount</h3>
-
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>componentWillUnmount() {
-}
-</code></pre></div></div>
-
-<p>해당 메소드는 컴포넌트가 소멸될때 발생하는 메소드로 인스턴스를 제거하는 코드를 작섷해줍니다.</p>
-
-<p>여기까지 큰틀로 실행되는 리액트의 LifeCycle에대해서 알아보았습니다.<br />
-deprecated 된것이 꽤 있기 때문에 모든것을 적지는 않았습니다.</p>
-
-<p>저 또한 작성하면서 다시 공부할 수 있었습니다.</p>
+<p>간단하게 부모와자식컴포넌트 사이에서 데이터를 교환하는 방법에대해서 알아보았습니다.</p>
 
 <p>해당 게시물에 문제가 있다면 댓글을 통해 피드백해주시면 감사하겠습니다~ 같이 공부해요~^^</p>
 
@@ -456,16 +401,16 @@ deprecated 된것이 꽤 있기 때문에 모든것을 적지는 않았습니다
 
                     <!-- <section class="share">
                         <h4>Share this post</h4>
-                        <a class="icon-twitter" href="http://twitter.com/share?text=[React] LifeCycle&amp;url=https://ghwlchlaks.github.io/react-lifecycle"
+                        <a class="icon-twitter" href="http://twitter.com/share?text=[React] 컴포넌트간의 데이터 전송&amp;url=https://ghwlchlaks.github.io/react-data-transfer"
                             onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
                             <span class="hidden">Twitter</span>
                         </a>
-                        <a class="icon-facebook" href="https://www.facebook.com/sharer/sharer.php?u=https://ghwlchlaks.github.io/react-lifecycle"
+                        <a class="icon-facebook" href="https://www.facebook.com/sharer/sharer.php?u=https://ghwlchlaks.github.io/react-data-transfer"
                             onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
                             <span class="hidden">Facebook</span>
                         </a>
-                        <a class="icon-google-plus" href="https://plus.google.com/share?url=https://ghwlchlaks.github.ioreact-lifecycle" 
-                            <a class="icon-google-plus" href="https://plus.google.com/share?url=https://ghwlchlaks.github.io/react-lifecycle"
+                        <a class="icon-google-plus" href="https://plus.google.com/share?url=https://ghwlchlaks.github.ioreact-data-transfer" 
+                            <a class="icon-google-plus" href="https://plus.google.com/share?url=https://ghwlchlaks.github.io/react-data-transfer"
                            onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;">
                             <span class="hidden">Google+</span>
                         </a>
@@ -479,8 +424,8 @@ deprecated 된것이 꽤 있기 때문에 모든것을 적지는 않았습니다
 <script type="text/javascript">
         /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
         var disqus_shortname = 'dmb3618'; // required: replace example with your forum shortname
-        var disqus_identifier = '/react-lifecycle';
-        var disqus_url = 'https://ghwlchlaks.github.io/react-lifecycle';
+        var disqus_identifier = '/react-data-transfer';
+        var disqus_url = 'https://ghwlchlaks.github.io/react-data-transfer';
 
             /* * * DON'T EDIT BELOW THIS LINE * * */
             (function() {
@@ -505,20 +450,13 @@ deprecated 된것이 꽤 있기 때문에 모든것을 적지는 않았습니다
 
     <!-- [[! next_post ]] -->
     
-        <a class="read-next-story " style="background-image: url(/assets/images/cover/react_js.png)" href="/react-data-transfer">
-            <section class="post">
-                <h2>[React] 컴포넌트간의 데이터 전송</h2>
-                <p>2개이상의 컴포넌트를 만들게 되면 부모 자식 관계의 컴포넌트가 생성되게 됩니다. 리액트에서 컴포넌트간 데이터를 전송을 해야하는...</p>
-            </section>
-        </a>
-    
     <!-- [[! /next_post ]] -->
     <!-- [[! prev_post ]] -->
     
-        <a class="read-next-story prev " style="background-image: url(/assets/images/cover/about_cover.jpg)" href="/interview-review01">
+        <a class="read-next-story prev " style="background-image: url(/assets/images/cover/react_js.png)" href="/react-lifecycle">
             <section class="post">
-                <h2>취업 미션 후기</h2>
-                <p>2주 동안 미션 진행.. 결과는 탈락.. 후기 : 취업 쉽지않네요.. 열심히 했다고 생각했는데 실력이 많이...</p>
+                <h2>[React] LifeCycle</h2>
+                <p>면접을 준비하면서 리액트를 빠르게 배워서 개발을 진행했습니다. 공부하면서 중요한 부분중에 하나가 역시 LifeCycle이었고 어려운 부분이었습니다....</p>
             </section>
         </a>
     

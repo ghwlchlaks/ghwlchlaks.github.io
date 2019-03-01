@@ -1,6 +1,14 @@
 [
   
     {
+      "title"    : "[React] 컴포넌트간의 데이터 전송",
+      "category" : "",
+      "tags"     : "Blog, IT",
+      "url"      : "https://ghwlchlaks.github.io/react-data-transfer",
+      "date"     : "2019-03-01 09:00:00 +0900"
+    } ,
+  
+    {
       "title"    : "[React] LifeCycle",
       "category" : "",
       "tags"     : "Blog, IT",
