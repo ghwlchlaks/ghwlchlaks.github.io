@@ -12,6 +12,77 @@
    <atom:link href="rss" rel="self" type="application/rss+xml" />
    
 	<item>
+	  <title>[React] 컴포넌트간의 데이터 전송</title>
+	  <link>//react-data-transfer</link>
+	  <author></author>
+	  <pubDate>2019-03-01T09:00:00+09:00</pubDate>
+	  <guid>//react-data-transfer</guid>
+	  <description><![CDATA[
+	     <p>2개이상의 컴포넌트를 만들게 되면 부모 자식 관계의 컴포넌트가 생성되게 됩니다.<br />
+리액트에서 컴포넌트간 데이터를 전송을 해야하는 경우가 많습니다. 이럴때 어떻게 데이터를 전송할 수 있을지 알아보도록하겠습니다.</p>
+
+<blockquote>
+  <ol>
+    <li>부모에서 자식으로 데이터 전송</li>
+    <li>자식에서 부모로 데이터 전송</li>
+  </ol>
+</blockquote>
+
+<h2 id="1-부모컴포넌트에서-자식컴포넌트로-데이터-전송">1. 부모컴포넌트에서 자식컴포넌트로 데이터 전송</h2>
+
+<p>부모에서 자식으로 데이터를 전송하는 방법은 Props를 이용한 방식을 사용합니다.</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>class Parent extends Component {
+    const data = this.state.data;
+    render() {
+        return (
+            &lt;div&gt;
+                &lt;Child dataFromParent={data} /&gt;
+            &lt;/div&gt;
+        )
+    }
+}
+</code></pre></div></div>
+
+<p>위와 같이 <code class="highlighter-rouge">Parent</code> 컴포넌트에서 자식컴포넌트를 렌더링하고있는 상황에 부모컴포넌트는 data라는 값을 자식컴포넌트 dataFromParent로 전달해줍니다.<br />
+이때 <code class="highlighter-rouge">Child</code> 컴포넌트에서는 this.props.dataFromParent로 접근하여 데이터를 읽을 수 있습니다.</p>
+
+<h2 id="2-자식컴포넌트에서-부모컴포넌트로-데이터-전송">2. 자식컴포넌트에서 부모컴포넌트로 데이터 전송</h2>
+
+<p>자식에서 부모로 데이터를 전송하는 방법은 states를 이용한 방식을 사용합니다.</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>class Parent extends Component {
+    parentCallback = (dataFromChild) =&gt; {
+        // 자식 컴포넌트에서 받은 값을 이용한 로직 처리
+        this.setState({
+            data: dataFromChild
+        })
+    }
+
+    render() {
+        return (
+            &lt;div&gt;
+                &lt;Child callbackFromParent={this.parentCallback}&gt;
+            &lt;/div&gt;
+        )
+    }
+}
+</code></pre></div></div>
+
+<p>위와 같이 parentCallback 함수를 <code class="highlighter-rouge">Child</code>에게 전달하여 자식은 this.props.callbackFromParent로 접근 할 수 있습니다. 접근하여 <code class="highlighter-rouge">Parent</code> state값을 변경할 수 있습니다.</p>
+
+<p>1, 2번 부모가 인자를 넘겨주고 자식이 이용하는 방법은 동일하지만 부모가 자식에게 데이터를 전달하는 것은 자식컴포넌트에서 부모컴포넌트의 데이터를 이용한(읽기) 로직을 처리하기 위함이고, 자식 컴포넌트에서 부모컴포넌트로 데이터를 전달하는 것은 부모 state의 값을 변경하기 위함입니다.</p>
+
+<p>간단하게 부모와자식컴포넌트 사이에서 데이터를 교환하는 방법에대해서 알아보았습니다.</p>
+
+<p>해당 게시물에 문제가 있다면 댓글을 통해 피드백해주시면 감사하겠습니다~ 같이 공부해요~^^</p>
+
+<p><code class="highlighter-rouge">방문해주신분들 댓글 한개씩 달아주시면 감사하겠습니다~~^^</code></p>
+
+	  ]]></description>
+	</item>
+
+	<item>
 	  <title>[React] LifeCycle</title>
 	  <link>//react-lifecycle</link>
 	  <author></author>
@@ -680,124 +751,6 @@ VOLUME 호스트디렉토리 컨테이너디렉토리</p>
 해당 게시물에 문제가 있다면 댓글을 통해 피드백해주시면 감사하겠습니다~ 같이 공부해요~^^</p>
 
 <p><code class="highlighter-rouge">방문해주신분들 댓글 한개씩 달아주시면 감사하겠습니다~~^^</code></p>
-
-	  ]]></description>
-	</item>
-
-	<item>
-	  <title>[Angular] Angular ng-bootstrap 환경 설정</title>
-	  <link>//angular-ngbootstrap-setup</link>
-	  <author></author>
-	  <pubDate>2019-01-13T09:00:00+09:00</pubDate>
-	  <guid>//angular-ngbootstrap-setup</guid>
-	  <description><![CDATA[
-	     <p>안녕하세요! <strong>Do My Best 블로그</strong> 입니다.</p>
-
-<p>이번에 포스팅할 내용은 Angular에서 ng-bootstrap 라이브러리 설치 및 사용방법에대해서 알아보겠습니다.</p>
-
-<p>이번 포스팅은 Angular 프로젝트가 cli로 생성했다는 전제하에 진행하도록 하겠습니다. 
-Angular 프로젝트 생성 방법 링크는 밑에 있습니다.
-<a href="https://ghwlchlaks.github.io/angular-starter">angular 프로젝트 생성</a></p>
-
-<p><strong>순서</strong></p>
-<blockquote>
-  <ul>
-    <li>ng-bootstrap 설치</li>
-    <li>ng-bootstrap 모듈 import</li>
-    <li>style.css에 bootstrap css추가</li>
-    <li>sample code 실행하여 적용되었는지 확인</li>
-  </ul>
-</blockquote>
-
-<p>먼저 설치 설치 원본 링크입니다. 
-<a href="https://ng-bootstrap.github.io/#/getting-started">ng-boostrap 설치</a></p>
-
-<p><strong>1. ng-bootstrap 설치</strong>
-ng-bootstrap 모듈을 설치하도록 하겠습니다. 
-그리고 ng-bootstrap에서 css를 사용하기위해 bootstrap모듈도 설치를 해줍니다.</p>
-
-<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">npm</span> <span class="n">install</span> <span class="o">--</span><span class="n">save</span> <span class="vi">@ng</span><span class="o">-</span><span class="n">bootstarp</span><span class="o">/</span><span class="n">ng</span><span class="o">-</span><span class="n">boostrap</span>
-<span class="n">npm</span> <span class="n">install</span> <span class="o">--</span><span class="n">save</span> <span class="n">bootstrap</span></code></pre></figure>
-
-<p><strong>2. ng-bootstrap 모듈 import</strong>
-ng-boostrap을 사용하기위해 모듈을 app.module.ts에 import를 해보겠습니다.</p>
-
-<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">import</span> <span class="p">{</span> <span class="no">BrowserModule</span> <span class="p">}</span> <span class="n">from</span> <span class="s1">'@angular/platform-browser'</span><span class="p">;</span>
-<span class="n">import</span> <span class="p">{</span> <span class="no">NgModule</span> <span class="p">}</span> <span class="n">from</span> <span class="s1">'@angular/core'</span><span class="p">;</span>
-<span class="n">import</span> <span class="p">{</span> <span class="no">NgbModule</span> <span class="p">}</span> <span class="n">from</span> <span class="s1">'@ng-bootstrap/ng-bootstrap'</span><span class="p">;</span> <span class="sr">//</span><span class="err">추가</span>
-<span class="n">import</span> <span class="p">{</span> <span class="no">AppComponent</span> <span class="p">}</span> <span class="n">from</span> <span class="s1">'./app.component'</span><span class="p">;</span>
-<span class="vi">@NgModule</span><span class="p">({</span>
-<span class="ss">declarations: </span><span class="p">[</span>
-<span class="no">AppComponent</span>
-<span class="p">],</span>
-<span class="ss">imports: </span><span class="p">[</span>
-<span class="no">BrowserModule</span><span class="p">,</span>
-<span class="no">NgbModule</span> <span class="sr">//</span><span class="err">추가</span>
-<span class="p">],</span>
-<span class="ss">providers: </span><span class="p">[],</span>
-<span class="ss">bootstrap: </span><span class="p">[</span><span class="no">AppComponent</span><span class="p">]</span>
-<span class="p">})</span>
-<span class="n">export</span> <span class="k">class</span> <span class="nc">AppModule</span> <span class="p">{</span> <span class="p">}</span>
-<span class="err">위와같이</span> <span class="err">주석으로</span> <span class="err">추가라고</span> <span class="err">된</span> <span class="mi">2</span><span class="err">줄만</span> <span class="err">추ㅏ해주시면됩니다</span><span class="o">.</span></code></pre></figure>
-
-<p><strong>3. style.css에 bootstrap css추가</strong>
-1번에서 설치한 모듈인 boostrap의 css를 사용하기위해 style.css에 해당 코드를 추가합니다.</p>
-
-<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="vi">@import</span> <span class="s2">"~bootstrap/dist/css/bootstrap.css"</span><span class="p">;</span></code></pre></figure>
-
-<p>여기까지 ng-boostrap을 사용하기 위한 준비가 끝났습니다. 
-이제 샘플 코드 하나를 적어 잘 적용되었는지 확인하도록 하겠습니다.</p>
-
-<p><strong>4. sample code 실행하여 적용되었는지 확인</strong>
-html파일에 아래와같은 코드를 적어 줍니다.</p>
-
-<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="o">&lt;</span><span class="n">ngb</span><span class="o">-</span><span class="n">accordion</span> <span class="c1">#acc="ngbAccordion" activeIds="ngb-panel-0"&gt;</span>
-<span class="o">&lt;</span><span class="n">ngb</span><span class="o">-</span><span class="n">panel</span> <span class="n">title</span><span class="o">=</span><span class="s2">"Simple"</span><span class="o">&gt;</span>
-<span class="o">&lt;</span><span class="n">ng</span><span class="o">-</span><span class="n">template</span> <span class="n">ngbPanelContent</span><span class="o">&gt;</span>
-<span class="no">Anim</span> <span class="n">pariatur</span> <span class="n">cliche</span> <span class="n">reprehenderit</span><span class="p">,</span> <span class="n">enim</span> <span class="n">eiusmod</span> <span class="n">high</span> <span class="n">life</span> <span class="n">accusamus</span> <span class="n">terry</span> <span class="n">richardson</span> <span class="n">ad</span> <span class="n">squid</span><span class="o">.</span> <span class="mi">3</span> <span class="n">wolf</span> <span class="n">moon</span> <span class="n">officia</span>
-<span class="n">aute</span><span class="p">,</span> <span class="n">non</span> <span class="n">cupidatat</span> <span class="n">skateboard</span> <span class="n">dolor</span> <span class="n">brunch</span><span class="o">.</span> <span class="no">Food</span> <span class="n">truck</span> <span class="n">quinoa</span> <span class="n">nesciunt</span> <span class="n">laborum</span> <span class="n">eiusmod</span><span class="o">.</span> <span class="no">Brunch</span> <span class="mi">3</span> <span class="n">wolf</span> <span class="n">moon</span> <span class="n">tempor</span><span class="p">,</span>
-<span class="n">sunt</span> <span class="n">aliqua</span> <span class="n">put</span> <span class="n">a</span> <span class="n">bird</span> <span class="n">on</span> <span class="n">it</span> <span class="n">squid</span> <span class="n">single</span><span class="o">-</span><span class="n">origin</span> <span class="n">coffee</span> <span class="n">nulla</span> <span class="n">assumenda</span> <span class="n">shoreditch</span> <span class="n">et</span><span class="o">.</span> <span class="no">Nihil</span> <span class="n">anim</span> <span class="n">keffiyeh</span> <span class="n">helvetica</span><span class="p">,</span>
-<span class="n">craft</span> <span class="n">beer</span> <span class="n">labore</span> <span class="n">wes</span> <span class="n">anderson</span> <span class="n">cred</span> <span class="n">nesciunt</span> <span class="n">sapiente</span> <span class="n">ea</span> <span class="n">proident</span><span class="o">.</span> <span class="no">Ad</span> <span class="n">vegan</span> <span class="n">excepteur</span> <span class="n">butcher</span> <span class="n">vice</span> <span class="n">lomo</span><span class="o">.</span> <span class="no">Leggings</span>
-<span class="n">occaecat</span> <span class="n">craft</span> <span class="n">beer</span> <span class="n">farm</span><span class="o">-</span><span class="n">to</span><span class="o">-</span><span class="n">table</span><span class="p">,</span> <span class="n">raw</span> <span class="n">denim</span> <span class="n">aesthetic</span> <span class="n">synth</span> <span class="n">nesciunt</span> <span class="n">you</span> <span class="n">probably</span> <span class="n">haven</span><span class="s1">'t heard of them accusamus
-labore sustainable VHS.
-&lt;/ng-template&gt;
-&lt;/ngb-panel&gt;
-&lt;ngb-panel&gt;
-&lt;ng-template ngbPanelTitle&gt;
-&lt;span&gt;★ &lt;b&gt;Fancy&lt;/b&gt; title ★&lt;/span&gt;
-&lt;/ng-template&gt;
-&lt;ng-template ngbPanelContent&gt;
-Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia
-aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor,
-sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica,
-craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings
-occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven'</span><span class="n">t</span> <span class="n">heard</span> <span class="n">of</span> <span class="n">them</span> <span class="n">accusamus</span>
-<span class="n">labore</span> <span class="n">sustainable</span> <span class="no">VHS</span><span class="p">.</span>
-<span class="nf">&lt;</span><span class="o">/</span><span class="n">ng</span><span class="o">-</span><span class="n">template</span><span class="o">&gt;</span>
-<span class="o">&lt;</span><span class="sr">/ngb-panel&gt;
-&lt;ngb-panel title="Disabled" [disabled]="true"&gt;
-&lt;ng-template ngbPanelContent&gt;
-Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia
-aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor,
-sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica,
-craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings
-occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus
-labore sustainable VHS.
-&lt;/n</span><span class="n">g</span><span class="o">-</span><span class="n">template</span><span class="o">&gt;</span>
-<span class="o">&lt;</span><span class="sr">/ngb-panel&gt;
-&lt;/n</span><span class="n">gb</span><span class="o">-</span><span class="n">accordion</span><span class="o">&gt;</span>
-<span class="err">복사</span> <span class="err">붙혀넣기를</span> <span class="err">해봅시다</span><span class="o">.!!</span></code></pre></figure>
-
-<p>잘 적용되었다면 아래와같은 화면이 출력됩니다. 
-물론 angular 이미지는 angular 프로젝트 생성시 있는 이미지입니다.</p>
-
-<p><img src="/assets/images/2019-01-14-angular-ngbootstrap-setup/result.png" /></p>
-
-<p>지금까지 <strong>Angular ng-bootstrap 환경 설정</strong>이라는 주제로 포스팅하였습니다!  <br />
-해당 게시물에 문제가 있다면 댓글을 통해 피드백해주시면 감사하겠습니다~ 같이 공부해요~^^</p>
-
-<p><code class="highlighter-rouge">방문해주신분들 댓글 한개씩 달아주시면 감사하겠습니다~~^^</code></p>
-
 
 	  ]]></description>
 	</item>

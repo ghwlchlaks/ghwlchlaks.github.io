@@ -8,6 +8,22 @@
     
       
       <item>
+        <title>[React] 컴포넌트간의 데이터 전송</title>
+        
+          <description>&lt;p&gt;2개이상의 컴포넌트를 만들게 되면 부모 자식 관계의 컴포넌트가 생성되게 됩니다.&lt;br /&gt;
+리액트에서 컴포넌트간 데이터를 전송을 해야하는 경우가 많습니다. 이럴때 어떻게 데이터를 전송할 수 있을지 알아보도록하겠습니다.&lt;/p&gt;
+
+</description>
+        
+        <pubDate>Fri, 01 Mar 2019 09:00:00 +0900</pubDate>
+        <link>
+        https://ghwlchlaks.github.io/react-data-transfer</link>
+        <guid isPermaLink="true">https://ghwlchlaks.github.io/react-data-transfer</guid>
+      </item>
+      
+    
+      
+      <item>
         <title>[React] LifeCycle</title>
         
           <description>&lt;p&gt;면접을 준비하면서 리액트를 빠르게 배워서 개발을 진행했습니다.&lt;br /&gt;
