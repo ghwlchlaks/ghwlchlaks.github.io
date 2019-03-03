@@ -8,6 +8,21 @@
     
       
       <item>
+        <title>[JavaScript] 질문 대비 (정리전)</title>
+        
+          <description>&lt;p&gt;Es6&lt;/p&gt;
+
+</description>
+        
+        <pubDate>Sun, 03 Mar 2019 09:00:00 +0900</pubDate>
+        <link>
+        https://ghwlchlaks.github.io/javascript-interview01</link>
+        <guid isPermaLink="true">https://ghwlchlaks.github.io/javascript-interview01</guid>
+      </item>
+      
+    
+      
+      <item>
         <title>[React] 컴포넌트간의 데이터 전송</title>
         
           <description>&lt;p&gt;2개이상의 컴포넌트를 만들게 되면 부모 자식 관계의 컴포넌트가 생성되게 됩니다.&lt;br /&gt;
