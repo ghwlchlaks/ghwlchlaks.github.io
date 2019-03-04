@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "[JavaScript] 질문 대비 (정리전)"
+title: "[JavaScript] 공부 (정리전)"
 date: 2019-03-03 00:00:00
 description: 면접 질문 대비 # Add post description (optional)
 img: JavaScript.jpg # Add image post (optional)
