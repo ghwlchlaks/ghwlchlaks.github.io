@@ -12,10 +12,10 @@ class: 'about-template'
   <img src="/assets/images/default/choijiho3.jpg" style="float: right; margin-right: 40%;">  
   
 # **`최지호`**  
-
+**Age** : 26  
 **Email** : `ghwlchlaks@gmail.com`  
 **Github** : [Github](https://github.com/ghwlchlaks/)  
-**Blog** : [Blog](https://ghwlchlaks.github.io/) 
+**Blog** : [Blog](https://ghwlchlaks.github.io/)   
 
 ---
 
@@ -26,10 +26,12 @@ class: 'about-template'
 ---
 
 ### **[주요프로젝트]**
+>* **[2019년 로그인, 파일매니저, 채팅 사이트 구축](http://ghwlchlaks.tk:8000/)**  
+(React, Bootstrap, Node, MongoDB, Docker, Linux, ESLint, VSCode, Nginx, Git, Postman)  
 >* **[2019년 게임 전적 조회 사이트 구축](http://fortnitestats.xyz/)**  
-(Angular, Node, Typescript, MongoDB, Docker, Linux, VSCode, Nginx, Git, Postman)  
+(Angular, Bootstrap, Node, Typescript, MongoDB, Docker, Linux, TSLint, VSCode, Nginx, Git, Postman)  
 >* **[2018년 Intelligence Open API 설계 및 구현 연구과제 참여](https://github.com/KOREN-Platform/SmartX_Open_Platform/tree/master/Intelligence_OpenAPI)**  
-(Node, Ejs, MongoDB, Spark, Linux, VSCode, Git, Postman, Swagger Codegen, Slack)
+(Node, Bootstrap, Ejs, MongoDB, Spark, Linux, ESLint, VSCode, Git, Postman, Swagger Codegen, Slack)
 >* **2017년 NDN과 Drone을 이용한 IoT 센서 정보 수집 시스템 공모전 참여**  
 (NDN, Drone, Raspberry Pi, Grafana, InfluxDB, Python, Slack, Trello)
 >* **[2017년 IoT데이터를 위한 동적 대시보드 설계 및 구현 연구과제 참여](https://github.com/KOREN-Platform/SmartX_Open_Platform)**   
