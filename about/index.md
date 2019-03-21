@@ -9,7 +9,7 @@ cover: 'assets/images/cover/about_cover.jpg'
 class: 'about-template'
 ---
   
-  <img src="/assets/images/default/choijiho3.jpg" style="float: right; margin-right: 40%;">  
+  <img src="/assets/images/default/choijiho3.jpg" style="float: right; padding-right: 20%;">  
   
 # **`최지호`**  
 **Age** : 26  
@@ -68,6 +68,13 @@ class: 'about-template'
 >* **결과** : 취득  
 
 ---
+
+### **[병역]**
+>* **병역 구분** : 만기 제대
+>* **기간** : 2013.12 - 2015.09
+
+---
+
 
 ### **[기타 공부 프로젝트]**
 >* **[Vue와 Node를 이용한 게시판](https://github.com/ghwlchlaks/node-vue-rtcAPI)**
