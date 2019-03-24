@@ -1,11 +1,19 @@
 [
   
     {
+      "title"    : "리눅스에서 지킬 설치 및 실행 [Jekyll]",
+      "category" : "",
+      "tags"     : "Blog, IT, Github, Jekyll",
+      "url"      : "https://ghwlchlaks.github.io/ubuntu-jekyll-installation",
+      "date"     : "2019-03-24 10:00:00 +0900"
+    } ,
+  
+    {
       "title"    : "[React-native] 설치 방법",
       "category" : "",
       "tags"     : "Blog, IT",
       "url"      : "https://ghwlchlaks.github.io/react-native-installation",
-      "date"     : "2019-03-23 09:00:00 +0900"
+      "date"     : "2019-03-24 09:00:00 +0900"
     } ,
   
     {

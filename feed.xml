@@ -8,13 +8,28 @@
     
       
       <item>
+        <title>리눅스에서 지킬 설치 및 실행 [Jekyll]</title>
+        
+          <description>&lt;p&gt;이번에는 리눅스 환경에서 jekyll를 설치하는 방법에대해서 알아보도록하겠습니다.&lt;/p&gt;
+
+</description>
+        
+        <pubDate>Sun, 24 Mar 2019 10:00:00 +0900</pubDate>
+        <link>
+        https://ghwlchlaks.github.io/ubuntu-jekyll-installation</link>
+        <guid isPermaLink="true">https://ghwlchlaks.github.io/ubuntu-jekyll-installation</guid>
+      </item>
+      
+    
+      
+      <item>
         <title>[React-native] 설치 방법</title>
         
           <description>&lt;h1 id=&quot;해당-게시글은-작성-진행-중입니다&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;해당 게시글은 작성 진행 중입니다.&lt;/code&gt;&lt;/h1&gt;
 
 </description>
         
-        <pubDate>Sat, 23 Mar 2019 09:00:00 +0900</pubDate>
+        <pubDate>Sun, 24 Mar 2019 09:00:00 +0900</pubDate>
         <link>
         https://ghwlchlaks.github.io/react-native-installation</link>
         <guid isPermaLink="true">https://ghwlchlaks.github.io/react-native-installation</guid>

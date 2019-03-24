@@ -12,81 +12,606 @@
    <atom:link href="rss" rel="self" type="application/rss+xml" />
    
 	<item>
-	  <title>[Angular] Angular Http Ajax 사용하기</title>
-	  <link>//angular-http</link>
+	  <title>[도커] 도커파일 Typescript node App에 도커파일 만들기</title>
+	  <link>//dockerfile-node-typescript</link>
 	  <author></author>
-	  <pubDate>2019-01-27T09:00:00+09:00</pubDate>
-	  <guid>//angular-http</guid>
+	  <pubDate>2019-01-24T09:00:00+09:00</pubDate>
+	  <guid>//dockerfile-node-typescript</guid>
 	  <description><![CDATA[
 	     <p>안녕하세요! <strong>Do My Best 블로그</strong> 입니다.</p>
 
-<p>이번에 포스팅할 내용은 Angular에서 http 방법으로 Api 호출하는 방법에대해서 포스팅하겠습니다.</p>
+<p>이번에 포스팅할 내용은 도커 파일을 작성하여 자신이 개발한 Typescript용 node를 이미지로 만드는 방법에대해서 포스팅하겠습니다.</p>
 
-<h2 id="순서">순서</h2>
+<p>먼저 Dockerfile에 명령어가 알고싶다면 <a href="https://ghwlchlaks.github.io/dockerfile-instruction">링크</a> 를 클릭해주세요!</p>
+
+<p><strong>Dockerfile</strong><br />
+Dockerfile을 자신이 개발한 앱폴더안에 넣어 작성합니다.<br />
+아래방법은 예시방법중 하나입니다. 자신의 개발한 환경에 맞게 작성해주셔야합니다.</p>
+
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="no">FROM</span> <span class="n">node</span><span class="ss">:version</span>
+<span class="c1"># 특정 버전 node 이미지를 받아옵니다.  </span>
+<span class="no">MAINTAINER</span> <span class="n">choi</span>
+<span class="c1"># 작성자의 이름을 적습니다. </span>
+<span class="no">WORKDIR</span> <span class="sr">/app
+# 만들 이미지에 작업할 디렉토리로 이동합니다.  
+COPY package*.json /</span><span class="n">app</span><span class="o">/</span>
+<span class="c1"># 현재 디렉토리에 package로 시작하는 파일들을 복사하여 이미지에서 작업할 디렉토리로 복사합니다. </span>
+<span class="no">RUN</span> <span class="n">npm</span> <span class="n">install</span>
+<span class="c1"># 이미지 디렉토리에서 npm install 명령어를 실행해 줍니다. </span>
+<span class="c1"># package.json이 있으므로 npm install로 종속 모듈이 설치가 되겠죠?  </span>
+<span class="no">RUN</span> <span class="n">npm</span> <span class="n">install</span> <span class="o">-</span><span class="n">g</span> <span class="n">typescript</span>
+<span class="c1"># typescript를 이용한 node이므로 전역옵션을 이용하여 typescript 모듈을 설치해줍니다.  </span>
+<span class="no">COPY</span> <span class="p">.</span><span class="nf">/</span> <span class="sr">/app/</span>
+<span class="c1"># 현재 폴더에 있는 모든 파일들을 복사하여 이미지 디렉토리에 복사합니다. </span>
+<span class="c1"># 여기과정이 자신이 작성한 코드등 리소스들이 복사됩니다.  </span>
+<span class="no">RUN</span> <span class="n">npm</span> <span class="n">run</span> <span class="n">build</span><span class="o">-</span><span class="n">ts</span>
+<span class="c1"># typescript로 작성된 node이므로 build를 하여 javascript 파일로 컴파일 해줍니다.  </span>
+<span class="no">CMD</span> <span class="p">[</span><span class="s2">"npm"</span><span class="p">,</span> <span class="s2">"run"</span><span class="p">,</span> <span class="s2">"serve"</span><span class="p">]</span> 
+<span class="c1"># 해당 이미지가 실행될때 실행될 명령어입니다. </span>
+<span class="c1"># 해당 이미지를 컨테이너로 실행할때 npm run serve 명령어가 실행되어 자신이 작성한 코드에 node가 실행됩니다.                      </span></code></pre></figure>
+
+<p>지금까지 <strong>Typescript node App에 도커파일 만들기</strong>이라는 주제로 포스팅하였습니다!</p>
+
+<p>해당 게시물에 문제가 있다면 댓글을 통해 피드백해주시면 감사하겠습니다~ 같이 공부해요~^^</p>
+
+<p><code class="highlighter-rouge">방문해주신분들 댓글 한개씩 달아주시면 감사하겠습니다~~^^</code></p>
+
+
+	  ]]></description>
+	</item>
+
+	<item>
+	  <title>[도커] 도커파일 명령어</title>
+	  <link>//dockerfile-instruction</link>
+	  <author></author>
+	  <pubDate>2019-01-23T09:00:00+09:00</pubDate>
+	  <guid>//dockerfile-instruction</guid>
+	  <description><![CDATA[
+	     <p>안녕하세요! <strong>Do My Best 블로그</strong> 입니다.</p>
+
+<p>이번에 포스팅할 내용은 도커 파일에 사용하는 명령어에대해서 포스팅하겠습니다.
+아래 명령어 순서로 포스팅하겠습니다.</p>
+
+<p><strong>순서</strong></p>
 <blockquote>
   <ul>
-    <li>라이브러리 설치</li>
-    <li>service 파일 생성</li>
-    <li>module 파일 수정</li>
-    <li>service 파일 수정</li>
-    <li>사용</li>
+    <li>FROM</li>
+    <li>RUN</li>
+    <li>EXPOSE</li>
+    <li>ENV</li>
+    <li>ENTRYPOINT</li>
+    <li>CMD</li>
+    <li>ADD</li>
+    <li>COPY</li>
+    <li>WORKDIR</li>
+    <li>VOLUME</li>
+    <li>USER</li>
+    <li>LABEL</li>
+    <li>ARG</li>
   </ul>
 </blockquote>
 
-<p><strong>1. 라이브러리 설치</strong><br />
-http 라이브러리를 사용하기위해 아래 명령어를 이용하여 설치 해줍니다. 
-기본적으로 @angular라이브러리들은 설치가 되있겠지만 혹시 설치가 안되있는경우 설치해 줍니다.</p>
+<p><strong>1. FROM</strong><br />
+<code class="highlighter-rouge">FROM</code> 명령어는 사용할 이미지를 지정하는 명령어입니다. ubuntu, node와같은 이미지파일을 지정합니다. 지정할때는 <code class="highlighter-rouge">:</code>뒤에 특정 버전을 지정하여 사용할 수 있습니다.</p>
 
-<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">npm</span> <span class="n">install</span> <span class="vi">@angular</span><span class="o">/</span><span class="n">http</span>
-<span class="n">npm</span> <span class="n">install</span> <span class="n">rxjs</span><span class="o">-</span><span class="n">compat</span> </code></pre></figure>
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="no">FROM</span> <span class="n">ubuntu</span><span class="p">:</span><span class="mf">18.04</span>
+<span class="n">or</span>
+<span class="no">FROM</span> <span class="n">node</span></code></pre></figure>
 
-<p><strong>2. service 파일 생성</strong><br />
-http 라이브러리를 관리하기위해 파일을 생성해줍니다.</p>
+<p><strong>2. RUN</strong><br />
+<code class="highlighter-rouge">RUN</code> 명령어는 내려받은 이미지에 설치할 패키지 또는 shell 명령어를 입력할 수 있습니다. 
+예를들어 내려받은 node이미지에 typescript를 설치하는 명령어를 내리고 싶다면</p>
 
-<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">ng</span> <span class="n">generate</span> <span class="n">service</span> <span class="n">services</span><span class="o">/</span><span class="err">파일이름</span></code></pre></figure>
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="no">RUN</span> <span class="n">npm</span> <span class="n">install</span> <span class="o">-</span><span class="n">g</span> <span class="n">typescript</span><span class="p">:[</span><span class="n">version</span><span class="p">]</span>
+<span class="n">or</span>
+<span class="no">RUN</span> <span class="p">[</span><span class="s2">"npm"</span><span class="p">,</span> <span class="s2">"install"</span><span class="p">,</span> <span class="s2">"-g"</span><span class="p">,</span> <span class="s2">"typescript:[version]"</span><span class="p">]</span></code></pre></figure>
 
-<p><strong>3. module 파일 수정</strong><br />
-app.module혹은 컴포넌트에 상위에서 사용하는 module 파일을 수정해 줍니다.</p>
+<p>보통 apt-get과 같은 명령어를 이용하여 패키지 설치 명령어를 지정해줍니다.</p>
 
-<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">import</span> <span class="p">{</span><span class="no">HttpModule</span><span class="p">}</span> <span class="n">from</span> <span class="s1">'@angular/http'</span><span class="p">;</span>     
-<span class="n">import</span> <span class="p">{</span><span class="no">ApiService</span><span class="p">}</span> <span class="n">from</span> <span class="s1">'../services/service파일이름'</span>
-<span class="ss">imports: </span><span class="p">[</span><span class="no">HttpModule</span><span class="p">]</span>  
-<span class="ss">providers: </span><span class="p">[</span><span class="no">ApiSerice</span><span class="p">]</span></code></pre></figure>
+<p><strong>3. EXPOSE</strong><br />
+<code class="highlighter-rouge">EXPOSE</code> 명령어는 실행한 container외부에 노출할 포트를 지정하는 명령어입니다.
+하지만 container를 실행할때 -p 옵션을통해 연결해주어야한다.</p>
 
-<p><strong>4. service 파일 수정</strong><br />
-2번에서 생성한 service파일을 수정해줍니다.</p>
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="no">EXPOSE</span> <span class="mi">8080</span></code></pre></figure>
 
-<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">export</span> <span class="k">class</span> <span class="nc">HomeModule</span> <span class="p">{</span> <span class="p">}</span>
-<span class="n">import</span> <span class="p">{</span> <span class="no">Injectable</span> <span class="p">}</span> <span class="n">from</span> <span class="s1">'@angular/core'</span><span class="p">;</span>
-<span class="n">import</span> <span class="p">{</span><span class="no">Http</span><span class="p">}</span> <span class="n">from</span> <span class="s1">'@angular/http'</span><span class="p">;(</span><span class="err">추가</span><span class="p">)</span>
-<span class="vi">@Injectable</span><span class="p">({</span>
-<span class="ss">providedIn: </span><span class="s1">'root'</span>
+<p><strong>4. ENV</strong> <br />
+<code class="highlighter-rouge">ENV</code> 명령어는 환경변수를 지정하는 것으로 파일내부에서 변수처럼 활용이 가능합니다.</p>
+
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="no">ENV</span> <span class="nb">test</span> <span class="mi">123</span>
+<span class="no">CMD</span> <span class="n">echo</span> <span class="vg">$test</span></code></pre></figure>
+
+<p>해당 도커파일을 빌드하여 실행하면 test변수의 값인 123이 출력되는 것을 확인 할 수 있습니다.
+해당 환경변수는 빌드된 이미지를 실행할때 override할 수 있습니다.</p>
+
+<p><strong>5. ENTRYPOINT</strong><br />
+<code class="highlighter-rouge">ENTRYPOINT</code> 명령어는 컨테이너를 실행했을때 실행할 명령입니다. 컨테이너를 정지했다가 다시 시작해도 실행하는 명령어입니다. 물론 run명령어로 컨테이너를 실행했을때도 실행됩니다.<br />
+컨테이너가 실행될떄 실행되는 명령어이므로 도커파일에서 한번만 사용할 수 있습니다.</p>
+
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="no">ENTRYPOINT</span> <span class="p">[</span><span class="s2">"npm"</span><span class="p">,</span> <span class="s2">"run"</span><span class="p">,</span> <span class="s2">"serve"</span><span class="p">]</span></code></pre></figure>
+
+<p><strong>6. CMD</strong><br />
+<code class="highlighter-rouge">CMD</code> 명령어는 docker run 실행 시 사용할 default 명령을 설정하는데 사용합니다.</p>
+
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="no">CMD</span> <span class="p">[</span><span class="s2">"npm"</span><span class="p">,</span> <span class="s2">"run"</span><span class="p">,</span> <span class="s2">"serve"</span><span class="p">]</span></code></pre></figure>
+
+<p><a href="http://pyrasis.com/book/DockerForTheReallyImpatient/Chapter07/06">ENTRYPOINT와 CMD의 차이</a>를 설명하는 사이트입니다.</p>
+
+<p><strong>7. ADD</strong><br />
+<code class="highlighter-rouge">ADD</code> 명령어는 빌드 중 호스트의 디렉토리에서 파일을 가져와서 이미지에 파일을 더하는 것입니다. 
+주의할점은 빌드되는 디렉토리 밖에 위치하는 파일들은 가져오지 않습니다.<br />
+ADD 호스트파일위치 이미지파일위치</p>
+
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="no">ADD</span> <span class="nb">test</span><span class="p">.</span><span class="nf">txt</span> <span class="o">/</span></code></pre></figure>
+
+<p>호스트의 test.txt파일이 이미지 파일에 / 위치로 더해집니다.</p>
+
+<p><strong>8. COPY</strong><br />
+<code class="highlighter-rouge">COPY</code> 명령어는 ADD와 동일한 동작을 합니다. 하지만 압축파일을 자동으로 풀어주지 않습니다.</p>
+
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="no">COPY</span> <span class="nb">test</span><span class="p">.</span><span class="nf">txt</span> <span class="o">/</span></code></pre></figure>
+
+<p><strong>9. WORKDIR</strong><br />
+<code class="highlighter-rouge">WORKDIR</code> 명령어는 cd의 명령어와 비슷합니다. RUN과 CMD과 같은 명령어가 실행될 이미지 내부에 위치를 지정해주는 명령어입니다.</p>
+
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="no">WORKDIR</span> <span class="sr">/app/</span></code></pre></figure>
+
+<p><strong>10. VOLUME</strong><br />
+<code class="highlighter-rouge">VOLUME</code> 명령어는 호스트의 디렉토리를 docker 컨테이너에 연결하는 명령어입니다. 
+여러가지 설정파일, 데이터 등을 docker 컨테이너에너 사용할 수 있게 해줍니다. 
+즉 디렉토리 내용을 컨테이너에 저장하지 않고 호스트에 저장하도록 설정하는 것입니다.
+로그 수집과 같은 데이터 저장에 쓰임.
+VOLUME 호스트디렉토리 컨테이너디렉토리</p>
+
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="no">VOLUME</span> <span class="p">[</span><span class="s2">"/data"</span><span class="p">,</span> <span class="s2">"/var/log"</span><span class="p">]</span></code></pre></figure>
+
+<p><strong>11. USER</strong><br />
+<code class="highlighter-rouge">USER</code> 명령어는 해당 docker 이미지를 실행할 user를 지정하는 명령어입니다.</p>
+
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="no">USER</span> <span class="n">user</span>
+<span class="n">or</span>
+<span class="no">USER</span> <span class="p">[</span><span class="n">uid</span><span class="p">]:[</span><span class="n">gid</span><span class="p">]</span></code></pre></figure>
+
+<p><strong>12. LABEL</strong><br />
+<code class="highlighter-rouge">LABEL</code> 명령어는 이미지에 라벨을 다는 것입니다.</p>
+
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="no">LABEL</span> <span class="s2">"abcd@gmail.com"</span></code></pre></figure>
+
+<p><strong>13. ARG</strong><br />
+<code class="highlighter-rouge">ARG</code> 명령어는 도커파일 빌드시에 설정하는 옵션들을 지정할 수 있는 명령어 입니다.</p>
+
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="no">ARG</span> <span class="n">arg1</span>
+<span class="no">ARG</span> <span class="n">arg2</span><span class="o">=</span><span class="n">value</span></code></pre></figure>
+
+<p>위와 같이 지정할 경우 도커파일 빌드시 arg1 인자를 입력받아야합니다. 또한 arg2의 default값은 value값으로 지정되어 빌드된됩니다.</p>
+
+<p>지금까지 <strong>도커파일 명령어</strong>이라는 주제로 포스팅하였습니다!  <br />
+해당 게시물에 문제가 있다면 댓글을 통해 피드백해주시면 감사하겠습니다~ 같이 공부해요~^^</p>
+
+<p><code class="highlighter-rouge">방문해주신분들 댓글 한개씩 달아주시면 감사하겠습니다~~^^</code></p>
+
+
+	  ]]></description>
+	</item>
+
+	<item>
+	  <title>[리눅스] GUI, CLI 환경으로 변경 방법</title>
+	  <link>//linux-gui-to-cli</link>
+	  <author></author>
+	  <pubDate>2019-01-21T09:00:00+09:00</pubDate>
+	  <guid>//linux-gui-to-cli</guid>
+	  <description><![CDATA[
+	     <p>안녕하세요! <strong>Do My Best 블로그</strong> 입니다.</p>
+
+<p>이번에 포스팅할 내용은 리눅스 GUI환경에서 CLI환경으로 바꾸는 방법에대해서 포스팅하겠습니다.
+바꾸는 방법은 한가지 파일만 수정하면 되므로 쉽습니다.<br />
+순서는 아래와 같습니다.</p>
+
+<p><strong>순서</strong></p>
+<blockquote>
+  <ul>
+    <li>주석 처리</li>
+    <li>수정</li>
+    <li>주석 제거</li>
+    <li>CLI 환경 적용</li>
+    <li>GUI 환경으로 돌아가기</li>
+  </ul>
+</blockquote>
+
+<p>이번 포스팅은 /etc/default/grub 파일만을 다룹니다.</p>
+
+<p><strong>1. 주석 처리</strong></p>
+
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="no">GRUB_CMDLINE_LINUX_DEFAULT</span> <span class="err">라인을</span> <span class="err">주석처리합니다</span><span class="o">.</span></code></pre></figure>
+
+<p><img src="/assets/images/2019-01-21-linux-gui-to-cli/1.png" /></p>
+
+<p><strong>2. 수정</strong></p>
+
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="no">GRUB_CMDLINE_LINUX</span> <span class="err">라인을</span> <span class="no">GRUB_CMDLINE_LINUX</span><span class="o">=</span><span class="s2">"text"</span> <span class="err">로</span> <span class="err">수정합니다</span><span class="o">.</span></code></pre></figure>
+
+<p><img src="/assets/images/2019-01-21-linux-gui-to-cli/2.png" /></p>
+
+<p><strong>3. 주석 제거</strong></p>
+
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="p">\</span><span class="c1">#GRUB_TERMINAL=console' 라인에 주석을 제거하여 'GRUB_TERMINAL=console' 로 수정</span></code></pre></figure>
+
+<p><img src="/assets/images/2019-01-21-linux-gui-to-cli/3.png" /></p>
+
+<p>여기까지 파일 수정은 끝이났습니다. :wq명령어 혹은 쓰시는 에디터의 명령어를 이용하여 저장하고 빠져나옵니다.</p>
+
+<p><strong>4. CLI 환경 적용</strong>
+아래 명령어를 이용하여 적용해줍니다.</p>
+
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">systemctl</span> <span class="n">set</span><span class="o">-</span><span class="n">default</span> <span class="n">multi</span><span class="o">-</span><span class="n">user</span><span class="p">.</span><span class="nf">target</span></code></pre></figure>
+
+<p><img src="/assets/images/2019-01-21-linux-gui-to-cli/5.png" /></p>
+
+<p><strong>4. GUI 환경으로 돌아가기</strong>
+혹시나 GUI환경으로 돌아가려면 아래와같은 명령어를 실행해줍니다.</p>
+
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">systemctl</span> <span class="n">set</span><span class="o">-</span><span class="n">default</span> <span class="n">graphical</span><span class="p">.</span><span class="nf">target</span></code></pre></figure>
+
+<p><img src="/assets/images/2019-01-21-linux-gui-to-cli/4.png" /></p>
+
+<p>이제 모든 설정이 끝이 났습니다. reboot를해서 재부팅을 하면 CLI환경으로 접속되는것을 확인 할 수 있습니다.</p>
+
+<p>지금까지 <strong>GUI, CLI 환경으로 변경 방법</strong>이라는 주제로 포스팅하였습니다!  <br />
+해당 게시물에 문제가 있다면 댓글을 통해 피드백해주시면 감사하겠습니다~ 같이 공부해요~^^</p>
+
+<p><code class="highlighter-rouge">방문해주신분들 댓글 한개씩 달아주시면 감사하겠습니다~~^^</code></p>
+
+	  ]]></description>
+	</item>
+
+	<item>
+	  <title>[Angular] Angular ng-bootstrap 환경 설정</title>
+	  <link>//angular-ngbootstrap-setup</link>
+	  <author></author>
+	  <pubDate>2019-01-13T09:00:00+09:00</pubDate>
+	  <guid>//angular-ngbootstrap-setup</guid>
+	  <description><![CDATA[
+	     <p>안녕하세요! <strong>Do My Best 블로그</strong> 입니다.</p>
+
+<p>이번에 포스팅할 내용은 Angular에서 ng-bootstrap 라이브러리 설치 및 사용방법에대해서 알아보겠습니다.</p>
+
+<p>이번 포스팅은 Angular 프로젝트가 cli로 생성했다는 전제하에 진행하도록 하겠습니다. 
+Angular 프로젝트 생성 방법 링크는 밑에 있습니다.
+<a href="https://ghwlchlaks.github.io/angular-starter">angular 프로젝트 생성</a></p>
+
+<p><strong>순서</strong></p>
+<blockquote>
+  <ul>
+    <li>ng-bootstrap 설치</li>
+    <li>ng-bootstrap 모듈 import</li>
+    <li>style.css에 bootstrap css추가</li>
+    <li>sample code 실행하여 적용되었는지 확인</li>
+  </ul>
+</blockquote>
+
+<p>먼저 설치 설치 원본 링크입니다. 
+<a href="https://ng-bootstrap.github.io/#/getting-started">ng-boostrap 설치</a></p>
+
+<p><strong>1. ng-bootstrap 설치</strong>
+ng-bootstrap 모듈을 설치하도록 하겠습니다. 
+그리고 ng-bootstrap에서 css를 사용하기위해 bootstrap모듈도 설치를 해줍니다.</p>
+
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">npm</span> <span class="n">install</span> <span class="o">--</span><span class="n">save</span> <span class="vi">@ng</span><span class="o">-</span><span class="n">bootstarp</span><span class="o">/</span><span class="n">ng</span><span class="o">-</span><span class="n">boostrap</span>
+<span class="n">npm</span> <span class="n">install</span> <span class="o">--</span><span class="n">save</span> <span class="n">bootstrap</span></code></pre></figure>
+
+<p><strong>2. ng-bootstrap 모듈 import</strong>
+ng-boostrap을 사용하기위해 모듈을 app.module.ts에 import를 해보겠습니다.</p>
+
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">import</span> <span class="p">{</span> <span class="no">BrowserModule</span> <span class="p">}</span> <span class="n">from</span> <span class="s1">'@angular/platform-browser'</span><span class="p">;</span>
+<span class="n">import</span> <span class="p">{</span> <span class="no">NgModule</span> <span class="p">}</span> <span class="n">from</span> <span class="s1">'@angular/core'</span><span class="p">;</span>
+<span class="n">import</span> <span class="p">{</span> <span class="no">NgbModule</span> <span class="p">}</span> <span class="n">from</span> <span class="s1">'@ng-bootstrap/ng-bootstrap'</span><span class="p">;</span> <span class="sr">//</span><span class="err">추가</span>
+<span class="n">import</span> <span class="p">{</span> <span class="no">AppComponent</span> <span class="p">}</span> <span class="n">from</span> <span class="s1">'./app.component'</span><span class="p">;</span>
+<span class="vi">@NgModule</span><span class="p">({</span>
+<span class="ss">declarations: </span><span class="p">[</span>
+<span class="no">AppComponent</span>
+<span class="p">],</span>
+<span class="ss">imports: </span><span class="p">[</span>
+<span class="no">BrowserModule</span><span class="p">,</span>
+<span class="no">NgbModule</span> <span class="sr">//</span><span class="err">추가</span>
+<span class="p">],</span>
+<span class="ss">providers: </span><span class="p">[],</span>
+<span class="ss">bootstrap: </span><span class="p">[</span><span class="no">AppComponent</span><span class="p">]</span>
 <span class="p">})</span>
-<span class="n">export</span> <span class="k">class</span> <span class="nc">ApiService</span> <span class="p">{</span>
-<span class="n">constructor</span><span class="p">(</span><span class="kp">private</span> <span class="ss">http: </span><span class="no">Http</span><span class="p">)</span> <span class="p">{</span> <span class="p">}</span>
-<span class="n">getIpAddress</span><span class="p">():</span> <span class="no">Observable</span><span class="o">&lt;</span><span class="no">Object</span><span class="o">&gt;</span> <span class="p">{</span>
-    <span class="p">(</span><span class="err">추가</span><span class="p">)</span>
-    <span class="k">return</span> <span class="n">this</span><span class="p">.</span><span class="nf">http</span><span class="p">.</span><span class="nf">get</span><span class="p">(</span><span class="s1">'localhost:3000/'</span><span class="p">)</span>
-    <span class="p">.</span><span class="nf">map</span><span class="p">((</span><span class="ss">data: </span><span class="no">Response</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="n">data</span><span class="p">.</span><span class="nf">json</span><span class="p">());</span>
-    <span class="p">}</span>
+<span class="n">export</span> <span class="k">class</span> <span class="nc">AppModule</span> <span class="p">{</span> <span class="p">}</span>
+<span class="err">위와같이</span> <span class="err">주석으로</span> <span class="err">추가라고</span> <span class="err">된</span> <span class="mi">2</span><span class="err">줄만</span> <span class="err">추ㅏ해주시면됩니다</span><span class="o">.</span></code></pre></figure>
+
+<p><strong>3. style.css에 bootstrap css추가</strong>
+1번에서 설치한 모듈인 boostrap의 css를 사용하기위해 style.css에 해당 코드를 추가합니다.</p>
+
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="vi">@import</span> <span class="s2">"~bootstrap/dist/css/bootstrap.css"</span><span class="p">;</span></code></pre></figure>
+
+<p>여기까지 ng-boostrap을 사용하기 위한 준비가 끝났습니다. 
+이제 샘플 코드 하나를 적어 잘 적용되었는지 확인하도록 하겠습니다.</p>
+
+<p><strong>4. sample code 실행하여 적용되었는지 확인</strong>
+html파일에 아래와같은 코드를 적어 줍니다.</p>
+
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="o">&lt;</span><span class="n">ngb</span><span class="o">-</span><span class="n">accordion</span> <span class="c1">#acc="ngbAccordion" activeIds="ngb-panel-0"&gt;</span>
+<span class="o">&lt;</span><span class="n">ngb</span><span class="o">-</span><span class="n">panel</span> <span class="n">title</span><span class="o">=</span><span class="s2">"Simple"</span><span class="o">&gt;</span>
+<span class="o">&lt;</span><span class="n">ng</span><span class="o">-</span><span class="n">template</span> <span class="n">ngbPanelContent</span><span class="o">&gt;</span>
+<span class="no">Anim</span> <span class="n">pariatur</span> <span class="n">cliche</span> <span class="n">reprehenderit</span><span class="p">,</span> <span class="n">enim</span> <span class="n">eiusmod</span> <span class="n">high</span> <span class="n">life</span> <span class="n">accusamus</span> <span class="n">terry</span> <span class="n">richardson</span> <span class="n">ad</span> <span class="n">squid</span><span class="o">.</span> <span class="mi">3</span> <span class="n">wolf</span> <span class="n">moon</span> <span class="n">officia</span>
+<span class="n">aute</span><span class="p">,</span> <span class="n">non</span> <span class="n">cupidatat</span> <span class="n">skateboard</span> <span class="n">dolor</span> <span class="n">brunch</span><span class="o">.</span> <span class="no">Food</span> <span class="n">truck</span> <span class="n">quinoa</span> <span class="n">nesciunt</span> <span class="n">laborum</span> <span class="n">eiusmod</span><span class="o">.</span> <span class="no">Brunch</span> <span class="mi">3</span> <span class="n">wolf</span> <span class="n">moon</span> <span class="n">tempor</span><span class="p">,</span>
+<span class="n">sunt</span> <span class="n">aliqua</span> <span class="n">put</span> <span class="n">a</span> <span class="n">bird</span> <span class="n">on</span> <span class="n">it</span> <span class="n">squid</span> <span class="n">single</span><span class="o">-</span><span class="n">origin</span> <span class="n">coffee</span> <span class="n">nulla</span> <span class="n">assumenda</span> <span class="n">shoreditch</span> <span class="n">et</span><span class="o">.</span> <span class="no">Nihil</span> <span class="n">anim</span> <span class="n">keffiyeh</span> <span class="n">helvetica</span><span class="p">,</span>
+<span class="n">craft</span> <span class="n">beer</span> <span class="n">labore</span> <span class="n">wes</span> <span class="n">anderson</span> <span class="n">cred</span> <span class="n">nesciunt</span> <span class="n">sapiente</span> <span class="n">ea</span> <span class="n">proident</span><span class="o">.</span> <span class="no">Ad</span> <span class="n">vegan</span> <span class="n">excepteur</span> <span class="n">butcher</span> <span class="n">vice</span> <span class="n">lomo</span><span class="o">.</span> <span class="no">Leggings</span>
+<span class="n">occaecat</span> <span class="n">craft</span> <span class="n">beer</span> <span class="n">farm</span><span class="o">-</span><span class="n">to</span><span class="o">-</span><span class="n">table</span><span class="p">,</span> <span class="n">raw</span> <span class="n">denim</span> <span class="n">aesthetic</span> <span class="n">synth</span> <span class="n">nesciunt</span> <span class="n">you</span> <span class="n">probably</span> <span class="n">haven</span><span class="s1">'t heard of them accusamus
+labore sustainable VHS.
+&lt;/ng-template&gt;
+&lt;/ngb-panel&gt;
+&lt;ngb-panel&gt;
+&lt;ng-template ngbPanelTitle&gt;
+&lt;span&gt;★ &lt;b&gt;Fancy&lt;/b&gt; title ★&lt;/span&gt;
+&lt;/ng-template&gt;
+&lt;ng-template ngbPanelContent&gt;
+Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia
+aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor,
+sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica,
+craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings
+occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven'</span><span class="n">t</span> <span class="n">heard</span> <span class="n">of</span> <span class="n">them</span> <span class="n">accusamus</span>
+<span class="n">labore</span> <span class="n">sustainable</span> <span class="no">VHS</span><span class="p">.</span>
+<span class="nf">&lt;</span><span class="o">/</span><span class="n">ng</span><span class="o">-</span><span class="n">template</span><span class="o">&gt;</span>
+<span class="o">&lt;</span><span class="sr">/ngb-panel&gt;
+&lt;ngb-panel title="Disabled" [disabled]="true"&gt;
+&lt;ng-template ngbPanelContent&gt;
+Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia
+aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor,
+sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica,
+craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings
+occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus
+labore sustainable VHS.
+&lt;/n</span><span class="n">g</span><span class="o">-</span><span class="n">template</span><span class="o">&gt;</span>
+<span class="o">&lt;</span><span class="sr">/ngb-panel&gt;
+&lt;/n</span><span class="n">gb</span><span class="o">-</span><span class="n">accordion</span><span class="o">&gt;</span>
+<span class="err">복사</span> <span class="err">붙혀넣기를</span> <span class="err">해봅시다</span><span class="o">.!!</span></code></pre></figure>
+
+<p>잘 적용되었다면 아래와같은 화면이 출력됩니다. 
+물론 angular 이미지는 angular 프로젝트 생성시 있는 이미지입니다.</p>
+
+<p><img src="/assets/images/2019-01-14-angular-ngbootstrap-setup/result.png" /></p>
+
+<p>지금까지 <strong>Angular ng-bootstrap 환경 설정</strong>이라는 주제로 포스팅하였습니다!  <br />
+해당 게시물에 문제가 있다면 댓글을 통해 피드백해주시면 감사하겠습니다~ 같이 공부해요~^^</p>
+
+<p><code class="highlighter-rouge">방문해주신분들 댓글 한개씩 달아주시면 감사하겠습니다~~^^</code></p>
+
+
+	  ]]></description>
+	</item>
+
+	<item>
+	  <title>[Angular] Angular 프로젝트 생성</title>
+	  <link>//angular-starter</link>
+	  <author></author>
+	  <pubDate>2019-01-08T09:00:00+09:00</pubDate>
+	  <guid>//angular-starter</guid>
+	  <description><![CDATA[
+	     <p>안녕하세요! <strong>Do My Best 블로그</strong> 입니다.</p>
+
+<p>이번에 포스팅할 내용은 Angular 프로젝트 생성을해서 실행까지 해보도록 하겠습니다.</p>
+
+<p>이번 포스팅은 Node가 설치되어 있는 상태라 가정하고 진행하도록 하겠습니다.<br />
+node가 설치 되지 않은 분들은 아래 링크에 들어가셔서 자신에 운영체제에 맞게 설치를 진행하시면 되겠습니다.<br />
+<a href="https://ghwlchlaks.github.io/nodejs-installation-window/">윈도우 설치</a><br />
+<a href="https://ghwlchlaks.github.io/nodejs-installation-ubuntu/">리눅스 설치</a></p>
+
+<p><strong>순서</strong></p>
+<blockquote>
+  <ul>
+    <li>Angular cli 설치 및 Angular 새로운 프로젝트 생성</li>
+    <li>Angular 실행</li>
+  </ul>
+</blockquote>
+
+<p><strong>1. Angular cli 설치 및 Angular 새로운 프로젝트 생성</strong></p>
+
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">npm</span> <span class="n">install</span> <span class="o">-</span><span class="n">g</span> <span class="n">angular</span><span class="o">-</span><span class="n">cli</span></code></pre></figure>
+
+<p>전역(g)옵션으로 angular 명령어를 사용할 수 있는 라이브러리를 설치해 줍니다. 
+설치가 되고나면 angular-cli는 ng 명령어 키워드를 이용할 수 있습니다.</p>
+
+<p>이제 angular 프로젝트를 생성해 보겠습니다. 아주 간단합니다.</p>
+
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">ng</span> <span class="n">new</span> <span class="p">[</span><span class="n">project</span> <span class="nb">name</span><span class="p">]</span></code></pre></figure>
+
+<p><img src="/assets/images/2019-01-08-angular-starter/newProject.png" />
+그러면 위 이미지처럼 선택하는 항목이 나오게되는데 위에 이미지가 default입니다. 
+css말고 scss등 선택할 수 있습니다.</p>
+
+<p>선택하시면 쉽게 프로젝트가 생성되었습니다.</p>
+
+<p><strong>2. Angular 실행</strong>
+이번에는 만들어진 default 프로젝트를 실행해 보도록하겠습니다. 
+ng 명령어 키워드를 이용하시면 됩니다.</p>
+
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">ng</span> <span class="n">serve</span></code></pre></figure>
+
+<p><img src="/assets/images/2019-01-08-angular-starter/startPage.png" />
+서버가 실행이되면 <code class="highlighter-rouge">localhost:4200</code>에 접속하시게되면 위 이미지와같이 출력되는것을 확인 하실 수 있습니다.</p>
+
+<p>다음 링크는 초기 환경 설정이 된 github link 입니다.</p>
+
+<p><a href="https://github.com/ghwlchlaks/angular-bulletinBoard-example/tree/env/angular-material">Angular-starter</a></p>
+
+<p>지금까지 <strong>Angular 프로젝트 생성</strong>이라는 주제로 포스팅하였습니다!  <br />
+해당 게시물에 문제가 있다면 댓글을 통해 피드백해주시면 감사하겠습니다~ 같이 공부해요~^^</p>
+
+<p><code class="highlighter-rouge">방문해주신분들 댓글 한개씩 달아주시면 감사하겠습니다~~^^</code></p>
+
+
+	  ]]></description>
+	</item>
+
+	<item>
+	  <title>[Express] Typescript를 이용한 express, node초기 설정</title>
+	  <link>//express-setup-typescript</link>
+	  <author></author>
+	  <pubDate>2019-01-03T09:00:00+09:00</pubDate>
+	  <guid>//express-setup-typescript</guid>
+	  <description><![CDATA[
+	     <p>안녕하세요! <strong>Do My Best 블로그</strong> 입니다. 
+2019년 기해년에 첫 게시글이 되겠네요.ㅎㅎ<br />
+모두 새해 복 많이 받으세요~</p>
+
+<p>이번에 포스팅할 내용은 JavaScript가 아니라 TypeScript를 이용하여 Node 서버 초기 환경 설정하는 방법에 대해서 
+포스팅 하겠습니다.</p>
+
+<p>TypeScript와 JavaScript의 차이는 다른 게시글에서 포스팅하도록 하겠습니다.</p>
+
+<p>먼저 해당 게시물은 node가 설치 되어있다는 가정하에 시작하도록 하겠습니다.<br />
+혹시 설치가 안되있는 분은 설치 방법을 링크하도록 하겠습니다.</p>
+
+<p><a href="https://ghwlchlaks.github.io/nodejs-installation-window/">윈도우 설치</a><br />
+<a href="https://ghwlchlaks.github.io/nodejs-installation-ubuntu/">리눅스 설치</a></p>
+
+<p>먼저 typescript를 이용하여 node 서버 구동을 위한 환경 설정은 다양한 방법들이 존재합니다. 
+해당 방법도 여러가지 방법 중 하나라고 생각하시고 보시면 좋을것 같습니다.</p>
+
+<p><strong>순서</strong></p>
+<blockquote>
+  <ul>
+    <li>폴더 생성 및 node 폴더로 초기화.</li>
+    <li>devloperment 의존성 설치</li>
+    <li>express 설치</li>
+    <li>tsconfig.json 생성 및 작성</li>
+    <li>tslint 생성 및 설정</li>
+    <li>package.json 수정</li>
+    <li>node server 구동</li>
+  </ul>
+</blockquote>
+
+<p><strong>1. 폴더 생성 및 node 폴더로 초기화.</strong></p>
+
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">mkdir</span> <span class="n">typescript</span><span class="o">-</span><span class="n">node</span>
+<span class="n">cd</span> <span class="n">typescript</span><span class="o">-</span><span class="n">node</span>
+<span class="n">npm</span> <span class="n">init</span></code></pre></figure>
+
+<p>npm init 명령어를 입력하게 되면 여러가지 적는 칸과 선택 하는 항목이 출력되게됩니다. 
+특별하게 설정할 것이없다면 모두 default로 설정해주시면 됩니다.</p>
+
+<p><strong>2. devloperment 의존성 설치</strong></p>
+
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">npm</span> <span class="n">install</span> <span class="o">-</span><span class="no">D</span> <span class="n">typescript</span>
+<span class="n">npm</span> <span class="n">install</span> <span class="o">-</span><span class="no">D</span> <span class="n">nodemon</span>
+<span class="n">npm</span> <span class="n">install</span> <span class="o">-</span><span class="no">D</span> <span class="n">tslint</span></code></pre></figure>
+
+<p>Typescript로 진행 할 예정이니 당연히 typescript를 설치 해야겠죠?
+nodemon은 개발시 auto refresh가 되기 때문에 개발 편의를 위해 설치 해줍니다
+tslint는 개발 시 정해놓은 어법을 맞추기 위해 설치 해줍니다.<br />
+문서에서는 코딩스타일, 코딩 표준을 맞추기 위한 방법이라고 설명되어있네요 ㅎㅎ</p>
+
+<p><strong>3. express 설치</strong></p>
+
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">npm</span> <span class="n">install</span> <span class="n">express</span>
+<span class="n">npm</span> <span class="n">install</span> <span class="vi">@types</span><span class="o">/</span><span class="n">express</span></code></pre></figure>
+
+<p>express로 서버를 구성할 것이기 떄문에 express모듈을 추가적으로 설치 해줍니다.</p>
+
+<p><strong>4. tsconfig.json 생성 및 작성</strong></p>
+
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="p">{</span>
+    <span class="s2">"compilerOptions"</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s2">"module"</span><span class="p">:</span> <span class="s2">"commonjs"</span><span class="p">,</span>
+        <span class="s2">"esModuleInterop"</span><span class="p">:</span> <span class="kp">true</span><span class="p">,</span>
+        <span class="s2">"target"</span><span class="p">:</span> <span class="s2">"es6"</span><span class="p">,</span>
+        <span class="s2">"noImplicitAny"</span><span class="p">:</span> <span class="kp">true</span><span class="p">,</span>
+        <span class="s2">"moduleResolution"</span><span class="p">:</span> <span class="s2">"node"</span><span class="p">,</span>
+        <span class="s2">"sourceMap"</span><span class="p">:</span> <span class="kp">true</span><span class="p">,</span>
+        <span class="s2">"outDir"</span><span class="p">:</span> <span class="s2">"dist"</span><span class="p">,</span>
+        <span class="s2">"baseUrl"</span><span class="p">:</span> <span class="s2">"."</span><span class="p">,</span>
+        <span class="s2">"paths"</span><span class="p">:</span> <span class="p">{</span>
+            <span class="s2">"*"</span><span class="p">:</span> <span class="p">[</span>
+                <span class="s2">"node_modules/*"</span><span class="p">,</span>
+                <span class="s2">"src/types/*"</span>
+            <span class="p">]</span>
+        <span class="p">},</span>
+        <span class="s2">"lib"</span><span class="p">:</span> <span class="p">[</span>
+            <span class="s2">"es2015"</span>
+        <span class="p">]</span>
+    <span class="p">},</span>
+    <span class="s2">"include"</span><span class="p">:</span> <span class="p">[</span>
+        <span class="s2">"src/**/*"</span>
+    <span class="p">]</span>
 <span class="p">}</span></code></pre></figure>
 
-<p><strong>5. 사용</strong><br />
-Api를 사용할 컴포넌트 파일을 수정해줍니다.</p>
+<p>tsconfig.json 파일을 생성후 해당 내용을 넣어줍니다. 
+typescript는 compile을 통해 javascript파일을 생성하고 구동합니다.<br />
+그렇기 때문에 compile option을 지정하고 compile할 경로 include를 지정해 줍니다. <br />
+대표적으로  include에 파일들을 lib에 express버전을통해 compile하고 outDir에 경로에 javascript파일을 생성합니다.</p>
 
-<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"> 
-<span class="n">import</span> <span class="p">{</span><span class="no">ApiService</span><span class="p">}</span> <span class="n">from</span> <span class="s1">'./services/service파일이름'</span>
-<span class="n">constructor</span><span class="p">(</span> <span class="kp">private</span> <span class="ss">apiSerivce: </span><span class="no">ApiService</span><span class="p">)</span> <span class="p">{</span> <span class="p">}</span> 
-<span class="n">apiService</span><span class="p">.</span><span class="nf">getData</span><span class="p">().</span><span class="nf">subscribe</span><span class="p">((</span><span class="n">result</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
-    <span class="n">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="n">result</span><span class="p">);</span>
-<span class="p">})</span></code></pre></figure>
+<p><strong>5. tslint 생성 및 설정</strong></p>
 
-<p>위와같이 작성하게되면 localhost:3000으로 api요청이 들어와 값이 반환되게됩니다.<br />
-물론 3000포트의 서버는 작성이 되있으셔야겠죠??</p>
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="p">.</span><span class="nf">/</span><span class="n">node_modules</span><span class="o">/</span><span class="p">.</span><span class="nf">bin</span><span class="o">/</span><span class="n">tslint</span> <span class="o">--</span><span class="n">init</span></code></pre></figure>
 
-<p>지금까지 <strong>Angular Http Ajax 사용하기</strong>이라는 주제로 포스팅하였습니다!</p>
+<p>tslint 설정을 위해 생성해줍니다. 
+그 후 tslint.json에 내용을 수정해 줍니다.</p>
 
-<p>해당 게시물에 문제가 있다면 댓글을 통해 피드백해주시면 감사하겠습니다~ 같이 공부해요~^^</p>
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="p">{</span>
+    <span class="s2">"defaultSeverity"</span><span class="p">:</span> <span class="s2">"error"</span><span class="p">,</span>
+    <span class="s2">"extends"</span><span class="p">:</span> <span class="p">[</span>
+        <span class="s2">"tslint:recommended"</span>
+    <span class="p">],</span>
+    <span class="s2">"jsRules"</span><span class="p">:</span> <span class="p">{},</span>
+    <span class="s2">"rules"</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s2">"interface-name"</span><span class="p">:</span> <span class="p">[</span><span class="kp">false</span><span class="p">],</span>
+        <span class="s2">"no-console"</span><span class="p">:</span> <span class="p">[</span><span class="kp">false</span><span class="p">],</span>
+        <span class="s2">"quotemark"</span><span class="p">:</span> <span class="p">[</span><span class="kp">true</span><span class="p">,</span> <span class="s2">"single"</span><span class="p">]</span>
+    <span class="p">},</span>
+    <span class="s2">"rulesDirectory"</span><span class="p">:</span> <span class="p">[]</span>
+<span class="p">}</span></code></pre></figure>
+
+<p>기본적인 lint이외에 다른 옵션들은 검색을 통해 쉽게 찾으실 수 있습니다.</p>
+
+<p><strong>6. package.json 수정</strong></p>
+
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="p">{</span>
+  <span class="s2">"name"</span><span class="p">:</span> <span class="s2">"typescript-node"</span><span class="p">,</span>
+  <span class="s2">"version"</span><span class="p">:</span> <span class="s2">"1.0.0"</span><span class="p">,</span>
+  <span class="s2">"description"</span><span class="p">:</span> <span class="s2">""</span><span class="p">,</span>
+  <span class="s2">"main"</span><span class="p">:</span> <span class="s2">"dist/server.js"</span><span class="p">,</span>
+  <span class="s2">"scripts"</span><span class="p">:</span> <span class="p">{</span>
+    <span class="s2">"build-ts"</span><span class="p">:</span> <span class="s2">"tsc"</span><span class="p">,</span>
+    <span class="s2">"start"</span><span class="p">:</span> <span class="s2">"npm run serve"</span><span class="p">,</span>
+    <span class="s2">"serve"</span><span class="p">:</span> <span class="s2">"node dist/server.js"</span><span class="p">,</span>
+    <span class="s2">"watch-node"</span><span class="p">:</span> <span class="s2">"nodemon dist/server.js"</span><span class="p">,</span>
+    <span class="s2">"watch-ts"</span><span class="p">:</span> <span class="s2">"tsc -w"</span>
+  <span class="p">},</span>
+  <span class="s2">"author"</span><span class="p">:</span> <span class="s2">""</span><span class="p">,</span>
+  <span class="s2">"license"</span><span class="p">:</span> <span class="s2">"ISC"</span><span class="p">,</span>
+  <span class="s2">"devDependencies"</span><span class="p">:</span> <span class="p">{</span>
+    <span class="s2">"nodemon"</span><span class="p">:</span> <span class="s2">"^1.18.3"</span><span class="p">,</span>
+    <span class="s2">"tslint"</span><span class="p">:</span> <span class="s2">"^5.11.0"</span><span class="p">,</span>
+    <span class="s2">"typescript"</span><span class="p">:</span> <span class="s2">"^3.0.1"</span>
+  <span class="p">},</span>
+  <span class="s2">"dependencies"</span><span class="p">:</span> <span class="p">{</span>
+    <span class="s2">"@types/express"</span><span class="p">:</span> <span class="s2">"^4.16.0"</span><span class="p">,</span>
+    <span class="s2">"express"</span><span class="p">:</span> <span class="s2">"^4.16.3"</span>
+  <span class="p">}</span>
+<span class="p">}</span></code></pre></figure>
+
+<p>수정해야할 부분은 main, scripts에 있는 내용입니다. 이외에 내용은 앞에서 설치하며 진행했기 때문에 
+수정하지 않아도 될 것입니다.<br />
+<code class="highlighter-rouge">scripts</code> 부분은 node 서버를 구동하기위해 사용하는 script들입니다.</p>
+
+<p><strong>7. node server 구동</strong>
+기본적인 설정이 끝이 났습니다. 이제 서버를 실행시켜 구동해보도록 하겠습니다.</p>
+
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">npm</span> <span class="n">run</span> <span class="n">watch</span><span class="o">-</span><span class="n">ts</span></code></pre></figure>
+
+<p>다른 터미널에서</p>
+
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">npm</span> <span class="n">run</span> <span class="n">watch</span><span class="o">-</span><span class="n">node</span></code></pre></figure>
+
+<p>그 후 <code class="highlighter-rouge">http://localhost:3000</code>에 접속해보시면 server가 구동된것을 확인 하실 수 있습니다.</p>
+
+<p>다음 링크는 초기 환경 설정이 된 폴더 입니다.</p>
+
+<p><a href="https://github.com/ghwlchlaks/typescript-express-example">Typescript-node-boilerplate</a></p>
+
+<p>지금까지 <strong>typescript를 이용한 express, node초기 설정</strong>이라는 주제로 포스팅하였습니다!  <br />
+해당 게시물에 문제가 있다면 댓글을 통해 피드백해주시면 감사하겠습니다~ 같이 공부해요~^^</p>
 
 <p><code class="highlighter-rouge">방문해주신분들 댓글 한개씩 달아주시면 감사하겠습니다~~^^</code></p>
 
