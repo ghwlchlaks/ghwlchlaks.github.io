@@ -12,6 +12,160 @@
    <atom:link href="rss" rel="self" type="application/rss+xml" />
    
 	<item>
+	  <title>style-components와 React [styled-components]</title>
+	  <link>//styled-components</link>
+	  <author></author>
+	  <pubDate>2019-03-30T10:00:00+09:00</pubDate>
+	  <guid>//styled-components</guid>
+	  <description><![CDATA[
+	     <p>이번에는 React에서 styled-components 라이브러리를 사용하여 실습을 해보겠습니다.</p>
+
+<p>먼저 styled-components <a href="https://www.styled-components.com/docs/basics#installation">링크</a> 입니다.</p>
+
+<h2 id="순서">순서</h2>
+<blockquote>
+  <ul>
+    <li>라이브러리 설치</li>
+    <li>예제 실습</li>
+  </ul>
+</blockquote>
+
+<h3 id="1-라이브러리-설치">1. 라이브러리 설치</h3>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>npm install --save styled-components
+</code></pre></div></div>
+
+<h3 id="2-예제-실습">2. 예제 실습</h3>
+<h4 id="1">(1)</h4>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>import React, { Component } from 'react';
+import './App.css';
+import styled from 'styled-components'
+
+class App extends Component {
+  render() {
+    return (
+      &lt;Wrapper&gt;
+        &lt;Title&gt;
+          Hello World
+        &lt;/Title&gt;
+      &lt;/Wrapper&gt;
+    );
+  }
+}
+
+const Title = styled.h1`
+  font-size: 1.5em;
+  text-align: center;
+  color: palevioletred;
+`;
+
+const Wrapper = styled.section`
+  padding: 4em;
+  background: papayawhip;
+`;
+
+export default App;
+
+</code></pre></div></div>
+
+<h4 id="결과-화면-1">결과 화면 (1)</h4>
+<p><img src="/assets/images/2019-03-30-styled-components/result1.png" /></p>
+
+<p>css파일을 사용할 경우, css와 컴포넌트 파일이 떨어져있기 때문에 관리가 불편한 점이 있습니다. <br />
+styled-components는 컴포넌트를 생성할때 스타일을 입히기 때문에 css파일을 따로 관리하지 않아도됩니다.</p>
+
+<p>또한 props를 받아서 스타일에 적용시킬수도 있습니다.</p>
+<h4 id="2">(2)</h4>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>import React, { Component } from 'react';
+import './App.css';
+import styled from 'styled-components'
+
+class App extends Component {
+  render() {
+    return (
+      &lt;div&gt;
+        &lt;Button&gt;Normal&lt;/Button&gt;
+        &lt;Button primary&gt;Primary&lt;/Button&gt;
+      &lt;/div&gt;
+    );
+  }
+}
+
+const Button = styled.button`
+  background: ${props =&gt; props.primary ? "palevioletred" : "white"};
+  color: ${props =&gt; props.primary ? "white" : "palevioletred"};
+
+  font-size: 1em;
+  margin: 1em;
+  padding: 0.25em 1em;
+  border: 2px solid palevioletred;
+  border-radius: 3px;
+`;
+
+
+export default App;
+
+</code></pre></div></div>
+
+<h4 id="결과화면-2">결과화면 (2)</h4>
+<p><img src="/assets/images/2019-03-30-styled-components/result2.png" /></p>
+
+<p>위 코드처럼 컴포넌트에 primary props의 존재 유무에 따라 스타일을 동적으로 지정할 수 있습니다.</p>
+
+<p>다음 예제를 진행해 보겠습니다.</p>
+
+<h4 id="3">(3)</h4>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>import React, { Component } from 'react';
+import './App.css';
+import styled from 'styled-components'
+
+class App extends Component {
+  render() {
+    return (
+      &lt;div&gt;
+        &lt;Button&gt;Normal Button&lt;/Button&gt;
+        &lt;TomatoButton&gt;Tomato Button&lt;/TomatoButton&gt;
+      &lt;/div&gt;
+    );
+  }
+}
+
+const Button = styled.button`
+  color: palevioletred;
+  font-size: 1em;
+  margin: 1em;
+  padding: 0.25em 1em;
+  border: 2px solid palevioletred;
+  border-radius: 3px;
+`;
+
+const TomatoButton = styled(Button)`
+  color: tomato;
+  border-color: tomato;
+`;
+
+
+export default App;
+
+</code></pre></div></div>
+
+<h4 id="결과화면-3">결과화면 (3)</h4>
+<p><img src="/assets/images/2019-03-30-styled-components/result3.png" /></p>
+
+<p>위에 코드는 style을 override한것입니다. 즉, 이전의 설정한 스타일을 포함하면서 새롭게 tomatobutton생성한 스타일로 덮어집니다.</p>
+
+<p>이것으로 간단하게 styled-components 사용방법과 이점에대해서 알아봤습니다.</p>
+
+<p>해당 게시물에 문제가 있다면 댓글을 통해 피드백해주시면 감사하겠습니다~
+같이 공부해요~^^</p>
+
+<p><code class="highlighter-rouge">방문해주신분들 댓글 한개씩 달아주시면 감사하겠습니다~~^^</code></p>
+
+
+	  ]]></description>
+	</item>
+
+	<item>
 	  <title>리눅스에서 지킬 설치 및 실행 [Jekyll]</title>
 	  <link>//ubuntu-jekyll-installation</link>
 	  <author></author>
