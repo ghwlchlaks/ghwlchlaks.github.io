@@ -1,6 +1,14 @@
 [
   
     {
+      "title"    : "면접 공부04 (정리전)",
+      "category" : "",
+      "tags"     : "Blog, IT",
+      "url"      : "https://ghwlchlaks.github.io/interview04",
+      "date"     : "2019-04-04 09:00:00 +0900"
+    } ,
+  
+    {
       "title"    : "style-components와 React [styled-components]",
       "category" : "",
       "tags"     : "Blog, IT, Github, Jekyll",
