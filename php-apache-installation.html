@@ -6,8 +6,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 
     <!-- Page Meta -->
-    <title>첫 출근</title>
-    <meta name="description" content="첫 출근" />
+    <title>윈도우 apache php 설치</title>
+    <meta name="description" content="윈도우 apache php 설치" />
 
     <!-- Mobile Meta -->
     <meta name="HandheldFriendly" content="True" />
@@ -29,21 +29,21 @@
 	<link rel="stylesheet" href="/assets/fonts/font-awesome/css/font-awesome.min.css">
 
     <!-- Ghost outputs important style and meta data with this tag -->
-        <link rel="canonical" href="https://ghwlchlaks.github.io//firstWork" />
+        <link rel="canonical" href="https://ghwlchlaks.github.io//php-apache-installation" />
     <meta name="referrer" content="origin" />
     <link rel="next" href="https://ghwlchlaks.github.io/page2/" />
 
     <meta property="og:site_name" content="DeMBi" />
     <meta property="og:type" content="website" />
-    <meta property="og:title" content="첫 출근" />
-    <meta property="og:description" content="첫 출근" />
-    <meta property="og:url" content="https://ghwlchlaks.github.io//firstWork" />
+    <meta property="og:title" content="윈도우 apache php 설치" />
+    <meta property="og:description" content="윈도우 apache php 설치" />
+    <meta property="og:url" content="https://ghwlchlaks.github.io//php-apache-installation" />
     <meta property="og:image" content="https://ghwlchlaks.github.io/assets/images/cover/about_cover.jpg" />
 
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="첫 출근" />
-    <meta name="twitter:description" content="첫 출근" />
-    <meta name="twitter:url" content="https://ghwlchlaks.github.io//firstWork" />
+    <meta name="twitter:title" content="윈도우 apache php 설치" />
+    <meta name="twitter:description" content="윈도우 apache php 설치" />
+    <meta name="twitter:url" content="https://ghwlchlaks.github.io//php-apache-installation" />
     <meta name="twitter:image:src" content="/assets/images/cover/about_cover.jpg" />
     
     <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
@@ -54,12 +54,14 @@
     });
     </script>
     <!-- <meta property="og:locale" content="ko_KR" />
-	<meta name="description" content="안녕하세요 퇴근 후 작성하네요.">
+	<meta name="description" content="1. 아파치 다운C드라이브에 압축해제">
 	<meta property="og:site_name" content="">
 	
-	<meta property="og:title" content="첫 출근">
+	<meta property="og:title" content="윈도우 apache php 설치">
 	<meta property="og:type" content="article">
-	<meta property="og:description" content="안녕하세요 퇴근 후 작성하네요.
+	<meta property="og:description" content="1. 아파치 다운
+C드라이브에 압축해제
+
 
 "/>
 	
@@ -67,7 +69,7 @@
 	<meta property="article:published_time" content="2019-04-22T09:00:00+09:00">
 	<meta property="article:author" content="https://ghwlchlaks.github.io/about/">
 	
-	<meta property="og:url" content="https://ghwlchlaks.github.io/firstWork" />
+	<meta property="og:url" content="https://ghwlchlaks.github.io/php-apache-installation" />
 	
 	<meta itemprop="keywords" content="Blog,IT" />
 	
@@ -84,10 +86,10 @@
     "@context": "http://schema.org",
     "@type": "Website",
     "publisher": "DeMBi",
-    "name": "첫 출근",
-    "url": "https://ghwlchlaks.github.io///firstWork",
+    "name": "윈도우 apache php 설치",
+    "url": "https://ghwlchlaks.github.io///php-apache-installation",
     "image": "https://ghwlchlaks.github.io/assets/images/cover/about_cover.jpg",
-    "description": "첫 출근"
+    "description": "윈도우 apache php 설치"
 }
     </script>
 
@@ -280,7 +282,7 @@ document.addEventListener("DOMContentLoaded", function(){
     </div>
     <article id="contents_ads" class="post tag-IT tag-Interview" style="width: 70%; padding-right: 10px; padding-top: 10px;">
         <header class="post-header">
-            <h1 class="post-title">첫 출근</h1>
+            <h1 class="post-title">윈도우 apache php 설치</h1>
             <section class="post-meta">
             <!-- <a href='/'></a> -->
 
@@ -308,17 +310,58 @@ document.addEventListener("DOMContentLoaded", function(){
 
         <section class="post-content">
 
-            <p>안녕하세요 퇴근 후 작성하네요.</p>
+            <h2 id="1-아파치-다운">1. <a href="https://www.apachelounge.com/download/">아파치 다운</a></h2>
+<p>C드라이브에 압축해제
+<img src="/assets/images/2019-04-23-php-apache-installation/apahcefolder.png" /></p>
 
-<p>오늘은 첫 출근을 했습니다. 팀원분들이 다들 좋으신 분들이라 다행입니다. ㅎㅎ</p>
+<p>폴더내부에 Apache24/conf/httpd.conf 파일 수정</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Define SRVROOT "C:\자신의 apache폴더위치\Apache24"  
+...  
+ServerAdmin 자신의 이메일  
+...  
+ServerName localhost  
 
-<p>당분간은 회사에 적응하는 시간을 가지는것같습니다.</p>
+</code></pre></div></div>
 
-<p>빠르게 적응하고 많은 것을 배울 수 있는 기회가 되었음 좋겠습니다.</p>
+<p>환경 변수 설정
+path 변수 값 apache폴더/bin</p>
 
-<p>요즘은 일기 형식으로 많이 쓰는것 같네요. 빠르게 공부한 내용도 업로드 할 수 있도록 하겠습니다.</p>
+<p>관리자 권한으로 명령프롬프트 실행
+httpd.exe -k install
+httpd.exe -k start</p>
 
-<p>감사합니다.</p>
+<p>localhost 접속 
+it works가 출력되야 정상</p>
+
+<h2 id="2-php-다운">2. <a href="https://windows.php.net/download">php 다운</a></h2>
+<p>C드라이브에 압축해제
+php.ini-production의 이름을 php.ini로 변경 후 내용 수정</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>extension_dir = "C:\php가 설치된 폴더 경로\php\ext"
+</code></pre></div></div>
+
+<p>1번에서 진행했던 httpd.conf파일에 내용 추가</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>LoadModule php7_module "C:\php가 설치된 폴더 경로\php\php7apache2_4.dll"
+AddType application/x-httpd-php .php .html
+AddHandler application/x-httpd-php .php .html
+PHPIniDir "C:\php가 설치된 폴더 경로\php" 
+</code></pre></div></div>
+
+<p>httpd.exe -k restart</p>
+
+<p>Apache24\htdocs에 test.php파일 추가
+<img src="/assets/images/2019-04-23-php-apache-installation/code.png" /></p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code># test.php
+&lt;?php phpinfo(); ?&gt;
+</code></pre></div></div>
+
+<p>localhost/test.php접속</p>
+
+<h3 id="결과화면">결과화면</h3>
+<p><img src="/assets/images/2019-04-23-php-apache-installation/result.png" /></p>
+
+<p>위와같이 출력되면 정상적으로 php apache설치 및 연동이 된것입니다.</p>
+
 
 
         </section>
@@ -351,16 +394,16 @@ document.addEventListener("DOMContentLoaded", function(){
 
                     <!-- <section class="share">
                         <h4>Share this post</h4>
-                        <a class="icon-twitter" href="http://twitter.com/share?text=첫 출근&amp;url=https://ghwlchlaks.github.io/firstWork"
+                        <a class="icon-twitter" href="http://twitter.com/share?text=윈도우 apache php 설치&amp;url=https://ghwlchlaks.github.io/php-apache-installation"
                             onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
                             <span class="hidden">Twitter</span>
                         </a>
-                        <a class="icon-facebook" href="https://www.facebook.com/sharer/sharer.php?u=https://ghwlchlaks.github.io/firstWork"
+                        <a class="icon-facebook" href="https://www.facebook.com/sharer/sharer.php?u=https://ghwlchlaks.github.io/php-apache-installation"
                             onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
                             <span class="hidden">Facebook</span>
                         </a>
-                        <a class="icon-google-plus" href="https://plus.google.com/share?url=https://ghwlchlaks.github.iofirstWork" 
-                            <a class="icon-google-plus" href="https://plus.google.com/share?url=https://ghwlchlaks.github.io/firstWork"
+                        <a class="icon-google-plus" href="https://plus.google.com/share?url=https://ghwlchlaks.github.iophp-apache-installation" 
+                            <a class="icon-google-plus" href="https://plus.google.com/share?url=https://ghwlchlaks.github.io/php-apache-installation"
                            onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;">
                             <span class="hidden">Google+</span>
                         </a>
@@ -374,8 +417,8 @@ document.addEventListener("DOMContentLoaded", function(){
 <script type="text/javascript">
         /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
         var disqus_shortname = 'dmb3618'; // required: replace example with your forum shortname
-        var disqus_identifier = '/firstWork';
-        var disqus_url = 'https://ghwlchlaks.github.io/firstWork';
+        var disqus_identifier = '/php-apache-installation';
+        var disqus_url = 'https://ghwlchlaks.github.io/php-apache-installation';
 
             /* * * DON'T EDIT BELOW THIS LINE * * */
             (function() {
@@ -400,20 +443,13 @@ document.addEventListener("DOMContentLoaded", function(){
 
     <!-- [[! next_post ]] -->
     
-        <a class="read-next-story " style="background-image: url(/assets/images/cover/about_cover.jpg)" href="/php-apache-installation">
-            <section class="post">
-                <h2>윈도우 apache php 설치</h2>
-                <p>## 1. [아파치 다운][apache-download] C드라이브에 압축해제 폴더내부에 Apache24/conf/httpd.conf 파일 수정 ``` Define SRVROOT "C:\자신의 apache폴더위치\Apache24"...</p>
-            </section>
-        </a>
-    
     <!-- [[! /next_post ]] -->
     <!-- [[! prev_post ]] -->
     
-        <a class="read-next-story prev " style="background-image: url(/assets/images/cover/about_cover.jpg)" href="/beforedaywork">
+        <a class="read-next-story prev " style="background-image: url(/assets/images/cover/about_cover.jpg)" href="/firstWork">
             <section class="post">
-                <h2>첫 출근 전 날</h2>
-                <p>일주일간 많이 쉬고, 취업에 몰두하느라 못만났던 사람들을 만났습니다. 잠도 많이 자고, 휴식을 충분히 했습니다. ㅎㅎ...</p>
+                <h2>첫 출근</h2>
+                <p>안녕하세요 퇴근 후 작성하네요. 오늘은 첫 출근을 했습니다. 팀원분들이 다들 좋으신 분들이라 다행입니다. ㅎㅎ 당분간은...</p>
             </section>
         </a>
     
