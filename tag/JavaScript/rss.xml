@@ -103,7 +103,7 @@ lrwxr-xr-x 1 test test 5 Mar 7 22:00 link1 -&gt; file1<br />
 	  <guid>//nodejs-installation-window</guid>
 	  <description><![CDATA[
 	     <p>안녕하세요! <strong>Do My Best 블로그</strong> 아홉번째 게시물입니다. ㅎㅎ<br />
-이번에 포스팅할 내용은 여덟번째 내용이었던 <a href="https://ghwlchlaks.github.io/nodejs-installation-ubuntu/">리눅스에서 Node.js 설치</a>에 이어 윈도우 운영체제 환경에서 Node.js를 설치하는 방법에 대해서 알아보겠습니다.!</p>
+이번에 포스팅할 내용은 여덟번째 내용이었던 <a href="https://ghwlchlaks.github.io/nodejs-installation-ubuntu">리눅스에서 Node.js 설치</a>에 이어 윈도우 운영체제 환경에서 Node.js를 설치하는 방법에 대해서 알아보겠습니다.!</p>
 
 <p><strong>1. Node.js <a href="https://nodejs.org/">공식 사이트</a>에 접속하기.</strong>
 접속하시면 자신의 운영체제에 맞게 페이지가 등장합니다!<br />
