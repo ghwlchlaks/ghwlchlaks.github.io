@@ -82,7 +82,7 @@ PHPIniDir "C:\php가 설치된 폴더 경로\php"
 <p>Apache24\htdocs에 test.php파일 추가
 <img src="/assets/images/2019-04-23-php-apache-installation/code.png" /></p>
 <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code># test.php
-&lt;?php phpinfo(); ?&gt;
+<span class="cp">&lt;?php</span> <span class="nb">phpinfo</span><span class="p">();</span> <span class="cp">?&gt;</span>
 </code></pre></div></div>
 
 <p>localhost/test.php접속</p>

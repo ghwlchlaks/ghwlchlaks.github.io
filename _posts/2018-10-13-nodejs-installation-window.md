@@ -93,5 +93,5 @@ server.listen(3000);
 
 `방문해주신분들 댓글 한개씩 달아주시면 감사하겠습니다~~^^`  
 
-[linux-installation-nodejs]:https://ghwlchlaks.github.io/nodejs-installation-ubuntu/
+[linux-installation-nodejs]:https://ghwlchlaks.github.io/nodejs-installation-ubuntu
 [node-org]:https://nodejs.org/
