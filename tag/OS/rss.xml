@@ -84,7 +84,7 @@ Rufus라는 툴을 이용하면 쉽게 이미지파일을 USB에 업로드하여
 부팅 화면이 빠르게 넘어갈 수 있으니 해당 키를 연타하시는게 좋을 것 같네요 ㅎㅎ<br />
 바이오스 화면은 메인보드에 따라 다르므로 자신의 메인보드를 검색하셔서 찾아보는것도 좋은 방법입니다!<br />
 기본적으로 ‘Boot Device Priority’에서 ‘1st Boot Device’로 boot순서를 변경 할 수 있습니다. <br />
-이때 <code class="highlighter-rouge">1st Boot Device</code>를 아까 만든 <code class="highlighter-rouge">부팅 USB</code>로 설정하시면 되겠죠?<br />
+이때 <code class="language-plaintext highlighter-rouge">1st Boot Device</code>를 아까 만든 <code class="language-plaintext highlighter-rouge">부팅 USB</code>로 설정하시면 되겠죠?<br />
 설정을 저장한 후 다시 재부팅하시면 자동으로 운영체제의 설치 화면으로 넘어가게됩니다.!!</p>
 
 <p>복잡한 과정인것 같지만 해보면 그렇게 복잡하지는 않습니다. ISO 파일 설치할 때 좀 걸린다는 점만 빼면..ㅎㅎ</p>
@@ -92,7 +92,7 @@ Rufus라는 툴을 이용하면 쉽게 이미지파일을 USB에 업로드하여
 <p>지금까지 <strong>부팅 USB 만들기</strong>라는 주제로 포스팅하였습니다!  <br />
 해당 게시물에 문제가 있다면 댓글을 통해 피드백해주시면 감사하겠습니다~ 같이 공부해요~^^</p>
 
-<p><code class="highlighter-rouge">방문해주신분들 댓글 한개씩 달아주시면 감사하겠습니다~~^^</code></p>
+<p><code class="language-plaintext highlighter-rouge">방문해주신분들 댓글 한개씩 달아주시면 감사하겠습니다~~^^</code></p>
 
 
 	  ]]></description>

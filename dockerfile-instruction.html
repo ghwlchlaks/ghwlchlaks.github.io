@@ -117,6 +117,7 @@
 
         <li class="nav-Github " role="presentation"><a href="https://ghwlchlaks.github.io/tag/Github">Github</a></li>
         <li class="nav-Algorithm " role="presentation"><a href="https://ghwlchlaks.github.io/tag/Algorithm">Algorithm</a></li>
+        <li class="nav-AWS " role="presentation"><a href="https://ghwlchlaks.github.io/tag/AWS">AWS</a></li>
         <!-- <li class="nav-IT " role="presentation"><a href="https://ghwlchlaks.github.io/tag/IT">IT</a></li> -->
         
         <button class="dropdown-btn">Language <i class="material-icons arrow">arrow_drop_up</i></button>
@@ -345,14 +346,14 @@ document.addEventListener("DOMContentLoaded", function(){
 </blockquote>
 
 <p><strong>1. FROM</strong><br />
-<code class="highlighter-rouge">FROM</code> 명령어는 사용할 이미지를 지정하는 명령어입니다. ubuntu, node와같은 이미지파일을 지정합니다. 지정할때는 <code class="highlighter-rouge">:</code>뒤에 특정 버전을 지정하여 사용할 수 있습니다.</p>
+<code class="language-plaintext highlighter-rouge">FROM</code> 명령어는 사용할 이미지를 지정하는 명령어입니다. ubuntu, node와같은 이미지파일을 지정합니다. 지정할때는 <code class="language-plaintext highlighter-rouge">:</code>뒤에 특정 버전을 지정하여 사용할 수 있습니다.</p>
 
 <figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="no">FROM</span> <span class="n">ubuntu</span><span class="p">:</span><span class="mf">18.04</span>
 <span class="n">or</span>
 <span class="no">FROM</span> <span class="n">node</span></code></pre></figure>
 
 <p><strong>2. RUN</strong><br />
-<code class="highlighter-rouge">RUN</code> 명령어는 내려받은 이미지에 설치할 패키지 또는 shell 명령어를 입력할 수 있습니다. 
+<code class="language-plaintext highlighter-rouge">RUN</code> 명령어는 내려받은 이미지에 설치할 패키지 또는 shell 명령어를 입력할 수 있습니다. 
 예를들어 내려받은 node이미지에 typescript를 설치하는 명령어를 내리고 싶다면</p>
 
 <figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="no">RUN</span> <span class="n">npm</span> <span class="n">install</span> <span class="o">-</span><span class="n">g</span> <span class="n">typescript</span><span class="p">:[</span><span class="n">version</span><span class="p">]</span>
@@ -362,13 +363,13 @@ document.addEventListener("DOMContentLoaded", function(){
 <p>보통 apt-get과 같은 명령어를 이용하여 패키지 설치 명령어를 지정해줍니다.</p>
 
 <p><strong>3. EXPOSE</strong><br />
-<code class="highlighter-rouge">EXPOSE</code> 명령어는 실행한 container외부에 노출할 포트를 지정하는 명령어입니다.
+<code class="language-plaintext highlighter-rouge">EXPOSE</code> 명령어는 실행한 container외부에 노출할 포트를 지정하는 명령어입니다.
 하지만 container를 실행할때 -p 옵션을통해 연결해주어야한다.</p>
 
 <figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="no">EXPOSE</span> <span class="mi">8080</span></code></pre></figure>
 
 <p><strong>4. ENV</strong> <br />
-<code class="highlighter-rouge">ENV</code> 명령어는 환경변수를 지정하는 것으로 파일내부에서 변수처럼 활용이 가능합니다.</p>
+<code class="language-plaintext highlighter-rouge">ENV</code> 명령어는 환경변수를 지정하는 것으로 파일내부에서 변수처럼 활용이 가능합니다.</p>
 
 <figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="no">ENV</span> <span class="nb">test</span> <span class="mi">123</span>
 <span class="no">CMD</span> <span class="n">echo</span> <span class="vg">$test</span></code></pre></figure>
@@ -377,20 +378,20 @@ document.addEventListener("DOMContentLoaded", function(){
 해당 환경변수는 빌드된 이미지를 실행할때 override할 수 있습니다.</p>
 
 <p><strong>5. ENTRYPOINT</strong><br />
-<code class="highlighter-rouge">ENTRYPOINT</code> 명령어는 컨테이너를 실행했을때 실행할 명령입니다. 컨테이너를 정지했다가 다시 시작해도 실행하는 명령어입니다. 물론 run명령어로 컨테이너를 실행했을때도 실행됩니다.<br />
+<code class="language-plaintext highlighter-rouge">ENTRYPOINT</code> 명령어는 컨테이너를 실행했을때 실행할 명령입니다. 컨테이너를 정지했다가 다시 시작해도 실행하는 명령어입니다. 물론 run명령어로 컨테이너를 실행했을때도 실행됩니다.<br />
 컨테이너가 실행될떄 실행되는 명령어이므로 도커파일에서 한번만 사용할 수 있습니다.</p>
 
 <figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="no">ENTRYPOINT</span> <span class="p">[</span><span class="s2">"npm"</span><span class="p">,</span> <span class="s2">"run"</span><span class="p">,</span> <span class="s2">"serve"</span><span class="p">]</span></code></pre></figure>
 
 <p><strong>6. CMD</strong><br />
-<code class="highlighter-rouge">CMD</code> 명령어는 docker run 실행 시 사용할 default 명령을 설정하는데 사용합니다.</p>
+<code class="language-plaintext highlighter-rouge">CMD</code> 명령어는 docker run 실행 시 사용할 default 명령을 설정하는데 사용합니다.</p>
 
 <figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="no">CMD</span> <span class="p">[</span><span class="s2">"npm"</span><span class="p">,</span> <span class="s2">"run"</span><span class="p">,</span> <span class="s2">"serve"</span><span class="p">]</span></code></pre></figure>
 
 <p><a href="http://pyrasis.com/book/DockerForTheReallyImpatient/Chapter07/06">ENTRYPOINT와 CMD의 차이</a>를 설명하는 사이트입니다.</p>
 
 <p><strong>7. ADD</strong><br />
-<code class="highlighter-rouge">ADD</code> 명령어는 빌드 중 호스트의 디렉토리에서 파일을 가져와서 이미지에 파일을 더하는 것입니다. 
+<code class="language-plaintext highlighter-rouge">ADD</code> 명령어는 빌드 중 호스트의 디렉토리에서 파일을 가져와서 이미지에 파일을 더하는 것입니다. 
 주의할점은 빌드되는 디렉토리 밖에 위치하는 파일들은 가져오지 않습니다.<br />
 ADD 호스트파일위치 이미지파일위치</p>
 
@@ -399,17 +400,17 @@ ADD 호스트파일위치 이미지파일위치</p>
 <p>호스트의 test.txt파일이 이미지 파일에 / 위치로 더해집니다.</p>
 
 <p><strong>8. COPY</strong><br />
-<code class="highlighter-rouge">COPY</code> 명령어는 ADD와 동일한 동작을 합니다. 하지만 압축파일을 자동으로 풀어주지 않습니다.</p>
+<code class="language-plaintext highlighter-rouge">COPY</code> 명령어는 ADD와 동일한 동작을 합니다. 하지만 압축파일을 자동으로 풀어주지 않습니다.</p>
 
 <figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="no">COPY</span> <span class="nb">test</span><span class="p">.</span><span class="nf">txt</span> <span class="o">/</span></code></pre></figure>
 
 <p><strong>9. WORKDIR</strong><br />
-<code class="highlighter-rouge">WORKDIR</code> 명령어는 cd의 명령어와 비슷합니다. RUN과 CMD과 같은 명령어가 실행될 이미지 내부에 위치를 지정해주는 명령어입니다.</p>
+<code class="language-plaintext highlighter-rouge">WORKDIR</code> 명령어는 cd의 명령어와 비슷합니다. RUN과 CMD과 같은 명령어가 실행될 이미지 내부에 위치를 지정해주는 명령어입니다.</p>
 
 <figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="no">WORKDIR</span> <span class="sr">/app/</span></code></pre></figure>
 
 <p><strong>10. VOLUME</strong><br />
-<code class="highlighter-rouge">VOLUME</code> 명령어는 호스트의 디렉토리를 docker 컨테이너에 연결하는 명령어입니다. 
+<code class="language-plaintext highlighter-rouge">VOLUME</code> 명령어는 호스트의 디렉토리를 docker 컨테이너에 연결하는 명령어입니다. 
 여러가지 설정파일, 데이터 등을 docker 컨테이너에너 사용할 수 있게 해줍니다. 
 즉 디렉토리 내용을 컨테이너에 저장하지 않고 호스트에 저장하도록 설정하는 것입니다.
 로그 수집과 같은 데이터 저장에 쓰임.
@@ -418,19 +419,19 @@ VOLUME 호스트디렉토리 컨테이너디렉토리</p>
 <figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="no">VOLUME</span> <span class="p">[</span><span class="s2">"/data"</span><span class="p">,</span> <span class="s2">"/var/log"</span><span class="p">]</span></code></pre></figure>
 
 <p><strong>11. USER</strong><br />
-<code class="highlighter-rouge">USER</code> 명령어는 해당 docker 이미지를 실행할 user를 지정하는 명령어입니다.</p>
+<code class="language-plaintext highlighter-rouge">USER</code> 명령어는 해당 docker 이미지를 실행할 user를 지정하는 명령어입니다.</p>
 
 <figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="no">USER</span> <span class="n">user</span>
 <span class="n">or</span>
 <span class="no">USER</span> <span class="p">[</span><span class="n">uid</span><span class="p">]:[</span><span class="n">gid</span><span class="p">]</span></code></pre></figure>
 
 <p><strong>12. LABEL</strong><br />
-<code class="highlighter-rouge">LABEL</code> 명령어는 이미지에 라벨을 다는 것입니다.</p>
+<code class="language-plaintext highlighter-rouge">LABEL</code> 명령어는 이미지에 라벨을 다는 것입니다.</p>
 
 <figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="no">LABEL</span> <span class="s2">"abcd@gmail.com"</span></code></pre></figure>
 
 <p><strong>13. ARG</strong><br />
-<code class="highlighter-rouge">ARG</code> 명령어는 도커파일 빌드시에 설정하는 옵션들을 지정할 수 있는 명령어 입니다.</p>
+<code class="language-plaintext highlighter-rouge">ARG</code> 명령어는 도커파일 빌드시에 설정하는 옵션들을 지정할 수 있는 명령어 입니다.</p>
 
 <figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="no">ARG</span> <span class="n">arg1</span>
 <span class="no">ARG</span> <span class="n">arg2</span><span class="o">=</span><span class="n">value</span></code></pre></figure>
@@ -440,7 +441,7 @@ VOLUME 호스트디렉토리 컨테이너디렉토리</p>
 <p>지금까지 <strong>도커파일 명령어</strong>이라는 주제로 포스팅하였습니다!  <br />
 해당 게시물에 문제가 있다면 댓글을 통해 피드백해주시면 감사하겠습니다~ 같이 공부해요~^^</p>
 
-<p><code class="highlighter-rouge">방문해주신분들 댓글 한개씩 달아주시면 감사하겠습니다~~^^</code></p>
+<p><code class="language-plaintext highlighter-rouge">방문해주신분들 댓글 한개씩 달아주시면 감사하겠습니다~~^^</code></p>
 
 
 
@@ -547,7 +548,7 @@ VOLUME 호스트디렉토리 컨테이너디렉토리</p>
 
         <!-- The tiny footer at the very bottom -->
         <footer class="site-footer clearfix">
-          <section class="copyright"><a href="https://ghwlchlaks.github.io/">DeMBi</a> &copy; 2019</section>
+          <section class="copyright"><a href="https://ghwlchlaks.github.io/">DeMBi</a> &copy; 2020</section>
           <section class="poweredby">Proudly published with <a href="https://jekyllrb.com/">Jekyll</a> using <a href="https://github.com/jekyller/jasper">Jasper</a></section>
         </footer>
     </div>

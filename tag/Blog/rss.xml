@@ -12,6 +12,33 @@
    <atom:link href="rss" rel="self" type="application/rss+xml" />
    
 	<item>
+	  <title>AWS CLI 설치</title>
+	  <link>//aws-cli-installation</link>
+	  <author></author>
+	  <pubDate>2020-10-10T09:00:00+09:00</pubDate>
+	  <guid>//aws-cli-installation</guid>
+	  <description><![CDATA[
+	     <h2 id="1-aws-cli-다운">1. <a href="https://docs.aws.amazon.com/ko_kr/cli/latest/userguide/cli-chap-install.html">AWS CLI 다운</a></h2>
+
+<p>위 링크로 접속해서 설치하고자하는 aws cli 버전을 클릭해서 설치하세요</p>
+
+<p>설치는 간단합니다.</p>
+
+<p><img src="/assets/images/2020-10-10-aws-cli-installation/01.png" /></p>
+
+<p>next를 계속 눌러주시면됩니다.</p>
+
+<h3 id="결과화면">결과화면</h3>
+<p>잘 설치가 되었는지 cmd 창에서 aws –version 을 입력합니다.
+<img src="/assets/images/2020-10-10-aws-cli-installation/02.png" /></p>
+
+<p>위와같이 출력되면 정상적으로 aws cli 설치가 된것입니다.</p>
+
+
+	  ]]></description>
+	</item>
+
+	<item>
 	  <title>첫 출근</title>
 	  <link>//firstWork</link>
 	  <author></author>
@@ -45,7 +72,7 @@
 <img src="/assets/images/2019-04-23-php-apache-installation/apahcefolder.png" /></p>
 
 <p>폴더내부에 Apache24/conf/httpd.conf 파일 수정</p>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Define SRVROOT "C:\자신의 apache폴더위치\Apache24"  
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Define SRVROOT "C:\자신의 apache폴더위치\Apache24"  
 ...  
 ServerAdmin 자신의 이메일  
 ...  
@@ -66,12 +93,12 @@ it works가 출력되야 정상</p>
 <h2 id="2-php-다운">2. <a href="https://windows.php.net/download">php 다운</a></h2>
 <p>C드라이브에 압축해제
 php.ini-production의 이름을 php.ini로 변경 후 내용 수정</p>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>extension_dir = "C:\php가 설치된 폴더 경로\php\ext"
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>extension_dir = "C:\php가 설치된 폴더 경로\php\ext"
 </code></pre></div></div>
 
 <p>1번에서 진행했던 httpd.conf파일에 내용 추가</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>LoadModule php7_module "C:\php가 설치된 폴더 경로\php\php7apache2_4.dll"
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>LoadModule php7_module "C:\php가 설치된 폴더 경로\php\php7apache2_4.dll"
 AddType application/x-httpd-php .php .html
 AddHandler application/x-httpd-php .php .html
 PHPIniDir "C:\php가 설치된 폴더 경로\php" 
@@ -81,8 +108,8 @@ PHPIniDir "C:\php가 설치된 폴더 경로\php"
 
 <p>Apache24\htdocs에 test.php파일 추가
 <img src="/assets/images/2019-04-23-php-apache-installation/code.png" /></p>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code># test.php
-<span class="cp">&lt;?php</span> <span class="nb">phpinfo</span><span class="p">();</span> <span class="cp">?&gt;</span>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code># test.php
+&lt;?php phpinfo(); ?&gt;
 </code></pre></div></div>
 
 <p>localhost/test.php접속</p>
@@ -301,13 +328,13 @@ PHPIniDir "C:\php가 설치된 폴더 경로\php"
 </blockquote>
 
 <h3 id="1-라이브러리-설치">1. 라이브러리 설치</h3>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>npm install --save styled-components
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>npm install --save styled-components
 </code></pre></div></div>
 
 <h3 id="2-예제-실습">2. 예제 실습</h3>
 <h4 id="1">(1)</h4>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>import React, { Component } from 'react';
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>import React, { Component } from 'react';
 import './App.css';
 import styled from 'styled-components'
 
@@ -346,7 +373,7 @@ styled-components는 컴포넌트를 생성할때 스타일을 입히기 때문�
 
 <p>또한 props를 받아서 스타일에 적용시킬수도 있습니다.</p>
 <h4 id="2">(2)</h4>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>import React, { Component } from 'react';
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>import React, { Component } from 'react';
 import './App.css';
 import styled from 'styled-components'
 
@@ -385,7 +412,7 @@ export default App;
 <p>다음 예제를 진행해 보겠습니다.</p>
 
 <h4 id="3">(3)</h4>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>import React, { Component } from 'react';
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>import React, { Component } from 'react';
 import './App.css';
 import styled from 'styled-components'
 
@@ -429,7 +456,7 @@ export default App;
 <p>해당 게시물에 문제가 있다면 댓글을 통해 피드백해주시면 감사하겠습니다~
 같이 공부해요~^^</p>
 
-<p><code class="highlighter-rouge">방문해주신분들 댓글 한개씩 달아주시면 감사하겠습니다~~^^</code></p>
+<p><code class="language-plaintext highlighter-rouge">방문해주신분들 댓글 한개씩 달아주시면 감사하겠습니다~~^^</code></p>
 
 
 	  ]]></description>
@@ -448,95 +475,41 @@ export default App;
 
 <p><strong>1. 루비 (Ruby) 설치!</strong><br />
 먼저 ruby를 설치 해줍니다.</p>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>apt-get install ruby-dev
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>apt-get install ruby-dev
 </code></pre></div></div>
 
 <p><strong>2. 지킬 (Jekyll) 설치</strong><br />
 jekyll를 설치 해보도록하겠습니다.</p>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>gem install jekyll
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>gem install jekyll
 </code></pre></div></div>
 <p>역시 리눅스는 간단한 명령어로 패키지를 설치할 수 있는 장점이 있네요 ㅎㅎ</p>
 
 <p>하지만 jekyll 설치 애러가 나타나는 경우가 있습니다. 이때는 의존 소프트웨어를 설치해주어야합니다. 
 참고한 <a href="https://github.com/sj26/mailcatcher/issues/144#issuecomment-48008579">링크</a>입니다.</p>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>apt-get install build-essential
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>apt-get install build-essential
 </code></pre></div></div>
-<p>해당 패키지가 설치되고 나서 다시 <code class="highlighter-rouge">apt-get install jekyll</code>명령어를 사용하시면 잘 작동하시는 것을 보실 수 있습니다.</p>
+<p>해당 패키지가 설치되고 나서 다시 <code class="language-plaintext highlighter-rouge">apt-get install jekyll</code>명령어를 사용하시면 잘 작동하시는 것을 보실 수 있습니다.</p>
 
 <p>이후 bundler를 설치 해줍니다.</p>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>apt-get install bundler 
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>apt-get install bundler 
 bundle install
 </code></pre></div></div>
 <p>이때 nokogiri가 설치되지 않는 문제가 발생 할 수 있습니다. 
 이때도 의존성 소프트웨어가 설치 되있지 않아서 생기는 문제입니다.
 이 문제를 해결하기위해서는 해당 명령어를 이용하여 의존 패키지를 설치해줍니다.
 참고한 <a href="https://nokogiri.org/tutorials/installing_nokogiri.html">링크</a>입니다.</p>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>apt-get install patch ruby-dev zlib1g-dev liblzma-dev
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>apt-get install patch ruby-dev zlib1g-dev liblzma-dev
 </code></pre></div></div>
-<p>설치가 된 이후 다시 <code class="highlighter-rouge">bundle install</code>명령어를 이용하여 설치를 진행해주시면 됩니다.</p>
+<p>설치가 된 이후 다시 <code class="language-plaintext highlighter-rouge">bundle install</code>명령어를 이용하여 설치를 진행해주시면 됩니다.</p>
 
-<p>이후 과정이 오류없이 설치가 완료된다면 <code class="highlighter-rouge">bundle exec jekyll serve</code>명령어를 이용하여 github-page를 실행할 수 있습니다 
-오류 없이 실행이 된다면 <code class="highlighter-rouge">http://localhost:4000/</code>으로 접속하시면 자신이 폴더내에서 수정한 블로그를 확인 할 수 있습니다.<br />
+<p>이후 과정이 오류없이 설치가 완료된다면 <code class="language-plaintext highlighter-rouge">bundle exec jekyll serve</code>명령어를 이용하여 github-page를 실행할 수 있습니다 
+오류 없이 실행이 된다면 <code class="language-plaintext highlighter-rouge">http://localhost:4000/</code>으로 접속하시면 자신이 폴더내에서 수정한 블로그를 확인 할 수 있습니다.<br />
 수정이 끝난 후에는 git push를 통해 업로드 하시면 적용가능합니다!</p>
 
 <p>해당 게시물에 문제가 있다면 댓글을 통해 피드백해주시면 감사하겠습니다~
 같이 공부해요~^^</p>
 
-<p><code class="highlighter-rouge">방문해주신분들 댓글 한개씩 달아주시면 감사하겠습니다~~^^</code></p>
-
-
-	  ]]></description>
-	</item>
-
-	<item>
-	  <title>[React-native] 설치 방법</title>
-	  <link>//react-native-installation</link>
-	  <author></author>
-	  <pubDate>2019-03-24T09:00:00+09:00</pubDate>
-	  <guid>//react-native-installation</guid>
-	  <description><![CDATA[
-	     <h1 id="해당-게시글은-작성-진행-중입니다"><code class="highlighter-rouge">해당 게시글은 작성 진행 중입니다.</code></h1>
-
-<p>사전의 설치되있어야하는 프로그램
-안드로이드 스튜디오, jdk
-<a href="[https://facebook.github.io/react-native/docs/getting-started.html]">참고 링크</a></p>
-
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>npm install -g react-native-cli
-</code></pre></div></div>
-
-<h2 id="안드로이드-스튜디오에서-설치할-라이브러리">안드로이드 스튜디오에서 설치할 라이브러리</h2>
-<p>Android SDK <br />
-Android SDK Platform - Android SDK Platform 28  <br />
-Performance (Intel ® HAXM) (See here for AMD)<br />
-Android Virtual Device<br />
-Intel x86 Atom_64 System Image or Google APIs Intel x86 Atom System Image</p>
-
-<h2 id="안드로이드-sdk-환경변수-설정">안드로이드 sdk 환경변수 설정</h2>
-<p><img src="/assets/images/2019-03-23-react-native-installation/sdk_path.png" /></p>
-
-<h2 id="platform-tools-path-설정">platform tools path 설정</h2>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>c:\Users\YOUR_USERNAME\AppData\Local\Android\Sdk\platform-tools
-</code></pre></div></div>
-
-<h2 id="안드로이드-스튜디오-emulator-실행">안드로이드 스튜디오 emulator 실행</h2>
-
-<h2 id="프로젝트-생성">프로젝트 생성</h2>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>react-native init firstProject
-</code></pre></div></div>
-
-<h2 id="연결된-디바이스-검색">연결된 디바이스 검색</h2>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>adb devices
-</code></pre></div></div>
-<p><img src="/assets/images/2019-03-23-react-native-installation/adb_list.png" /></p>
-
-<h2 id="프로젝트-안드로이드-emulator로-실행">프로젝트 안드로이드 emulator로 실행</h2>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>react-native run-android
-</code></pre></div></div>
-<p><img src="/assets/images/2019-03-23-react-native-installation/result_android.png" /></p>
-
-<p>해당 게시물에 문제가 있다면 댓글을 통해 피드백해주시면 감사하겠습니다~ 같이 공부해요~^^</p>
-
-<p><code class="highlighter-rouge">방문해주신분들 댓글 한개씩 달아주시면 감사하겠습니다~~^^</code></p>
+<p><code class="language-plaintext highlighter-rouge">방문해주신분들 댓글 한개씩 달아주시면 감사하겠습니다~~^^</code></p>
 
 
 	  ]]></description>

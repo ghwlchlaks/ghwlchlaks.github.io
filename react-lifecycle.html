@@ -114,6 +114,7 @@
 
         <li class="nav-Github " role="presentation"><a href="https://ghwlchlaks.github.io/tag/Github">Github</a></li>
         <li class="nav-Algorithm " role="presentation"><a href="https://ghwlchlaks.github.io/tag/Algorithm">Algorithm</a></li>
+        <li class="nav-AWS " role="presentation"><a href="https://ghwlchlaks.github.io/tag/AWS">AWS</a></li>
         <!-- <li class="nav-IT " role="presentation"><a href="https://ghwlchlaks.github.io/tag/IT">IT</a></li> -->
         
         <button class="dropdown-btn">Language <i class="material-icons arrow">arrow_drop_up</i></button>
@@ -320,7 +321,7 @@ document.addEventListener("DOMContentLoaded", function(){
 
 <h3 id="1constructor">1.constructor</h3>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>constructor(props) {
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>constructor(props) {
     super(props);
 }
 </code></pre></div></div>
@@ -332,7 +333,7 @@ props또한 전달되어집니다.</p>
 
 <h3 id="3-render">3. render</h3>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>render {
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>render {
     return()
 }
 </code></pre></div></div>
@@ -341,7 +342,7 @@ props또한 전달되어집니다.</p>
 
 <h3 id="4-componentdidmount">4. componentDidMount</h3>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>componentDidMount() {
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>componentDidMount() {
     Document.get...
     axios.get...
 }
@@ -356,7 +357,7 @@ props또한 전달되어집니다.</p>
 
 <h3 id="1-getderivedstatefromprops">1. getDerivedStateFromProps</h3>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>static getDerivedStateFromProps(nextProps, prevState) {
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>static getDerivedStateFromProps(nextProps, prevState) {
     if (prevState.val !== nextProps.val) {
         return {val: nextProps.val};
     }
@@ -371,7 +372,7 @@ retrun {val: nextProps.val}의 형태로 반환해준다는 것입니다.</p>
 
 <h3 id="2-shouldcomponentupdate">2. shouldComponentUpdate</h3>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>shouldComponentUpdate(nextProps, nextState) {
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>shouldComponentUpdate(nextProps, nextState) {
     if ( this.state.val !== nextState.val) {
         return false;
     }
@@ -385,7 +386,7 @@ retrun {val: nextProps.val}의 형태로 반환해준다는 것입니다.</p>
 
 <h3 id="3-getsnapshotbeforeupdate">3. getSnapshotBeforeUpdate</h3>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>getSnapshotBeforeUpdate(prevProps, prevState) {
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>getSnapshotBeforeUpdate(prevProps, prevState) {
     return prevState.val;
 }
 </code></pre></div></div>
@@ -396,7 +397,7 @@ componentDidupdate에 세번째 매개변수로 전달됩니다. (자주 사용�
 
 <h3 id="4-componentdidupdate">4. componentDidUpdate</h3>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>componentDidUpdate(prevProps, prevState, [snapshot]) {
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>componentDidUpdate(prevProps, prevState, [snapshot]) {
 }
 </code></pre></div></div>
 
@@ -410,7 +411,7 @@ componentDidupdate에 세번째 매개변수로 전달됩니다. (자주 사용�
 
 <h3 id="1-componentwillunmount">1. componentWillUnmount</h3>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>componentWillUnmount() {
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>componentWillUnmount() {
 }
 </code></pre></div></div>
 
@@ -423,7 +424,7 @@ deprecated 된것이 꽤 있기 때문에 모든것을 적지는 않았습니다
 
 <p>해당 게시물에 문제가 있다면 댓글을 통해 피드백해주시면 감사하겠습니다~ 같이 공부해요~^^</p>
 
-<p><code class="highlighter-rouge">방문해주신분들 댓글 한개씩 달아주시면 감사하겠습니다~~^^</code></p>
+<p><code class="language-plaintext highlighter-rouge">방문해주신분들 댓글 한개씩 달아주시면 감사하겠습니다~~^^</code></p>
 
 
         </section>
@@ -529,7 +530,7 @@ deprecated 된것이 꽤 있기 때문에 모든것을 적지는 않았습니다
 
         <!-- The tiny footer at the very bottom -->
         <footer class="site-footer clearfix">
-          <section class="copyright"><a href="https://ghwlchlaks.github.io/">DeMBi</a> &copy; 2019</section>
+          <section class="copyright"><a href="https://ghwlchlaks.github.io/">DeMBi</a> &copy; 2020</section>
           <section class="poweredby">Proudly published with <a href="https://jekyllrb.com/">Jekyll</a> using <a href="https://github.com/jekyller/jasper">Jasper</a></section>
         </footer>
     </div>

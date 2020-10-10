@@ -53,7 +53,7 @@ dp를 풀면서 해당 문제를 풀어보도록 하겠습니다.</p>
 
 <p>i+1번째행에 최댓값은 이전 행에 최댓값을 더한겁니다. <br />
 또한 자기 자신에 열을 연속해서 밟으면 안되므로 자신을 제외한 열의 max값을 구합니다. <br />
-즉 하나의 행열에서의 최댓값을 구하는 식은 <code class="highlighter-rouge">land[i+1][0] = max(land[i][1], land[i][2], land[i][3]) + land[i+1][0]</code>  입니다. <br />
+즉 하나의 행열에서의 최댓값을 구하는 식은 <code class="language-plaintext highlighter-rouge">land[i+1][0] = max(land[i][1], land[i][2], land[i][3]) + land[i+1][0]</code>  입니다. <br />
 그러면 마지막 행에는 모든 경로의 최댓값이 들어가게됩니다. <br />
 마지막행에서 최댓값을 구하면 위에 조건을 만족하면서 최대점수를 구할 수 있습니다.</p>
 
@@ -62,7 +62,7 @@ dp를 풀면서 해당 문제를 풀어보도록 하겠습니다.</p>
 <p>지금까지 <strong>프로그래머스 문제 LEVEL2에 해당되는 땅 따먹기 문제</strong>이라는 주제로 포스팅하였습니다!  <br />
 해당 게시물에 문제가 있다면 댓글을 통해 피드백해주시면 감사하겠습니다~ 같이 공부해요~^^</p>
 
-<p><code class="highlighter-rouge">방문해주신분들 댓글 한개씩 달아주시면 감사하겠습니다~~^^</code></p>
+<p><code class="language-plaintext highlighter-rouge">방문해주신분들 댓글 한개씩 달아주시면 감사하겠습니다~~^^</code></p>
 
 
 	  ]]></description>
@@ -149,7 +149,7 @@ dp를 풀면서 해당 문제를 풀어보도록 하겠습니다.</p>
 <p>지금까지 <strong>프로그래머스 문제 LEVEL2에 해당되는 이상한 문자 만들기 알고리즘 문제</strong>이라는 주제로 포스팅하였습니다!  <br />
 해당 게시물에 문제가 있다면 댓글을 통해 피드백해주시면 감사하겠습니다~ 같이 공부해요~^^</p>
 
-<p><code class="highlighter-rouge">방문해주신분들 댓글 한개씩 달아주시면 감사하겠습니다~~^^</code></p>
+<p><code class="language-plaintext highlighter-rouge">방문해주신분들 댓글 한개씩 달아주시면 감사하겠습니다~~^^</code></p>
 
 
 	  ]]></description>
@@ -200,7 +200,7 @@ collections.Counter(list) 메소드는 리스트를 dictionary 형태로 숫자�
 <span class="n">list</span> <span class="o">=</span> <span class="p">[</span><span class="s2">"a"</span><span class="p">,</span> <span class="s2">"b"</span><span class="p">,</span> <span class="s2">"c"</span> <span class="p">,</span><span class="s2">"a"</span><span class="p">]</span>
 <span class="n">collections</span><span class="o">.</span><span class="no">Counter</span><span class="p">(</span><span class="n">list</span><span class="p">)</span></code></pre></figure>
 
-<p>일때 결과 값은 <code class="highlighter-rouge">{a:2, b: 1, c:1}</code>입니다.
+<p>일때 결과 값은 <code class="language-plaintext highlighter-rouge">{a:2, b: 1, c:1}</code>입니다.
 해당 형태로 다른 딕셔너리 형태와 사칙연산을 할 수 있습니다.</p>
 
 <p>즉 참가자 중에 동명이인이 있으므로 collections.Counter() 메소드를 이용하여 참가자 수와 완주한 사람의 수를 딕셔너리 형태로 얻은 후 남은 값들은 완주하지 못한 사람이 됩니다.
@@ -209,7 +209,7 @@ collections.Counter(list) 메소드는 리스트를 dictionary 형태로 숫자�
 <p>지금까지 <strong>완주하지 못한 선수 프로그래머스 해시 [파이썬]</strong>이라는 주제로 포스팅하였습니다!  <br />
 해당 게시물에 문제가 있다면 댓글을 통해 피드백해주시면 감사하겠습니다~ 같이 공부해요~^^</p>
 
-<p><code class="highlighter-rouge">방문해주신분들 댓글 한개씩 달아주시면 감사하겠습니다~~^^</code></p>
+<p><code class="language-plaintext highlighter-rouge">방문해주신분들 댓글 한개씩 달아주시면 감사하겠습니다~~^^</code></p>
 
 
 	  ]]></description>
@@ -262,13 +262,13 @@ collections.Counter(list) 메소드는 리스트를 dictionary 형태로 숫자�
 <h1 id="풀이방법">풀이방법</h1>
 <p>처음 i 변수를 가지는 for문은 비교할 기준의 요소를 정하는 인덱스입니다.<br />
 안에 j 변수를 가지는 for문은 인덱스 i부터 끝까지 비교할 대상의 인덱스를 나타냅니다.<br />
-안에 <code class="highlighter-rouge">if prices[i] &gt; prices[j]</code>는 기준에 비해 가격이 유지되지 않고 떨어지는 인덱스를 가졌을때 해당 for문을 벗어나는 코드입니다.<br />
-<code class="highlighter-rouge">else</code>부분은 이외에는 count를 1씩 증가시켜줍니다.</p>
+안에 <code class="language-plaintext highlighter-rouge">if prices[i] &gt; prices[j]</code>는 기준에 비해 가격이 유지되지 않고 떨어지는 인덱스를 가졌을때 해당 for문을 벗어나는 코드입니다.<br />
+<code class="language-plaintext highlighter-rouge">else</code>부분은 이외에는 count를 1씩 증가시켜줍니다.</p>
 
 <p>지금까지 <strong>주식가격 프로그래머스 스택/큐 [파이썬]</strong>이라는 주제로 포스팅하였습니다!  <br />
 해당 게시물에 문제가 있다면 댓글을 통해 피드백해주시면 감사하겠습니다~ 같이 공부해요~^^</p>
 
-<p><code class="highlighter-rouge">방문해주신분들 댓글 한개씩 달아주시면 감사하겠습니다~~^^</code></p>
+<p><code class="language-plaintext highlighter-rouge">방문해주신분들 댓글 한개씩 달아주시면 감사하겠습니다~~^^</code></p>
 
 
 	  ]]></description>
@@ -331,7 +331,7 @@ heapq에대한 설명은 <a href="https://ghwlchlaks.github.io/Heapq-Python/">he
 <p>지금까지 <strong>더맵게 프로그래머스 heap [파이썬]</strong>이라는 주제로 포스팅하였습니다!  <br />
 해당 게시물에 문제가 있다면 댓글을 통해 피드백해주시면 감사하겠습니다~ 같이 공부해요~^^</p>
 
-<p><code class="highlighter-rouge">방문해주신분들 댓글 한개씩 달아주시면 감사하겠습니다~~^^</code></p>
+<p><code class="language-plaintext highlighter-rouge">방문해주신분들 댓글 한개씩 달아주시면 감사하겠습니다~~^^</code></p>
 
 
 	  ]]></description>
@@ -401,7 +401,7 @@ while문안에서는 맨앞에 요소를 pop(0)을 통해 꺼내고 남은 prior
 <p>지금까지 <strong>프린터 프로그래머스 스택/큐 [파이썬]</strong>이라는 주제로 포스팅하였습니다!  <br />
 해당 게시물에 문제가 있다면 댓글을 통해 피드백해주시면 감사하겠습니다~ 같이 공부해요~^^</p>
 
-<p><code class="highlighter-rouge">방문해주신분들 댓글 한개씩 달아주시면 감사하겠습니다~~^^</code></p>
+<p><code class="language-plaintext highlighter-rouge">방문해주신분들 댓글 한개씩 달아주시면 감사하겠습니다~~^^</code></p>
 
 
 	  ]]></description>
@@ -451,7 +451,7 @@ while문안에서는 맨앞에 요소를 pop(0)을 통해 꺼내고 남은 prior
 <p>지금까지 <strong>탑 프로그래머스 스택/큐 [파이썬]</strong>이라는 주제로 포스팅하였습니다!  <br />
 해당 게시물에 문제가 있다면 댓글을 통해 피드백해주시면 감사하겠습니다~ 같이 공부해요~^^</p>
 
-<p><code class="highlighter-rouge">방문해주신분들 댓글 한개씩 달아주시면 감사하겠습니다~~^^</code></p>
+<p><code class="language-plaintext highlighter-rouge">방문해주신분들 댓글 한개씩 달아주시면 감사하겠습니다~~^^</code></p>
 
 
 	  ]]></description>
@@ -512,7 +512,7 @@ Event Loop는 단일 Thread지만 Thread Pool 내부는 여러개의 Thread를 �
 지금까지 <strong>Node.js란?</strong>이라는 주제로 포스팅하였습니다!<br />
 해당 게시물에 문제가 있다면 댓글을 통해 피드백해주시면 감사하겠습니다~ 같이 공부해요~^^</p>
 
-<p><code class="highlighter-rouge">방문해주신분들 댓글 한개씩 달아주시면 감사하겠습니다~~^^</code></p>
+<p><code class="language-plaintext highlighter-rouge">방문해주신분들 댓글 한개씩 달아주시면 감사하겠습니다~~^^</code></p>
 
 	  ]]></description>
 	</item>
@@ -550,24 +550,24 @@ view에서 접근하여도 css나 image가 적용이 되지 않는 당황스러�
 <p>이러한 코드를 확인 하실 수 있을것입니다!
 이코드는 express-generator로 생성한 폴더라면 default로 설정되어있습니다.</p>
 
-<p>해당 코드의 의미는 정적(static)한 파일을 이곳에 넣어두면 <code class="highlighter-rouge">/</code> 경로로 ejs파일내에서 public폴더내에 있는 파일을 접근 할 수 있다는 의미입니다.</p>
+<p>해당 코드의 의미는 정적(static)한 파일을 이곳에 넣어두면 <code class="language-plaintext highlighter-rouge">/</code> 경로로 ejs파일내에서 public폴더내에 있는 파일을 접근 할 수 있다는 의미입니다.</p>
 
-<p>예를들어 <code class="highlighter-rouge">/public/test.jpg</code> 라는 파일이 <strong>public 폴더</strong>내에 존재한다면
-ejs파일내에서 <code class="highlighter-rouge">src=/test.jpg </code>로 접근을 할 수 있습니다.!!</p>
+<p>예를들어 <code class="language-plaintext highlighter-rouge">/public/test.jpg</code> 라는 파일이 <strong>public 폴더</strong>내에 존재한다면
+ejs파일내에서 <code class="language-plaintext highlighter-rouge">src=/test.jpg </code>로 접근을 할 수 있습니다.!!</p>
 
-<p>만약 default로 설정된 <code class="highlighter-rouge">/</code> 경로가 아닌 다른 정적(static) 폴더를 만들고 다른 경로를 만들어서 사용하고 싶으시다면 app.js 파일에</p>
+<p>만약 default로 설정된 <code class="language-plaintext highlighter-rouge">/</code> 경로가 아닌 다른 정적(static) 폴더를 만들고 다른 경로를 만들어서 사용하고 싶으시다면 app.js 파일에</p>
 
 <figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">app</span><span class="p">.</span><span class="nf">use</span><span class="p">(</span><span class="s1">'/ejs에서접근할경로'</span><span class="p">,</span> <span class="n">express</span><span class="p">.</span><span class="nf">static</span><span class="p">(</span><span class="n">path</span><span class="p">.</span><span class="nf">join</span><span class="p">(</span><span class="n">__dirname</span><span class="p">,</span> <span class="s1">' /실제위치한디렉토리경로'</span><span class="p">)));</span>  </code></pre></figure>
 
 <p>해당 코드를 입력하고~<br />
-<strong>ejs</strong>에서 <code class="highlighter-rouge">src=/ejs에서접근할경로/정적(static)파일위치</code> 로 접근하시면
+<strong>ejs</strong>에서 <code class="language-plaintext highlighter-rouge">src=/ejs에서접근할경로/정적(static)파일위치</code> 로 접근하시면
 image,css와같은 파일들의 자원을 사용하실 수 있습니다!!</p>
 
 <p>한번 테스트해보시고 사용해보시면 좋을것같습니다.!<br />
 지금까지 <strong>Node.js에서 정적(static)</strong> 파일 사용하는 방법이었습니다!<br />
 해당 게시물에 문제가 있다면 댓글을 통해 피드백해주시면 감사하겠습니다~ 같이 공부해요~^^</p>
 
-<p><code class="highlighter-rouge">방문해주신분들 댓글 한개씩 달아주시면 감사하겠습니다~~^^</code></p>
+<p><code class="language-plaintext highlighter-rouge">방문해주신분들 댓글 한개씩 달아주시면 감사하겠습니다~~^^</code></p>
 
 	  ]]></description>
 	</item>
@@ -625,7 +625,7 @@ A가 B의 부모노드(parent node) 이면, A의 키(key)값과 B의 키값 사�
 <p>지금까지 파이썬 라이브러리인 <strong>heapq</strong> 사용방법이었습니다. <br />
 해당 게시물에 문제가 있다면 댓글을 통해 피드백해주시면 감사하겠습니다~ 같이 공부해요~^^</p>
 
-<p><code class="highlighter-rouge">방문해주신분들 댓글 한개씩 달아주시면 감사하겠습니다~~^^</code></p>
+<p><code class="language-plaintext highlighter-rouge">방문해주신분들 댓글 한개씩 달아주시면 감사하겠습니다~~^^</code></p>
 
 
 	  ]]></description>
