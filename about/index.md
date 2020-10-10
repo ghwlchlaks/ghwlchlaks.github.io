@@ -12,39 +12,17 @@ class: 'about-template'
   <img src="/assets/images/default/choijiho3.jpg" style="float: right; padding-right: 20%;">  
   
 # **`최지호`**  
-**Age** : 26  
+**Age** : 27  
 **Email** : `ghwlchlaks@gmail.com`  
 **Github** : [Github](https://github.com/ghwlchlaks/)  
 **Blog** : [Blog](https://ghwlchlaks.github.io/)   
 
 ---
 
-### **[하고 싶은 말]**  
->* Github에 조금씩이라도 매일 업로드하는 것을 목표로 공부하고 있습니다.  
-   꾸준히 공부하는 개발자가 되겠습니다.  
-
----
-
-### **[주요프로젝트]**
->* **[2019년 로그인, 파일매니저, 채팅 사이트 구축](http://ghwlchlaks.tk:8000/)**  
-(React, Bootstrap, Node, MongoDB, Docker, Linux, ESLint, VSCode, Nginx, Git, Postman)  
->* **[2019년 게임 전적 조회 사이트 구축](http://fortnitestats.xyz/)**  
-(Angular, Bootstrap, Node, Typescript, MongoDB, Docker, Linux, TSLint, VSCode, Nginx, Git, Postman)  
->* **[2018년 Intelligence Open API 설계 및 구현 연구과제 참여](https://github.com/KOREN-Platform/SmartX_Open_Platform/tree/master/Intelligence_OpenAPI)**  
-(Node, Bootstrap, Ejs, MongoDB, Spark, Linux, ESLint, VSCode, Git, Postman, Swagger Codegen, Slack)
->* **2017년 NDN과 Drone을 이용한 IoT 센서 정보 수집 시스템 공모전 참여**  
-(NDN, Drone, Raspberry Pi, Grafana, InfluxDB, Python, Slack, Trello)
->* **[2017년 IoT데이터를 위한 동적 대시보드 설계 및 구현 연구과제 참여](https://github.com/KOREN-Platform/SmartX_Open_Platform)**   
-(Grafana, Python, InfluxDB, Slack, Trello)
-
----
-
-### **[학력사항]**  
->* **기간** : 2013.03 - 2019.02  
->* **학교명** : 안양대학교  
->* **학과명** : 컴퓨터학과  
->* **학점** : 4.02  
->* **전공평점** : 4.27  
+### **[경력]**  
+>* **카페24**  
+   **기간**: 2019.04 - 현재  
+   **스킬**: php, javascript
 
 ---
 
@@ -75,9 +53,3 @@ class: 'about-template'
 
 ---
 
-
-### **[기타 공부 프로젝트]**
->* **[Vue와 Node를 이용한 게시판](https://github.com/ghwlchlaks/node-vue-rtcAPI)**
->* **[Arduino를 이용한 소맥 제조기](https://github.com/ghwlchlaks/SoMac)**
->* **[Unity엔진을 이용한 미로탈출 게임](https://github.com/ghwlchlaks/MazeGame)**
->* **[C#을 이용한 채팅 프로그램](https://github.com/ghwlchlaks/ChattingProgram)**

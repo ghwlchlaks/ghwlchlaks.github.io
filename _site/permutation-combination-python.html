@@ -119,6 +119,7 @@
 
         <li class="nav-Github " role="presentation"><a href="https://ghwlchlaks.github.io/tag/Github">Github</a></li>
         <li class="nav-Algorithm " role="presentation"><a href="https://ghwlchlaks.github.io/tag/Algorithm">Algorithm</a></li>
+        <li class="nav-AWS " role="presentation"><a href="https://ghwlchlaks.github.io/tag/AWS">AWS</a></li>
         <!-- <li class="nav-IT " role="presentation"><a href="https://ghwlchlaks.github.io/tag/IT">IT</a></li> -->
         
         <button class="dropdown-btn">Language <i class="material-icons arrow">arrow_drop_up</i></button>
@@ -331,10 +332,10 @@ document.addEventListener("DOMContentLoaded", function(){
 
 <p>우선 순열 라이브러리 사용방법에대해서 간단하게 설명하도록 하겠습니다.!</p>
 
-<p>순열을 <code class="highlighter-rouge">nPr</code>로 표현하는데요~ n개중에 r개를 뽑아 나열하는 경우의 수입니다.</p>
+<p>순열을 <code class="language-plaintext highlighter-rouge">nPr</code>로 표현하는데요~ n개중에 r개를 뽑아 나열하는 경우의 수입니다.</p>
 
 <p><strong>#순열 : 중복 허용x</strong>
-<code class="highlighter-rouge">permutations</code> 중복을 허용하지 않습니다.</p>
+<code class="language-plaintext highlighter-rouge">permutations</code> 중복을 허용하지 않습니다.</p>
 
 <figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">from</span> <span class="n">itertools</span> <span class="n">import</span> <span class="n">permutations</span>
 <span class="n">per</span> <span class="o">=</span> <span class="n">permutations</span><span class="p">([</span><span class="s2">"빨"</span><span class="p">,</span><span class="s2">"주"</span><span class="p">,</span><span class="s2">"노"</span><span class="p">,</span><span class="s2">"초"</span><span class="p">],</span><span class="mi">2</span><span class="p">)</span>
@@ -342,25 +343,25 @@ document.addEventListener("DOMContentLoaded", function(){
 <span class="c1">#=&gt; [('빨', '주'), ('빨', '노'), ('빨', '초'), ('주', '빨'), ('주', '노'), ('주', '초'), ('노', '빨'), ('노', '주'), ('노', '초'), ('초', '빨'), ('초', '주'), ('초', '노')]</span></code></pre></figure>
 
 <p><strong>#순열 : 중복 허용o</strong><br />
-<code class="highlighter-rouge">product</code>는 중복을 허용한 방법입니다. 이때 <code class="highlighter-rouge">repeat</code>으로 인자를 설정해야합니다!</p>
+<code class="language-plaintext highlighter-rouge">product</code>는 중복을 허용한 방법입니다. 이때 <code class="language-plaintext highlighter-rouge">repeat</code>으로 인자를 설정해야합니다!</p>
 
 <figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">from</span> <span class="n">itertools</span> <span class="n">import</span> <span class="n">product</span>
 <span class="n">per1</span> <span class="o">=</span> <span class="n">product</span><span class="p">(([</span><span class="s2">"빨"</span><span class="p">,</span><span class="s2">"주"</span><span class="p">,</span><span class="s2">"노"</span><span class="p">,</span><span class="s2">"초"</span><span class="p">]),</span> <span class="n">repeat</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">list</span><span class="p">(</span><span class="n">per1</span><span class="p">))</span>
 <span class="c1">#=&gt; [('빨', '빨'), ('빨', '주'), ('빨', '노'), ('빨', '초'), ('주', '빨'), ('주', '주'), ('주', '노'), ('주', '초'), ('노', '빨'), ('노', '주'), ('노', '노'), ('노', '초'), ('초', '빨'), ('초', '주'), ('초', '노'), ('초', '초')]</span></code></pre></figure>
 
-<p>조합은 <code class="highlighter-rouge">nCr</code>로 표현하는데요~ n개중에 r개를 뽑는 수 입니다.<br />
+<p>조합은 <code class="language-plaintext highlighter-rouge">nCr</code>로 표현하는데요~ n개중에 r개를 뽑는 수 입니다.<br />
 나열하는 경우가 없는 것에서 순열과 차이가 있죠?</p>
 
 <p><strong>#조합 : 중복 허용x</strong>
-<code class="highlighter-rouge">combinations</code>는 중복을 허용하지 않습니다.</p>
+<code class="language-plaintext highlighter-rouge">combinations</code>는 중복을 허용하지 않습니다.</p>
 
 <figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">from</span> <span class="n">itertools</span> <span class="n">import</span> <span class="n">combinations</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">list</span><span class="p">(</span><span class="n">combinations</span><span class="p">(</span><span class="s1">'빨주노초'</span><span class="p">,</span><span class="mi">2</span><span class="p">)))</span>
 <span class="c1">#=&gt; [('빨', '주'), ('빨', '노'), ('빨', '초'), ('주', '노'), ('주', '초'), ('노', '초')]</span></code></pre></figure>
 
 <p><strong>#조합 : 중복 허용o</strong>
-<code class="highlighter-rouge">combinations_with_replacement</code>는 중복을 허용한 방법입니다.</p>
+<code class="language-plaintext highlighter-rouge">combinations_with_replacement</code>는 중복을 허용한 방법입니다.</p>
 
 <figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">from</span> <span class="n">itertools</span> <span class="n">import</span> <span class="n">combinations_with_replacement</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">list</span><span class="p">(</span><span class="n">combinations_with_replacement</span><span class="p">(</span><span class="s2">"빨주노초"</span><span class="p">,</span><span class="mi">2</span><span class="p">)))</span>
@@ -371,7 +372,7 @@ document.addEventListener("DOMContentLoaded", function(){
 <p>지금까지 파이썬 라이브러리를 이용하여 순열과 조합 모든 경우의 수 계산 방법이었습니다. <br />
 해당 게시물에 문제가 있다면 댓글을 통해 피드백해주시면 감사하겠습니다~ 같이 공부해요~^^</p>
 
-<p><code class="highlighter-rouge">방문해주신분들 댓글 한개씩 달아주시면 감사하겠습니다~~^^</code></p>
+<p><code class="language-plaintext highlighter-rouge">방문해주신분들 댓글 한개씩 달아주시면 감사하겠습니다~~^^</code></p>
 
 
         </section>
@@ -470,7 +471,7 @@ document.addEventListener("DOMContentLoaded", function(){
 
         <!-- The tiny footer at the very bottom -->
         <footer class="site-footer clearfix">
-          <section class="copyright"><a href="https://ghwlchlaks.github.io/">DeMBi</a> &copy; 2019</section>
+          <section class="copyright"><a href="https://ghwlchlaks.github.io/">DeMBi</a> &copy; 2020</section>
           <section class="poweredby">Proudly published with <a href="https://jekyllrb.com/">Jekyll</a> using <a href="https://github.com/jekyller/jasper">Jasper</a></section>
         </footer>
     </div>

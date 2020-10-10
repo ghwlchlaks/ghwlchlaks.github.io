@@ -115,6 +115,7 @@ C드라이브에 압축해제
 
         <li class="nav-Github " role="presentation"><a href="https://ghwlchlaks.github.io/tag/Github">Github</a></li>
         <li class="nav-Algorithm " role="presentation"><a href="https://ghwlchlaks.github.io/tag/Algorithm">Algorithm</a></li>
+        <li class="nav-AWS " role="presentation"><a href="https://ghwlchlaks.github.io/tag/AWS">AWS</a></li>
         <!-- <li class="nav-IT " role="presentation"><a href="https://ghwlchlaks.github.io/tag/IT">IT</a></li> -->
         
         <button class="dropdown-btn">Language <i class="material-icons arrow">arrow_drop_up</i></button>
@@ -315,7 +316,7 @@ document.addEventListener("DOMContentLoaded", function(){
 <img src="/assets/images/2019-04-23-php-apache-installation/apahcefolder.png" /></p>
 
 <p>폴더내부에 Apache24/conf/httpd.conf 파일 수정</p>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Define SRVROOT "C:\자신의 apache폴더위치\Apache24"  
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Define SRVROOT "C:\자신의 apache폴더위치\Apache24"  
 ...  
 ServerAdmin 자신의 이메일  
 ...  
@@ -336,12 +337,12 @@ it works가 출력되야 정상</p>
 <h2 id="2-php-다운">2. <a href="https://windows.php.net/download">php 다운</a></h2>
 <p>C드라이브에 압축해제
 php.ini-production의 이름을 php.ini로 변경 후 내용 수정</p>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>extension_dir = "C:\php가 설치된 폴더 경로\php\ext"
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>extension_dir = "C:\php가 설치된 폴더 경로\php\ext"
 </code></pre></div></div>
 
 <p>1번에서 진행했던 httpd.conf파일에 내용 추가</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>LoadModule php7_module "C:\php가 설치된 폴더 경로\php\php7apache2_4.dll"
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>LoadModule php7_module "C:\php가 설치된 폴더 경로\php\php7apache2_4.dll"
 AddType application/x-httpd-php .php .html
 AddHandler application/x-httpd-php .php .html
 PHPIniDir "C:\php가 설치된 폴더 경로\php" 
@@ -351,8 +352,8 @@ PHPIniDir "C:\php가 설치된 폴더 경로\php"
 
 <p>Apache24\htdocs에 test.php파일 추가
 <img src="/assets/images/2019-04-23-php-apache-installation/code.png" /></p>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code># test.php
-<span class="cp">&lt;?php</span> <span class="nb">phpinfo</span><span class="p">();</span> <span class="cp">?&gt;</span>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code># test.php
+&lt;?php phpinfo(); ?&gt;
 </code></pre></div></div>
 
 <p>localhost/test.php접속</p>
@@ -443,6 +444,13 @@ PHPIniDir "C:\php가 설치된 폴더 경로\php"
 
     <!-- [[! next_post ]] -->
     
+        <a class="read-next-story " style="background-image: url(/assets/images/cover/about_cover.jpg)" href="/aws-cli-installation">
+            <section class="post">
+                <h2>AWS CLI 설치</h2>
+                <p>## 1. [AWS CLI 다운][aws-cli-installation-page] 위 링크로 접속해서 설치하고자하는 aws cli 버전을 클릭해서 설치하세요 설치는...</p>
+            </section>
+        </a>
+    
     <!-- [[! /next_post ]] -->
     <!-- [[! prev_post ]] -->
     
@@ -460,7 +468,7 @@ PHPIniDir "C:\php가 설치된 폴더 경로\php"
 
         <!-- The tiny footer at the very bottom -->
         <footer class="site-footer clearfix">
-          <section class="copyright"><a href="https://ghwlchlaks.github.io/">DeMBi</a> &copy; 2019</section>
+          <section class="copyright"><a href="https://ghwlchlaks.github.io/">DeMBi</a> &copy; 2020</section>
           <section class="poweredby">Proudly published with <a href="https://jekyllrb.com/">Jekyll</a> using <a href="https://github.com/jekyller/jasper">Jasper</a></section>
         </footer>
     </div>

@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+<channel>
+   
+      <title>ghwlchlaks.github.io/</title>
+   
+   <link>https://ghwlchlaks.github.io</link>
+   <description>같이 배워가는 IT 블로그입니다~. Python, JavaScript, nodejs, Github, algorithm, etc</description>
+   <language>ko-KR</language>
+   <managingEditor> </managingEditor>
+   <atom:link href="rss" rel="self" type="application/rss+xml" />
+   
+	<item>
+	  <title>AWS CLI 설치</title>
+	  <link>//aws-cli-installation</link>
+	  <author></author>
+	  <pubDate>2020-10-10T09:00:00+09:00</pubDate>
+	  <guid>//aws-cli-installation</guid>
+	  <description><![CDATA[
+	     <h2 id="1-aws-cli-다운">1. <a href="https://docs.aws.amazon.com/ko_kr/cli/latest/userguide/cli-chap-install.html">AWS CLI 다운</a></h2>
+
+<p>위 링크로 접속해서 설치하고자하는 aws cli 버전을 클릭해서 설치하세요</p>
+
+<p>설치는 간단합니다.</p>
+
+<p><img src="/assets/images/2020-10-10-aws-cli-installation/01.png" /></p>
+
+<p>next를 계속 눌러주시면됩니다.</p>
+
+<h3 id="결과화면">결과화면</h3>
+<p>잘 설치가 되었는지 cmd 창에서 aws –version 을 입력합니다.
+<img src="/assets/images/2020-10-10-aws-cli-installation/02.png" /></p>
+
+<p>위와같이 출력되면 정상적으로 aws cli 설치가 된것입니다.</p>
+
+
+	  ]]></description>
+	</item>
+
+
+</channel>
+</rss>

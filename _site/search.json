@@ -1,6 +1,14 @@
 [
   
     {
+      "title"    : "AWS CLI 설치",
+      "category" : "",
+      "tags"     : "Blog, IT, AWS",
+      "url"      : "https://ghwlchlaks.github.io/aws-cli-installation",
+      "date"     : "2020-10-10 09:00:00 +0900"
+    } ,
+  
+    {
       "title"    : "윈도우 apache php 설치",
       "category" : "",
       "tags"     : "Blog, IT",

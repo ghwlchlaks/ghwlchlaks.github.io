@@ -119,6 +119,7 @@
 
         <li class="nav-Github " role="presentation"><a href="https://ghwlchlaks.github.io/tag/Github">Github</a></li>
         <li class="nav-Algorithm " role="presentation"><a href="https://ghwlchlaks.github.io/tag/Algorithm">Algorithm</a></li>
+        <li class="nav-AWS " role="presentation"><a href="https://ghwlchlaks.github.io/tag/AWS">AWS</a></li>
         <!-- <li class="nav-IT " role="presentation"><a href="https://ghwlchlaks.github.io/tag/IT">IT</a></li> -->
         
         <button class="dropdown-btn">Language <i class="material-icons arrow">arrow_drop_up</i></button>
@@ -355,7 +356,7 @@ document.addEventListener("DOMContentLoaded", function(){
 
 <p><strong>2. Oracle database 생성</strong><br />
 sql developer.exe를 실행합니다. 
-그 후 아래 그림에서 초록색 <code class="highlighter-rouge">+</code>버튼을 클릭합니다.
+그 후 아래 그림에서 초록색 <code class="language-plaintext highlighter-rouge">+</code>버튼을 클릭합니다.
 <img src="/assets/images/2018-12-10-spring-oracle-setup/oracle-setup3.png" /></p>
 
 <p>그렇다면 아래와 같은 창이 표시됩니다. 
@@ -367,7 +368,7 @@ sql developer.exe를 실행합니다.
 
 <p><strong>3. JUnit 설치</strong><br />
 이제 이클립스에서 JUnit 라이브러리를 이용하여 데이터베이스가 연결이 잘 되는지 확인해 보겠습니다. 
-spring폴더 내에서 <code class="highlighter-rouge">pom.xml</code>을 열어서 아래와 같이 dependency를 추가해 줍니다.</p>
+spring폴더 내에서 <code class="language-plaintext highlighter-rouge">pom.xml</code>을 열어서 아래와 같이 dependency를 추가해 줍니다.</p>
 
 <figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="o">&lt;!--</span> <span class="no">Test</span> <span class="o">--&gt;</span>
         <span class="o">&lt;</span><span class="n">dependency</span><span class="o">&gt;</span>
@@ -382,7 +383,7 @@ spring폴더 내에서 <code class="highlighter-rouge">pom.xml</code>을 열어�
 
 <p><strong>4. JUnit을 이용한 database 연결 테스트</strong><br />
 이제 테스트 코드를 작성해 보겠습니다. <br />
-spring폴더내에 <code class="highlighter-rouge">src/test/java</code> 폴더에서 아래와 같이 OracleConnectionTest.java 파일을 생성해 줍니다.
+spring폴더내에 <code class="language-plaintext highlighter-rouge">src/test/java</code> 폴더에서 아래와 같이 OracleConnectionTest.java 파일을 생성해 줍니다.
 <img src="/assets/images/2018-12-10-spring-oracle-setup/junit1.png" />
 그리고 파일내에 해당 코드를 작성해 줍니다.</p>
 
@@ -406,7 +407,7 @@ public void testConnection() throws Exception {
 
 <p>위와같이 작성해주고 저장해줍니다. <br />
 이제 해당코드를 실행하여 테스트 해보겠습니다. <br />
-OracleConnectionTest.java 파일을 오른쪽으로 클릭하고 <code class="highlighter-rouge">run as</code>를 보시면 JUnit test가 있을겁니다. 
+OracleConnectionTest.java 파일을 오른쪽으로 클릭하고 <code class="language-plaintext highlighter-rouge">run as</code>를 보시면 JUnit test가 있을겁니다. 
 이것을 클릭하여 실행해봅시다.</p>
 
 <p>그렇다면 아래와같이 에러 없이 작동하는 것을 확인하시면됩니다.
@@ -417,13 +418,13 @@ OracleConnectionTest.java 파일을 오른쪽으로 클릭하고 <code class="hi
 
 <p>위와같이 에러없이 로그 값이 출력된다면 데이터베이스와 연결 테스트가 성공적으로 된 것입니다.</p>
 
-<p>여기까지 <code class="highlighter-rouge">Oracle 설치 및 Spring에서 연동</code>에대해서 포스팅했습니다. <br />
+<p>여기까지 <code class="language-plaintext highlighter-rouge">Oracle 설치 및 Spring에서 연동</code>에대해서 포스팅했습니다. <br />
 지금까지는 데이터베이스 설치, 데이터베이스 설정, spring과 데이터베이스(oracle) 연결 테스트를 진행했습니다.</p>
 
 <p>해당 게시물에 문제가 있다면 댓글을 통해 피드백해주시면 감사하겠습니다~ 
 같이 공부해요~^^</p>
 
-<p><code class="highlighter-rouge">방문해주신분들 댓글 한개씩 달아주시면 감사하겠습니다~~^^</code></p>
+<p><code class="language-plaintext highlighter-rouge">방문해주신분들 댓글 한개씩 달아주시면 감사하겠습니다~~^^</code></p>
 
 
 
@@ -530,7 +531,7 @@ OracleConnectionTest.java 파일을 오른쪽으로 클릭하고 <code class="hi
 
         <!-- The tiny footer at the very bottom -->
         <footer class="site-footer clearfix">
-          <section class="copyright"><a href="https://ghwlchlaks.github.io/">DeMBi</a> &copy; 2019</section>
+          <section class="copyright"><a href="https://ghwlchlaks.github.io/">DeMBi</a> &copy; 2020</section>
           <section class="poweredby">Proudly published with <a href="https://jekyllrb.com/">Jekyll</a> using <a href="https://github.com/jekyller/jasper">Jasper</a></section>
         </footer>
     </div>

@@ -31,13 +31,13 @@
 </blockquote>
 
 <h3 id="1-라이브러리-설치">1. 라이브러리 설치</h3>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>npm install --save styled-components
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>npm install --save styled-components
 </code></pre></div></div>
 
 <h3 id="2-예제-실습">2. 예제 실습</h3>
 <h4 id="1">(1)</h4>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>import React, { Component } from 'react';
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>import React, { Component } from 'react';
 import './App.css';
 import styled from 'styled-components'
 
@@ -76,7 +76,7 @@ styled-components는 컴포넌트를 생성할때 스타일을 입히기 때문�
 
 <p>또한 props를 받아서 스타일에 적용시킬수도 있습니다.</p>
 <h4 id="2">(2)</h4>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>import React, { Component } from 'react';
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>import React, { Component } from 'react';
 import './App.css';
 import styled from 'styled-components'
 
@@ -115,7 +115,7 @@ export default App;
 <p>다음 예제를 진행해 보겠습니다.</p>
 
 <h4 id="3">(3)</h4>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>import React, { Component } from 'react';
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>import React, { Component } from 'react';
 import './App.css';
 import styled from 'styled-components'
 
@@ -159,7 +159,7 @@ export default App;
 <p>해당 게시물에 문제가 있다면 댓글을 통해 피드백해주시면 감사하겠습니다~
 같이 공부해요~^^</p>
 
-<p><code class="highlighter-rouge">방문해주신분들 댓글 한개씩 달아주시면 감사하겠습니다~~^^</code></p>
+<p><code class="language-plaintext highlighter-rouge">방문해주신분들 댓글 한개씩 달아주시면 감사하겠습니다~~^^</code></p>
 
 
 	  ]]></description>
@@ -178,41 +178,41 @@ export default App;
 
 <p><strong>1. 루비 (Ruby) 설치!</strong><br />
 먼저 ruby를 설치 해줍니다.</p>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>apt-get install ruby-dev
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>apt-get install ruby-dev
 </code></pre></div></div>
 
 <p><strong>2. 지킬 (Jekyll) 설치</strong><br />
 jekyll를 설치 해보도록하겠습니다.</p>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>gem install jekyll
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>gem install jekyll
 </code></pre></div></div>
 <p>역시 리눅스는 간단한 명령어로 패키지를 설치할 수 있는 장점이 있네요 ㅎㅎ</p>
 
 <p>하지만 jekyll 설치 애러가 나타나는 경우가 있습니다. 이때는 의존 소프트웨어를 설치해주어야합니다. 
 참고한 <a href="https://github.com/sj26/mailcatcher/issues/144#issuecomment-48008579">링크</a>입니다.</p>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>apt-get install build-essential
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>apt-get install build-essential
 </code></pre></div></div>
-<p>해당 패키지가 설치되고 나서 다시 <code class="highlighter-rouge">apt-get install jekyll</code>명령어를 사용하시면 잘 작동하시는 것을 보실 수 있습니다.</p>
+<p>해당 패키지가 설치되고 나서 다시 <code class="language-plaintext highlighter-rouge">apt-get install jekyll</code>명령어를 사용하시면 잘 작동하시는 것을 보실 수 있습니다.</p>
 
 <p>이후 bundler를 설치 해줍니다.</p>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>apt-get install bundler 
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>apt-get install bundler 
 bundle install
 </code></pre></div></div>
 <p>이때 nokogiri가 설치되지 않는 문제가 발생 할 수 있습니다. 
 이때도 의존성 소프트웨어가 설치 되있지 않아서 생기는 문제입니다.
 이 문제를 해결하기위해서는 해당 명령어를 이용하여 의존 패키지를 설치해줍니다.
 참고한 <a href="https://nokogiri.org/tutorials/installing_nokogiri.html">링크</a>입니다.</p>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>apt-get install patch ruby-dev zlib1g-dev liblzma-dev
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>apt-get install patch ruby-dev zlib1g-dev liblzma-dev
 </code></pre></div></div>
-<p>설치가 된 이후 다시 <code class="highlighter-rouge">bundle install</code>명령어를 이용하여 설치를 진행해주시면 됩니다.</p>
+<p>설치가 된 이후 다시 <code class="language-plaintext highlighter-rouge">bundle install</code>명령어를 이용하여 설치를 진행해주시면 됩니다.</p>
 
-<p>이후 과정이 오류없이 설치가 완료된다면 <code class="highlighter-rouge">bundle exec jekyll serve</code>명령어를 이용하여 github-page를 실행할 수 있습니다 
-오류 없이 실행이 된다면 <code class="highlighter-rouge">http://localhost:4000/</code>으로 접속하시면 자신이 폴더내에서 수정한 블로그를 확인 할 수 있습니다.<br />
+<p>이후 과정이 오류없이 설치가 완료된다면 <code class="language-plaintext highlighter-rouge">bundle exec jekyll serve</code>명령어를 이용하여 github-page를 실행할 수 있습니다 
+오류 없이 실행이 된다면 <code class="language-plaintext highlighter-rouge">http://localhost:4000/</code>으로 접속하시면 자신이 폴더내에서 수정한 블로그를 확인 할 수 있습니다.<br />
 수정이 끝난 후에는 git push를 통해 업로드 하시면 적용가능합니다!</p>
 
 <p>해당 게시물에 문제가 있다면 댓글을 통해 피드백해주시면 감사하겠습니다~
 같이 공부해요~^^</p>
 
-<p><code class="highlighter-rouge">방문해주신분들 댓글 한개씩 달아주시면 감사하겠습니다~~^^</code></p>
+<p><code class="language-plaintext highlighter-rouge">방문해주신분들 댓글 한개씩 달아주시면 감사하겠습니다~~^^</code></p>
 
 
 	  ]]></description>
@@ -326,14 +326,14 @@ shell script를 만들어 보겠습니다 파일명.sh을 만든 후 해당 코�
 저는 에디터에서 파일경로 복사하고 에디터 터미널에 붙여넣기 하는 방식으로 합니다. <br />
 편하신 방법으로 하시면 되겠습니다.</p>
 
-<p>물론 당연한거지만 <code class="highlighter-rouge">주의하실점</code>은 source브랜치에서 bundle exec jekyll build or bundle exec jekyll serve 명령어로 build하신 후 (local에서 확인 하실 꺼니깐 당연히 하실꺼라 생각합니다.) git add, git commit을 하셔야합니다. <br />
+<p>물론 당연한거지만 <code class="language-plaintext highlighter-rouge">주의하실점</code>은 source브랜치에서 bundle exec jekyll build or bundle exec jekyll serve 명령어로 build하신 후 (local에서 확인 하실 꺼니깐 당연히 하실꺼라 생각합니다.) git add, git commit을 하셔야합니다. <br />
 그래야 _site폴더가 갱신된 상태에서 local repository에 적용이 되니깐요 ㅎㅎ<br />
 그 후 쉘스크립트 또는 위에 순서대로 진행하시면 됩니다.</p>
 
 <p>해당 게시물에 문제가 있다면 댓글을 통해 피드백해주시면 감사하겠습니다~
 같이 공부해요~^^</p>
 
-<p><code class="highlighter-rouge">방문해주신분들 댓글 한개씩 달아주시면 감사하겠습니다~~^^</code></p>
+<p><code class="language-plaintext highlighter-rouge">방문해주신분들 댓글 한개씩 달아주시면 감사하겠습니다~~^^</code></p>
 
 	  ]]></description>
 	</item>
@@ -372,7 +372,7 @@ Ruby Command prompt창을 시작합니다.<br />
 
 <p><strong>3. 로컬에서 블로그 실행</strong><br />
 우선 로컬에 자신의 블로그 git폴더가 있어야겠죠?<br />
-그 후 폴더 내에서 <code class="highlighter-rouge">jekyll serve</code>를 이용하여 실행 합니다.</p>
+그 후 폴더 내에서 <code class="language-plaintext highlighter-rouge">jekyll serve</code>를 이용하여 실행 합니다.</p>
 
 <figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="c1">#자신의 블로그 복제하여 다운로드</span>
 <span class="n">git</span> <span class="nb">clone</span> <span class="n">https</span><span class="ss">:/</span><span class="o">/</span><span class="n">github</span><span class="p">.</span><span class="nf">com</span><span class="o">/</span><span class="n">username</span><span class="p">.</span><span class="nf">git</span><span class="p">.</span><span class="nf">io</span><span class="o">/</span>
@@ -381,13 +381,13 @@ Ruby Command prompt창을 시작합니다.<br />
 <span class="c1">#로컬에서 블로그 실행! 요것은 ruby prompt에서 실행해야겠죠?</span>
 <span class="n">jekyll</span> <span class="n">serve</span></code></pre></figure>
 
-<p>오류 없이 실행이 된다면 <code class="highlighter-rouge">http://localhost:4000/</code>으로 접속하시면 자신이 폴더내에서 수정한 블로그를 확인 할 수 있습니다.<br />
+<p>오류 없이 실행이 된다면 <code class="language-plaintext highlighter-rouge">http://localhost:4000/</code>으로 접속하시면 자신이 폴더내에서 수정한 블로그를 확인 할 수 있습니다.<br />
 수정이 끝난 후에는 git push를 통해 업로드 하시면 적용가능합니다!</p>
 
 <p>해당 게시물에 문제가 있다면 댓글을 통해 피드백해주시면 감사하겠습니다~
 같이 공부해요~^^</p>
 
-<p><code class="highlighter-rouge">방문해주신분들 댓글 한개씩 달아주시면 감사하겠습니다~~^^</code></p>
+<p><code class="language-plaintext highlighter-rouge">방문해주신분들 댓글 한개씩 달아주시면 감사하겠습니다~~^^</code></p>
 
 
 	  ]]></description>
